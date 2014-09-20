@@ -1,0 +1,404 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Ken Silverman's Projects Page</title></head>
+<body text="#e0e060" vlink="#C0C8FF" alink="#C0C0FF" background="download_files/downback.png" bgcolor="403000" link="#C0C8FF">
+<h1 align="center">Ken Silverman's Projects Page</h1>
+<hr size="1" width="100%">
+
+<a name="evaldraw">
+<h2 align="center">EVALDRAW</h2>
+</a><p><a name="evaldraw"></a><a href="http://advsys.net/ken/evaldraw.zip">EVALDRAW.ZIP</a>
+ (1,321,223 bytes, 05/28/2011): A complete programming environment with 
+built-in compiler, text editor, and functions to allow for quick 
+prototyping. With Evaldraw, you can make graphs in any dimension (1D, 
+2D, 3D), animations, custom musical instruments, voxel models, and 
+general purpose applications. I've included a lot of examples, so even 
+if you're not a programmer, you can look at the demos.<i>(Win32 - Requires DirectX)</i></p>
+<table width="0%" align="center" border="0">
+<tbody><tr>
+<td align="center"><img src="download_files/evaldrw0.png" alt="General-purpose programming" width="400" height="300">
+</td><td align="center"><img src="download_files/evaldrw1.jpg" alt="Generate 3D voxel models" width="400" height="300">
+</td></tr><tr>
+<td align="center"><img src="download_files/evaldrw2.png" alt="Design instruments and test them on the piano." width="400" height="300">
+</td><td align="center"><img src="download_files/evaldrw3.jpg" alt="Multiplayer 3D games are possible too!" width="400" height="300">
+</td></tr></tbody></table>
+
+<a name="evallib">
+<p>Perhaps the best feature of Evaldraw is the instant feedback. It 
+automatically re-compiles the code every time you change it - i.e. on 
+every keystroke. Since it is a custom compiler, no temporary files are 
+ever written to your hard drive.</p>
+
+</a><p><a name="evallib">Most people don't have time to learn a new 
+programming language. For this reason, I've done my best to keep the 
+learning curve to a minimum. Evaldraw's syntax is very similar to C. See
+ the included EVALDRAW.TXT or RScript.chm for a list of differences. If 
+you are new to programming, try the </a><a href="http://advsys.net/ken/evaltut/evaldraw_tut.htm">EVALDRAW tutorial</a>.</p>
+
+<p>I started Evaldraw in March 2003, when my friend, <a href="http://moonedit.com/tom">Tom</a>, was playing around with <a href="http://moonedit.com/tom/vox2_en.htm">texture generation</a>.
+ His work really impressed me. It was missing something very crucial 
+though - a run-time scripting system. Evaldraw was my answer to that. :)
+ My library takes a C string (containing the script code), and converts 
+it into executable code. This executable code can then be called 
+directly by the running program - just like any other C function - all 
+at runtime!</p>
+
+<p>In January 2010, Robert Rodgers wrote a new compiler, which will 
+eventually replace EVAL. It is now integrated into EVALDRAW as the 
+default compiler. Robert's compiler already has more features than EVAL,
+ and it is faster too! Thanks to his involvement, I will be able to 
+concentrate on improving other parts of EVALDRAW (when I find free 
+time).</p>
+
+<p><a href="http://advsys.net/ken/util/kc_src.zip">EVAL compiler in KC_SRC.ZIP</a>
+ (117,530 bytes, 05/15/2010) My old "EVAL" library, now with complete 
+source code. The EVAL compiler consists of 3 files: EVAL.C, EVAL.H, and 
+EVAL.TXT. The other files are only required to compile <a href="http://advsys.net/ken/utils.htm#kc">KC</a>,
+ a project based on the EVAL compiler. To compile the console-based test
+ application, type "nmake eval.c" at a Visual C command prompt.<i> (Requires Microsoft Visual C/C++ 6.0 or above)</i></p>
+
+
+<hr size="1" width="100%">
+
+<a name="polydraw">
+<h2 align="center">POLYDRAW</h2>
+</a><p><a name="polydraw"></a><a href="http://advsys.net/ken/polydraw.zip">POLYDRAW.ZIP</a> (312,292 bytes, 05/28/2011): Originally started by <a href="http://ind.untergrund.net/">Tigrou</a> and posted at <a href="http://www.pouet.net/prod.php?which=54245">pouet</a>,
+ this programming environment allows fast prototyping of GPU shaders. It
+ uses my EVAL compiler for the "c" program and compiles on every 
+keystroke without hard drive access. Having been impressed by Tigrou's 
+work, I took over his project and this is the result of several months 
+of modifications. I learned a lot about shader programming during the 
+process : ) See the included POLYDRAW.TXT for a complete list of 
+modifications. Included are demos from both Tigrou and myself. Most 
+demos require GLSL, although ARB assembly is also supported for those 
+stuck with older video cards.
+<i>(Win32 - Requires OpenGL+GLSL)</i></p>
+<table width="0%" align="center" border="0">
+<tbody><tr>
+<td align="center"><img src="download_files/polydrw0.jpg" alt="Programming environment" width="512" height="384">
+</td><td align="center"><img src="download_files/polydrw1.jpg" alt="Fractal Rainbow by Tigrou" width="512" height="384">
+</td></tr><tr>
+<td align="center"><img src="download_files/polydrw2.jpg" alt="Town Textured by Tigrou" width="512" height="384">
+</td><td align="center"><img src="download_files/polydrw3.jpg" alt="Drawcone by Ken" width="512" height="384">
+</td></tr></tbody></table>
+<hr size="1" width="100%">
+
+
+<a name="flyduct">
+<h2 align="center">FLYDUCT</h2>
+<p align="center"><img src="download_files/flyduct.jpg" alt="Flyduct screen shot" width="400" height="300"><br>Flyduct screen shot</p>
+</a><p><a name="flyduct"></a><a href="http://advsys.net/ken/flyduct.zip">FLYDUCT.ZIP</a>
+ (298,074 bytes, 10/26/2008): Guide the blue bird through the ducts 
+without getting its wings clipped. I wrote this silly game to test 2 
+reasons: originally for a custom 2D mouse that also sense rotation, but 
+later to test heightmapping on a cylinder. Since few people have a 
+rotating mouse, the game controls are now made to work with a regular 
+mouse. Use the mouse to move the bird, and the left/right arrow keys to 
+tilt the bird. Feel free to shoot down those red birds (left mouse 
+button) if they get in your way. There is no ending - I never bothered 
+to finish the game. The scenery (cylinder and gates) are all 
+procedurally generated the first time you run the game. Special thanks 
+to <a href="http://moonedit.com/tom">Tom</a> for suggesting a game where you fly through holes.
+<i>(Win32 - Requires DirectX)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="pingball">
+<h2 align="center">PINGBALL</h2>
+<p align="center"><img src="download_files/pingball.gif" alt="Pingball screen shot" width="360" height="270"><br>This is me pretending to be competitive with the computer AI :)</p>
+</a><p><a name="pingball"></a><a href="http://advsys.net/ken/pingball.zip">PINGBALL.ZIP</a>
+ (230,442 bytes, 08/09/2006): I wrote PingBall as a testing platform for
+ a new 3D input device being developed by a group of students at Brown 
+University. It plays well with a standard mouse, but with less freedom 
+of course. Pingball comes with pretty good computer AI and it also 
+supports 1 on 1 network play. Unfortunately, I haven't gotten around to 
+fixing the network protocol to hide latency (as well as other issues).<i>(Win32 - Requires DirectX and Pentium III or Athlon)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="slab6">
+<h2 align="center">SLAB6</h2>
+<p align="center"><img src="download_files/slab6.png" alt="Slab6 screen shot" width="400" height="300"><br>Slab6 screen shot (desklamp.kvx)</p>
+</a><p><a name="slab6"></a><a href="http://advsys.net/ken/slab6.zip">SLAB6.ZIP</a>
+ (304,809 bytes, 03/22/2011): A 6-degree of freedom viewer and editor 
+for KVX and VOX voxel files. I designed the KVX format for use with 
+Shadow Warrior and Blood. If you have a copy of these games, you can 
+extract their KVX and use them with this program. To extract voxels from
+ Shadow Warrior, use KEXTRACT (it's included on the registered CD). To 
+extract voxels from Blood, use this utility: <a href="http://advsys.net/ken/kbarf.zip">KBARF.ZIP (4,379 bytes, 05/18/2006)</a>.
+ Put it in the Blood directory and type: "kbarf blood.rff *.kvx". If you
+ don't have either of these games, you're not out of luck. I included 16
+ of my own voxel objects. Includes source.
+<i>(Win32 - Requires DirectX)</i></p>
+<p><a href="http://advsys.net/ken/poly2vox.zip">POLY2VOX.ZIP</a> (91,932
+ bytes, 07/09/2009): A polygon to voxel model converter. Supported 
+polygon formats: 3D Studio: ASC/3DS, or Quake: MD2/MD3. Supported voxel 
+formats: VOX, Build Engine KVX, <a href="http://advsys.net/ken/voxlap.htm">Voxlap's</a> KV6/VXL format. POLY2VOX recognizes the following texture formats: PNG,JPG,GIF,TGA,CEL,BMP,PCX. Includes source.<i>(Win32)</i></p>
+<p><a href="http://advsys.net/ken/util/v3b2vox.zip">V3B2VOX.ZIP</a> 
+(9,097 bytes, 05/30/2007): Converter between SLABSPRI/SLAB6's VOX format
+ and EveryGraph Voxel3D's V3A/V3B formats. V3B2VOX converts V3A or V3B 
+to VOX, while VOX2V3B converts VOX to V3A. (Inconsistent names, I know).
+ Source included.</p>
+<hr size="1" width="100%">
+
+
+<a name="rubix">
+<h2 align="center">RUBIX</h2>
+<p align="center"><img src="download_files/rubix.png" alt="Rubix screen shot" width="336" height="336"><br>4x4x4 cube in the middle of a rotation.</p>
+</a><p><a name="rubix"></a><a href="http://advsys.net/ken/rubix.zip">RUBIX.ZIP</a>
+ (227,251 bytes, 04/23/2007): Rubik's cube simulator. Rotate slice with 
+the left mouse button; rotate view with the right mouse button. Select 
+any size from 1x1x1 to 64x64x64, randomize, and try to solve. Features: 
+proper 3D perspective, history bar, backup memory cube, color editor, 
+save games, authentic rotation sounds, and a custom solver written by 
+Ben Jos Walbeehm - supporting any size! Rubix is a great tool for 
+learning how to solve the cube. I learned the 3x3x3 using an early 
+version of this program : ) <i>(Win32 - Requires DirectX)</i></p>
+<p><a href="http://advsys.net/ken/rubix_src.zip">RUBIX_SRC.ZIP</a> (160,611 bytes, 04/23/2007): MSVC 6.0 source code to RUBIX.EXE.</p>
+<hr size="1" width="100%">
+
+
+<a name="kcirc">
+<h2 align="center">KCIRC</h2>
+<p align="center"><img src="download_files/kcirc.png" alt="Kcirc screen shot" width="476" height="251"><br>The white dashes move in the direction of current.</p>
+</a><p><a name="kcirc"></a><a href="http://advsys.net/ken/kcirc.zip">KCIRC.ZIP</a>
+ (105,457 bytes, 02/09/2011): An analog circuit simulator. Build a 
+complete electrical circuit with just a few keypresses and the circuit 
+will start animating automatically! This is the perfect program for 
+anyone who wants to learn about elementary circuits. Includes voltage 
+sources, current sources, 4 types of dependent sources, resistors, 
+capacitors, inductors, and switches. Also can do Bode and Transient 
+Analysis plots. Can create time-dependent sources by typing in virtually
+ any mathematical function. <i>(Win32 - Requires DirectX)</i></p>
+<p><a href="http://advsys.net/ken/kcirc_mac_x86.zip">KCIRC_MAC_X86.ZIP</a>
+ (135,406 bytes, 02/09/2011): Mac OSX version for Intel / OSX 10.6. 
+Experimental! Here's what's unfinished: To open the menu, press ESC then
+ use the arrow keys&amp;Enter to select option. In the load/save 
+dialogs, you must manually type the .KSP extension. You must load .KSP 
+files from inside the app - dragging a KSP file onto the app icon 
+doesn't work yet.<i>(Requires OSX 10.6 &amp; Intel based CPU)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="globe">
+<h2 align="center">GLOBE</h2>
+<p align="center"><img src="download_files/globe.png" alt="Globe screen shot" width="640" height="480"><br>Tried
+ to show as much as possible in 1 shot.  (With a 90 degree field of 
+view, the Sun (and Moon) really are that small!  Planets are enlarged 
+for wide angle views.)</p>
+</a><p><a name="globe"></a><a href="http://advsys.net/ken/globe.zip">GLOBE.ZIP</a>
+ (219,666 bytes, 04/24/2009): A 3-D planetarium program with super 
+smooth frame rate. Move anywhere! Look anywhere! Fly around the earth or
+ even to other planets! Speed up time and watch the planets orbit really
+ fast. Zoom into a planet to see its phase. Check for solar eclipses or 
+transits of Mercury &amp; Venus.  Find rise and set times of any solar 
+system object from anywhere on Earth. Learn geography from the high-res 
+data that can be downloaded separately. All in true perspective with 
+really fast 3-D graphics. The sun, moon, 9 planets and 1,482 stars are 
+all accurate to about 1 arc minute from their actual positions. Now 
+includes source. <i>(Win32 - Requires DirectX)</i></p>
+<p>Here's a <a href="http://advsys.net/ken/globe2.png" alt="hi">screenshot</a> with the high-res GSHHS shoreline and CIA political border data (not included) (a view of New England, USA)</p>
+<hr size="1" width="100%">
+
+
+<a name="2draw">
+<h2 align="center">2DRAW</h2>
+<p align="center"><img src="download_files/2draw.jpg" alt="2draw screen shot" width="320" height="200"><br>2draw screen shot</p>
+</a><p><a name="2draw"></a><a href="http://advsys.net/ken/2draw.zip">2DRAW.ZIP</a>
+ (362,045 bytes, 01/18/2011): 2DRAW! This 2D rotation &amp; zoom engine 
+was going to be used for an Apogee game called "Crystal Carnage" until 
+the project was cancelled. Also, during the development of Build, I used
+ this as my test platform for debugging network/modem code error 
+correction.  In fact, if you copy COMMIT.* which comes with the 
+shareware version of many Build games, such as Duke Nukem 3D, you can 
+play multiplayer 2DRAW games! Also features stereo sound and a digital 
+MOD-style song that I composed myself. To see the demo I recorded, press
+ SHIFT-SHIFT-'R' inside the game. Includes a nice board editor. Now 
+includes source. <i>(DOS32)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="cubes5">
+<h2 align="center">CUBES5</h2>
+<p align="center"><img src="download_files/cubes5.jpg" alt="Cubes5 screen shot" width="320" height="200"><br>It's the "HI" room! Would you believe there's also a "LO" room?</p>
+</a><p><a name="cubes5"></a><a href="http://advsys.net/ken/cubes5.zip">CUBES5.ZIP</a>
+ (160,249 bytes, 10/17/2005): A 6 degree of freedom texture-mapped cube 
+engine. I made this during the development of the Build engine 
+(1994-1995) It has an easy-to-use editor built in. Graphics are 
+compatible with the Build .ART format. If you make any interesting maps,
+ please send them to me! ZIP now includes source code (compile with <a href="http://openwatcom.org/">Open Watcom 1.3</a>).<i>(DOS32)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="kentris">
+<h2 align="center">KENTRIS</h2>
+<p align="center"><img src="download_files/kentris.png" alt="Kentris screen shot" width="640" height="480"><br>Looks like I'm beating the computer.</p>
+</a><p><a name="kentris"></a><a href="http://advsys.net/ken/kentrs43.zip">KENTRS43.ZIP</a>
+ (147,661 bytes, 08/14/2005): Kentris version 4.3. This is a 2-player 
+tetris game I made in 1991, featuring full sound &amp; music. Includes 
+source code.<i>(DOS16)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="sibros">
+<h2 align="center">SIBROS</h2>
+<p align="center"><img src="download_files/sibros.png" alt="Sibros screen shot" width="360" height="240"><br>One of the later levels</p>
+</a><p><a name="sibros"></a><a href="http://advsys.net/ken/sibros.zip">SIBROS.ZIP</a>
+ (45,118 bytes): Super Silverbrothers! Remember when Super Mario 
+Brothers was popular? This platform game I made in 1991 features smooth 
+scrolling (70fps) even on a 386 if I remember correctly. It has cool 
+music too. <i>(DOS16)</i></p>
+
+<p><a href="http://advsys.net/ken/sibrosrc.zip">SIBROSRC.ZIP</a> (12,446
+ bytes): The source code to Super Silverbrothers. Note: you'll need the 
+old 16-bit Microsoft C compiler for DOS in order to compile this!</p>
+
+<hr size="1" width="100%">
+
+
+<a name="breakout">
+<h2 align="center">BREAKOUT</h2>
+<p align="center"><img src="download_files/breakout.png" alt="Breakout screen shot" width="320" height="200"><br>Breakout screen shot</p>
+</a><p><a name="breakout"></a><a href="http://advsys.net/ken/breakout.zip">BREAKOUT.ZIP</a>
+ (49,729 bytes, 09/16/2007): My own BreakOut game featuring playback of 4
+ simultaneous notes through the PC speaker, movement of the paddle 
+up&amp;down, palette animation, and 3 different ending screens depending
+ on how well you do. For best sound, run in DosBox or pure DOS mode. 
+Includes source code.<i>(DOS16)</i></p>
+<hr size="1" width="100%">
+
+
+<a name="scroller">
+<h2 align="center">SCROLLER</h2>
+<p align="center"><img src="download_files/scroller.png" alt="Scroller screen shot" width="202" height="152"><br>Scroller screen shot</p>
+</a><p><a name="scroller"></a><a href="http://advsys.net/ken/scroller.zip">SCROLLER.ZIP</a>
+ (51,040 bytes, 10/28/2004): A cute little QuickBasic platform game that
+ predates Sibros. The object is pretty self-explanatory so I didn't 
+include any instructions. However I will say that the only keys are: 
+Left, Right, Space, and ESC. See if you can win with more than 39 coins!
+ Full source code included. <i>(DOS16)</i></p>
+<hr size="1" width="100%">
+
+
+<table width="100%" align="center" border="1">
+
+<tbody><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/qz35.zip">QZ35.ZIP</a>
+</td><td align="left">79,767 bytes
+</td><td align="left">QuiZzer version 3.5. Throw away those flash cards!
+ With QZ, you can type in your own list of words and definitions or you 
+can load a pre-defined list, such as world capitals. Then quiz yourself 
+by either spelling out the word, selecting from multiple choices or by 
+playing hangman. This is an old program (1991) of mine, which I recently
+ fixed up.
+</td><td align="left">DOS16
+
+</td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/chess.zip">CHESS.ZIP</a>
+</td><td align="left">187,557 bytes, 06/01/2005
+</td><td align="left">This is a chess game I made sometime in 1995. I 
+suppose its best features are the funny sounds I used and its built in 
+IPX network/modem support.  You can play against the computer using 
+several levels of difficulty, but if you're looking for a worthy 
+opponent to take on "Deep Blue", look elsewhere! Source code included.
+</td><td align="left">DOS32 - Requires VESA driver
+
+</td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/spherand.exe">SPHERAND.EXE</a>
+</td><td align="left">42,585 bytes
+</td><td align="left">8192 repelling or attracting dots on the surface 
+of a sphere. Use the mouse to rotate. Up &amp; down arrow to move in and
+ out. Keypad + and - to select attracting or repelling dots.  A special 
+locality algorithm is used to reduce the amount of calculation time used
+ to move the dots.
+</td><td align="left">DOS32 - Requires VESA driver
+
+</td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/sphere.exe">SPHERE.EXE</a>
+</td><td align="left">54,356 bytes
+</td><td align="left">You're stuck inside a texture-mapped sphere. I 
+don't use the Mercator projection. Instead I partition the sphere in 
+such a way that all the texels are close to square aspect ratio. Use 
+mouse to rotate, arrows to move. Really FAST frame rate! Someday I may 
+stick these texture-mapping routines into my globe program (that is, if I
+ can work out the bugs).
+</td><td align="left">DOS32 - Requires VESA driver
+
+<a name="kdmsongs">
+</a></td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/kdmsongs.zip">KDMSONGS.ZIP</a>
+</td><td align="left">477,272 bytes, 09/19/2009
+</td><td align="left">Music is just one of my many talents! In 1995 I 
+made a digital music editor &amp; player (KDM stands for Ken's Digital 
+Music). In this ZIP, I give you only 9 of my best compositions. Plays at
+ 44100hz, stereo, 16-bit.  Staircase aliasing is filtered out using 
+linear interpolation. Source code now included.
+</td><td align="left">DOS32 &amp; Win32 versions. DOS version requires SB-compatible sound card.
+
+
+</td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/util/kdm2it.zip">KDM2IT.ZIP</a>
+</td><td align="left">25,429 bytes, 12/25/2010
+</td><td align="left">In 2005, <a href="http://jspenguin.org:81/">Jared Stafford</a>
+ wrote a KDM to Impulse Tracker (IT) converter. I didn't think much of 
+it at the time.. apparently it is useful to some people. I noticed that 
+Jared never put it on his site, so here it is. To compile in Visual C, 
+make sure to specify the /TP (compile as C++) option.
+</td><td align="left">Win32 / Linux / C compiler
+
+</td></tr><tr valign="top">
+<td align="left"><a name="ksmsongs"></a><a href="http://advsys.net/ken/ksmsongs.zip">KSMSONGS.ZIP</a>
+</td><td align="left">227,123 bytes, 09/10/2006
+</td><td align="left">Here are some old songs of mine written 
+specifically for the Adlib/OPL2 chipset (FM synthesis). 12 of the songs 
+are from "Kentris" and "Ken's Labyrinth". I also included 3 other songs.
+ Includes 3 players: PLAYKSM.EXE (uses the Adlib hardware), DIGIKSM.EXE 
+(digital emulator/WAV writer for DOS), KSMWIN.EXE (digital emulator for 
+Windows). Also includes my original editor from 1992 (KSM.EXE), and now 
+source code for all programs. Emulating the Adlib chipset accurately 
+required several weeks of reverse engineering. All writes to the Adlib 
+FM ports (0x388-9) are passed to my emulator and it returns digital 
+sound buffers to the caller.
+</td><td align="left">At least 1 of the EXEs should work :)
+
+</td></tr><tr valign="top">
+<td align="left"><a href="http://advsys.net/ken/oldsongs.zip">OLDSONGS.ZIP</a>
+</td><td align="left">66,592 bytes
+</td><td align="left">Here are some even older songs of mine. About half
+ were written for my Casiotone CT-640 synthesizer and the rest are even 
+older pieces of junk.
+</td><td align="left">DIGISM (DOS) requires SB-compatible sound card.
+
+</td></tr><tr valign="top">
+<td align="left"><a name="in_ken"></a><a href="http://advsys.net/ken/util/in_ken.zip">IN_KEN.ZIP</a>
+</td><td align="left">16,099 bytes
+</td><td align="left">A Winamp 2.x plug-in I wrote that plays all of my 
+music formats (.SND, .SM, .KSM, .KDM). To install, extract the file 
+(IN_KEN.DLL) to your winamp plugin directory - on most computers, that's
+ C:\PROGRAM FILES\WINAMP\PLUGINS\ You will need to re-start Winamp (but 
+not windows!) for it to detect the plugin.
+</td><td align="left">Winamp 2.x (Win32)
+
+</td></tr><tr valign="top">
+<td align="left"><a name="in_ken_src"></a><a href="http://advsys.net/ken/util/in_ken_src.zip">IN_KEN_SRC.ZIP</a>
+</td><td align="left">25,456 bytes, 10/23/2009
+</td><td align="left">Source code to IN_KEN.DLL. To compile, launch a 
+Visual C Command Prompt, cd to the directory where you extracted the 
+files, and then type 'nmake'. Before compiling, you should check that 
+the Winamp plugins directory located in my makefile is correct.
+</td><td align="left">VC6+
+
+</td></tr></tbody></table>
+
+<br>
+<p>I have literally hundreds of other home-made programs like these, but
+ for now they rot on my hard drive. It takes time to fix up old programs
+ for release. I like to make them playable on modern systems. I also try
+ to look at my old records and see if I can find a little history about 
+the program. Some demos are full of bugs and simply not worth the 
+trouble. I will continue to try to put up more demos whenever I can find
+ the time.</p>
+
+Back to <a href="http://advsys.net/ken/default.htm">Ken Silverman's Official Home Page</a>
+
+
+</body></html>

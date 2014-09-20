@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Chitika Ads v2 500x250</title>
+        <script type="text/javascript">
+            function append_func(o,f) {
+                return function(e) {
+                    if(typeof(o) == "function") { o(e); }
+                    return a(e);
+                }
+            }
+            function toggleSearch() {
+                var sBlock = document.getElementById('searchBlock');
+                if (sBlock.style.visibility == "hidden") {
+                    sBlock.style.visibility = "visible";
+                } else {
+                    sBlock.style.visibility = "hidden";
+                }
+            }
+
+        </script>
+        <style type="text/css">
+* {
+    padding: 0;
+    margin: 0px;
+}
+
+strong, b, span {
+    clear: left;
+    display: inline;
+    float: none;
+}
+
+body {
+    border: 1px solid #FFFFFF;
+    height: 238px;
+    padding: 5px;
+    width: 488px;
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#query {
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    height: 16.8px;
+    font-weight: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#query strong, #query b, #query span {
+    color: inherit;
+    background-color: #FFFF33;
+    font-weight: bold;
+}
+
+ul li {
+    height: 58.8px;
+    list-style: none;
+    margin-bottom: 12.1333333333333px;
+}
+ul li:hover {
+    background-color: transparent;
+}
+ul li div.details {
+    margin: 0 0 0 60px;
+}
+
+img.thumbnail {
+    border: none;
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 50px;
+}
+img.trk {
+    display: none !important;
+}
+
+ul li .resThumb {
+    background-position: center center !important;
+    height: 50px !important;
+    float: left;
+    margin: 2px 0 0 5px;
+    width: 50px !important;
+}
+ul li .resThumb img {
+    border: 0 !important;
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.resTitle, .resDesc, .resDomain {
+    overflow: hidden;
+    text-overflow: elipsis;
+    text-overflow-mode:ellipsis;
+}
+
+.resTitle, .resTitle a {
+    color: #0000CC;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline;
+    height: 16.8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.resTitle a:hover {
+    background-color: transparent;
+    color: #00c;
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.resDesc, .resDesc a {
+    color: #000000;
+    height: 28.8px;
+    font-weight: normal;
+    line-height: 14.4px;
+    text-decoration: none;
+}
+.resDesc a:hover {
+    background-color: transparent;
+    color: #00c;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.resDomain, .resDomain a  {
+    color: #0000CC;
+    font-size: 11px;
+    height: 13.2px;
+    line-height: 13.2px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.resDomain a:hover {
+    background-color: transparent;
+    color: #00c;
+    text-decoration: none;
+    font-style: normal;
+}
+
+#more {
+    color: #999;
+    font-size: 10px;
+    line-height: 11px;
+    position: absolute;
+    text-decoration: none;
+    bottom: 2px;
+    right: 22px;
+}
+
+#more:hover {
+    color: #333;
+}
+#ads li {
+    position: relative; 
+    zoom: 1;
+}
+#ads li .phone {
+    float: none !important;
+    position: absolute;
+    height: 18px;
+    top: 3px;
+    right: 3px;
+    zoom: 1;
+}
+#ads li .phone a, #ads li .phone a img {
+    float: none !important;
+    border: none !important;
+    height: 18px !important;
+    position: relative;
+    zoom: 1;
+}
+
+#searchLink {
+    cursor: pointer;
+    height: 16px;
+    position: absolute;
+    width: 16px;
+    bottom: 2px;
+    right: 2px;
+}
+
+#searchBlock {
+    background-color: #fff;
+    border: 3px solid #CCC;
+    clear: left;
+    display: hidden;
+    float: none;
+    height: 100px;
+    left: 147px;
+    position: absolute;
+    top: 72px;
+    width: 200px;
+    z-index: 9999;
+}
+
+#searchBlock div {
+    font-weight: bold;
+    font-size: small;
+    background: #CCC;
+    color: #fff;
+    width: 100%;
+}
+
+#searchBlock form {
+    padding: 5px;
+}
+
+#mquery {
+    clear: left;
+    display: block;
+    float: none;
+    margin: auto auto;
+    width: 170px;
+}
+
+#searchButton {
+    clear: left;
+    display: block;
+    float: none;
+    margin: auto auto;
+    text-align: center;
+    width: 90px;
+}
+
+        </style>
+<script type="text/javascript">
+var titles = [];
+function getNumber(_n,_i,_track) {
+    if(titles[_i]) {
+        var d = getTitle(_i);
+        if(d && d.innerText) {
+            d.innerText = titles[_i];
+            delete titles[_i];
+        }else if(d) {
+            d.textContent = titles[_i];
+            delete titles[_i];
+        }
+    }else{
+        var n = (_n).replace(/([0-9]{3})([0-9]{3})([0-9]{4})/, "($1) $2-$3");
+        var d = getTitle(_i);
+        if(d) {
+            if(d.innerText) {
+                titles[_i] = d.innerText;
+                d.innerText = n;
+            }else{
+                titles[_i] = d.textContent;
+                d.textContent = n;
+                d.style.backgroundColor = '#FFFF33';
+                d.style.color = '#000';
+                setTimeout(function() { d.style.backgroundColor = 'inherit'; d.style.color = '#0000CC'; }, 2000);
+    
+                var s = new Image();
+                s.src = 'http://labs.chitika.com/tf/pixel.php?t='+escape(_track);
+            }
+        }
+    }
+}
+
+function getTitle(_i) {
+    var d = document.getElementById(_i);
+    var a = d.getElementsByTagName('p');
+    var ret = false;
+    if(a.length > 0) {
+        var l = a.length;
+        for(var i = 0; i < l; i++) {
+            if(a[i].className && a[i].className.match(/(res)?title/i)) {
+                var title = a[i].getElementsByTagName('a');
+                if(title.length > 0) ret = title[0];
+                break;
+            }
+        }
+    }else{
+        a = d.getElementsByTagName('a');
+        var l = a.length;
+        for(var i = 0; i < l; i++) {
+            if(a[i].className && a[i].className.match(/(res)?title/i)) {
+                ret = a[i];
+                break;
+            }
+        }
+    }
+    return ret;
+}
+</script>
+    </head>
+<!--
+<pre>
+Title: 16.8
+Desc:  28.8
+link:  13.2
+Search:16.8
+Total: 58.8
+OL-h:  212.8
+OL-w:  488
+LI-h:  58.8
+LI-w:  488
+Ads:   3
+Pad:   12.1333333333333
+</pre>
+-->
+    <body>
+            <div id="query">
+                Related Results
+            </div>
+        <ul id="ads">
+            <li id="uniqueLi0">
+                <div class="resThumb"><img src="a_data/thumbnail.jpg" width="50" height="50"></div>
+                <div class="details">
+                    <p class="resTitle"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4v0S2CoKFlHBUgcnK86B9IJTdOggWkU7nEcflo658ISdmZ7Ffcslq_Jc6ujQprPOcrmsXm3YDrIEAFOnmkfQ39jJyjmD-r06KmwYV7pz1WWlcL-vBYxjcA1nOmu2bYqlOWWqxLd64MZd1QVq7WKSUbcxRQjK2NttRVlmHpoRebO3bhTrzWRldy8DjDfe3eBepZ5O0EozmcjzPl4Q1ebeGztTgy7CzcpNXK7BI0LXF5QaM1VAlMoLfDkaoPKvMifstzaKF_mBAmY3M93sLZQwX8S70uKR-oL5GPXy11cRqfo1O1rI8KvjzCppw&amp;xargs=Q%2BqZHYwI3jbkp79W2Ugl7o%2BI2g0Zj2QLtZ6JRDX9KLt0Zq1B%2BfGGWdmuhZln8mQIog2%2Be%2BTBBPHgt2t5Lx8bsXHxLvUj6aJ725HDeG10fPOYB3hhTXavM4h4iP5CsNMhwV3NxblX0qLxpcbT20nuyEtYh%2FbJbUrcEZkrtoXpR2ld6j8%2B3HUAiaGyQrdY%2Bh8pm582DDobGKjgkN%2FNCiUgcpreGVUOomkeDHblIzQSshg7e69Ia3NyfsQ6zf0tsM2AVNRx4ccXcRATcCER9FfDlhKolIABwR2CCJ%2FCDvj3VXDNyhfdMDDajO80erhRx6z97aqZut3BD9vCg7euOMBta7b2ucRgGju915GGi9or0RPSKLlsvLgQbg2f%2B2rX3dWFcvG5LfoEnx8D3ZUG1B6QTaJvvZMr%2FriOZSG298tjj2hC0bzRB7jOVo501FyfPYIO3ymlB8xrarNwWY4xt6QlvFQWjZTvXE569Y6N0cX%2BOqdYngXadAIen%2Bi3wP5X1vviAOAF9vS%2FN3vc1xaJVck4ZFfPI1nh%2BwuhFSBryi1hyXBL%2B7AIKYxZ9yr2ZHW0KUdjwZN%2BHBskRUtZiTXQ0QiXwQ%3D%3D&amp;template=v2-500x250">$5,000 Cash Loans</a></p>
+                    <p class="resDesc"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4v0S2CoKFlHBUgcnK86B9IJTdOggWkU7nEcflo658ISdmZ7Ffcslq_Jc6ujQprPOcrmsXm3YDrIEAFOnmkfQ39jJyjmD-r06KmwYV7pz1WWlcL-vBYxjcA1nOmu2bYqlOWWqxLd64MZd1QVq7WKSUbcxRQjK2NttRVlmHpoRebO3bhTrzWRldy8DjDfe3eBepZ5O0EozmcjzPl4Q1ebeGztTgy7CzcpNXK7BI0LXF5QaM1VAlMoLfDkaoPKvMifstzaKF_mBAmY3M93sLZQwX8S70uKR-oL5GPXy11cRqfo1O1rI8KvjzCppw&amp;xargs=Q%2BqZHYwI3jbkp79W2Ugl7o%2BI2g0Zj2QLtZ6JRDX9KLt0Zq1B%2BfGGWdmuhZln8mQIog2%2Be%2BTBBPHgt2t5Lx8bsXHxLvUj6aJ725HDeG10fPOYB3hhTXavM4h4iP5CsNMhwV3NxblX0qLxpcbT20nuyEtYh%2FbJbUrcEZkrtoXpR2ld6j8%2B3HUAiaGyQrdY%2Bh8pm582DDobGKjgkN%2FNCiUgcpreGVUOomkeDHblIzQSshg7e69Ia3NyfsQ6zf0tsM2AVNRx4ccXcRATcCER9FfDlhKolIABwR2CCJ%2FCDvj3VXDNyhfdMDDajO80erhRx6z97aqZut3BD9vCg7euOMBta7b2ucRgGju915GGi9or0RPSKLlsvLgQbg2f%2B2rX3dWFcvG5LfoEnx8D3ZUG1B6QTaJvvZMr%2FriOZSG298tjj2hC0bzRB7jOVo501FyfPYIO3ymlB8xrarNwWY4xt6QlvFQWjZTvXE569Y6N0cX%2BOqdYngXadAIen%2Bi3wP5X1vviAOAF9vS%2FN3vc1xaJVck4ZFfPI1nh%2BwuhFSBryi1hyXBL%2B7AIKYxZ9yr2ZHW0KUdjwZN%2BHBskRUtZiTXQ0QiXwQ%3D%3D&amp;template=v2-500x250">Cash Wired to Your Account Bad Credit OK Apply Now!</a></p>
+                    <p class="resDomain"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4v0S2CoKFlHBUgcnK86B9IJTdOggWkU7nEcflo658ISdmZ7Ffcslq_Jc6ujQprPOcrmsXm3YDrIEAFOnmkfQ39jJyjmD-r06KmwYV7pz1WWlcL-vBYxjcA1nOmu2bYqlOWWqxLd64MZd1QVq7WKSUbcxRQjK2NttRVlmHpoRebO3bhTrzWRldy8DjDfe3eBepZ5O0EozmcjzPl4Q1ebeGztTgy7CzcpNXK7BI0LXF5QaM1VAlMoLfDkaoPKvMifstzaKF_mBAmY3M93sLZQwX8S70uKR-oL5GPXy11cRqfo1O1rI8KvjzCppw&amp;xargs=Q%2BqZHYwI3jbkp79W2Ugl7o%2BI2g0Zj2QLtZ6JRDX9KLt0Zq1B%2BfGGWdmuhZln8mQIog2%2Be%2BTBBPHgt2t5Lx8bsXHxLvUj6aJ725HDeG10fPOYB3hhTXavM4h4iP5CsNMhwV3NxblX0qLxpcbT20nuyEtYh%2FbJbUrcEZkrtoXpR2ld6j8%2B3HUAiaGyQrdY%2Bh8pm582DDobGKjgkN%2FNCiUgcpreGVUOomkeDHblIzQSshg7e69Ia3NyfsQ6zf0tsM2AVNRx4ccXcRATcCER9FfDlhKolIABwR2CCJ%2FCDvj3VXDNyhfdMDDajO80erhRx6z97aqZut3BD9vCg7euOMBta7b2ucRgGju915GGi9or0RPSKLlsvLgQbg2f%2B2rX3dWFcvG5LfoEnx8D3ZUG1B6QTaJvvZMr%2FriOZSG298tjj2hC0bzRB7jOVo501FyfPYIO3ymlB8xrarNwWY4xt6QlvFQWjZTvXE569Y6N0cX%2BOqdYngXadAIen%2Bi3wP5X1vviAOAF9vS%2FN3vc1xaJVck4ZFfPI1nh%2BwuhFSBryi1hyXBL%2B7AIKYxZ9yr2ZHW0KUdjwZN%2BHBskRUtZiTXQ0QiXwQ%3D%3D&amp;template=v2-500x250">www.1Hour-Advance.com</a></p>
+                </div>
+            </li>
+            <li id="uniqueLi1">
+                <div class="resThumb"><img src="a_data/thumbnail_002.jpg" width="50" height="50"></div>
+                <div class="details">
+                    <p class="resTitle"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4vXypM-Is_8qtC3sMjppBcWCLbLEeLgRKkNjnje3q0R-7Aw9SoXeTSixdaJrtIkS4euTByndRVznjly4-Q1Tuqm9EWwLuWBcBnzpZ6xSHb2Lvq3yYq3tbTwI8x2o_5p651AOZaR0ht9ixRq3q2ZlTuJiV35Hk5OVq6OvTLTBJlfQ7V7Aw3PWSThbKeVWW7rqQ1CfzrIgdKJdqugepa1V5ac1MbaLzd1LOjuBDneD-Kep1o1W8b9ZMDWiDJ-qCOu4Bi7ENNA2hvTgWn1bO-VyEZ9QUoKAshuBP8KYfEXaE9kgJI0UCVD_Q_bNaAGAhDw8UPNVQJTOh6cmy4P1LMJCjVrVTLxG8QJmNzPehfoYCdJtz2_Z2oaBUJsu_REswZ6W5LEt_ul92TGWiO&amp;xargs=BrgaVC63uKtynoFqaRVjR8OqM3g5t5P2lGn%2BrRplP7NZ2IN64z8uTCX9c6Loqa0d9uR4mqRqgiZ2jBbjhsYmyAC0pd3%2FNI8xCBUyNE3Veeq690MIjR3J7ZeFIWxuPqLIpcuffeHOdwwDUZmILEQSveUkyxH6pD4rOS2vL18MXbPgsReFvp7902fKxoqM66yYqtcwbgFOHmObA4w7lhdFQ%2BTnGF6oTTfg4qJxvUPS0zWOBLTPY8ERBqFnoVQC1xPRA7xtmQLwhUQhSRdA%2FrRceUdf1LAsHLn%2BQHGPAFovJAPSTe7dqMJiLAciSwakIj5jqLOYb%2B3Cq6warFDnF4VUPD%2FqiD7N6WkbjmuzlHKz2q5QLxLtyo7YwisNMbUP3BGCKrS5a6kVLXTwPdOtcBXo7m5z6DmGryRVKZmDc3jdPjy3114sIMq1R6kKatqwuszx8xUtHIaxf0w%2FSYRekcaKRLAxXyN%2FvGezHASmGgkUlusod8sdUAD2KJzDZkyfwxY2JWL39eZTAzsHzSVm86w6x9H4VM3Qvf8%2FFUZcezRhIWZ3SvvJNG6BvE62y4YL3Nwpc3RnzUOpd70%3D&amp;template=v2-500x250">Bad Credit Loans</a></p>
+                    <p class="resDesc"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4vXypM-Is_8qtC3sMjppBcWCLbLEeLgRKkNjnje3q0R-7Aw9SoXeTSixdaJrtIkS4euTByndRVznjly4-Q1Tuqm9EWwLuWBcBnzpZ6xSHb2Lvq3yYq3tbTwI8x2o_5p651AOZaR0ht9ixRq3q2ZlTuJiV35Hk5OVq6OvTLTBJlfQ7V7Aw3PWSThbKeVWW7rqQ1CfzrIgdKJdqugepa1V5ac1MbaLzd1LOjuBDneD-Kep1o1W8b9ZMDWiDJ-qCOu4Bi7ENNA2hvTgWn1bO-VyEZ9QUoKAshuBP8KYfEXaE9kgJI0UCVD_Q_bNaAGAhDw8UPNVQJTOh6cmy4P1LMJCjVrVTLxG8QJmNzPehfoYCdJtz2_Z2oaBUJsu_REswZ6W5LEt_ul92TGWiO&amp;xargs=BrgaVC63uKtynoFqaRVjR8OqM3g5t5P2lGn%2BrRplP7NZ2IN64z8uTCX9c6Loqa0d9uR4mqRqgiZ2jBbjhsYmyAC0pd3%2FNI8xCBUyNE3Veeq690MIjR3J7ZeFIWxuPqLIpcuffeHOdwwDUZmILEQSveUkyxH6pD4rOS2vL18MXbPgsReFvp7902fKxoqM66yYqtcwbgFOHmObA4w7lhdFQ%2BTnGF6oTTfg4qJxvUPS0zWOBLTPY8ERBqFnoVQC1xPRA7xtmQLwhUQhSRdA%2FrRceUdf1LAsHLn%2BQHGPAFovJAPSTe7dqMJiLAciSwakIj5jqLOYb%2B3Cq6warFDnF4VUPD%2FqiD7N6WkbjmuzlHKz2q5QLxLtyo7YwisNMbUP3BGCKrS5a6kVLXTwPdOtcBXo7m5z6DmGryRVKZmDc3jdPjy3114sIMq1R6kKatqwuszx8xUtHIaxf0w%2FSYRekcaKRLAxXyN%2FvGezHASmGgkUlusod8sdUAD2KJzDZkyfwxY2JWL39eZTAzsHzSVm86w6x9H4VM3Qvf8%2FFUZcezRhIWZ3SvvJNG6BvE62y4YL3Nwpc3RnzUOpd70%3D&amp;template=v2-500x250">Looking For Bad Credit Loans? Find It Nearby With Local.com!</a></p>
+                    <p class="resDomain"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F0.r.msn.com%2F%3Fld%3D4vXypM-Is_8qtC3sMjppBcWCLbLEeLgRKkNjnje3q0R-7Aw9SoXeTSixdaJrtIkS4euTByndRVznjly4-Q1Tuqm9EWwLuWBcBnzpZ6xSHb2Lvq3yYq3tbTwI8x2o_5p651AOZaR0ht9ixRq3q2ZlTuJiV35Hk5OVq6OvTLTBJlfQ7V7Aw3PWSThbKeVWW7rqQ1CfzrIgdKJdqugepa1V5ac1MbaLzd1LOjuBDneD-Kep1o1W8b9ZMDWiDJ-qCOu4Bi7ENNA2hvTgWn1bO-VyEZ9QUoKAshuBP8KYfEXaE9kgJI0UCVD_Q_bNaAGAhDw8UPNVQJTOh6cmy4P1LMJCjVrVTLxG8QJmNzPehfoYCdJtz2_Z2oaBUJsu_REswZ6W5LEt_ul92TGWiO&amp;xargs=BrgaVC63uKtynoFqaRVjR8OqM3g5t5P2lGn%2BrRplP7NZ2IN64z8uTCX9c6Loqa0d9uR4mqRqgiZ2jBbjhsYmyAC0pd3%2FNI8xCBUyNE3Veeq690MIjR3J7ZeFIWxuPqLIpcuffeHOdwwDUZmILEQSveUkyxH6pD4rOS2vL18MXbPgsReFvp7902fKxoqM66yYqtcwbgFOHmObA4w7lhdFQ%2BTnGF6oTTfg4qJxvUPS0zWOBLTPY8ERBqFnoVQC1xPRA7xtmQLwhUQhSRdA%2FrRceUdf1LAsHLn%2BQHGPAFovJAPSTe7dqMJiLAciSwakIj5jqLOYb%2B3Cq6warFDnF4VUPD%2FqiD7N6WkbjmuzlHKz2q5QLxLtyo7YwisNMbUP3BGCKrS5a6kVLXTwPdOtcBXo7m5z6DmGryRVKZmDc3jdPjy3114sIMq1R6kKatqwuszx8xUtHIaxf0w%2FSYRekcaKRLAxXyN%2FvGezHASmGgkUlusod8sdUAD2KJzDZkyfwxY2JWL39eZTAzsHzSVm86w6x9H4VM3Qvf8%2FFUZcezRhIWZ3SvvJNG6BvE62y4YL3Nwpc3RnzUOpd70%3D&amp;template=v2-500x250">Local.com</a></p>
+                </div>
+            </li>
+            <li id="uniqueLi2">
+                <div class="resThumb"><img src="a_data/thumbnail_003.jpg" width="50" height="50"></div>
+                <div class="details">
+                    <p class="resTitle"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F1131.r.msn.com%2F%3Fld%3D4v39WoZh6HvhPxs1FfO6APvC8F1fc7zra3KLRyE34sQoLivxOJ7EU6mUA_mgvzbFpsCUFwFa3YQsX7hTbASUqEAizYA6lf-QerFjDX7fRVdPYy0IMOaaW_xfHRHoji1MYT1MQbQtURdklowRL2N0TWRpwTId40o-8GI0I50d8en0OLb9CGPocogUQ8ZOCEN8kKQ_SHhbuNEyrjavxsZ-zlBgmHommMOk8Vw9r7v0iflkOJFsWBTkoxrPh0PQJxg4w5jjZVvozEMsmoCPE_ZUUARyXFyDdQMtsyrPN9x-ez6iuAI0NR15zW_uSH1PdJVadUNVQJTIWwZcFR1dKSqqiUjqxv_moQJmNzPZGnDEPilYSelEamvn0PoKQTb66sUfu5t1TOVhN_syUd&amp;xargs=jiYBscjS8b6JHnD%2FN3AAXjlpcSjp8vwS6XrPxB4aSrcvyzWiwq16xVcCY6faHyv%2BGQJKAnYGdL1agCCs3h6f1HZn3cL7fsPRCi5igdevXYbaI%2FSc04NtUGaguaHcLHAY3tyDDdjZC%2BAgth237aDZlLPMrhwNuYNrRiAjwvJT2hpxIFgNPJVUE4ZhY6WnJeBkoq7N0ZRzzu05FjZbWdDqyglZRQmsW7Po%2BRYTzVzn3YJRTOa0FtROg3UCii0nNfLvt1%2Byq1q2W%2B4En8ZuAaO8rKgO4BZ%2FV9w8ZIjBKZ1apZAYchpIkMg8ZdpnFoYZ52CAFO43Um7GL5LVsz5hecvkCKs2ohkklRTdRSx3k72nr5%2BD3xvEqEiYna%2F6N8qdK2hUBV6eIiOiYKHRTMQH4ghXro3uGlFqHIRhFpTCC8tZLGQu%2F1%2FIgoXbg2tKjnAMHrvYPCPETrF7kbD7ZD%2FmOUgJvnnOA78Cx7X88q%2BA%2BqDDMdv06psq18G3trt2UJTwQ6LkkzimpLUlTMZZksV6UjZ8VpiyakSK9%2B4Ikmc4PrTKAYZXMrVBUNmpknZv1gt36woyVaJqY1ce4D0%3D&amp;template=v2-500x250">Foreign Exchange Trading</a></p>
+                    <p class="resDesc"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F1131.r.msn.com%2F%3Fld%3D4v39WoZh6HvhPxs1FfO6APvC8F1fc7zra3KLRyE34sQoLivxOJ7EU6mUA_mgvzbFpsCUFwFa3YQsX7hTbASUqEAizYA6lf-QerFjDX7fRVdPYy0IMOaaW_xfHRHoji1MYT1MQbQtURdklowRL2N0TWRpwTId40o-8GI0I50d8en0OLb9CGPocogUQ8ZOCEN8kKQ_SHhbuNEyrjavxsZ-zlBgmHommMOk8Vw9r7v0iflkOJFsWBTkoxrPh0PQJxg4w5jjZVvozEMsmoCPE_ZUUARyXFyDdQMtsyrPN9x-ez6iuAI0NR15zW_uSH1PdJVadUNVQJTIWwZcFR1dKSqqiUjqxv_moQJmNzPZGnDEPilYSelEamvn0PoKQTb66sUfu5t1TOVhN_syUd&amp;xargs=jiYBscjS8b6JHnD%2FN3AAXjlpcSjp8vwS6XrPxB4aSrcvyzWiwq16xVcCY6faHyv%2BGQJKAnYGdL1agCCs3h6f1HZn3cL7fsPRCi5igdevXYbaI%2FSc04NtUGaguaHcLHAY3tyDDdjZC%2BAgth237aDZlLPMrhwNuYNrRiAjwvJT2hpxIFgNPJVUE4ZhY6WnJeBkoq7N0ZRzzu05FjZbWdDqyglZRQmsW7Po%2BRYTzVzn3YJRTOa0FtROg3UCii0nNfLvt1%2Byq1q2W%2B4En8ZuAaO8rKgO4BZ%2FV9w8ZIjBKZ1apZAYchpIkMg8ZdpnFoYZ52CAFO43Um7GL5LVsz5hecvkCKs2ohkklRTdRSx3k72nr5%2BD3xvEqEiYna%2F6N8qdK2hUBV6eIiOiYKHRTMQH4ghXro3uGlFqHIRhFpTCC8tZLGQu%2F1%2FIgoXbg2tKjnAMHrvYPCPETrF7kbD7ZD%2FmOUgJvnnOA78Cx7X88q%2BA%2BqDDMdv06psq18G3trt2UJTwQ6LkkzimpLUlTMZZksV6UjZ8VpiyakSK9%2B4Ikmc4PrTKAYZXMrVBUNmpknZv1gt36woyVaJqY1ce4D0%3D&amp;template=v2-500x250">Free $50,000 Practice Account With Real-Time Charts, News &amp; Research.</a></p>
+                    <p class="resDomain"><a target="_blank" href="http://mm.chitika.net/track?target=http%3A%2F%2F1131.r.msn.com%2F%3Fld%3D4v39WoZh6HvhPxs1FfO6APvC8F1fc7zra3KLRyE34sQoLivxOJ7EU6mUA_mgvzbFpsCUFwFa3YQsX7hTbASUqEAizYA6lf-QerFjDX7fRVdPYy0IMOaaW_xfHRHoji1MYT1MQbQtURdklowRL2N0TWRpwTId40o-8GI0I50d8en0OLb9CGPocogUQ8ZOCEN8kKQ_SHhbuNEyrjavxsZ-zlBgmHommMOk8Vw9r7v0iflkOJFsWBTkoxrPh0PQJxg4w5jjZVvozEMsmoCPE_ZUUARyXFyDdQMtsyrPN9x-ez6iuAI0NR15zW_uSH1PdJVadUNVQJTIWwZcFR1dKSqqiUjqxv_moQJmNzPZGnDEPilYSelEamvn0PoKQTb66sUfu5t1TOVhN_syUd&amp;xargs=jiYBscjS8b6JHnD%2FN3AAXjlpcSjp8vwS6XrPxB4aSrcvyzWiwq16xVcCY6faHyv%2BGQJKAnYGdL1agCCs3h6f1HZn3cL7fsPRCi5igdevXYbaI%2FSc04NtUGaguaHcLHAY3tyDDdjZC%2BAgth237aDZlLPMrhwNuYNrRiAjwvJT2hpxIFgNPJVUE4ZhY6WnJeBkoq7N0ZRzzu05FjZbWdDqyglZRQmsW7Po%2BRYTzVzn3YJRTOa0FtROg3UCii0nNfLvt1%2Byq1q2W%2B4En8ZuAaO8rKgO4BZ%2FV9w8ZIjBKZ1apZAYchpIkMg8ZdpnFoYZ52CAFO43Um7GL5LVsz5hecvkCKs2ohkklRTdRSx3k72nr5%2BD3xvEqEiYna%2F6N8qdK2hUBV6eIiOiYKHRTMQH4ghXro3uGlFqHIRhFpTCC8tZLGQu%2F1%2FIgoXbg2tKjnAMHrvYPCPETrF7kbD7ZD%2FmOUgJvnnOA78Cx7X88q%2BA%2BqDDMdv06psq18G3trt2UJTwQ6LkkzimpLUlTMZZksV6UjZ8VpiyakSK9%2B4Ikmc4PrTKAYZXMrVBUNmpknZv1gt36woyVaJqY1ce4D0%3D&amp;template=v2-500x250">www.Forex.com</a></p>
+                </div>
+            </li>
+        </ul>
+        <a id="more" href="http://chitika.com/publishers.php?refid=vmuthu" target="_blank">Chitika | Select</a>
+        <div id="searchBlock" style="visibility: hidden;">
+            <div>Chitika Premium Search</div>
+            <form action="http://mm.chitika.net/minimall?w=500&amp;h=250&amp;client=vmuthu&amp;sid=Chitika%20Default&amp;cid=Chitika%20Default&amp;type=mpu&amp;cl_border=%23FFFFFF&amp;cl_bg=%23FFFFFF&amp;cl_title=%230000CC&amp;cl_text=%23000000&amp;cl_site_link=%230000CC&amp;screenres=1024x600&amp;winsize=1032x580&amp;canvas=1008x1241&amp;frm=false&amp;history=1&amp;impsrc=amm&amp;url=http%3A//www.codersource.net/mfc/mfc-miscellaneous/dialog-box-pretranslatemessage.aspx&amp;ref=http%3A//www.gamedev.net/topic/306221-mfc--making-sure-esc-and-enter-dont-work/&amp;cb=580&amp;loc=51%2C1223&amp;output=simplejs&amp;callback=ch_ad_render_search" method="get" id="searchBox" name="searchBox">
+                
+<input value="false" name="frm" type="hidden">
+<input value="Chitika Default" name="sid" type="hidden">
+<input value="500" name="w" type="hidden">
+<input value="#000000" name="cl_text" type="hidden">
+<input value="1024x600" name="screenres" type="hidden">
+<input value="580" name="cb" type="hidden">
+<input value="250" name="h" type="hidden">
+<input value="_blank" name="cttarget" type="hidden">
+<input value="#FFFFFF" name="cl_border" type="hidden">
+<input value="http://www.codersource.net/mfc/mfc-miscellaneous/dialog-box-pretranslatemessage.aspx" name="url" type="hidden">
+<input value="1" name="history" type="hidden">
+<input value="#0000CC" name="cl_site_link" type="hidden">
+<input value="http://www.gamedev.net/topic/306221-mfc--making-sure-esc-and-enter-dont-work/" name="ref" type="hidden">
+<input value="amm" name="impsrc" type="hidden">
+<input value="#FFFFFF" name="cl_bg" type="hidden">
+<input value="1008x1241" name="canvas" type="hidden">
+<input value="vmuthu" name="client" type="hidden">
+<input value="1032x580" name="winsize" type="hidden">
+<input value="ch_ad_render_search" name="callback" type="hidden">
+<input value="51,1223" name="loc" type="hidden">
+<input value="mpu" name="type" type="hidden">
+<input value="Chitika Default" name="cid" type="hidden">
+<input value="#0000CC" name="cl_title" type="hidden">
+<input value="1" name="from_mm" type="hidden">
+<input value="1" name="udq" type="hidden">
+                <p>What would you like to search for?</p>
+                <input id="mquery" name="mquery" type="text">
+                <input id="searchButton" name="searchButton" value="Search" type="submit">
+            </form>
+        </div>
+        <img id="searchLink" src="a_data/yahoo.gif" alt="Search" onclick="toggleSearch(); return false;" width="16" height="16">
+    
+
+
+</body></html>
+<!--overture-->

@@ -1,0 +1,872 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="FF"><head id="ctl00_ctl00_HeadTag">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"><link id="ctl00_ctl00_MasterCss" href="RubiksCubeSolver_files/StyleSheet.css" type="text/css" rel="stylesheet"><link rel="SHORTCUT ICON" href="http://msdn2.microsoft.com/favicon.ico">
+    <style type="text/css">.SideBar, .SideBarPadding{display:none;}.MainContent{width:auto;}.SiteContentTable{width:100%;}</style>
+    <style id="ctl00_ctl00_Header_ProjectStyles" type="text/css">.SiteContent{padding:1em;padding-top:.7em;margin-top:0;min-height:225px;background-color:#fff;}.FF .SiteContentTable{clear:both;}.ProjectContent{min-height:225px;}.Safari .ProjectContent{padding-top:1.3em;}.IE6 .ProjectTitleControl{position:relative;}.CanvasMargin{width:0;}h1.ProjectHeader{font-size:2em;font-weight:bold;vertical-align:bottom;margin-right:.63em;margin-bottom:0;}.ProjectHeader a{color:#3E62A6;}.MSDNSearchCell{width:275px;}</style>
+    
+    <style type="text/css">.ProjectContent{padding:0;}</style>
+    <style type="text/css">.LeftSideBar, .LeftSideBarPadding{display:none;}.RightSideBar, .RightSideBarPadding{display:block;}.RightSideBarPadding{width:0;}.MainContent{width:auto;padding-right:17px;}.IE7 .MainContent{padding-right:0;}.SiteContentTable{width:100%;}</style>
+    <style type="text/css">.MainContent{width:100%;}.RightSideBar{width:auto}</style>
+    <script type="text/javascript" src="RubiksCubeSolver_files/wiki.js"></script>
+    <style type="text/css">
+        .RightSideBar { width:15.1em; }
+        .FF .RightSideBar { display: table-cell; }
+        .FF .MainContent { width: auto; }
+    </style>
+
+    <meta id="ctl00_ctl00_Header_WTProjectName" name="WT.pi" content="RubiksCubeSolver">
+<meta id="ctl00_ctl00_PageDescription" name="Description" content="This is a windows Dialog based application written in Visual C++/MFC that solves a scrambled Rubik's cube, showing the steps. A Rubik's cube configuration can be entered into the program using the 2D view. The 3D view was written using OpenGL. 
+
+">
+    <script type="text/javascript">
+        //WebTrends Globals
+		var ProductionDomains="code.msdn.microsoft.com";var gDomain="m.webtrends.com";var gTrackEvents=1;var a=ProductionDomains.split(',');var b=0;for(var i=0;i<a.length;i++){if(window.location.host == a[i]){b++;}}if(b!=0){var gDcsId="dcs5rnktm00000wokdu2jsj42_4o9e";}if(b==0){var gDcsId="dcslftz1610000k3o02hajud6_2b1y";}var gFpc="WT_FPC";if(document.cookie.indexOf(gFpc+"=")==-1){document.write("<SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'><\/SCR"+"IPT>");}var gFpcDom="code.msdn.microsoft.com"; 
+        
+        
+        function AddLiveSearch()
+        { 
+            window.external.AddSearchProvider('http://www.live.com/live/search/search.xml');
+        }
+    </script>
+<link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx"><link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube-Discussions" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fforum%2fRubiksCubeSolver"><link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube-Issue Tracker" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fRubiksCubeSolver"><link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube-Releases" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fRubiksCubeSolver"><link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube-Source Code" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fsourcecontrol%2fRubiksCubeSolver"><link rel="alternate" type="application/rss+xml" title="Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube-Wiki" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fRubiksCubeSolver"><title>
+	Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube - Home
+</title></head>
+<body class=" NoImages" onload="masterLoad();">
+    <form name="aspnetForm" method="POST" action="/RubiksCubeSolver" id="aspnetForm" autocomplete="off" enctype="multipart/form-data">
+<div>
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUINzIwMDQwODgPZBYCZg9kFgJmD2QWBGYPZBYIAgEPFgIeBGhyZWYFNX4vQ3NzL1N0eWxlU2hlZXQuYXNoeD9jc3M9Q29kZVBsZXgsQ29udHJvbHMsTVNETixXaWtpZAIDD2QWBGYPFgIeCWlubmVyaHRtbAW5Ay5TaXRlQ29udGVudHtwYWRkaW5nOjFlbTtwYWRkaW5nLXRvcDouN2VtO21hcmdpbi10b3A6MDttaW4taGVpZ2h0OjIyNXB4O2JhY2tncm91bmQtY29sb3I6I2ZmZjt9LkZGIC5TaXRlQ29udGVudFRhYmxle2NsZWFyOmJvdGg7fS5Qcm9qZWN0Q29udGVudHttaW4taGVpZ2h0OjIyNXB4O30uU2FmYXJpIC5Qcm9qZWN0Q29udGVudHtwYWRkaW5nLXRvcDoxLjNlbTt9LklFNiAuUHJvamVjdFRpdGxlQ29udHJvbHtwb3NpdGlvbjpyZWxhdGl2ZTt9LkNhbnZhc01hcmdpbnt3aWR0aDowO31oMS5Qcm9qZWN0SGVhZGVye2ZvbnQtc2l6ZToyZW07Zm9udC13ZWlnaHQ6Ym9sZDt2ZXJ0aWNhbC1hbGlnbjpib3R0b207bWFyZ2luLXJpZ2h0Oi42M2VtO21hcmdpbi1ib3R0b206MDt9LlByb2plY3RIZWFkZXIgYXtjb2xvcjojM0U2MkE2O30uTVNETlNlYXJjaENlbGx7d2lkdGg6Mjc1cHg7fWQCAg8WBB4HY29udGVudAUQUnViaWtzQ3ViZVNvbHZlch4HVmlzaWJsZWdkAgQPFgQfAgX2AVRoaXMgaXMgYSB3aW5kb3dzIERpYWxvZyBiYXNlZCBhcHBsaWNhdGlvbiB3cml0dGVuIGluIFZpc3VhbCBDKysvTUZDIHRoYXQgc29sdmVzIGEgc2NyYW1ibGVkIFJ1YmlrJ3MgY3ViZSwgc2hvd2luZyB0aGUgc3RlcHMuIEEgUnViaWsncyBjdWJlIGNvbmZpZ3VyYXRpb24gY2FuIGJlIGVudGVyZWQgaW50byB0aGUgcHJvZ3JhbSB1c2luZyB0aGUgMkQgdmlldy4gVGhlIDNEIHZpZXcgd2FzIHdyaXR0ZW4gdXNpbmcgT3BlbkdMLiAKCh8DZ2QCBw8WAh4EVGV4dAXjBC8vV2ViVHJlbmRzIEdsb2JhbHMNCgkJdmFyIFByb2R1Y3Rpb25Eb21haW5zPSJjb2RlLm1zZG4ubWljcm9zb2Z0LmNvbSI7dmFyIGdEb21haW49Im0ud2VidHJlbmRzLmNvbSI7dmFyIGdUcmFja0V2ZW50cz0xO3ZhciBhPVByb2R1Y3Rpb25Eb21haW5zLnNwbGl0KCcsJyk7dmFyIGI9MDtmb3IodmFyIGk9MDtpPGEubGVuZ3RoO2krKyl7aWYod2luZG93LmxvY2F0aW9uLmhvc3QgPT0gYVtpXSl7YisrO319aWYoYiE9MCl7dmFyIGdEY3NJZD0iZGNzNXJua3RtMDAwMDB3b2tkdTJqc2o0Ml80bzllIjt9aWYoYj09MCl7dmFyIGdEY3NJZD0iZGNzbGZ0ejE2MTAwMDBrM28wMmhhanVkNl8yYjF5Ijt9dmFyIGdGcGM9IldUX0ZQQyI7aWYoZG9jdW1lbnQuY29va2llLmluZGV4T2YoZ0ZwYysiPSIpPT0tMSl7ZG9jdW1lbnQud3JpdGUoIjxTQ1IiKyJJUFQgVFlQRT0ndGV4dC9qYXZhc2NyaXB0JyBTUkM9JyIrImh0dHAiKyh3aW5kb3cubG9jYXRpb24ucHJvdG9jb2wuaW5kZXhPZignaHR0cHM6Jyk9PTA/J3MnOicnKSsiOi8vIitnRG9tYWluKyIvIitnRGNzSWQrIi93dGlkLmpzIisiJz48XC9TQ1IiKyJJUFQ+Iik7fXZhciBnRnBjRG9tPSJjb2RlLm1zZG4ubWljcm9zb2Z0LmNvbSI7ZAIBD2QWDAICDxYCHwAF9QFqYXZhc2NyaXB0OndpbmRvdy5leHRlcm5hbC5BZGRTZWFyY2hQcm92aWRlcignL1dlYlJlc291cmNlLmF4ZD9kPWpNU2Fpc0NlVklUa01kUi1SWHRVNk5pRzdST0JFQ214cEU0Uy1GZHZjWVA3MmR1eXFiTE9VNE16NVRiOFZzekM3Qy02MkRQZUVkekRublVnZmJaMWdENmZsekVQSHY1M1ZhVjFlZDVyNFE2cFdfX0diTU9sWlZFTkRDeEhyUmN3aUZIX0hzcjhBb2ZVbWJVa3dzdzFINlplVlpZMSZ0PTYzNDM3MDc2NzM2MDAwMDAwMCcpO2QCBA9kFgICBQ9kFgJmDw9kFgIeBXN0eWxlBS5wb3NpdGlvbjpyZWxhdGl2ZTt0b3A6LTNweDttYXJnaW4tYm90dG9tOi0zcHg7ZAIFD2QWAgIFD2QWAmYPD2QWAh8FBS5wb3NpdGlvbjpyZWxhdGl2ZTt0b3A6LTNweDttYXJnaW4tYm90dG9tOi0zcHg7ZAIHD2QWBAIBDw8WAh8DaGQWAmYPZBYCAgQPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotM3B4O21hcmdpbi1ib3R0b206LTNweDsWAgIBD2QWAgIFDw8WAh8DaGRkAgUPZBYGAgEPDxYCHgtOYXZpZ2F0ZVVybAUyaHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXJkFgICAQ8PFgIfBAVJUnViaWsmIzM5O3MgQ3ViZSBTb2x2ZXIgd3JpdHRlbiBpbiBWaXN1YWwgQyYjNDM7JiM0Mzsgd2l0aCBPcGVuR0wgM0QgQ3ViZWRkAgMPDxYCHwNoZBYCAgUPZBYCZg9kFgICAQ9kFgRmDw8WAh8EBR9odHRwOi8vY29kZS5tc2RuLm1pY3Jvc29mdC5jb20vZGQCAQ8PFgIfBGRkZAIFDxYCHwNoFgJmDw8WAh8GBVJodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L0VkaXRQcm9qZWN0RGV0YWlscy5hc3B4ZGQCCQ9kFgQCAQ8PFgIfA2hkFgICBA9kFgJmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi0zcHg7bWFyZ2luLWJvdHRvbTotM3B4O2QCAw9kFgQCAQ9kFhICAQ8WAh4FY2xhc3MFEk5hcnJvd2VyIEFjdGl2ZVRhYhYCAgEPZBYCAgUPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotNXB4O21hcmdpbi1ib3R0b206LTVweDsWAgIBD2QWAgIBDw8WAh8GBTJodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlcmRkAgIPZBYCAgEPZBYCAgUPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotNXB4O21hcmdpbi1ib3R0b206LTVweDsWAgIBD2QWAgIBDw8WAh8GBU9odHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9SZWxlYXNlL1Byb2plY3RSZWxlYXNlcy5hc3B4ZGQCAw9kFgICAQ9kFgICBQ9kFgJmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi01cHg7bWFyZ2luLWJvdHRvbTotNXB4OxYCAgEPZBYCAgEPDxYCHwYFQ2h0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL1RocmVhZC9MaXN0LmFzcHhkZAIED2QWAgIBD2QWAgIFD2QWAmYPD2QWAh8FBS5wb3NpdGlvbjpyZWxhdGl2ZTt0b3A6LTVweDttYXJnaW4tYm90dG9tOi01cHg7FgICAQ9kFgICAQ8PFgIfBgVFaHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXIvV29ya0l0ZW0vTGlzdC5hc3B4ZGQCBQ8WAh8DaBYCAgEPZBYCAgUPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotNXB4O21hcmdpbi1ib3R0b206LTVweDsWAgIBD2QWAgIBDw8WAh8GBV1odHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Tb3VyY2VDb250cm9sL0xpc3REb3dubG9hZGFibGVDb21taXRzLmFzcHhkZAIGDxYCHwNoFgICAQ9kFgICBQ9kFgJmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi01cHg7bWFyZ2luLWJvdHRvbTotNXB4OxYCAgEPZBYCAgEPDxYCHwYFPWh0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL3N0YXRzL3ZpZXdkZAIHD2QWAgIBD2QWAgIFD2QWAmYPD2QWAh8FBS5wb3NpdGlvbjpyZWxhdGl2ZTt0b3A6LTVweDttYXJnaW4tYm90dG9tOi01cHg7FgICAQ9kFgICAQ8PFgIfBgVMaHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXIvUGVvcGxlL1Byb2plY3RQZW9wbGUuYXNweGRkAggPZBYCAgEPZBYCAgUPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotNXB4O21hcmdpbi1ib3R0b206LTVweDsWAgIBD2QWAgIBDw8WAh8GBUdodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L0xpY2Vuc2UuYXNweGRkAgoPZBYGAgIPZBYCAgUPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotNXB4O21hcmdpbi1ib3R0b206LTVweDtkAgQPZBYCAgQPZBYEZg8PZBYCHwUFMHBvc2l0aW9uOnJlbGF0aXZlO3RvcDotMTNweDttYXJnaW4tYm90dG9tOi0xM3B4OxYCAgEPZBYCAgMPDxYCHghJbWFnZVVybAUUL0ltYWdlcy9pY29uX3Jzcy5naWZkZAIBD2QWAgIBD2QWAgIBD2QWDAIBD2QWAgIBDw8WAh8GBUpodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L1Byb2plY3RSc3MuYXNweGRkAgMPZBYCAgEPDxYCHwYFgwFodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L1Byb2plY3RSc3MuYXNweD9Qcm9qZWN0UlNTRmVlZD1jb2RlcGxleCUzYSUyZiUyZmZvcnVtJTJmUnViaWtzQ3ViZVNvbHZlcmRkAgUPZBYCAgEPDxYCHwYFhgFodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L1Byb2plY3RSc3MuYXNweD9Qcm9qZWN0UlNTRmVlZD1jb2RlcGxleCUzYSUyZiUyZndvcmtpdGVtJTJmUnViaWtzQ3ViZVNvbHZlcmRkAgcPZBYCAgEPDxYCHwYFhQFodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9Qcm9qZWN0L1Byb2plY3RSc3MuYXNweD9Qcm9qZWN0UlNTRmVlZD1jb2RlcGxleCUzYSUyZiUyZnJlbGVhc2UlMmZSdWJpa3NDdWJlU29sdmVyZGQCCQ8PFgIfA2hkFgICAQ8PFgIfBgWLAWh0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL1Byb2plY3QvUHJvamVjdFJzcy5hc3B4P1Byb2plY3RSU1NGZWVkPWNvZGVwbGV4JTNhJTJmJTJmc291cmNlY29udHJvbCUyZlJ1Ymlrc0N1YmVTb2x2ZXJkZAILD2QWAgIBDw8WAh8GBYIBaHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXIvUHJvamVjdC9Qcm9qZWN0UnNzLmFzcHg/UHJvamVjdFJTU0ZlZWQ9Y29kZXBsZXglM2ElMmYlMmZ3aWtpJTJmUnViaWtzQ3ViZVNvbHZlcmRkAgYPZBYEZg8PFgIfCAUdL0ltYWdlcy9hcnJvd19yaWdodF9ncmVlbi5naWZkZAICDw8WAh8IBRQvSW1hZ2VzL2ljb25fcnNzLmdpZmRkAgMPZBYCAgUPZBYCZg9kFgICAQ9kFgICAQ9kFgwCAw9kFgoCAQ8PFgQfBgV2aHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXIvV2lraS9FZGl0LmFzcHg/dGl0bGU9SG9tZSZhY3Rpb249RWRpdCZ2ZXJzaW9uPTgmcmVmZXJyaW5nVGl0bGU9SG9tZR8DaGRkAgMPDxYCHwNoZGQCCQ8PFgIfBgWJAWphdmFzY3JpcHQ6b3BlblByZXZpZXdXaWtpV2luZG93KCdodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9XaWtpL1ByaW50LmFzcHg/dGl0bGU9SG9tZSZ2ZXJzaW9uPTgmYWN0aW9uPVByaW50Jyk7ZGQCDQ8PFgIfBgVYaHR0cDovL2FyY2hpdmUubXNkbi5taWNyb3NvZnQuY29tL1J1Ymlrc0N1YmVTb2x2ZXIvV2lraS9JbmZvLmFzcHg/dGl0bGU9SG9tZSZhY3Rpb249SW5mb2RkAhEPDxYCHwYFQ2h0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL1dpa2kvUmVjZW50LmFzcHhkZAIIDxYCHgtfIUl0ZW1Db3VudAIBFgICAQ9kFgICAQ8PFgQfBAUESG9tZR8GBUFodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUnViaWtzQ3ViZVNvbHZlci9XaWtpL1ZpZXcuYXNweGRkAgoPZBYCZg9kFgICAQ8PFgIfBAX9CjxkaXYgY2xhc3M9Indpa2lkb2MiPg0KPGI+UmVzb3VyY2UgUGFnZSBEZXNjcmlwdGlvbjwvYj48YnIgLz5UaGlzIGlzIGEgd2luZG93cyBEaWFsb2cgYmFzZWQgYXBwbGljYXRpb24gd3JpdHRlbiBpbiBWaXN1YWwgQyYjNDM7JiM0MzsmIzQ3O01GQyB0aGF0IHNvbHZlcyBhIHNjcmFtYmxlZCBSdWJpayYjMzk7cyBjdWJlLCBzaG93aW5nIHRoZSBzdGVwcy4gQSBSdWJpayYjMzk7cyBjdWJlIGNvbmZpZ3VyYXRpb24gY2FuIGJlIGVudGVyZWQgaW50byB0aGUgcHJvZ3JhbSB1c2luZyB0aGUgMkQgdmlldy4gVGhlIDNEIHZpZXcgd2FzIHdyaXR0ZW4gdXNpbmcgT3BlbkdMLiA8YnIgLz48YnIgLz4NCjxiciAvPiA8YnIgLz5UaGUgcHJvZ3JhbSBzb2x2ZXMgZWFjaCBsYXllciBvZiB0aGUgY3ViZSBvbmUgYXQgYSB0aW1lLiAgSXQgZmlyc3Qgc29sdmVzIHRoZSB0b3AgbGF5ZXIsIHRoZSBtaWRkbGUgbGF5ZXIsIGFuZCB0aGVuIHRoZSBib3R0b20gbGF5ZXIuPGJyIC8+IDxiciAvPlRoaXMgcGFnZSBpcyBhIGdvb2QgZXhhbXBsZSBvZiB0aGlzIHNvbHV0aW9uOjxiciAvPjxhIGhyZWY9Imh0dHA6Ly9wZXRlci5zdGlsbGhxLmNvbS9qYXNtaW5lL3J1Ymlrc2N1YmVzb2x1dGlvbi5odG1sIiBjbGFzcz0iZXh0ZXJuYWxMaW5rIj5odHRwOi8vcGV0ZXIuc3RpbGxocS5jb20vamFzbWluZS9ydWJpa3NjdWJlc29sdXRpb24uaHRtbDxzcGFuIGNsYXNzPSJleHRlcm5hbExpbmtJY29uIj48L3NwYW4+PC9hPjxiciAvPiA8YnIgLz5UbyBtaW5pbWl6ZSB0aGUgbnVtYmVyIG9mIG1vdmVzIGZvciB0aGUgdXNlciwgdGhlIHByb2dyYW0gc29sdmVzIHRoZSBjdWJlIDYgZGlmZmVyZW50IHRpbWVzLCBlYWNoIHRpbWUgcm90YXRpbmcgdGhlIGN1YmUgdG8gdXNlIGEgZGlmZmVyZW50IHNpZGUgYXMgdGhlIHRvcCBsYXllciwgYW5kIHNob3dzIHRoZSBzb2x1dGlvbiB3aXRoIHRoZSBsZWFzdCBudW1iZXIgb2YgbW92ZXMuICBCdXQgc2luY2UgaXQgc2hvd3MgdGhlIHNvbHV0aW9uIHRvIHRoZSB1c2VyIHdpdGggdGhlIEJsdWUgc2lkZSBmYWNpbmcgdGhlIHVzZXIsIHRoZSBmaXJzdCBsYXllciB0aGF0IGlzIGJlaW5nIHNvbHZlZCBtaWdodCBub3QgYmUgdGhlIHRvcCBsYXllci4gIEZlZWwgZnJlZSB0byBjb21tZW50IG9uIHRoaXMgYXMgSSBoYXZlIGJlZW4gZGViYXRpbmcgb24gd2hldGhlciB0byBzb2x2ZSB0aGUgWWVsbG93IGxheWVyIGZpcnN0IGFsbCB0aW1lcyBvciBub3QuPGJyIC8+IDxiciAvPjxpbWcgc3JjPSJodHRwOi8vYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20vUHJvamVjdC9Eb3dubG9hZC9GaWxlRG93bmxvYWQuYXNweD9Qcm9qZWN0TmFtZT1SdWJpa3NDdWJlU29sdmVyJmFtcDtEb3dubG9hZElkPTEzMjMiIGFsdD0iU2NyZWVuU2hvdC5qcGciIC8+PGJyIC8+DQo8L2Rpdj5kZAIMD2QWBgIBDw8WAh4NRGF0ZVRpbWVWYWx1ZQZQZ1BTwVvKCGRkAgMPDxYEHwQFCUFsaVJhZmllZR8GBTAvVXNlckFjY291bnQvVXNlclByb2ZpbGUuYXNweD9Vc2VyTmFtZT1BbGlSYWZpZWVkZAIFDxYCHwQFAThkAhAPZBYEAgEPFgIfBAUkVGhlIHdpa2kgcGFnZSAnSG9tZScgZG9lcyBub3QgZXhpc3QuZAIDDxYCHwNoZAIUD2QWAgIBD2QWAgIBD2QWAmYPZBYEAgEPFgIfCWZkAgMPFgIfA2cWAgIBDw8WAh8GBcQBaHR0cHM6Ly9sb2dpbi5saXZlLmNvbS9sb2dpbi5zcmY/d2E9d3NpZ25pbjEuMCZycHNudj0xMSZjdD0xMzA2OTgzMDQ1JnJ2ZXI9Ni4wLjUyNzYuMCZ3cD1NQ0xCSSZ3cmVwbHk9aHR0cHM6JTJGJTJGYXJjaGl2ZS5tc2RuLm1pY3Jvc29mdC5jb20lMkZSdWJpa3NDdWJlU29sdmVyJTJGV2lraSUyRlZpZXcuYXNweCZsYz0xMDMzJmlkPTI1NDM1NGRkAgoPZBYCAgEPZBYCAgEPZBYKAgEPZBYCZg9kFgICAw9kFgZmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi0wcHg7bWFyZ2luLWJvdHRvbTotMHB4O2QCAQ9kFgICAQ9kFgQCAQ9kFgQCAQ8PFgQfBAUPSW5pdGlhbCBSZWxlYXNlHwYFXWh0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL1JlbGVhc2UvUHJvamVjdFJlbGVhc2VzLmFzcHg/UmVsZWFzZUlkPTcxMmRkAgMPDxYCHwoGAAA3I1lbyghkZAIDDw8WAh8DaGRkAgIPD2QWAh8FBQh0b3A6MHB4OxYCAgEPZBYCAgEPDxYCHwYFT2h0dHA6Ly9hcmNoaXZlLm1zZG4ubWljcm9zb2Z0LmNvbS9SdWJpa3NDdWJlU29sdmVyL1JlbGVhc2UvUHJvamVjdFJlbGVhc2VzLmFzcHhkZAIFD2QWAmYPZBYCAgQPZBYCZg8PZBYCHwUFLnBvc2l0aW9uOnJlbGF0aXZlO3RvcDotMHB4O21hcmdpbi1ib3R0b206LTBweDtkAgcPFgIfA2hkAgkPDxYCHwNoZBYCZg9kFgICBA9kFgRmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi0wcHg7bWFyZ2luLWJvdHRvbTotMHB4O2QCAQ9kFgICAQ9kFgICAQ88KwAJAGQCCw9kFgICBA9kFgRmDw9kFgIfBQUucG9zaXRpb246cmVsYXRpdmU7dG9wOi0wcHg7bWFyZ2luLWJvdHRvbTotMHB4O2QCAQ9kFgICAQ9kFgICAQ9kFgJmDxYCHwUFEHRleHQtYWxpZ246bGVmdDtkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYDBSpjdGwwMCRjdGwwMCRNU0ROU2VhcmNoQ29udHJvbCRTZWFyY2hCdXR0b24FOWN0bDAwJGN0bDAwJFdpZGVDb250ZW50JFByb2plY3RTZWFyY2hDb250cm9sJFNlYXJjaEJ1dHRvbgVKY3RsMDAkY3RsMDAkQ29udGVudCRUYWJDb250ZW50UGFuZWwkQ29udGVudCRzZWFyY2hXaWtpQ29udHJvbCRTZWFyY2hCdXR0b27Bl6cvf2ign+diia2ZMaNVGnSf/g==" type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="RubiksCubeSolver_files/WebResource.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function AddCommentWithAjaxPostback(){
+__doPostBack('ctl00$ctl00$Content$TabContentPanel$Content$newCollapse$addCommentButton','')
+}
+//]]>
+</script>
+
+<script src="RubiksCubeSolver_files/ScriptResource_002.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="RubiksCubeSolver_files/ScriptResource.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/common.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/UpdateProgress.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/SmartDate.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/Codeplex_webtrends_040706.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/broker.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/PromptBox.js" type="text/javascript"></script>
+<script src="RubiksCubeSolver_files/jsdebug.js" type="text/javascript"></script>
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCALdwJ3LBQLCrdHyCgKAlvvuCgKU6pTACAKj7tCtBgKps+SLAQKVzobfBwK5pPn2B8Z/IYzVIck0g/lmay9YqVaQoCRw" type="hidden">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ScriptManager', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tctl00$ctl00$Content$TabContentPanel$Content$newCollapse$CommentUpdatePanel'], [], [], 90);
+//]]>
+</script>
+
+    <table id="Canvas" style="width: 100%; height: 100%;" cellpadding="0" cellspacing="0">
+        <tbody><tr><td style="height: 100%;" valign="top">
+        <div class="MinWidthDiv"></div>
+        <table class="MinWidthContent" style="width: 100%; height: 100%;" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+                <td class="CanvasMargin"><div class="CanvasMargin"></div></td>
+                <td class="CanvasBackground" style="height: 100%;" valign="top">
+                    <div id="CanvasContent" class="CanvasContent">
+                        <table style="height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+                            <tbody><tr valign="top"><td>
+                                <div class="SiteHeader">
+				                                <div id="Header">
+					                                <div class="GlobalBar">
+						                                <div class="SiteMap">
+							                                <a href="http://www.microsoft.com/">Microsoft.com</a></div>
+						                               
+					                                </div>
+				                                </div>
+				                                <div class="ThinNavBox">
+				                                    <div class="TopLeftCorner"></div>
+					                                <div class="BottomLeftCorner"></div>
+					                                <div class="TopRightCorner"></div>
+					                                <div class="BottomRightCorner"></div>
+					                                <a title="MSDN" href="http://msdn.microsoft.com/"><div class="BrandLogo"></div></a>
+					                                <div class="ThinNavTarget MSDNSearch">
+                                                        <div id="ctl00_ctl00_MSDNSearchControl_MSDNSearchPanel" class="ProjectSearchPanel NoWrap" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_MSDNSearchControl_SearchButton')">
+	
+    <script type="text/javascript">
+        function ProjectSearchButton_Click(input){
+            var textbox=$get('ctl00_ctl00_MSDNSearchControl_SearchTextBox');
+            if(textbox&&!textbox.dirty){
+                textbox.value='';
+            // Uncomment to prevent empty searches
+            //return false;
+            }
+        }
+    </script>
+    
+    <script id="mscom.srch.searchBox" src="RubiksCubeSolver_files/SearchBox.js" type="text/javascript" language="javascript" defer="defer"></script>
+    <input name="ctl00$ctl00$MSDNSearchControl$SearchTextBox" id="ctl00_ctl00_MSDNSearchControl_SearchTextBox" value="Search MSDN with Bing" class="TextBoxSearch EmptyTextBox" type="text"><input name="ctl00$ctl00$MSDNSearchControl$SearchButton" id="ctl00_ctl00_MSDNSearchControl_SearchButton" class="SearchButton" src="RubiksCubeSolver_files/search.gif" onclick="return ProjectSearchButton_Click(this);" style="border-width: 0px;" type="image">		                           
+
+</div>
+
+				                                    </div>
+					                                <div class="ThinNavTarget">
+				                                        <div class="thinnavtableft"></div>
+				                                        <div class="BrowseCenter"><a title="All DevCenters" href="http://msdn.microsoft.com/developercenters/">All DevCenters</a></div>
+				                                        <div class="thinnavtabright"></div>
+	                                                </div>
+		                                            <div class="ThinNavTarget">
+				                                        <div class="thinnavtableft"></div>
+			                                            <div class="BrowseSite"><a title="MSDN Home" href="http://msdn.microsoft.com/">MSDN Home</a></div>
+				                                        <div class="thinnavtabright"></div>
+			                                        </div>
+			                                        
+				                                </div>
+                                				    
+                                				    
+                                				    
+                                				      <!--
+                                				      
+                                				      We need these controls in the future ... if we take these out it will error
+                                   <a href="javascript:window.external.AddSearchProvider('/WebResource.axd?d=jMSaisCeVITkMdR-RXtU6NiG7ROBECmxpE4S-FdvcYP72duyqbLOU4Mz5Tb8VszC7C-62DPeEdzDnnUgfbZ1gD6flzEPHv53VaV1ed5r4Q6pW__GbMOlZVENDCxHrRcwiFH_Hsr8AofUmbUkwsw1H6ZeVZY1&t=634370767360000000');" id="ctl00_ctl00_TicklerLink" title="Add LIVE SEARCH to your Browser!">Add <b>LIVE SEARCH</b> to your browser!</a>
+                                                                          
+                                    
+                                    -->                  
+
+                        <div class="ClearBoth"></div>
+                                          
+                                         
+                                           <div id="ctl00_ctl00_CodeGallerySubNav" class="ContentPanel MSDNNavBox Rounded" style="min-width:6px;">
+	<div class="RoundedCornerContainer Top">
+		<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;height:0px;border-top-width:1px;"></div>
+		<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+		<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+		<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+
+	</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -3px;">
+		<div id="ctl00_ctl00_CodeGallerySubNav_headerPanel" class="HeaderPanel Header" style="position:relative;top:-3px;margin-bottom:-3px;">
+			
+    
+                                               <div class="PassportScarab">
+                                              
+                                               
+                                    
+        <div class="NoWrap Centered">
+            <a id="idPPScarab" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1306983045&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wreply=https:%2F%2Farchive.msdn.microsoft.com%2FWiki%2FView.aspx%3FProjectName%3DRubiksCubeSolver&amp;lc=1033&amp;id=254354"><img id="idSI" style="border-style: none;" class="PassportSignIn" src="RubiksCubeSolver_files/signin.gif" alt="Windows Live ID"></a>
+        </div>
+    
+                                </div>
+                            <span style="font-weight:bold; color:Black;">MSDN Archive: </span>
+                            &nbsp;
+                            <a href="http://archive.msdn.microsoft.com/">MSDN Archive Home</a>
+                            &nbsp; | &nbsp;
+                            <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx">Browse Archive</a>
+                             &nbsp; | &nbsp;
+                            <a href="http://archive.msdn.microsoft.com/Project/ProjectCreation.aspx">Share Code</a>
+                            &nbsp; | &nbsp;
+                            <a href="http://archive.msdn.microsoft.com/CodeGallery">Help and FAQs</a>
+                            
+                    
+
+		</div>
+	</div><div class="RoundedCornerContainer Bottom">
+		<div class="RoundedBorder BottomBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+		<div class="RoundedBorder BottomBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+		<div class="RoundedBorder BottomBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+		<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;height:0px;border-top-width:1px;"></div>
+
+	</div>
+</div>
+                       
+                    
+                                    
+                                    <div class="ClearBoth"></div>
+                        </div>
+                                <div class="SiteContent">
+                                    
+    <table class="FullWidth" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td class="AlignTop">
+                <div>
+                    
+                    
+                    
+
+<div class="ProjectTitleControl HalfMarginBottom">
+    <h1 class="ProjectHeader NoMargin">
+        <a id="ctl00_ctl00_WideContent_ProjectTitleControl1_ProjectTitleLink" class="NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver"><span id="ctl00_ctl00_WideContent_ProjectTitleControl1_TitleLabel">Rubik's Cube Solver written in Visual C++ with OpenGL 3D Cube</span></a>
+    </h1>
+</div>
+
+
+
+
+
+                </div>
+            </td>
+            <td class="AlignTop AlignRight MSDNSearchCell">
+                <div class="MSDNSearch StandardMarginBottom">
+                    <div id="ctl00_ctl00_WideContent_ProjectSearchControl_ProjectSearchPanel" class="ProjectSearchPanel NoWrap" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_WideContent_ProjectSearchControl_SearchButton')">
+	
+    <script type="text/javascript">
+        function ProjectSearchButton_Click(input){
+            var textbox=$get('ctl00_ctl00_WideContent_ProjectSearchControl_SearchTextBox');
+            if(textbox&&!textbox.dirty){
+                textbox.value='';
+// Uncomment to prevent empty searches
+//                return false;
+            }
+        }
+    </script>
+    
+    <input name="ctl00$ctl00$WideContent$ProjectSearchControl$SearchTextBox" id="ctl00_ctl00_WideContent_ProjectSearchControl_SearchTextBox" value="Search MSDN Archive Resources" class="TextBoxSearch EmptyTextBox" type="text"><input name="ctl00$ctl00$WideContent$ProjectSearchControl$SearchButton" id="ctl00_ctl00_WideContent_ProjectSearchControl_SearchButton" class="SearchButton" src="RubiksCubeSolver_files/search.gif" alt="Search" onclick="return ProjectSearchButton_Click(this);" style="border-width: 0px;" type="image">
+
+</div>
+
+                </div>
+                
+            </td>
+        </tr>
+    </tbody></table>
+
+                                    <table class="SiteContentTable" cellpadding="0" cellspacing="0">
+                                        <tbody><tr valign="top">
+                                            <td class="SideBarPadding LeftSideBarPadding"><div></div></td>
+                                            <td class="SideBar LeftSideBar">
+                                                <div class="SideBar LeftSideBar">
+                                                    
+                                                </div>
+                                            </td>
+                                            <td class="SideBarPadding LeftSideBarPadding"><div></div></td>
+                                            <td class="MainContent">
+                                                <div class="MainContentMinWidthDiv"></div>
+                                                <div class="MainContentMinWidthContent">
+                                                    
+    
+    <div id="ctl00_ctl00_Content_ProjectContentPanel" class="ProjectContent">
+	
+        
+
+<div class="TabStrip">
+    <table class="FullWidth Fixed" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td id="ctl00_ctl00_Content_Tabs_homeTabCell" class="Narrower ActiveTab">
+                <div id="ctl00_ctl00_Content_Tabs_ContentPanelHome" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelHome_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                         <a id="ctl00_ctl00_Content_Tabs_ContentPanelHome_homeTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver">Home</a>
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	<td id="ctl00_ctl00_Content_Tabs_releasesTabCell" class="Wider">
+                <div id="ctl00_ctl00_Content_Tabs_ContentPanelReleases" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelReleases_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                        <a id="ctl00_ctl00_Content_Tabs_ContentPanelReleases_releasesTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Release/ProjectReleases.aspx">Downloads</a>
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	<td id="ctl00_ctl00_Content_Tabs_discussionTabCell" class="Wider">
+               <div id="ctl00_ctl00_Content_Tabs_ContentPanelDiscussion" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelDiscussion_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                         <a id="ctl00_ctl00_Content_Tabs_ContentPanelDiscussion_discussionTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Thread/List.aspx">Discussions</a> 
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	<td id="ctl00_ctl00_Content_Tabs_workItemsTabCell" class="Widest">
+                <div id="ctl00_ctl00_Content_Tabs_ContentPanelWorkItems" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelWorkItems_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                        <a id="ctl00_ctl00_Content_Tabs_ContentPanelWorkItems_workItemsTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/WorkItem/List.aspx">Issue Tracker</a>
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	<td id="ctl00_ctl00_Content_Tabs_peopleTabCell">
+                <div id="ctl00_ctl00_Content_Tabs_ContentPanelPeople" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelPeople_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                        <a id="ctl00_ctl00_Content_Tabs_ContentPanelPeople_peopleTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/People/ProjectPeople.aspx">People</a>
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	<td id="ctl00_ctl00_Content_Tabs_licenseTabCell">
+                <div id="ctl00_ctl00_Content_Tabs_ContentPanelLicense" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_ContentPanelLicense_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    
+                        <a id="ctl00_ctl00_Content_Tabs_ContentPanelLicense_licenseTab" class="TabLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/License.aspx">License</a>
+                    
+
+			</div>
+		</div>
+	</div>
+            </td>
+	
+            <td class="FullWidth">&nbsp;</td>
+            <td class="AlignRight" nowrap="nowrap">
+                <style id="ctl00_ctl00_Content_Tabs_rssFeeds_ProjectDirectoryStyles" type="text/css">
+        .SiteContent {
+            padding: 1em;
+        }
+        .FF .RightMarginFix{
+            margin-right: 1px;
+        }
+        .HoverPanel{
+            position: absolute; 
+            display: none;
+            z-index: 3; 
+        }
+        .IE .HoverPanel{
+            margin-left: -1px;
+        }
+        .IE7 HoverPanel{
+            margin-top: 1px;
+        }
+        .IE6 .HoverPanel .Content{
+	        margin-top: -13px;
+        }
+        .LeftHoverWidth{
+            width: 16.4em;
+        }
+        .HoverClosePanel{
+            width: 4em;
+            position: absolute; 
+            right: 2em;
+            top: -1.9em;
+            z-index: 1;
+        }
+        .HoverClosePanel .RoundedContent{
+            min-height: 2em;
+            height: 2em;
+        }
+        .HoverContentPanel{
+            position:relative;
+            z-index: 2;
+        }
+        .MockPanelBorder{
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        .IE6 .SiteContentTable{
+            table-layout:fixed;
+        }
+</style>
+    
+<script type="text/javascript">
+        function setMaxHeight(divName, bottomPixelPadding){
+            var constraindiv = $get(divName);
+            var divpoint = CodePlex.UI.getElementPosition(constraindiv);
+            var maxHeight = $get('Canvas').offsetHeight - divpoint.y - bottomPixelPadding;
+            var scrollHeight = constraindiv.scrollHeight;
+            constraindiv.style.height = (scrollHeight > maxHeight) ? maxHeight + 'px' : 'auto';
+        }
+        function placeHover(linkname, hovername) {
+            var link = $get(linkname);
+            var hoverdiv = $get(hovername);
+            var point = CodePlex.UI.getElementPosition(link);
+            hoverdiv.style.left = (point.x - 2) + 'px';
+            hoverdiv.style.top = (point.y - 7) + 'px';
+            hoverdiv.style.display = 'block';
+            
+        }
+        function closeHover(hovername) {
+            $get(hovername).style.display = '';
+        }
+        function closeHovers() {
+            $get('rssHoverDiv').style.display = '';
+        }
+</script>
+    
+<div id="rssHoverDiv" class="HoverPanel LeftHoverWidth AlignLeft">
+        <div class="HoverClosePanel">
+            <a href="#" onclick="closeHover('rssHoverDiv'); return false;" class="TabLink">
+                <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverCloseContentPanel" class="ContentPanel TabPanel Rounded" style="min-width:10px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:5px;margin-right:5px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-2px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-2px -3px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -5px;">
+			<div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverCloseContentPanel_headerPanel" class="HeaderPanel Header" style="position:relative;top:-5px;margin-bottom:-5px;">
+				
+    Close
+
+			</div>
+		</div>
+	</div>
+            </a>
+        </div>
+        <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel" class="ContentPanel HoverContentPanel Rounded" style="min-width:26px;">
+		<div class="RoundedCornerContainer Top">
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:13px;margin-right:13px;height:0px;border-top-width:1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:11px;margin-right:11px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:10px;margin-right:10px;border-left-width:1px;border-right-width:1px;height:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:8px;margin-right:8px;border-left-width:2px;border-right-width:2px;height:1px;background-position:-3px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:7px;margin-right:7px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-5px 0px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:6px;margin-right:6px;border-left-width:1px;border-right-width:1px;height:1px;background-position:-5px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep6" style="border-width:0;margin:0;overflow:hidden;margin-left:4px;margin-right:4px;border-left-width:2px;border-right-width:2px;height:1px;background-position:-6px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep7" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -1px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep8" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -2px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep9" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -4px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep10" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -5px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep11" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -6px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep12" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -8px;"></div>
+			<div class="RoundedBorder TopBorder BorderStep13" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -9px;"></div>
+
+		</div><div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-position:0px -13px;">
+			<div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_headerPanel" class="HeaderPanel Header" style="position:relative;top:-13px;margin-bottom:-13px;">
+				
+    
+                <div class="StandardPaddingBottom">
+                    <span onclick="closeHover('rssHoverDiv');">
+                        <a href="#" onclick="return false;"><img id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_ArrowDownImg3" src="RubiksCubeSolver_files/arrow_dsc_green.gif" style="height: 9px; width: 9px; border-width: 0px;"></a>
+                        <a href="#" onclick="return false;">RSS</a>
+                        <img id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_rssFeedImageHover" src="RubiksCubeSolver_files/icon_rss.gif" alt="RSS Feed" style="border: 0px none; vertical-align: bottom;" hspace="5">
+                    </span>
+                </div>
+           
+
+			</div><div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_contentPanel" class="Content StandardPadding">
+				
+    
+           <ul id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_FeedsPanel" class="RssFeedsPanel">
+            <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_ProjectPanel">
+					
+                <li>
+                    <a id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_ProjectRssLink" title="All Resource Updates" class="ArrowSmall NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx">All Resource Updates</a>
+                </li>
+            
+				</div>
+            <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_DiscussionsPanel">
+					
+                <li>
+                    <a id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_DiscussionsRssLink" title="New threads and posts" class="ArrowSmall NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fforum%2fRubiksCubeSolver">Discussions</a>
+                </li>
+            
+				</div>
+            <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_IssueTrackerPanel">
+					
+                <li>    
+                    <a id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_IssueTrackerRssLink" title="New and updated work items" class="ArrowSmall NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fworkitem%2fRubiksCubeSolver">Issue Tracker</a>
+                </li>
+            
+				</div>
+            <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_ReleasesPanel">
+					
+                <li>
+                    <a id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_ReleasesRssLink" title="New and updated releases" class="ArrowSmall NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2frelease%2fRubiksCubeSolver">Releases</a>
+                </li>
+            
+				</div>            
+            
+            <div id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_WikiPanel">
+					
+                <li>
+                    <a id="ctl00_ctl00_Content_Tabs_rssFeeds_RssHoverContentPanel_WikiRssLink" title="New and updated wiki pages" class="ArrowSmall NoUnderline" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fRubiksCubeSolver">Wiki</a>
+                </li>
+            
+				</div>
+        </ul>
+           
+
+			</div>
+		</div><div class="RoundedCornerContainer Bottom">
+			<div class="RoundedBorder BottomBorder BorderStep13" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -9px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep12" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -8px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep11" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -6px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep10" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -5px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep9" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -4px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep8" style="border-width:0;margin:0;overflow:hidden;margin-left:2px;margin-right:2px;height:2px;border-left-width:1px;border-right-width:1px;background-position:-8px -2px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep7" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-8px -1px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep6" style="border-width:0;margin:0;overflow:hidden;margin-left:4px;margin-right:4px;border-left-width:2px;border-right-width:2px;height:1px;background-position:-6px -1px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep5" style="border-width:0;margin:0;overflow:hidden;margin-left:6px;margin-right:6px;border-left-width:1px;border-right-width:1px;height:1px;background-position:-5px -1px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep4" style="border-width:0;margin:0;overflow:hidden;margin-left:7px;margin-right:7px;height:1px;border-left-width:1px;border-right-width:1px;background-position:-5px 0px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:8px;margin-right:8px;border-left-width:2px;border-right-width:2px;height:1px;background-position:-3px 0px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:10px;margin-right:10px;border-left-width:1px;border-right-width:1px;height:1px;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:11px;margin-right:11px;border-left-width:2px;border-right-width:2px;height:1px;background-position:0px 0px;"></div>
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:13px;margin-right:13px;height:0px;border-top-width:1px;"></div>
+
+		</div>
+	</div>  
+</div>
+    
+<div id="rssHoverLink" class="StandardPaddingBottom">
+    <span onclick="closeHovers();placeHover('rssHoverLink', 'rssHoverDiv');">
+    <span id="ctl00_ctl00_Content_Tabs_rssFeeds_FeedsLabel"><img id="ctl00_ctl00_Content_Tabs_rssFeeds_rssRightArrow" title="RSS Feed" src="RubiksCubeSolver_files/arrow_right_green.gif" style="border-width: 0px;" align="absmiddle">
+        <a href="#" onclick="return false;">RSS</a>
+        <img id="ctl00_ctl00_Content_Tabs_rssFeeds_rssFeedImage" src="RubiksCubeSolver_files/icon_rss.gif" alt="RSS Feed" style="border: 0px none; vertical-align: bottom;" hspace="5"></span>
+    </span>
+</div>
+    
+        
+
+            </td>
+            <td class="Narrowest"></td>
+        </tr>
+    </tbody></table>
+</div>
+        <div id="ctl00_ctl00_Content_TabContentPanel" class="ContentPanel  Rounded" style="min-width:6px;">
+		<div class="RoundedContent" style="border-width:0;margin:0;overflow:hidden;border-left-width:1px;border-right-width:1px;background-image:none;background-position:0px 0px;">
+			<div id="ctl00_ctl00_Content_TabContentPanel_contentPanel" class="Content">
+				
+    
+            
+    <input name="ctl00$ctl00$Content$TabContentPanel$Content$ReferringTitleHidden" id="ctl00_ctl00_Content_TabContentPanel_Content_ReferringTitleHidden" value="Home" type="hidden">
+    <table style="width: 100%;" cellpadding="0" cellspacing="0">
+        <tbody><tr id="wikiTop" width="100%">
+            <td align="left" nowrap="nowrap">
+                <div id="ctl00_ctl00_Content_TabContentPanel_Content_wikiLinksPanel">
+					
+                    
+                    
+                    <a id="ctl00_ctl00_Content_TabContentPanel_Content_CommentsHyperLink" href="#CommentsAnchor">Comments</a>
+                    <span id="ctl00_ctl00_Content_TabContentPanel_Content_CommentsPipe">|</span>
+                    <a id="ctl00_ctl00_Content_TabContentPanel_Content_printerFriendlyHyperLink" href="javascript:openPreviewWikiWindow('http://archive.msdn.microsoft.com/RubiksCubeSolver/Wiki/Print.aspx?title=Home&amp;version=8&amp;action=Print');">Print</a>
+                    <span id="ctl00_ctl00_Content_TabContentPanel_Content_printerPipe">|</span> 
+                    <a id="ctl00_ctl00_Content_TabContentPanel_Content_pageInfoHyperLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Wiki/Info.aspx?title=Home&amp;action=Info">Page Info</a>
+                    <span id="ctl00_ctl00_Content_TabContentPanel_Content_changesPipe">|</span> 
+                    <a id="ctl00_ctl00_Content_TabContentPanel_Content_changesHyperlink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Wiki/Recent.aspx">Change&nbsp;History&nbsp;(all&nbsp;pages)</a>
+                
+				</div>
+            </td>
+            <td class="NoWrap StandardPadding" align="right">
+                <span id="ctl00_ctl00_Content_TabContentPanel_Content_searchTextLabel" class="StandardPaddingRight">Search Wiki: </span><span id="ctl00_ctl00_Content_TabContentPanel_Content_searchWikiControl"><div id="ctl00_ctl00_Content_TabContentPanel_Content_searchWikiControl_searchPanel" class="SearchWikiControl" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_ctl00_Content_TabContentPanel_Content_searchWikiControl_SearchButton')">
+					<input name="ctl00$ctl00$Content$TabContentPanel$Content$searchWikiControl$searchTextBox" id="ctl00_ctl00_Content_TabContentPanel_Content_searchWikiControl_searchTextBox" type="text"><input name="ctl00$ctl00$Content$TabContentPanel$Content$searchWikiControl$SearchButton" id="ctl00_ctl00_Content_TabContentPanel_Content_searchWikiControl_SearchButton" class="StandardMarginLeft" src="RubiksCubeSolver_files/forwardbutton.gif" alt="Search" style="border-width: 0px;" type="image" align="absmiddle">
+				</div></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: left;" align="left">
+                
+                        <div class="breadcrumbs">
+                    
+                            <a href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Wiki/View.aspx">Home</a>
+                    
+                        </div>
+                    
+            </td>
+        </tr>
+
+            <tr id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourcePanel">
+					<td colspan="2" class="wikiSource">
+                    <div style="width: 775px;" class="WikiContent">
+                        <span id="ctl00_ctl00_Content_TabContentPanel_Content_wikiSourceLabel"><div class="wikidoc">
+<b>Resource Page Description</b><br>This is a windows Dialog based 
+application written in Visual C++/MFC that solves a scrambled Rubik's 
+cube, showing the steps. A Rubik's cube configuration can be entered 
+into the program using the 2D view. The 3D view was written using 
+OpenGL. <br><br>
+<br> <br>The program solves each layer of the cube one at a time.  It 
+first solves the top layer, the middle layer, and then the bottom layer.<br> <br>This page is a good example of this solution:<br><a href="http://peter.stillhq.com/jasmine/rubikscubesolution.html" class="externalLink">http://peter.stillhq.com/jasmine/rubikscubesolution.html<span class="externalLinkIcon"></span></a><br> <br>To
+ minimize the number of moves for the user, the program solves the cube 6
+ different times, each time rotating the cube to use a different side as
+ the top layer, and shows the solution with the least number of moves.  
+But since it shows the solution to the user with the Blue side facing 
+the user, the first layer that is being solved might not be the top 
+layer.  Feel free to comment on this as I have been debating on whether 
+to solve the Yellow layer first all times or not.<br> <br><img src="RubiksCubeSolver_files/FileDownload.jpg" alt="ScreenShot.jpg"><br>
+</div></span>
+                    </div>
+                </td>
+				</tr>
+				
+        <tr>
+            <td colspan="2" class="wikiSource">
+                <div id="ctl00_ctl00_Content_TabContentPanel_Content_editedInfoPanel">
+					
+                    <span class="SubText">
+                        Last edited <span class="smartDate" localtimeticks="1206386748">Mar 25 2008<wbr> at 12:55 AM</span>&nbsp;by&nbsp;<a id="ctl00_ctl00_Content_TabContentPanel_Content_wikiEditByLink" href="http://archive.msdn.microsoft.com/UserAccount/UserProfile.aspx?UserName=AliRafiee">AliRafiee</a>, version 8
+                    </span>
+                
+				</div>
+                
+                
+                
+            </td>
+        </tr>
+        <tr>
+        <td colspan="2">
+            
+    
+<script type="text/javascript">
+    function addComment_Click(control)
+    {
+        if(!Page_ClientValidate('AddCommentValidation')) 
+        {
+            Page_BlockSubmit = false;
+            return;
+        }
+        
+        CodePlex.UpdateProgress.displayPanelAndDisableControls("Working...",control);
+        AddCommentWithAjaxPostback();
+    }
+</script>    
+<div>
+    <div id="CommentsAnchor" class="CommentsHeader">Comments</div>
+    <div style="padding:.5em;">
+        <div id="ctl00_ctl00_Content_TabContentPanel_Content_newCollapse_content" style="display:inline">
+            <div id="ctl00_ctl00_Content_TabContentPanel_Content_newCollapse_CommentUpdatePanel">
+					
+                    
+                    <div id="ctl00_ctl00_Content_TabContentPanel_Content_newCollapse_addComment">
+                        <a id="ctl00_ctl00_Content_TabContentPanel_Content_newCollapse_SignInToAddCommentLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1306983045&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wreply=https:%2F%2Farchive.msdn.microsoft.com%2FRubiksCubeSolver%2FWiki%2FView.aspx&amp;lc=1033&amp;id=254354">Sign in to add a comment</a>
+                    </div>
+                    
+                
+				</div>
+        </div>
+    </div>
+</div>
+        </td>
+        </tr>
+    </tbody></table>
+
+        
+
+			</div>
+		</div><div class="RoundedCornerContainer Bottom">
+			<div class="RoundedBorder BottomBorder BorderStep3" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:2px;border-left-width:1px;border-right-width:1px;background-image:none;background-position:-2px -1px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep2" style="border-width:0;margin:0;overflow:hidden;margin-left:0px;margin-right:0px;height:1px;border-left-width:1px;border-right-width:1px;background-image:none;background-position:-2px 0px;"></div>
+			<div class="RoundedBorder BottomBorder BorderStep1" style="border-width:0;margin:0;overflow:hidden;margin-left:1px;margin-right:1px;border-left-width:2px;border-right-width:2px;height:1px;background-image:none;background-position:0px 0px;"></div>
+			<div class="OuterBorder" style="border-width:0;margin:0;overflow:hidden;margin-left:3px;margin-right:3px;height:0px;border-top-width:1px;background-image:none;"></div>
+
+		</div>
+	</div>
+    
+</div>
+
+                                                </div>
+                                            </td>
+                                            <td class="SideBarPadding RightSideBarPadding"><div></div></td>
+                                            <td class="SideBar RightSideBar">
+                                                <div class="SideBar RightSideBar">
+                                                    
+    <div id="ctl00_ctl00_RightSideBar_RightSideBarPanel" class="StandardPaddingTop" style="padding-top:1.6em;">
+	
+        
+    <div id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar" class="ContentPanel " style="">
+		<div id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_headerPanel" class="Header StandardPaddingBottom" style="position:relative;top:-0px;margin-bottom:-0px;">
+			
+    <h2>Current Release</h2>
+
+		</div><div id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_contentPanel" class="Content">
+			
+    
+        <div id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_ReleasePanel">
+				
+            <div class="StandardPadding"><a id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_releaseLink" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Release/ProjectReleases.aspx?ReleaseId=712">Initial Release</a></div>
+            <div><span class="smartDate full" localtimeticks="1206342000" style="margin-left:7px;font-size:x-small;">Mon Mar 24 2008<wbr> at 12:30 PM</span></div>
+        
+			</div>
+        
+    
+
+		</div><div id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_footerPanel" class="Footer" style="top:0px;">
+			
+    
+        <a id="ctl00_ctl00_RightSideBar_RightSideBar_CurrentRelease_Sidebar_AllReleaseLink" class="ArrowSmall" href="http://archive.msdn.microsoft.com/RubiksCubeSolver/Release/ProjectReleases.aspx">All Releases</a>
+        
+
+		</div>
+	</div>
+
+    
+    
+    
+    
+    <div class="AlignTop TagMSDNCellBody">
+        <div id="ctl00_ctl00_RightSideBar_RightSideBar_CodeGalleryTagCloud" class="ContentPanel " style="">
+		<div id="ctl00_ctl00_RightSideBar_RightSideBar_CodeGalleryTagCloud_headerPanel" class="TagMSDNHeader" style="position:relative;top:-0px;margin-bottom:-0px;">
+			
+    
+        
+        <div style="position: absolute; right: 0.2em;"><a href="http://archive.msdn.microsoft.com/Tagging/FullTagCloud.aspx">More Tags ...</a></div>
+                        <span style="font-weight:bold;">Popular Tags</span>
+        
+
+		</div><div id="ctl00_ctl00_RightSideBar_RightSideBar_CodeGalleryTagCloud_contentPanel" class="Content TagMSDNBody">
+			
+    
+            <div id="ctl00_ctl00_RightSideBar_RightSideBar_CodeGalleryTagCloud_TagCloud_TagCloudDiv" style="text-align:left;">
+    <span><a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=.NET" rel="nofollow" title="216 resources" class="TagCloud-High">.NET</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=.NET%202.0" rel="nofollow" title="56 resources" class="TagCloud-Low">.NET 2.0</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=.NET%203.0" rel="nofollow" title="27 resources" class="TagCloud-Lowest">.NET 3.0</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=.NET%203.5" rel="nofollow" title="72 resources" class="TagCloud-Low">.NET 3.5</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=.NET%20Framework" rel="nofollow" title="34 resources" class="TagCloud-Lowest">.NET Framework</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=2008" rel="nofollow" title="51 resources" class="TagCloud-Low">2008</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=2009" rel="nofollow" title="80 resources" class="TagCloud-Medium">2009</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=2010" rel="nofollow" title="77 resources" class="TagCloud-Medium">2010</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=2011" rel="nofollow" title="38 resources" class="TagCloud-Lowest">2011</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=ADO.NET" rel="nofollow" title="42 resources" class="TagCloud-Low">ADO.NET</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=ASP.NET" rel="nofollow" title="121 resources" class="TagCloud-High">ASP.NET</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Azure" rel="nofollow" title="29 resources" class="TagCloud-Lowest">Azure</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=C%23" rel="nofollow" title="224 resources" class="TagCloud-Highest">C#</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=C%23%203.0" rel="nofollow" title="28 resources" class="TagCloud-Lowest">C# 3.0</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=C%2b%2b" rel="nofollow" title="68 resources" class="TagCloud-Low">C++</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=CRM" rel="nofollow" title="83 resources" class="TagCloud-Medium">CRM</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Entity%20Framework" rel="nofollow" title="36 resources" class="TagCloud-Lowest">Entity Framework</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Hotfix" rel="nofollow" title="225 resources" class="TagCloud-Highest">Hotfix</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=LINQ" rel="nofollow" title="72 resources" class="TagCloud-Low">LINQ</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=LINQ%20to%20SQL" rel="nofollow" title="32 resources" class="TagCloud-Lowest">LINQ to SQL</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=MCMS" rel="nofollow" title="54 resources" class="TagCloud-Low">MCMS</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=MSDN%20Magazine" rel="nofollow" title="232 resources" class="TagCloud-Highest">MSDN Magazine</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Samples" rel="nofollow" title="107 resources" class="TagCloud-High">Samples</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=SharePoint" rel="nofollow" title="90 resources" class="TagCloud-Medium">SharePoint</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=SharePoint%202010%20" rel="nofollow" title="24 resources" class="TagCloud-Lowest">SharePoint 2010 </a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=silverlight" rel="nofollow" title="71 resources" class="TagCloud-Low">silverlight</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=SQL%20Server" rel="nofollow" title="89 resources" class="TagCloud-Medium">SQL Server</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=tfs" rel="nofollow" title="56 resources" class="TagCloud-Low">tfs</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=VB.NET" rel="nofollow" title="30 resources" class="TagCloud-Lowest">VB.NET</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Visual%20Basic" rel="nofollow" title="111 resources" class="TagCloud-High">Visual Basic</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Visual%20Studio" rel="nofollow" title="224 resources" class="TagCloud-Highest">Visual Studio</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Visual%20Studio%202005" rel="nofollow" title="59 resources" class="TagCloud-Low">Visual Studio 2005</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Visual%20Studio%202008" rel="nofollow" title="152 resources" class="TagCloud-High">Visual Studio 2008</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Visual%20Studio%202010" rel="nofollow" title="98 resources" class="TagCloud-Medium">Visual Studio 2010</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=VS%20SDK" rel="nofollow" title="29 resources" class="TagCloud-Lowest">VS SDK</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=VSTO" rel="nofollow" title="34 resources" class="TagCloud-Lowest">VSTO</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=VSX" rel="nofollow" title="48 resources" class="TagCloud-Low">VSX</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=WCF" rel="nofollow" title="84 resources" class="TagCloud-Medium">WCF</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=windows%207" rel="nofollow" title="28 resources" class="TagCloud-Lowest">windows 7</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Windows%20Forms" rel="nofollow" title="45 resources" class="TagCloud-Low">Windows Forms</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=Windows%20Mobile" rel="nofollow" title="32 resources" class="TagCloud-Lowest">Windows Mobile</a><wbr> <a href="http://archive.msdn.microsoft.com/Project/ProjectDirectory.aspx?TagName=WPF" rel="nofollow" title="98 resources" class="TagCloud-Medium">WPF</a><wbr> </span>
+    
+</div>
+        
+
+		</div>
+	</div>
+    </div>
+
+    
+</div>
+
+                                                </div>
+                                            </td>
+                                            <td class="SideBarPadding RightSideBarPadding"><div></div></td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+
+                            </td></tr>
+                            <tr><td class="DoublePaddingLeft">
+				                <div id="Footer">
+					                <div class="FooterLogo" title="Microsoft Corporation"><img src="RubiksCubeSolver_files/blkmslogo.gif" style="border-width: 0px;"></div>
+					                <div class="FooterLinks">
+					                    <div>
+						                    <a title="Manage Your Profile" href="http://go.microsoft.com/?linkid=317027">Manage Your Profile</a><a class="FooterLink" title="Contact Us" href="http://archive.msdn.microsoft.com/ContactUs.aspx">Contact Us</a><a class="FooterLink" title="MSDN Flash Newsletter" href="http://msdn.microsoft.com/flash/">MSDN Flash Newsletter</a>
+					                    </div>
+					                    <div class="StandardMarginTop">
+						                    <span class="footerCopyright" title="© 2008 Microsoft Corporation. All rights reserved.">© 2008  Microsoft Corporation. All rights reserved.</span>
+						                    <a title="Terms of Use" href="http://archive.msdn.microsoft.com/Legal/Terms.aspx">Terms of Use</a><a class="FooterLink" title="Trademarks" href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a><a class="FooterLink" title="Privacy Statement" href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a>
+					                    </div>
+					                </div>
+				                </div>
+                            </td></tr>
+                        </tbody></table>
+                    </div>
+                </td>
+                <td class="CanvasMargin"><div class="CanvasMargin"></div></td>
+            </tr>
+        </tbody></table>
+        
+       </td></tr>
+    </tbody></table>    
+
+    
+                              
+    
+
+<script type="text/javascript">
+//<![CDATA[
+new CodePlex.PromptBox('Search MSDN with Bing').initialize('ctl00_ctl00_MSDNSearchControl_SearchTextBox');new CodePlex.PromptBox('Search MSDN Archive Resources').initialize('ctl00_ctl00_WideContent_ProjectSearchControl_SearchTextBox');
+Sys.Application.setServerId("ctl00_ctl00_ScriptManager", "ctl00$ctl00$ScriptManager");
+
+Sys.Application.initialize();
+//]]>
+</script>
+</form><script src="RubiksCubeSolver_files/broker-config.js"></script>
+
+
+     <div style="left: 504px; top: 589px;" id="UpdateProgressPanel" class="UpdateProgress">
+        <span id="UpdateProgressText" class="UpdateProgressText">Updating...</span>
+     </div>
+ 
+     <img style="display: none;" src="RubiksCubeSolver_files/trans_pixel.gif" alt="Page view tracker" width="0" height="0">
+             
+    <noscript>
+        <img alt="" id="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcs5rnktm00000wokdu2jsj42_4o9e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" />
+    </noscript>
+
+    <!-- START OMNITURE -->
+    <script type="text/javascript" src="RubiksCubeSolver_files/omni_rsid_social.js"></script>
+    <noscript><a href="http://www.omniture.com" title="Web Analytics"><img src="http://msstonojssocial.112.2O7.net/b/ss/msstonojssocial/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /></a></noscript>
+    <!-- END OMNITURE -->
+    
+
+
+</body></html>

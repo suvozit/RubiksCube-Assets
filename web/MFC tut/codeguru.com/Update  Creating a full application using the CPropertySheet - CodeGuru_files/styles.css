@@ -1,0 +1,303 @@
+@import 'global.css';
+@import 'hacks.css';
+
+/*.colLeft {
+	float:left;
+	padding-right:10px;
+}*/
+
+.colLeft {
+	float:left;
+	padding:5px;
+}
+
+
+#ewgtcontainer {
+	margin-bottom: -1px;
+/*	margin-bottom: expression('-18px'); */
+        margin-bottom: 0px\9;
+}
+
+/** html #ewgtcontainer {
+margin-bottom: -19px;
+}*/
+
+body {
+	margin:0;
+	padding:0;
+	background:#053061 url('/newimg/images/main_bg2.gif') 0 0 repeat-x;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.spacer {
+	margin:0;
+	padding:0
+}
+#container {
+	margin:0 auto 0 auto;
+	width:985px; 
+	background:url('/newimg/images/shadow.png') repeat-y left top ;
+	padding-left:0px;
+}
+.sub_content_holder {
+	width:980px; 
+	background:#FFFFFF;
+	float:left;
+}
+.clear {
+	clear:both;
+}
+a:focus {
+  -moz-outline-style: none;
+}
+
+span.cp_wrapper ul#cp_links {
+  margin-left: 0px;
+  padding: 0 0 0 0;
+}
+
+span.ciu_wrapper {
+        font-size: 12px;
+}
+span.ciu_wrapper div{
+        margin-right: 10px;
+        padding: 10 10 10 10;
+}
+
+h1.article_title{
+	margin-bottom: 10px;
+}
+
+div.latestdeveloper{
+	float: left;
+}
+
+div.event_before div.blue_box{
+	color: #FFFFFF;
+	background: url("/newimg/images/event_timer_background.gif") repeat-x scroll left top #063060;
+	width: 100%;
+	float: left;
+}
+div.box_event{
+	float: left;
+	width: 450px;
+	margin-bottom: 10px;
+}
+div.box_event .row4{
+	clear:left;
+	float: left;
+	width: 100%;
+}
+div.box_event .row2{
+	clear:left;
+	float: left;
+	width: 100%;
+}
+
+.blue{
+	color: #acd3ff;
+}
+.blue1{
+	color: #063062;
+}
+div.l{
+	float: left;
+}
+div.r{
+	float: left;
+	clear: right;
+}
+div.event_before div.row4 .r{
+	font-weight: normal;
+	margin-left: 5px;
+}
+div.event_before div.row2{
+	font-weight: normal;
+}
+div.event_before div.row1, div.event_before div.row2, div.event_before div.row3{
+	clear:left;
+	float: left;
+}
+div.event_before div.box_image{
+	margin-left: 15px;
+	float: left;
+	width: 130px;
+}
+div#event_player{
+	font-weight: bold;
+	font-size: 15px;
+}
+div.event_before div.box_addtocalendar{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 115px;
+	height: 18px;
+}
+div.event_before div.event_title{
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.event_before div.countdown_wrapper{
+	text-align: center;
+	width: 100%;
+	color: #acd3ff;
+	font-weight: bold;
+	padding-left: 100px;
+	float: left;
+	height: 45px;
+	font-size: 15px;
+	margin-top: 13px;
+}
+div.event_before div.countdown_wrapper div.l{
+	margin-right: 10px;
+}
+div.event_before div.countdown_wrapper span.val{
+	color: #FFFFFF;
+}
+
+div.event_before div.row4{
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+
+
+div.event_description{
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div.event_description .row1{
+	margin-bottom: 5px;
+}
+div.event_description .row2{
+	clear: both;
+}
+div.box_upcomming {
+	float: left;
+	background-color: #dae0e7;
+	padding: 10px 10px 10px 10px;
+	width: 100%;
+}
+div.box_previous_events {
+	float: left;
+	background-color: #dae0e7;
+	padding: 10px 10px 10px 10px;
+	width: 100%;
+	margin-top: 15px;
+}
+div.twitter_box{
+    height: 590px;
+    left: 0;
+    position: fixed;
+    top: 0;
+	background-color: #FFFFF;
+	cursor: move;
+}
+div.twitter_header{
+	float: left;
+	padding: 5px;
+}
+div.twitter_close{
+	float: right;
+}
+
+div.upcomming_event {
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+}
+div.upcomming_title{
+	margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+div.upcomming_event img{
+	margin-right: 5px;
+}
+div.event_description .row1{
+	font-size: 16px;
+	font-weight: bold;
+}
+div.event_description .row2{
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+}
+div#player_event_wrapper{
+	margin-bottom: 15px;
+}
+div.live_player div.row1{
+	color: #ff3138;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+div.live_player div.row2{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+div.live_player div.row3{
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+div.live_player  div.row5 .pc{
+	font-size: 12px;
+}
+div.live_player  div.row5 .pcode{
+	font-size: 16px;
+}
+div.live_player  div.player{
+	margin-bottom: 10px;
+}
+/* jQuery Countdown styles 1.5.9. */
+.hasCountdown {
+	
+}
+.countdown_rtl {
+	direction: rtl;
+}
+.countdown_holding span {
+	background-color: #ccc;
+}
+.countdown_row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown_show1 .countdown_section {
+	width: 98%;
+}
+.countdown_show2 .countdown_section {
+	width: 48%;
+}
+.countdown_show3 .countdown_section {
+	width: 32.5%;
+}
+.countdown_show4 .countdown_section {
+	width: 24.5%;
+}
+.countdown_show5 .countdown_section {
+	width: 19.5%;
+}
+.countdown_show6 .countdown_section {
+	width: 16.25%;
+}
+.countdown_show7 .countdown_section {
+	width: 14%;
+}
+.countdown_section {
+	display: block;
+	float: left;
+	font-size: 75%;
+	text-align: center;
+}
+.countdown_amount {
+	font-size: 200%;
+}
+.countdown_descr {
+	display: block;
+	width: 100%;
+}

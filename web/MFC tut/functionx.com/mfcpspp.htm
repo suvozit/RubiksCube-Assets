@@ -1,0 +1,1392 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<meta name="Keywords" content="mfc, property, sheet, page">
+<meta name="Description" content="This article shows how to create MFC property sheets and property pages.">
+
+<link rel="stylesheet" type="text/css" href="mfcpspp_files/Lessons.css">
+
+<title>Microsoft Visual C++/MFC: MFC Property Sheets and Property Pages</title>
+<style type="text/css">
+
+
+.redcode {
+	font-family: "Courier New", Courier, monospace;
+  	color:       red;
+  	font-size:   10pt
+}
+
+</style>
+</head>
+
+<body>
+
+<div align="center">
+  <center>
+
+<table width="900" border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <td width="738" align="center">
+    
+<!-- Casale Media: 728x90 (Banner) -->
+<script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "2";
+CasaleArgs.casaleID = 56757;
+</script>
+<script type="text/javascript" src="mfcpspp_files/casaleJTag.js"></script><div id="CasaleDIV0.1039628217180737" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="mfcpspp_files/j_003"></script>
+<!-- DO NOT MODIFY -->
+
+    </td>
+  </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+&nbsp;
+<div align="center">
+  <center>
+  <table width="900" border="0">
+    <tbody><tr>
+      <td rowspan="2" valign="top" width="680">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td valign="middle" width="10%" align="center"><a href="http://www.functionx.com/index.htm"><img src="mfcpspp_files/ftxlogo2.gif" alt="Home" width="51" border="0" height="60"></a></td>
+    <td width="90%">
+      <p class="maintitle">MFC Property Sheets and Property Pages</p></td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" bgcolor="#CC3300" height="2"></td>
+  </tr>
+</tbody></table>
+
+<span name="KonaBody">
+
+&nbsp;
+
+&nbsp;
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="100%">
+      <p class="paratitle">Introduction to the MFC Property Sheet</p></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#FF0000" height="1"></td>
+  </tr>
+</tbody></table>
+
+&nbsp;
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="100%">
+      <p class="subtitle">Description</p></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#0000FF" height="1"></td>
+  </tr>
+</tbody></table>
+
+<table width="100%" border="0">
+  <tbody><tr>
+    <td>
+          
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 160;
+google_ad_height = 90;
+google_ad_format = "160x90_0ads_al";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "800000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "0000ff";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="mfcpspp_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="160" frameborder="0" height="90"></iframe></ins></ins>
+
+    </td>
+    <td>
+
+	<p class="parajust">The classic property sheets have been part of the 
+	Microsoft Windows operating system for a long time. Applications 
+	functionalities and requirements have seen an increase in the last few years 
+	with new aesthetic features. To keep the trend, the new MFC brought new 
+	controls. One of them is a new type of property sheet.</p>
+
+    </td>
+  </tr>
+</tbody></table>
+
+<p class="parajust">The MFC property sheet adds new behaviors to the 
+	  classic property sheet in the ways the tabs display or their contents are 
+	  accessed.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Introducing MFC Property Sheets</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>Start Microsoft Visual Studio</li>
+		  <li>To create a new application, on the main menu, click File -&gt; New 
+		  Project...</li>
+		  <li>In the left list, click Visual C++. In the right list, click MFC 
+		  Application</li>
+		  <li>Change the Name to <strong>LifePlanning</strong></li>
+		  <li>Click OK</li>
+		  <li>In the first page of the MFC Application Wizard, read the text and 
+		  click Next</li>
+		  <li>In the second page of the wizard, click Dialog Based</li>
+		  <li>Click Next</li>
+		  <li>In the third page, click Next</li>
+		  <li>In the fourth page of the wizard, click Next</li>
+		  <li>In the fifth page of the wizard, click Finish</li>
+		  <li>On the dialog box, click the TODO line and press Delete</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Creating an MFC Property Page</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">The MFC property sheet and its property page(s) are 
+	  primarily created like the classic property sheet. In fact, a property 
+	  page is created as a dialog box with the following characteristics:</p>
+	  <ul>
+		  <li>Border: Thin</li>
+		  <li>Caption: Set the string you want to display on the tab (or button)</li>
+		  <li>Disabled: True</li>
+		  <li>Style: Child</li>
+		  <li>Title Bar: True</li>
+	  </ul>
+	  <p class="parajust">An MFC property page is based on a class named <strong>
+	  CMFCPropertyPage</strong> that is derived from <strong>CPropertyPage</strong>. 
+	  Therefore, to create an MFC property page:</p>
+	  <ol type="a">
+		  <li>Create a dialog box resource with the characteristics of a 
+		  property page</li>
+		  <li>Add a class to the dialog box. The class must be derived from 
+		  CMFCPropertyPage</li>
+		  <li>Optionally add the functionalities (controls, events, etc) you 
+		  want the property page to execute</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Creating MFC Property Pages</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>On the main menu, click Project -&gt; Class Wizard...</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CComputerScience</strong></li>
+		  <li>Set the Base Class to CMFCPropertyPage<br>&nbsp;<br>
+		  <img alt="MFC Add Class Wizard" src="mfcpspp_files/mfcacw5.gif" width="615" height="517"></li>
+		  <li>Click Finish</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CInformationTechnology</strong></li>
+		  <li>Set the Base Class to CMFCPropertyPage</li>
+		  <li>Click Finish</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CHistory</strong></li>
+		  <li>Set the Base Class to CMFCPropertyPage</li>
+		  <li>Click Finish</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CCulinaryServices</strong></li>
+		  <li>Set the Base Class to CMFCPropertyPage</li>
+		  <li>Click Finish</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CCareers</strong></li>
+		  <li>Set the Base Class to CMFCPropertyPage</li>
+		  <li>Click Finish</li>
+		  <li>Click OK</li>
+		  <li>In the Resource View, right-click LifePlanning and click Add 
+		  Resource...</li>
+		  <li>In the Add Resource dialog box, expand the Dialog node </li>
+		  <li>Click IDD_PROPPAGE_LARGE</li>
+		  <li>Click New</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>Computer Science</strong><br>ID: <strong>
+		  IDD_COMPUTERSCIENCE</strong></li>
+		  <li>On the Toolbox click Button and click the dialog box</li>
+		  <li>Access the ComputerScience.h file and change it as follows:
+		  <pre>#pragma once
+
+// CComputerScience
+
+class CComputerScience : public CMFCPropertyPage
+{
+	DECLARE_DYNAMIC(CComputerScience)
+
+// Dialog Data
+	<font color="red">enum { IDD = IDD_COMPUTERSCIENCE };</font>
+
+public:
+	CComputerScience();
+	virtual ~CComputerScience();
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>In the Resource View, right-click LifePlanning and click Add 
+		  Resource...</li>
+		  <li>In the Add Resource dialog box, expand the Dialog node </li>
+		  <li>Expand Dialog and click IDD_PROPPAGE_LARGE</li>
+		  <li>Click New</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>Information Technology</strong><br>ID: <strong>
+		  IDD_INFORMATIONTECHNOLOGY</strong></li>
+		  <li>On the Toolbox click Check Box and click the dialog box</li>
+		  <li>Access the InformationTechnology.h file and change it as follows:
+		  <pre>#pragma once
+
+// CInformationTechnology
+
+class CInformationTechnology : public CMFCPropertyPage
+{
+	DECLARE_DYNAMIC(CInformationTechnology)
+
+// Dialog Data
+	<font color="red">enum { IDD = IDD_INFORMATIONTECHNOLOGY };</font>
+
+public:
+	CInformationTechnology();
+	virtual ~CInformationTechnology();
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>In the Resource View, right-click LifePlanning.rc and click Add 
+		  Resource...</li>
+		  <li>In the Add Resource dialog box, expand the Dialog node </li>
+		  <li>Expand Dialog and double-click IDD_PROPPAGE_SMALL</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>History</strong><br>ID: <strong>IDD_HISTORY</strong></li>
+		  <li>On the Toolbox click Edit Control and click the dialog box</li>
+		  <li>Access the History.h file and change it as follows:
+		  <pre>#pragma once
+
+// CHistory
+
+class CHistory : public CMFCPropertyPage
+{
+	DECLARE_DYNAMIC(CHistory)
+
+// Dialog Data
+	<span class="redcode">enum { IDD = IDD_HISTORY };</span>
+
+public:
+	CHistory();
+	virtual ~CHistory();
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>In the Resource View, right-click LifePlanning and click Add 
+		  Resource...</li>
+		  <li>In the Add Resource dialog box, expand the Dialog node </li>
+		  <li>Expand Dialog and double-click IDD_PROPPAGE_MEDIUM</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>Culinary Services</strong><br>ID: <strong>
+		  IDD_CULINARYSERVICES</strong></li>
+		  <li>On the Toolbox click Picture Control and click the dialog box</li>
+		  <li>Access the CulinaryServices.h file and change it as follows:
+		  <pre>#pragma once
+
+// CCulinaryServices
+
+class CCulinaryServices : public CMFCPropertyPage
+{
+	DECLARE_DYNAMIC(CCulinaryServices)
+
+// Dialog Data
+	<font color="red">enum { IDD = IDD_CULINARYSERVICES };</font>
+
+public:
+	CCulinaryServices();
+	virtual ~CCulinaryServices();
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>In the Resource View, right-click LifePlanning and click Add 
+		  Resource...</li>
+		  <li>In the Add Resource dialog box, expand the Dialog node </li>
+		  <li>Expand Dialog and double-click IDD_PROPPAGE_LARGE</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>Careers</strong><br>ID: <strong>IDD_CAREERS</strong></li>
+		  <li>On the Toolbox click Static Text and click the dialog box</li>
+		  <li>Access the Careers.h file and change it as follows:
+		  <pre>#pragma once
+
+// CCareers
+
+class CCareers : public CMFCPropertyPage
+{
+	DECLARE_DYNAMIC(CCareers)
+
+// Dialog Data
+	<font color="red">enum { IDD = IDD_CAREERS };</font>
+
+public:
+	CCareers();
+	virtual ~CCareers();
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Creating an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">An MFC property sheet is primarily a normal property 
+	  sheet. In fact, the class used for it is named <strong>CMFCPropertySheet</strong> 
+	  and it is directly derived from <strong>CPropertySheet</strong>. 
+	  Therefore, to create an MFC property sheet, create an MFC class based on
+	  <strong>CMFCPropertySheet</strong>.</p>
+	  <p class="parajust">To specify the pages of the property sheet, in the 
+	  constructor of your property sheet class or just before displaying the 
+	  property sheet, call the <strong>CPropertySheet::AddPage()</strong> method 
+	  for each property page.</p>
+	  <p class="parajust">To display the property sheet, call the <strong>
+	  CDialog::DoModal()</strong> member function it inherits from its parent.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Creating an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>On the main menu, click Project -&gt; Class Wizard...</li>
+		  <li>Click Add Class</li>
+		  <li>Set the Class Name to <strong>CLifePlanningSheet</strong></li>
+		  <li>Set the Base Class to CMFCPropertySheet</li>
+		  <li>Click Finish</li>
+		  <li>Click OK</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="paratitle">Characteristics of an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#FF0000" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  &nbsp;
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Characteristics of MFC Property Pages</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">The MFC property page gets most of its functionality 
+	  from its parent: the Win32's property page that is implemented through the
+	  <strong>CPropertyPage</strong>. Still, the <strong>CMFCPropertyPage</strong> 
+	  has its own constructor that is different from its parent class. The 
+	  constructor comes in two versions whose syntaxes are:</p>
+	  <pre>CMFCPropertyPage(UINT nIDTemplate, UINT nIDCaption=0);
+CMFCPropertyPage(LPCTSTR lpszTemplateName, UINT nIDCaption=0);</pre>
+	  <p class="parajust">The first argument, which is also the only one 
+	  required, is either the resource ID of the dialog box or the name of the 
+	  template that holds the characteristics of the dialog box template. The 
+	  second argument, which is optional, is the string ID of the caption.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Configuring MFC Property Pages</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>Access the ComputerScience.cpp file and change the constructor as 
+		  follows:
+		  <pre>// ComputerScience.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "LifePlanning.h"
+#include "ComputerScience.h"
+
+// CComputerScience
+
+IMPLEMENT_DYNAMIC(CComputerScience, CMFCPropertyPage)
+
+CComputerScience::CComputerScience()
+	<span class="redcode">: CMFCPropertyPage(CComputerScience::IDD)</span>
+{
+
+}
+
+CComputerScience::~CComputerScience()
+{
+}
+
+BEGIN_MESSAGE_MAP(CComputerScience, CMFCPropertyPage)
+END_MESSAGE_MAP()
+
+// CComputerScience message handlers</pre>
+		  </li>
+		  <li>Access the InformationTechnology.cpp file and change the 
+		  constructor as follows:
+		  <pre>IMPLEMENT_DYNAMIC(CInformationTechnology, CMFCPropertyPage)
+
+CInformationTechnology::CInformationTechnology()
+	<span class="redcode">: CMFCPropertyPage(CInformationTechnology::IDD)</span>
+{
+
+}</pre>
+		  </li>
+		  <li>Access the History.cpp file and change the constructor as follows:
+		  <pre>CHistory::CHistory()
+	<span class="redcode">: CMFCPropertyPage(CHistory::IDD)</span>
+{
+
+}</pre>
+		  </li>
+		  <li>Access the CulinaryServices.cpp file and change the constructor as 
+		  follows:
+		  <pre>CCulinaryServices::CCulinaryServices()
+	<span class="redcode">: CMFCPropertyPage(CCulinaryServices::IDD)</span>
+{
+
+}</pre>
+		  </li>
+		  <li>Access the Careers.h file and change it as follows:
+		  <pre>CCareers::CCareers()
+	<span class="redcode">: CMFCPropertyPage(CCareers::IDD)</span>
+{
+
+}</pre>
+		  </li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Introduction to the Looks of&nbsp;an MFC Property 
+			  Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">The most fundamental difference between a classic 
+	  property sheet and an MFC property sheet is on how the latter displays its 
+	  property pages. To allow the options, the <strong>CMFCPropertySheet</strong> 
+	  class is equipped with the <strong>SetLook()</strong> member function. Its 
+	  syntax is:</p>
+	  <pre>void SetLook(PropSheetLook look, int nNavControlWidth = 100);</pre>
+	  <p class="parajust">Only the first argument is required and it specifies 
+	  how the property pages should be accessed. To set the option, call the
+	  <strong>CMFCPropertySheet</strong> enumeration and access the desired 
+	  member (next sections). The second argument is optional and it doesn't 
+	  apply to all options (we will come back to it in the next sections).</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Introducing the Look of an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ul>
+		  <li>Access the LifePlanningSheet.h file and change it as follows:
+		  <pre>#pragma once
+
+<span class="redcode">#include "ComputerScience.h"
+#include "InformationTechnology.h"
+#include "History.h"
+#include "CulinaryServices.h"
+#include "Careers.h"</span>
+
+// CLifePlanningSheet
+
+class CLifePlanningSheet : public CMFCPropertySheet
+{
+    DECLARE_DYNAMIC(CLifePlanningSheet)
+
+public:
+    CLifePlanningSheet();
+    virtual ~CLifePlanningSheet();
+
+private:
+    <span class="redcode">CComputerScience		pgeComputerScience;
+    CInformationTechnology	pgeInformationTechnology;
+    CHistory			pgeHistory;
+    CCulinaryServices		pgeCulinaryServices;
+    CCareers			pgeCareers;</span>
+
+protected:
+    DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+	  </ul>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">The Classic Look of&nbsp;an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">&nbsp;As mentioned already, an MFC property is primarily a 
+	  Win32 property sheet. It you just want to create a normal property sheet, 
+	  before it can display, simply call its <strong>AddPage()</strong> member 
+	  function and add the desired property pages. Here are examples:</p>
+	  <pre>CExerciseSheet::CExerciseSheet()
+{
+    <span class="redcode">AddPage(&amp;pgeFirst);
+    AddPage(&amp;pgeSecond);
+    AddPage(&amp;pgeThird);</span>
+}</pre>
+	  <p class="parajust">In the same way, to create the classic property sheet, 
+	  call the <strong>CMFCPropertySheet::SetLook()</strong> member function and 
+	  specofy the <b>PropSheetLook_Tabs</b> option. Here are examples:</p>
+	  <pre>CExerciseSheet::CExerciseSheet()
+{
+    AddPage(&amp;pgeFirst);
+    AddPage(&amp;pgeSecond);
+    AddPage(&amp;pgeThird);
+    
+    <font color="red">SetLook(CMFCPropertySheet::PropSheetLook_Tabs);</font> 
+}</pre>
+	  <p class="parajust">The result would be the same.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Setting the Classic Look</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>Access the LifePlanningSheet.cpp file and change it as follows:
+		  <pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    <span class="redcode">AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs);</span>
+}</pre>
+		  </li>
+		  <li>Display the first dialog box and add a button to it</li>
+		  <li>Using the Properties window, change its characteristics as 
+		  follows:<br>Caption: <strong>Plan Your Life...</strong><br>ID: <strong>
+		  IDC_PLAN_YOUR_LIFE</strong></li>
+		  <li>Double-click the button</li>
+		  <li>Change the file as follows:
+		  <pre>// LifePlanningDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "LifePlanning.h"
+#include "LifePlanningDlg.h"
+#include "afxdialogex.h"
+<span class="redcode">#include "LifePlanningSheet.h"</span>
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+// CLifePlanningDlg dialog
+
+<em>. . . No Change</em>
+
+void CLifePlanningDlg::OnBnClickedPlanYourLife()
+{
+    // TODO: Add your control notification handler code here
+    <span class="redcode">CLifePlanningSheet dlgLifePlanning;
+
+    dlgLifePlanning.SetTitle(L"Career Planning and Life Achievement");
+    dlgLifePlanning.DoModal();</span>
+}</pre>
+		  </li>
+		  <li>To execute, press F5</li>
+		  <li>Click the Plan Your Life...<br>&nbsp;<br>
+		  <img alt="Career Planning and Life Achievement" src="mfcpspp_files/life1.gif" width="473" height="383"></li>
+		  <li>Close the property sheet</li>
+		  <li>Close the dialog box and return to your programming environment</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">The One-Note Look of&nbsp;an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">To make the tabs more appealling, you can make them 
+	  look like those of the Microsoft OneNote application. To get this option, 
+	  call the <strong>SetLook()</strong> member function and apply the <b>
+	  PropSheetLook_OneNoteTabs</b> option.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Setting the OneNote Look</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>Access the LifePlanningSheet.cpp file and change it as follows:
+		  <pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+    AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs);
+}</pre>
+		  </li>
+		  <li>To execute, press F5</li>
+		  <li>Click the Plan Your Life...</li>
+		  <li>Click the Culinary Services tab</li>
+		  <li>Click History<br>&nbsp;<br>
+		  <img alt="Career Planning and Life Achievement" src="mfcpspp_files/life2.gif" width="473" height="383"></li>
+		  <li>Close the property sheet</li>
+		  <li>Close the dialog box and return to your programming environment</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">The Outlook Bar on an MFC Property Sheet</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">Instead of displaying tabs in the top section of a 
+	  property sheet, you can create a vertical bar on the left side of the 
+	  dialog box and make it display a button for each tab. This is popularly 
+	  referred to as the Outlook or Outlook Bar look of an application. In this 
+	  case, the property sheet would be divided in two sections: a frame on the 
+	  left and the right area used to display the property pages.</p>
+	  <p class="parajust">Remember that the syntax of the <strong>
+	  CMFCPropertySheet::SetLook()</strong> member function is:</p>
+	  <pre>void SetLook(PropSheetLook look, int nNavControlWidth = 100);</pre>
+	  <p class="parajust">The second argument specifies the width of the left 
+	  frame. The default with is 100 pixels, which applies if you don't pass the 
+	  second argument. To specify your desired width, pass the second argument.</p>
+	  <p class="parajust">If you are familiar with Microsoft Outlook bar, you 
+	  may know that each button displays a picture on top. Before considering 
+	  getting the Outlook bar look, you should (must) first create one ore more 
+	  icons, an icon for each button that would lead to the corresponding 
+	  property page. You can create the list of icons as a long bitmap resource. 
+	  After creating the physical bitmap, declare a variable of type CImageList 
+	  and call its <strong>Create()</strong> member function to initialize it. 
+	  Pass the bitmap resource to it.</p>
+	  <p class="parajust">To let you get the Outlook bar, the <strong>
+	  CMFCPropertySheet</strong> is equipped with the <b>SetIconsList()</b> 
+	  member function that is overloaded with two vesions. Their syntaxes are:</p>
+	  <pre>void SetIconsList(HIMAGELIST hIcons);
+BOOL SetIconsList(UINT uiImageListResID,
+   		  int cx,
+   		  COLORREF clrTransparent=RGB(255,0,255));</pre>
+	  <p class="parajust">The first version tabkes a handle to a Win32's image 
+	  list as argument.</p>
+	  <p class="parajust">The second version takes two required arguments and an 
+	  optional argument. The first argument is the ID of an image list resource. 
+	  The second argument specifies the width or each picture in the image list. 
+	  The third argument optionally specifies the level or transparency of hte 
+	  pictures.</p>
+	  <p class="parajust">To get the Outlook bar, call the <strong>SetLook()</strong> 
+	  member function and apply the <b>PropSheetLook_OutlookBar</b> option.</p>
+
+</span>
+
+      </td>
+      <td>
+   
+<table width="100%" border="0">
+  <tbody><tr>
+    <td width="100%">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript" src="mfcpspp_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="300" frameborder="0" height="250"></iframe></ins></ins>
+
+    </td>
+  </tr>
+</tbody></table>
+
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+   
+&nbsp;
+        <table width="100%" border="0">
+          <tbody><tr>
+            <td width="100%">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "0000FF";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<script type="text/javascript" src="mfcpspp_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="160" frameborder="0" height="600"></iframe></ins></ins>
+
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" border="0">
+          <tbody><tr>
+            <td width="100%"></td>
+          </tr>
+        </tbody></table>
+
+&nbsp;
+
+      </td>
+    </tr>
+  </tbody></table>
+  </center>
+</div>
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td rowspan="2" width="680">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="exotitle">
+			<img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			Learning: Using the Outlook Bar</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#CC3300" height="1"></td>
+		</tr>
+	</tbody></table>
+	<ol>
+		<li>In the Resource View, right-click LifePlanning -&gt; Add -&gt; Resource...</li>
+		<li>In the Add Resource dialog box, click Bitmap and click New</li>
+		<li>In the Properties window, change the following values:<br>Color: 24 
+		bit<br>Height: 32<br>Width: 96</li>
+		<li>In the Resource View, click IDB_BITMAP1</li>
+		<li>In the Properties window, click ID, type <strong>IDB_OUTLOOK</strong> 
+		and press Enter</li>
+		<li>Design the bitmap as follows:<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life1.htm" width="596" height="209"></li>
+		<li>Access the LifePlanningSheet.h file and declare a CImageList 
+		variable named m_OutlookImages:
+		<pre>#pragma once
+
+#include "ComputerScience.h"
+#include "InformationTechnology.h"
+#include "History.h"
+#include "CulinaryServices.h"
+#include "Careers.h"
+
+// CLifePlanningSheet
+
+class CLifePlanningSheet : public CMFCPropertySheet
+{
+    DECLARE_DYNAMIC(CLifePlanningSheet)
+
+public:
+    CLifePlanningSheet();
+    virtual ~CLifePlanningSheet();
+
+private:
+    CComputerScience	pgeComputerScience;
+    CInformationTechnology	pgeInformationTechnology;
+    CHistory		pgeHistory;
+    CCulinaryServices	pgeCulinaryServices;
+    CCareers		pgeCareers;
+
+    <font color="red">CImageList m_OutlookImages;</font>
+
+protected:
+    DECLARE_MESSAGE_MAP()
+};</pre>
+		</li>
+		<li>Access the LifePlanningSheet.cpp file and change it as follows:
+		<pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs); */
+	
+    // 3. Outlook Bar
+    <span class="redcode">AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    m_OutlookImages.Create(IDB_OUTLOOK, 32, 1, RGB(128, 128, 128));
+    SetIconsList(m_OutlookImages);
+    SetLook(CMFCPropertySheet::PropSheetLook_OutlookBar);</span>
+}</pre>
+		</li>
+		<li>To execute, press F5</li>
+		<li>Click the Culinary Services icon</li>
+		<li>Position the mouse on Computer Science<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life3.gif" width="569" height="353"></li>
+		<li>Close the property sheet</li>
+		<li>Close the dialog box and return to your programming environment</li>
+	</ol>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="subtitle">Using a List of Labels</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#0000FF" height="1"></td>
+		</tr>
+	</tbody></table>
+	<p class="parajust">Instead of using tabs or buttons, you can create strings 
+	that each would behave like a link. The user can create a label to access a 
+	property page. To get this behavior, call the <strong>SetLook()</strong> 
+	member function and apply the <b>PropSheetLook_List</b> option.</p>
+	<p class="parajust">As seen for the Outlook bar, if you use a list of 
+	strings, there would be a bar on the left side of the property sheet and 
+	that bar would be equipped with the strings.</p>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="exotitle">
+			<img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			Learning: Using a List</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#CC3300" height="1"></td>
+		</tr>
+	</tbody></table>
+	<ol>
+		<li>Change the LifePlanningSheet.cpp file it as follows:
+		<pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs); */
+	
+    // 3. Outlook Bar
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    m_OutlookImages.Create(IDB_OUTLOOK, 32, 1, RGB(128, 128, 128));
+    SetIconsList(m_OutlookImages);
+    SetLook(CMFCPropertySheet::PropSheetLook_OutlookBar); */
+	
+    // 4. List
+    <span class="redcode">AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_List, 150);</span>
+}</pre>
+		</li>
+		<li>To execute, press F5<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life4.gif" width="617" height="350"></li>
+		<li>Close the property sheet</li>
+		<li>Close the dialog box and return to your programming environment</li>
+	</ol>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="subtitle">Using a Tree List of Nodes</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#0000FF" height="1"></td>
+		</tr>
+	</tbody></table>
+	<p class="parajust">One of the characteristics of a list of labels is that 
+	each string is independent of the others. As alternative, you can create a 
+	tree of labels so that it would show that some labels belong to a group, and 
+	consequently some property pages work together. The labels in this case are 
+	called nodes.</p>
+	<p class="parajust">If you use a tree list, the property sheet displays a 
+	bar on the left side. The list on that side can have strings like those of 
+	the previously seen list. To enhance it, you can create one or more nodes 
+	that behave as parents to other nodes. When a node is used as a parent, if 
+	the user clicks it, it expands to show its child nodes. If the user clicks 
+	that parent node again, it collapses to hid its child nodes. In all cases, 
+	if the user clicks a node on the left side, its property page displays on 
+	the right side.</p>
+	<p class="parajust">To get a tree list, first call the <strong>SetLook()</strong> 
+	member function and apply the <b>CMFCPropertySheet::PropSheetLook_Tree</b>. 
+	If you stop there, the property sheet would behave like that of the list of 
+	labels. If you want an actual list, you must create. Fortunately, it is easy 
+	as long as you follow the right steps.</p>
+	<p class="parajust">To let you create a tree list, the <strong>
+	CMFCPropertySheet </strong>class is equipped with the <strong>
+	AddTreeCategory()</strong> member function. Its syntax is:</p>
+	<pre>CMFCPropertySheetCategoryInfo* AddTreeCategory(
+   LPCTSTR lpszLabel,
+   int nIconNum = -1,
+   int nSelectedIconNum = -1,
+   const CMFCPropertySheetCategoryInfo* pParentCategory = NULL 
+);</pre>
+	<p class="parajust">When calling this function get a reference to the <b>
+	CMFCPropertySheetCategoryInfo</b> object it returns. This function takes 
+	four argument but only one is required. The first argument is the string of 
+	the parent node. You can pass just that argument and the property sheet 
+	would work fine. If you want a node to display an icon, pass the zero-based 
+	index of that icon as the second argument. In this case, you can also pass a 
+	third argument as the icon that would display when the parent node is 
+	selected. If the node you are currently creating is the top node, pass the 
+	third argument as NULL. If that node has its own parent, pass its reference 
+	as the fourth argument.</p>
+	<p class="parajust">After calling this member function, call the the <strong>
+	AddPageToTree()</strong> member function. Its syntax is:</p>
+	<pre>void AddPageToTree(
+   CMFCPropertySheetCategoryInfo* pCategory,
+   CMFCPropertyPage* pPage,
+   int nIconNum=-1,
+   int nSelIconNum=-1 
+);</pre>
+	<p class="parajust">The first argument is a reference to a parent node you 
+	must have previously created. The second argument is a reference to a 
+	property page, the exact same argument you would pass for a regular property 
+	page in a Win32 property sheet. If the node should display an icon, pass the 
+	optional third argument. Also, you can optionally pass the fourth argument 
+	to specify what icon the node should display when it is selected.</p>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="exotitle">
+			<img alt="Practical Learning" src="mfcpspp_files/practical1.gif" width="21" border="0" height="20">Practical 
+			Learning: Using a Tree List</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#CC3300" height="1"></td>
+		</tr>
+	</tbody></table>
+	<ol>
+		<li>Change the LifePlanningSheet.cpp file it as follows:
+		<pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs); */
+	
+    // 3. Outlook Bar
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    m_OutlookImages.Create(IDB_OUTLOOK, 32, 1, RGB(128, 128, 128));
+    SetIconsList(m_OutlookImages);
+    SetLook(CMFCPropertySheet::PropSheetLook_OutlookBar); */
+	
+    // 4. List
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_List, 150); */
+	
+    // 5. Tree List
+    <span class="redcode">SetLook(CMFCPropertySheet::PropSheetLook_Tree, 150);
+    CMFCPropertySheetCategoryInfo * pscComputers = AddTreeCategory(_T("Computers"));
+    AddPageToTree(pscComputers, &amp;pgeComputerScience);
+    AddPageToTree(pscComputers, &amp;pgeInformationTechnology);
+
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);</span>
+}</pre>
+		</li>
+		<li>To execute, press F5<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life5a.gif" width="617" height="350"><br>
+		&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life5b.gif" width="617" height="350"></li>
+		<li>Close the property sheet</li>
+		<li>Close the dialog box and return to your programming environment</li>
+		<li>In the Resource View, right-click LifePlanning -&gt; Add -&gt; Resource...</li>
+		<li>In the Add Resource dialog box, click Bitmap and click New</li>
+		<li>In the Properties window, change the following values:<br>Color: 24 
+		bit<br>Height: 16<br>Width: 64</li>
+		<li>In the Resource View, click IDB_BITMAP2</li>
+		<li>In the Properties window, click ID, type <strong>IDB_TREELIST</strong> 
+		and press Enter</li>
+		<li>Design the bitmap as follows:<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life2.htm" width="403" height="114"></li>
+		<li>Access the LifePlanningSheet.h file and declare a CImageList 
+		variable named m_OutlookImages:
+		<pre>#pragma once
+
+#include "ComputerScience.h"
+#include "InformationTechnology.h"
+#include "History.h"
+#include "CulinaryServices.h"
+#include "Careers.h"
+
+// CLifePlanningSheet
+
+class CLifePlanningSheet : public CMFCPropertySheet
+{
+    DECLARE_DYNAMIC(CLifePlanningSheet)
+
+public:
+    CLifePlanningSheet();
+    virtual ~CLifePlanningSheet();
+
+private:
+    CComputerScience		pgeComputerScience;
+    CInformationTechnology	pgeInformationTechnology;
+    CHistory			pgeHistory;
+    CCulinaryServices		pgeCulinaryServices;
+    CCareers			pgeCareers;
+
+    CImageList m_OutlookImages;
+    <span class="redcode">CImageList m_TreeListImages;</span>
+	
+protected:
+    DECLARE_MESSAGE_MAP()
+};</pre>
+		</li>
+		<li>Access the LifePlanningSheet.cpp file and change it as follows:
+		<pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs); */
+	
+    // 3. Outlook Bar
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    m_OutlookImages.Create(IDB_OUTLOOK, 32, 1, RGB(128, 128, 128));
+    SetIconsList(m_OutlookImages);
+    SetLook(CMFCPropertySheet::PropSheetLook_OutlookBar); */
+	
+    // 4. List
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_List, 150); */
+	
+    // 5. Tree List
+    // Add the icons to the image list
+    <span class="redcode">m_TreeListImages.Create(IDB_TREELIST, 16, 1, RGB(255, 255, 255));</span>
+    // Indicate that the tree list will use icons
+    <span class="redcode">SetIconsList(m_TreeListImages);</span>
+    // Indicate that the property sheet will use a tree list
+    <span class="redcode">SetLook(CMFCPropertySheet::PropSheetLook_Tree, 185);</span>
+    // Create the top node and name it College Majors
+    <span class="redcode">CMFCPropertySheetCategoryInfo * pscCollgeMajors = 
+    		AddTreeCategory(_T("College Majors"), 0, 1);</span>
+    // Under the College Majors node, create a category named Computers Related
+    <span class="redcode">CMFCPropertySheetCategoryInfo * pscComputers = 
+    		AddTreeCategory(_T("Computers Related"), 2, 3, pscCollgeMajors);</span>
+    // Add the pages to the category
+    <span class="redcode">AddPageToTree(pscComputers, &amp;pgeComputerScience);
+    AddPageToTree(pscComputers, &amp;pgeInformationTechnology);</span>
+
+    // Add two categories to the College Majors node
+    <span class="redcode">AddPageToTree(pscCollgeMajors, &amp;pgeHistory);
+    AddPageToTree(pscCollgeMajors, &amp;pgeCulinaryServices);</span>
+
+    // Add a node that doesn't have a parent
+    <span class="redcode">AddPage(&amp;pgeCareers);</span>
+}</pre>
+		</li>
+		<li>To execute, press F5<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life6a.gif" width="652" height="350"><br>
+		&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life6b.gif" width="652" height="350"><br>
+		&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life6c.gif" width="652" height="350"></li>
+		<li>Close the property sheet</li>
+		<li>Close the dialog box and return to your programming environment</li>
+		<li>Change the design of the bitmap as follows:<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/plusminus1.htm" width="404" height="117"></li>
+		<li>Access the LifePlanningSheet.cpp file and change it as follows:
+		<pre>CLifePlanningSheet::CLifePlanningSheet()
+{
+    // 1. Classic property sheet
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    SetLook(CMFCPropertySheet::PropSheetLook_Tabs); */
+	
+    // 2. Microsoft OneNote tabs
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_OneNoteTabs); */
+	
+    // 3. Outlook Bar
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeHistory);
+    AddPage(&amp;pgeCulinaryServices);
+    m_OutlookImages.Create(IDB_OUTLOOK, 32, 1, RGB(128, 128, 128));
+    SetIconsList(m_OutlookImages);
+    SetLook(CMFCPropertySheet::PropSheetLook_OutlookBar); */
+	
+    // 4. List
+/*  AddPage(&amp;pgeComputerScience);
+    AddPage(&amp;pgeInformationTechnology);
+    AddPage(&amp;pgeCulinaryServices);
+    SetLook(CMFCPropertySheet::PropSheetLook_List, 150); */
+	
+    // 5. Tree List
+    // Add the icons to the image list
+    m_TreeListImages.Create(IDB_TREELIST, 16, 1, RGB(255, 255, 255));
+    // Indicate that the tree list will use icons
+    SetIconsList(m_TreeListImages);
+    // Indicate that the property sheet will use a tree list
+    SetLook(CMFCPropertySheet::PropSheetLook_Tree, 185);
+    // Create the top node and name it College Majors
+    CMFCPropertySheetCategoryInfo * pscCollgeMajors = 
+    		AddTreeCategory(_T("College Majors"), 0, 1);
+    // Under the College Majors node, create a category named Computers Related
+    CMFCPropertySheetCategoryInfo * pscComputers = 
+    		AddTreeCategory(_T("Computers Related"), <span class="redcode">0, 1</span>, pscCollgeMajors);
+    // Add the pages to the category
+    AddPageToTree(pscComputers, &amp;pgeComputerScience);
+    AddPageToTree(pscComputers, &amp;pgeInformationTechnology);
+
+    // Add two categories to the College Majors node
+    AddPageToTree(pscCollgeMajors, &amp;pgeHistory);
+    AddPageToTree(pscCollgeMajors, &amp;pgeCulinaryServices);
+
+    // Add a node that doesn't have a parent
+    AddPage(&amp;pgeCareers);
+}</pre>
+		</li>
+		<li>Press F5 to execute<br>&nbsp;<br>
+		<img alt="Career Planning and Life Achievement" src="mfcpspp_files/life7.gif" width="652" height="350"></li>
+		<li>Close the property sheet</li>
+		<li>Close the dialog box and return to your programming environment</li>
+	</ol>
+
+    </td>
+    <td valign="top">
+      <table width="100%" border="0">
+        <tbody><tr>
+          <td width="100%">
+          
+<!-- Casale Media: 336x280, 300x250 (Rectangle) -->
+<script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "6,4";
+CasaleArgs.casaleID = 56757;
+</script>
+<script type="text/javascript" src="mfcpspp_files/casaleJTag.js"></script><div id="CasaleDIV0.8082305487105748" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="mfcpspp_files/j"></script>
+<!-- DO NOT MODIFY -->
+
+          </td>
+        </tr>
+      </tbody></table>&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      &nbsp;
+      <table width="100%" border="0">
+        <tbody><tr>
+          <td width="100%" align="center"><!-- Casale Media: 160x600, 120x600 (Tower) -->
+            <script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "5,3";
+CasaleArgs.casaleID = 56757;
+</script>
+            <script type="text/javascript" src="mfcpspp_files/casaleJTag.js"></script><div id="CasaleDIV0.5617740388765169" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="mfcpspp_files/j_002"></script>
+            <!-- DO NOT MODIFY -->
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+  </center>
+</div>
+
+&nbsp;
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td width="100%" align="center">
+    
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="mfcpspp_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_3" name="aswift_3" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="728" frameborder="0" height="90"></iframe></ins></ins>
+
+    </td>
+  </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td colspan="3">
+      <hr color="#FF0000">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.functionx.com/index.htm">Home</a></td>
+    <td align="center"><a href="http://www.functionx.com/index.htm">Copyright © 2010 FunctionX, Inc.</a></td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <hr color="#FF0000">
+    </td>
+  </tr>
+</tbody></table>
+  </center>
+</div>
+
+<!-- DynamiContext AdLinks  -->
+<script language="JavaScript">
+var dc_UnitID = 14;
+var dc_PublisherID = 2409;
+var dc_AdLinkColor = 'blue';
+var  dc_adprod='ADL';
+</script>
+<script language="JavaScript" src="mfcpspp_files/KonaLibInline.js"></script><script language="JavaScript" src="mfcpspp_files/KonaFlashBase.js"></script><a href="#" target="_top" id="AdLinkLayerClick"></a>
+<span id="konasapn0"><script type="text/javascript" src="mfcpspp_files/KonaGet.txt"></script></span>
+
+<!-- DynamiContext AdLinks  -->
+
+
+
+
+</body></html>

@@ -1,0 +1,20 @@
+konaSafe(function(){
+teUrl='http://te.kontera.com/ContentLink/ContentLink?publisherId=2409&layout=adlinks&sId=676,889,892&cb=1307634347&creative=L&cn=';
+directAdsPrefetch=true;
+setMaxLinksOnPage(6);
+reJsonResponse({"AutoReport":{"rep":"re311.colo8.sjc.kontera.com","stopic":16},"jsABParameters":{"js_audience_targeting":true,"js_comscore_enabled":1,"js_feed_click_delay":true,"js_legolas_enabled":1,"js_one_layer":1,"js_related_enabled":0,"js_related_unit_settings":"disabled"},"konaLat":"0","konaLon":"0","konaPostalCode":"","konaUserGuid":"E4C86326-374B-11E0-BD6B-00163E201183","pageHash":"jp_PPpcaroaetatupprtdstaedabnccignebshjeeeloouplrtoyssmimmscenpfapialairfaftkirocrdzrnsllarpagOOeCssnR","scripts":[{"scriptURL":"http://rt.legolas-media.com/lgrt?ci=2&ti=253&kch=[SUPER_TOPIC]&kst=[SITE_DOMAIN]&ksp=[SEARCH_PHRASE]"},{"postCode":"COMSCORE.beacon({c1:8,c2:\"6036297\",c3:\"12345678\"});","scriptURL":"http://b.scorecardresearch.com/beacon.js"}],"topics":[[676,104,16],[889,136,3],[892,136,3],[65,11,3],[373,57,10],[668,102,16],[183,29,4],[679,104,16],[1774,288,36],[674,104,16],[94,17,4],[1433,253,6],[187,29,4],[2090,348,6],[678,104,16],[2030,348,6],[381,57,10],[2193,29,4],[675,104,16],[377,57,10]]});
+pageTopicVector="";
+addContentLink(800,61737,'Microsoft%20Visual%20C',800,1,"","50081");
+addContentLink(902,458185,'base%20class',902,1,"","50081");
+addContentLink(1018,16374086,'Cancel%20button',1018,1,"","50081");
+addContentLink(1296,458219,'derived%20class',1296,1,"","50081");
+addContentLink(1322,1122440,'MFC',1322,1,"","50081");
+addContentLink(1329,15371061,'Class%20Name',1329,1,"","50081");
+}, "reaction response");
+konaSafe(function(){
+konaTweakMode=621888531;
+konaRequestId="137691479673071690";
+konaPageLoadSendReport=0;
+setKonaResults(1,1,"L|0|0|0|white|none&pRfr=http://www.functionx.com/visualc/dialogboxes/propsheet.htm&dc_aff_id=");
+onKonaReturn(1);
+}, "reaction response");

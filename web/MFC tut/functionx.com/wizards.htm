@@ -1,0 +1,1014 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<meta name="Keywords" content="">
+<meta name="Description" content=".">
+
+<link rel="stylesheet" type="text/css" href="wizards_files/Lessons.css">
+
+<title>Windows Controls: Wizard Pages</title>
+<style type="text/css">
+
+
+.redcode {
+	font-family: "Courier New", Courier, monospace;
+  	color:       red;
+  	font-size:   10pt
+}
+
+</style>
+<script src="wizards_files/beacon.js" type="text/javascript"></script><script src="wizards_files/lgrt" type="text/javascript"></script></head>
+
+<body>
+
+<div align="center">
+  <center>
+
+<table width="900" border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <td width="738" align="center">
+    
+<!-- Casale Media: 728x90 (Banner) -->
+<script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "2";
+CasaleArgs.casaleID = 56757;
+</script>
+<script type="text/javascript" src="wizards_files/casaleJTag.js"></script><div id="CasaleDIV0.9635142205057382" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="wizards_files/j_002"></script><iframe src="wizards_files/index.htm" marginwidth="0" marginheight="0" scrolling="no" width="728" frameborder="0" height="90"></iframe>
+<!-- DO NOT MODIFY -->
+
+    </td>
+  </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+&nbsp;
+<div align="center">
+  <center>
+  <table width="900" border="0">
+    <tbody><tr>
+      <td rowspan="2" valign="top" width="680">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td valign="middle" width="10%" align="center"><a href="http://www.functionx.com/visualc/index.htm"><img src="wizards_files/ftxlogo2.gif" alt="Home" width="51" border="0" height="60"></a></td>
+    <td width="90%">
+      <p class="maintitle">Wizard Pages</p></td>
+  </tr>
+  <tr>
+    <td colspan="2" width="100%" bgcolor="#CC3300" height="2"></td>
+  </tr>
+</tbody></table>
+
+<span name="KonaBody">
+
+&nbsp;<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Introdution</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+&nbsp;<table width="100%" border="0">
+  <tbody><tr>
+    <td>
+          
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 160;
+google_ad_height = 90;
+google_ad_format = "160x90_0ads_al";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "800000";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "0000ff";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="wizards_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="160" frameborder="0" height="90"></iframe></ins></ins>
+
+    </td>
+    <td>
+
+	<p class="parajust">A wizard is a series of dialog boxes that are accessed 
+	consecutively. A wizard can consist of two or more pages. When it starts, it 
+	presents the starting or first page and it usually displays two or more 
+	buttons. One of the buttons may be disabled and display a caption as Back. 
+	Here is an example from Microsoft Access:</p>
+
+    </td>
+  </tr>
+</tbody></table>
+
+	  <p class="pcenter">
+	  <img alt="Wizard Pages" src="wizards_files/wizard1.gif" width="486" height="360"></p>
+	  <p class="parajust">To exploit it, the user would click a Next or Back 
+	  buttons. The Next button allows the user to access the page that succeeds 
+	  the current one. The Back button implements the opposite, allowing the 
+	  user to access the previous page. </p>
+	  <p class="parajust">When on the first page, after making a selection, the 
+	  user can click Next. This would enable the Back button. The wizard should 
+	  have another button labeled Next. After making a selection on a page, the 
+	  user can click Next. Most of the time, a wizard also has a button labeled 
+	  Finish:</p>
+	  <p class="pcenter">
+	  <img alt="Wizard Pages" src="wizards_files/wizard2.gif" width="486" height="360"></p>
+	  <p class="parajust">In this case, at any time, the user can click the 
+	  Finish. In some cases, a wizard has only two buttons with captions as Back 
+	  and Next. When in the first page, the left button is disabled. When the 
+	  user gets to the last button, the right <a id="KonaLink0" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important; position: static; border-bottom: 1px solid blue; background-color: transparent;">button </span><span class="kLink" style="color: blue ! important; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important; position: static; border-bottom: 1px solid blue; background-color: transparent;">changes</span></font></a> from Next to 
+	  Finish.</p>
+	  <p class="parajust">By default, a wizard has at least two buttons labeled 
+	  Back and Next. As mentioned already, when the user gets to the last page, 
+	  the Next button becomes Finish. In some cases, such as described for the 
+	  above wizard in Microsoft Access, the Finish button is separate. When the 
+	  user gets to the last page, the Next button becomes disabled:</p>
+	  <p class="pcenter">
+	  <img alt="Wizard Pages" src="wizards_files/wizard3.gif" width="486" height="360"></p>
+	  <p class="parajust">A wizard can also be equipped with a Cancel button. If 
+	  the wizard is equipped with a Cancel button, the user can close and 
+	  dismiss it at any time. This, by default allows you to ignore anything the 
+	  user did on the wizard. Another wizard may have a <a id="KonaLink1" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">Help </span><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">button</span></font></a>.</p>
+	  <p class="parajust">All this descrption is left up to you to decide what 
+	  buttons to display on your wizard, what to do with <a id="KonaLink2" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">the </span><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">buttons</span></font></a>, why, and 
+	  when. All options are possible and usually easy to configure.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="wizards_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Introducing Wizards</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>To create a new <a id="KonaLink3" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">application</span></font></a>, on the main menu, click File -&gt; New 
+		  Project...</li>
+		  <li>In the left list, click Visual C++. In the right list, click MFC 
+		  Application</li>
+		  <li>Change the Name to <strong>AutoRepair1</strong></li>
+		  <li>Click OK</li>
+		  <li>In the first page of the wizard, click Next</li>
+		  <li>In the second page of the wizard, click Dialog Based<br>&nbsp;<br>
+		  <img alt="MFC Application Wizard" src="wizards_files/mfcaw1.gif" width="615" height="517"></li>
+		  <li>Click Next</li>
+		  <li>In the third page, click About Box to remove its check mark and 
+		  click Next</li>
+		  <li>In the fourth page of the wizard, click Next</li>
+		  <li>In the fifth page of the wizard and in the General Classes list, 
+		  click CAutoRepairDlg</li>
+		  <li>In the Class Name, change the name of the class to <strong>
+		  CCustomerInformationDlg</strong></li>
+		  <li>Change the .h File to <strong>CustomerInformationDlg.h</strong></li>
+		  <li>Change the .cpp File to <strong>CustomerInformationDlg.cpp</strong><br>
+		  &nbsp;<br>
+		  <img alt="MFC Application Wizard" src="wizards_files/mfcaw2.gif" width="615" height="517"></li>
+		  <li>Click Finish</li>
+		  <li>On the dialog box, click the TODO line and press Delete</li>
+		  <li>While the OK button is selected, press Delete</li>
+		  <li>Also delete the Cancel button</li>
+		  <li>In the Toolbox, click Button and click the body of the dialog box</li>
+	  </ol>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="subtitle">Creating a Wizard</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#0000FF" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <p class="parajust">As seen with the property sheet, there are a few steps 
+	  you must follow to create a wizard. The steps are primarily the same as 
+	  those of a property sheet. Start by creating a dialog box for each wizard 
+	  page. When designing a page, set the size you want. If your wizard will 
+	  have more than one page (it is possible but not practical to have a wizard 
+	  with only one page), the width of the largest dialog box will be applied 
+	  to the other page(s). The height of the tallest dialog box will be used 
+	  for all pages.</p>
+	  <p class="parajust">After designing a page, create a class for it. For the 
+	  base class, select <strong>CPropertyPage</strong>. After creating the 
+	  pages and their classes, derive a class from <strong>CPropertySheet</strong>. 
+	  In a constructor of the <strong>CPropertySheet</strong>-based class, add 
+	  each page.</p>
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		  <tbody><tr>
+			  <td width="100%">
+			  <p class="exotitle">
+			  <img alt="Practical Learning" src="wizards_files/practical1.gif" width="21" border="0" height="20">Practical 
+			  Learning: Creating Wizard Pages</p>
+			  </td>
+		  </tr>
+		  <tr>
+			  <td width="100%" bgcolor="#CC3300" height="1"></td>
+		  </tr>
+	  </tbody></table>
+	  <ol>
+		  <li>In the main window, click the body of the dialog box</li>
+		  <li>In the Properties window, change the ID to <strong>
+		  IDD_CUSTOMERINFO_DLG</strong></li>
+		  <li>&nbsp;In the Solution Explorer, expand the project and the Header Files 
+		  node. Double-click CustomerInformationDlg.h</li>
+		  <li>Change the document as follows:
+		  <pre>// CustomerInformationDlg.h : header file
+//
+#pragma once
+
+// CCustomerInformationDlg dialog
+class CCustomerInformationDlg : public <span class="redcode">CPropertyPage</span>
+{
+// Construction
+public:
+	CCustomerInformationDlg(CWnd* pParent = NULL); // standard constructor
+
+// Dialog Data
+	enum { IDD = <span class="redcode">IDD_CUSTOMERINFO_DLG</span> };
+
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX); // DDX/DDV support
+
+// Implementation
+protected:
+	HICON m_hIcon;
+
+	// Generated message map functions
+	virtual BOOL OnInitDialog();
+	afx_msg void OnPaint();
+	afx_msg HCURSOR OnQueryDragIcon();
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>Access the CustomerInformationDlg.cpp file and change it as 
+		  follows:
+		  <pre class="sectover">// CustomerInformationDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "AutoRepair1.h"
+#include "CustomerInformationDlg.h"
+#include "afxdialogex.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+// CCustomerInformationDlg dialog
+
+CCustomerInformationDlg::CCustomerInformationDlg(CWnd* pParent /*=NULL*/)
+	: <span class="redcode">CPropertyPage</span>(CCustomerInformationDlg::IDD)
+{
+	m_hIcon = AfxGetApp()-&gt;LoadIcon(IDR_MAINFRAME);
+}
+
+void CCustomerInformationDlg::DoDataExchange(CDataExchange* pDX)
+{
+	<span class="redcode">CPropertyPage</span>::DoDataExchange(pDX);
+}
+
+BEGIN_MESSAGE_MAP(CCustomerInformationDlg, <span class="redcode">CPropertyPage</span>)
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+END_MESSAGE_MAP()
+
+
+// CCustomerInformationDlg message handlers
+
+BOOL CCustomerInformationDlg::OnInitDialog()
+{
+	<span class="redcode">CPropertyPage</span>::OnInitDialog();
+
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+
+	// TODO: Add extra initialization here
+
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+// If you add a minimize button to your dialog, you will need the code below
+//  to draw the icon.  For MFC applications using the document/view model,
+//  this is automatically done for you by the framework.
+
+void CCustomerInformationDlg::OnPaint()
+{
+    if (IsIconic())
+    {
+	CPaintDC dc(this); // device context for painting
+
+	SendMessage(WM_ICONERASEBKGND, 
+		    reinterpret_cast&lt;WPARAM&gt;(dc.GetSafeHdc()), 0);
+
+	// Center icon in client rectangle
+	int cxIcon = GetSystemMetrics(SM_CXICON);
+	int cyIcon = GetSystemMetrics(SM_CYICON);
+	CRect rect;
+	GetClientRect(&amp;rect);
+	int x = (rect.Width() - cxIcon + 1) / 2;
+	int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+	}
+	else
+	{
+		<span class="redcode">CPropertyPage</span>::OnPaint();
+	}
+}
+
+HCURSOR CCustomerInformationDlg::OnQueryDragIcon()
+{
+	return static_cast&lt;HCURSOR&gt;(m_hIcon);
+}</pre>
+		  </li>
+		  <li>Display the dialog box of the project</li>
+		  <li>Click the OK button and press Delete</li>
+		  <li>Click the Cancel button and press Delete</li>
+		  <li>In the Properties window, change the following characteristics of 
+		  the dialog box:<br>Border: Thin<br>Caption: <strong>Customer 
+		  Information</strong><br>Disabled: True<br>Style: Child</li>
+		  <li>If the Resource View is not visible, on the main menu, click View 
+		  -&gt; Other Windows -&gt; Resource View.<br>In the Resource View, expand the 
+		  name of the project. Expand AutoRepair1.rc. Expand Dialog.<br>
+		  Right-click Dialog and click Insert Dialog</li>
+		  <li>On the new dialog box, click OK and press Delete</li>
+		  <li>As the <a id="KonaLink4" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">Cancel </span><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">button</span></font></a> is selected, press Delete</li>
+		  <li>In the Properties window, change the following characteristics of 
+		  the dialog box:<br>Border: Thin<br>Caption: <strong>Job 
+		  Performed/Parts Used</strong><br>Disabled: True<br>ID: <strong>
+		  IDD_JOBSANDPARTS_DLG</strong><br>Style: Child</li>
+		  <li>In the Toolbox, click Combo Box and click the body of the dialog 
+		  box</li>
+		  <li>To create a class for the dialog box, right-click the body of the 
+		  dialog box and click Add Class...</li>
+		  <li>Set the Class Name to <strong>CJobsAndPartsDlg</strong></li>
+		  <li>Set the Base Class to CPropertyPage<br>&nbsp;<br>
+		  <img alt="MFC Add Class Wizard" src="wizards_files/macw2.gif" width="615" height="517"></li>
+		  <li>Click Finish</li>
+		  <li>To create a new property page, in the Resource View, right-click 
+		  Dialog and click Add Resource...</li>
+		  <li>In the Add <a id="KonaLink5" class="kLink" style="text-decoration: underline ! important; position: static; font-family: inherit ! important; font-weight: inherit ! important; font-size: inherit ! important;" href="#"><font style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;" color="blue"><span class="kLink" style="color: blue !important; font-family:inherit !important;font-weight:inherit !important;font-size:inherit !important;position:static;">Resource</span></font></a> dialog box, expand Dialog and click 
+		  IDD_PROPPAGE_LARGE</li>
+		  <li>Click New</li>
+		  <li>In the Properties window, change the following characteristics:<br>
+		  Caption: <strong>Repair Summary</strong><br>ID: <strong>
+		  IDD_REPAIRSUMMARY_DLG</strong></li>
+		  <li>In the Toolbox, click Month Calendar Control and click the body of 
+		  the dialog box</li>
+		  <li>Right-click the body of the dialog box and click Add Class...</li>
+		  <li>Set the Class Name to <strong>CRepairSummaryDlg</strong></li>
+		  <li>Set the Base Class to CPropertyPage</li>
+		  <li>Click Finish</li>
+		  <li>To create a new class, on the main menu, click Project -&gt; Add 
+		  Class...</li>
+		  <li>Click MFC Class and click Add</li>
+		  <li>Set the Class Name to <strong>CRepairOrderSheet</strong></li>
+		  <li>Set the Base Class to CPropertySheet<br>&nbsp;<br>
+		  <img alt="MFC Add Class Wizard" src="wizards_files/macw3.gif" width="615" height="517"></li>
+		  <li>Click Finish</li>
+		  <li>Change the RepairOrderSheet.h document as follows:
+		  <pre>#pragma once
+
+<span class="redcode">#include "CustomerInformationDlg.h"
+#include "JobsAndPartsDlg.h"
+#include "RepairSummaryDlg.h"</span>
+
+// CRepairOrderSheet
+
+class CRepairOrderSheet : public CPropertySheet
+{
+	DECLARE_DYNAMIC(CRepairOrderSheet)
+
+public:
+	CRepairOrderSheet(UINT nIDCaption, 
+		 	  CWnd* pParentWnd = NULL,
+			  UINT iSelectPage = 0);
+	CRepairOrderSheet(LPCTSTR pszCaption,
+			  CWnd* pParentWnd = NULL,
+			  UINT iSelectPage = 0);
+	virtual ~CRepairOrderSheet();
+
+private:
+	<span class="redcode">CCustomerInformationDlg dlgCustomerInformation;
+	CJobsAndPartsDlg dlgJobsAndParts;
+	CRepairSummaryDlg dlgRepairSummary;</span>
+
+protected:
+	DECLARE_MESSAGE_MAP()
+};</pre>
+		  </li>
+		  <li>Access the RepairOrderSheet.dpp file and change the constructor 
+		  that takes a string as its first argument as follows:
+		  <pre>CRepairOrderSheet::CRepairOrderSheet(LPCTSTR pszCaption,
+		  		     CWnd* pParentWnd, UINT iSelectPage)
+	:CPropertySheet(pszCaption, pParentWnd, iSelectPage)
+{
+	<span class="redcode">this-&gt;AddPage(&amp;dlgCustomerInformation);
+	this-&gt;AddPage(&amp;dlgJobsAndParts);
+	this-&gt;AddPage(&amp;dlgRepairSummary);</span>
+}</pre>
+		  </li>
+	  </ol>
+
+</span>
+
+      </td>
+      <td>
+   
+<table width="100%" border="0">
+  <tbody><tr>
+    <td width="100%">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript" src="wizards_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="300" frameborder="0" height="250"></iframe></ins></ins>
+
+    </td>
+  </tr>
+</tbody></table>
+
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+   
+&nbsp;
+        <table width="100%" border="0">
+          <tbody><tr>
+            <td width="100%">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = "FFFFFF";
+google_color_link = "0000FF";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<script type="text/javascript" src="wizards_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="160" frameborder="0" height="600"></iframe></ins></ins>
+
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" border="0">
+          <tbody><tr>
+            <td width="100%"></td>
+          </tr>
+        </tbody></table>
+
+&nbsp;
+
+      </td>
+    </tr>
+  </tbody></table>
+  </center>
+</div>
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td rowspan="2" width="680">
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="subtitle">Setting the Wizard Mode</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#0000FF" height="1"></td>
+		</tr>
+	</tbody></table>
+	<p class="parajust">The big difference between a property sheet and a wizard 
+	is that, before showing the dialog box, you must call the <strong>
+	SetWizardMode()</strong> member function of the <strong>CPropertySheet</strong> 
+	class. Its syntax is:</p>
+	<pre>void SetWizardMode();</pre>
+	<p class="parajust">As you can see, this member function takes no argument. 
+	It simply informs the compiler that, instead of a property sheet, you want 
+	to create a wizard. The real question is, where do you call this member 
+	function? That's because you have various options. The secret is to call 
+	before displaying the pages; that is, before calling <strong>
+	CDialog::DoModal()</strong>. You can call CPropertySheet::SetWizardMode() in 
+	the same constructore where you add the pages, or you can call it just 
+	before calling <strong>CDialog::DoModal()</strong>.</p>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="exotitle">
+			<img alt="Practical Learning" src="wizards_files/practical1.gif" width="21" border="0" height="20">Practical 
+			Learning: Calling a Wizard</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#CC3300" height="1"></td>
+		</tr>
+	</tbody></table>
+	<ol>
+		<li>In the Solution Explorer, double-click AutoRepair1.cpp and change it 
+		as follows:
+		<pre>// AutoRepair1.cpp : Defines the class behaviors for the application.
+//
+
+#include "stdafx.h"
+#include "AutoRepair1.h"
+#include "CustomerInformationDlg.h"
+<span class="redcode">#include "RepairOrderSheet.h"</span>
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+
+// CAutoRepair1App
+
+BEGIN_MESSAGE_MAP(CAutoRepair1App, CWinApp)
+	ON_COMMAND(ID_HELP, &amp;CWinApp::OnHelp)
+END_MESSAGE_MAP()
+
+
+// CAutoRepair1App construction
+
+CAutoRepair1App::CAutoRepair1App()
+{
+	// support Restart Manager
+	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
+
+	// TODO: add construction code here,
+	// Place all significant initialization in InitInstance
+}
+
+
+// The one and only CAutoRepair1App object
+
+CAutoRepair1App theApp;
+
+
+// CAutoRepair1App initialization
+
+BOOL CAutoRepair1App::InitInstance()
+{
+	// InitCommonControlsEx() is required on Windows XP if an application
+	// manifest specifies use of ComCtl32.dll version 6 or later to enable
+	// visual styles.  Otherwise, any window creation will fail.
+	INITCOMMONCONTROLSEX InitCtrls;
+	InitCtrls.dwSize = sizeof(InitCtrls);
+	// Set this to include all the common control classes you want to use
+	// in your application.
+	InitCtrls.dwICC = ICC_WIN95_CLASSES;
+	InitCommonControlsEx(&amp;InitCtrls);
+
+	CWinApp::InitInstance();
+
+	AfxEnableControlContainer();
+
+	// Create the shell manager, in case the dialog contains
+	// any shell tree view or shell list view controls.
+	CShellManager *pShellManager = new CShellManager;
+
+	// Standard initialization
+	// If you are not using these features and wish to reduce the size
+	// of your final executable, you should remove from the following
+	// the specific initialization routines you do not need
+	// Change the registry key under which our settings are stored
+	// TODO: You should modify this string to be something appropriate
+	// such as the name of your company or organization
+	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
+
+	// CCustomerInformationDlg dlg;
+	<span class="redcode">CRepairOrderSheet dlg(L"College Park Auto Repair");</span>
+	m_pMainWnd = &amp;dlg;
+	<span class="redcode">dlg.SetWizardMode();</span>
+
+	INT_PTR nResponse = dlg.DoModal();
+	if (nResponse == IDOK)
+	{
+		// TODO: Place code here to handle when the dialog is
+		//  dismissed with OK
+	}
+	else if (nResponse == IDCANCEL)
+	{
+		// TODO: Place code here to handle when the dialog is
+		//  dismissed with Cancel
+	}
+
+	// Delete the shell manager created above.
+	if (pShellManager != NULL)
+	{
+		delete pShellManager;
+	}
+
+	// Since the dialog has been closed, return FALSE so that we exit the
+	//  application, rather than start the application's message pump.
+	return FALSE;
+}</pre>
+		</li>
+		<li>To execute the project, press F5<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard4a.gif" width="441" height="306"></li>
+		<li>Notice that the Back button is enabled.<br>Click Next<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard4b.gif" width="441" height="306"></li>
+		<li>Click Next again<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard4c.gif" width="441" height="306"></li>
+		<li>Notice that there is no Finish button although you are on the last 
+		page.<br>Close the dialog box and return to your programming environment</li>
+	</ol>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="subtitle">Configuring the Default Buttons of a Wizard</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#0000FF" height="1"></td>
+		</tr>
+	</tbody></table>
+	<p class="parajust">By default, after creating a regular wizard, it is 
+	equipped with three buttons: Back, Next, and Cancel. If you select the 
+	option to add help in the MFC Application, the wizard would also be equipped 
+	with a Help button. You can manage the buttons and you have many options.</p>
+	<p class="parajust">As with anything else in the world or programming, you 
+	should make your wizard intuitive and friendly. For example, on the first 
+	page, since there is no reason for the user to access the previous page, you 
+	can disable the Back button. On the other hand, when the user gets to the 
+	last page, since there is no succeeding page, there is no need for a Next 
+	button. Consequently, you should replace it with a Finish button. 
+	Fortunately, the display of these buttons is probably the easiest thing to 
+	manage on a wizard.</p>
+	<p class="parajust">In order to decide what button(s) should be available 
+	when a particular page is accessed, generate its <strong>
+	CPropertyPage::OnSetActive()</strong> event. Its syntax is:</p>
+	<pre>virtual BOOL OnSetActive( );</pre>
+	<p class="parajust">This event fires when a page of your choice is accessed, 
+	allowing you to do what you want on the wizard page. One of the actions you 
+	can take when a page displays is to decide what button(s) should be 
+	displayed on the wizard. The buttons of a wizard are managed through the
+	<strong>CPropertySheet::SetWizardButtons()</strong> member function. Its 
+	syntax is:</p>
+	<pre>void SetWizardButtons(DWORD <em>dwFlags</em>);</pre>
+	<p class="parajust">The <em>dwFlags</em> argument is a constant or a 
+	combination of values that defines the buttons to display. The possible 
+	values are:</p>
+	<ul>
+		<li><strong>PSWIZB_BACK</strong> for the Back button</li>
+		<li><strong>PSWIZB_NEXT</strong> for the Next button</li>
+		<li><strong>PSWIZB_FINISH</strong> for the Finish button</li>
+		<li><strong>PSWIZB_DISABLEDFINISH</strong> to disable the Finish button</li>
+	</ul>
+	<p class="parajust">On the first page, to display the Next button while 
+	disabling the Back button, you can pass only the <strong>PSWIZB_NEXT</strong> 
+	value. On the last page, you should display the Back and the Finish buttons. 
+	All pages between the first and the last should display the Back and the 
+	Next buttons, unless you have a reason to do otherwise.</p>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="subtitle">Adding the Default Buttons of a Wizard</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#0000FF" height="1"></td>
+		</tr>
+	</tbody></table>
+	<p class="parajust">To add your own button to the wizard, you can use the 
+	features of the <strong>CWnd</strong> class. Here is an example:</p>
+	<pre>CmyWizardSheet::OnInitDialog()
+{
+    BOOL bResult = CPropertySheet::OnInitDialog();
+
+    CButton *btnWhatever = new CButton;
+
+    btnWhatever-&gt;Create(L"Whatever", WS_CHILD | WS_VISIBLE,
+		        CRect(10, 362, 126, 385), this, 0x122);
+
+    Return bResult;
+}</pre>
+	<p class="parajust">When the user clicks the Back button, the <strong>
+	CPropertyPage::OnWizardBack()</strong> event fires, giving you the 
+	opportunity to do what you judge necessary. Its syntax is:</p>
+	<pre>virtual LRESULT OnWizardBack();</pre>
+	<p class="parajust">You should use this event on a page that has the Back 
+	button and if this button is enabled. When the user clicks the Next button, 
+	the <strong>CPropertyPage::OnWizardNext()</strong> event fires, allowing you 
+	to take appropriate measures. Its syntax is:</p>
+	<pre>virtual LRESULT OnWizardNext();</pre>
+	<p class="parajust">You should use this event on a page that has the Next 
+	button. When the user clicks the Finish button, the <strong>
+	CPropertyPage::OnWizardFinish()</strong> event fires. Its syntax is:</p>
+	<pre>virtual BOOL OnWizardFinish( );</pre>
+	<p class="parajust">This event should be implement when either the user is 
+	on the last page that has the Finish button or at any time if the wizard has 
+	a permanent Finish button available on all pages.<br></p>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td width="100%">
+			<p class="exotitle">
+			<img alt="Practical Learning" src="wizards_files/practical1.gif" width="21" border="0" height="20">Practical 
+			Learning: Implementing Wizard Buttons</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" bgcolor="#CC3300" height="1"></td>
+		</tr>
+	</tbody></table>
+	<ol>
+		<li>On the main menu, click Project -&gt; Class Wizard...</li>
+		<li>In the Class Name combo box, make sure that CCustomerInformationDlg 
+		is selected (or select it).<br>Click the Virtual Funtions tab</li>
+		<li>In the Virtual Functions list, double-click OnSetActive<br>&nbsp;<br>
+		<img alt="MFC Class Wizard" src="wizards_files/mcw5.gif" width="706" height="600"></li>
+		<li>Click Edit Code</li>
+		<li>Change the file as follows:
+		<pre class="sectover">// CustomerInformationDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "AutoRepair1.h"
+#include "CustomerInformationDlg.h"
+#include "afxdialogex.h"
+<span class="redcode">#include "RepairOrderSheet.h"</span>
+
+<em>. . . No Change</em>
+
+BOOL CCustomerInformationDlg::OnSetActive()
+{
+    // TODO: Add your specialized code here and/or call the base class
+    <span class="redcode">CRepairOrderSheet *ros = reinterpret_cast&lt;CRepairOrderSheet *&gt;(GetParent());
+
+    ros-&gt;SetWizardButtons(PSWIZB_NEXT);</span>
+
+    return CPropertyPage::OnSetActive();
+}</pre>
+		</li>
+		<li>Press F5 to execute<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard4d.gif" width="441" height="306"></li>
+		<li>Notice that the Back button is now disabled.<br>Close the dialog box 
+		and return to your programming environment</li>
+		<li>On the main menu, click Project -&gt; Class Wizard...</li>
+		<li>In the Class Name combo box, select CRepairSummaryDlg</li>
+		<li>Click the Virtual Funtions tab</li>
+		<li>In the Virtual Functions list, double-click OnSetActive</li>
+		<li>In the Class Name combo box, select CJobsAndPartsDlg</li>
+		<li>In the Virtual Functions list, double-click OnSetActive</li>
+		<li>Click Edit Code</li>
+		<li>Change the file as follows:
+		<pre class="sectover">// JobsAndPartsDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "AutoRepair1.h"
+#include "JobsAndPartsDlg.h"
+#include "afxdialogex.h"
+<span class="redcode">#include "RepairOrderSheet.h"</span>
+
+<em>. . . No Change</em>
+
+BOOL CJobsAndPartsDlg::OnSetActive()
+{
+    // TODO: Add your specialized code here and/or call the base class
+    <span class="redcode">CRepairOrderSheet *ros = reinterpret_cast&lt;CRepairOrderSheet *&gt;(GetParent());
+
+    ros-&gt;SetWizardButtons(PSWIZB_BACK | PSWIZB_NEXT);</span>
+
+    return CPropertyPage::OnSetActive();
+}</pre>
+		</li>
+		<li>Access the RepairSummaryDlg.cpp file</li>
+		<li>Change the file as follows:
+		<pre>// RepairSummaryDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "AutoRepair1.h"
+#include "RepairSummaryDlg.h"
+#include "afxdialogex.h"
+<span class="redcode">#include "RepairOrderSheet.h"</span>
+
+<em>. . . No Change</em>
+
+BOOL CRepairSummaryDlg::OnSetActive()
+{
+    // TODO: Add your specialized code here and/or call the base class
+    <span class="redcode">CRepairOrderSheet *ros = reinterpret_cast&lt;CRepairOrderSheet *&gt;(GetParent());
+
+    ros-&gt;SetWizardButtons(PSWIZB_BACK | PSWIZB_FINISH);</span>
+
+    return CPropertyPage::OnSetActive();
+}</pre>
+		</li>
+		<li>To test the application, press F9<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard4e.gif" width="441" height="306"></li>
+		<li>Close the dialog box and return to your programming environment</li>
+		<li>Access the RepairSummaryDlg.cpp file and delete <strong>| 
+		PSWIZB_FINISH</strong> from the code you wrote:
+		<pre>OOL CRepairSummaryDlg::OnSetActive()
+{
+	// TODO: Add your specialized code here and/or call the base class
+	CRepairOrderSheet *ros = reinterpret_cast&lt;CRepairOrderSheet *&gt;(GetParent());
+
+	<span class="redcode">ros-&gt;SetWizardButtons(PSWIZB_BACK);</span>
+
+	return CPropertyPage::OnSetActive();
+}</pre>
+		</li>
+		<li>On the main menu, click Project -&gt; Class Wizard...</li>
+		<li>In the Class Name combo box, select CRepairOderSheet and click the 
+		Virtual Functions tab</li>
+		<li>In the Virtual Functions list, double-click OnInitDialog</li>
+		<li>Click Edit Code</li>
+		<li>Change the file as follows:
+		<pre>BOOL CRepairOrderSheet::OnInitDialog()
+{
+	BOOL bResult = CPropertySheet::OnInitDialog();
+
+	// TODO:  Add your specialized code here
+	CButton *btnFinish;
+
+	btnFinish = reinterpret_cast&lt;CButton *&gt;(GetDlgItem(IDCANCEL));
+	btnFinish-&gt;SetWindowText(L"Finish");
+
+	CButton *btnClose;
+
+	btnClose = reinterpret_cast&lt;CButton *&gt;(GetDlgItem(IDHELP));
+	btnClose-&gt;SetWindowText(L"Close");
+
+	return bResult;
+}</pre>
+		</li>
+		<li>On the main menu, click Project -&gt; Class Wizard...</li>
+		<li>In the Class Name combo box, make sure CRepairOrderSheet is selected 
+		and click the Commands tab.<br>In the Object IDs list, double-click 
+		IDCANCEL</li>
+		<li>Change the Member Function Name to <strong>OnFinishRepairOrder</strong></li>
+		<li>Click OK</li>
+		<li>In the Object IDs list, double-click IDHELP</li>
+		<li>Change the Member Function Name to <strong>OnCloseRepairOrder</strong></li>
+		<li>Click OK</li>
+		<li>Click Edit Code</li>
+		<li>Implement the events as follows:
+		<pre>void CRepairOrderSheet::OnFinishRepairOrder()
+{
+    // TODO: Add your command handler code here
+    <span class="redcode">AfxMessageBox(L"The Finish button of the wizard was clicked.");</span>
+}
+
+void CRepairOrderSheet::OnCloseRepairOrder()
+{
+    // TODO: Add your command handler code here
+    <span class="redcode">AfxMessageBox(L"The repair order will be closed!");
+	PostQuitMessage(0);</span>
+}</pre>
+		</li>
+		<li>To execute, press F9<br>&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard5a.gif" width="441" height="306"><br>
+		&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard5b.gif" width="441" height="306"><br>
+		&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard5c.gif" width="441" height="306"><br>
+		&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard5d.gif" width="444" height="460"><br>
+		&nbsp;<br>
+		<img alt="Wizard" src="wizards_files/wizard5e.gif" width="444" height="455"></li>
+		<li>Close the dialog box and return to your programming environment</li>
+	</ol>
+
+    </td>
+    <td valign="top">
+      <table width="100%" border="0">
+        <tbody><tr>
+          <td width="100%">
+          
+<!-- Casale Media: 336x280, 300x250 (Rectangle) -->
+<script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "6,4";
+CasaleArgs.casaleID = 56757;
+</script>
+<script type="text/javascript" src="wizards_files/casaleJTag.js"></script><div id="CasaleDIV0.22149742845150122" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="wizards_files/j"></script><iframe src="wizards_files/index_002.htm" marginwidth="0" marginheight="0" scrolling="no" width="336" frameborder="0" height="280"></iframe>
+<!-- DO NOT MODIFY -->
+
+          </td>
+        </tr>
+      </tbody></table>&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      &nbsp;
+      <table width="100%" border="0">
+        <tbody><tr>
+          <td width="100%" align="center"><!-- Casale Media: 160x600, 120x600 (Tower) -->
+            <script type="text/javascript">
+var CasaleArgs = new Object();
+CasaleArgs.version = 2;
+CasaleArgs.adUnits = "5,3";
+CasaleArgs.casaleID = 56757;
+</script>
+            <script type="text/javascript" src="wizards_files/casaleJTag.js"></script><div id="CasaleDIV0.05120238986294379" style="width:0; height:0;position:absolute;"></div><script type="text/javascript" src="wizards_files/j_003"></script><iframe id="cmif3-3402628315" src="wizards_files/a.htm" marginwidth="0" marginheight="0" allowtransparency="true" onload="var if1 = document.getElementById('cmif3-3402628315'); if (if1.src == 'http://cdn.optmd.com/blank.html') {if1.src='http://ad.doubleclick.net/adi/N4864.OHANANetwork/B5132684.246;sz=120x600;click0=http://c.casalemedia.com/c/3/1/85080/;ord=3213984154';}" scrolling="no" width="120" frameborder="0" height="600"></iframe>
+            <!-- DO NOT MODIFY -->
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+  </center>
+</div>
+
+&nbsp;
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td width="100%" align="center">
+    
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="wizards_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_3" name="aswift_3" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="728" frameborder="0" height="90"></iframe></ins></ins>
+
+    </td>
+  </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+&nbsp;
+
+<div align="center">
+  <center>
+<table width="900" border="0">
+  <tbody><tr>
+    <td colspan="3">
+      <hr color="#FF0000">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.functionx.com/visualc/index.htm">Home</a></td>
+    <td align="center"><a href="http://www.functionx.com/visualc/index.htm">Copyright © 2010 FunctionX, Inc.</a></td>
+    <td align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <hr color="#FF0000">
+    </td>
+  </tr>
+</tbody></table>
+  </center>
+</div>
+
+<!-- DynamiContext AdLinks  -->
+<script language="JavaScript">
+var dc_UnitID = 14;
+var dc_PublisherID = 2409;
+var dc_AdLinkColor = 'blue';
+var  dc_adprod='ADL';
+</script>
+<script language="JavaScript" src="wizards_files/KonaLibInline.js"></script><script language="JavaScript" src="wizards_files/KonaFlashBase.js"></script><a href="#" target="_top" id="AdLinkLayerClick"></a>
+<span id="konasapn0"><script type="text/javascript" src="wizards_files/KonaGet_002.txt"></script><script src="wizards_files/KonaSend_004.txt" type="text/javascript"></script><script src="wizards_files/KonaSend_003.txt" type="text/javascript"></script><script src="wizards_files/KonaSend.txt" type="text/javascript"></script><script src="wizards_files/KonaSend_002.txt" type="text/javascript"></script><script src="wizards_files/KonaGet.txt" type="text/javascript"></script><script src="wizards_files/ContentLink.htm" id="sendTeRequestTag" type="text/javascript"></script></span>
+
+<!-- DynamiContext AdLinks  -->
+
+
+
+
+<div style="position: fixed; top: 5px; left: 3px; width: 1px; height: 1px; overflow: hidden;" id="kona_flash_preloader_wrapper"><object style="visibility: visible; width: 1px; height: 1px;" id="kona_flash_preloader" data="wizards_files/konalayer.swf" type="application/x-shockwave-flash" width="100" height="100"><param value="transparent" name="wmode"><param value="always" name="allowScriptAccess"><param value="konaSuffix=?00000000380_16_08_2009&amp;layerId=-1&amp;enablePreloader=0" name="flashvars"></object></div><style></style><span style="position: absolute; z-index: 2147482647; left: 387px; top: 1209px; display: none;" id="preLoadLayer0"><img style="border: medium none; width: 22px; height: 22px;" src="wizards_files/grey_loader.gif" class="preloadImg"></span></body></html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Jaap's Puzzle Page</title>
+<link rel="stylesheet" type="text/css" href="Jaap%27s%20Puzzle%20Page_files/jaap.css">
+<link rel="shortcut icon" href="http://www.jaapsch.net/puzzles/images/buttons/favicon.ico">
+<style type="text/css">
+div.scriptavail{
+  float:left;
+  text-align: left;
+  font-size: 65%;
+}
+div.prevcontrol{
+  float:right;
+  text-align: left;
+  font-size: 65%;
+}
+
+</style>
+<meta name="Author" content="Jaap Scherphuis">
+<meta name="Description" content="This site has solutions to over 200
+puzzles like the Rubiks Cube, Pyraminx, Square One, and many other moving
+piece puzzles.">
+<meta name="Keywords" content="sequential movement puzzle, permutation
+puzzle, Rubic, Rubix, Rubiks Cube, 3x3x3, Rubik´s Revenge, 4x4x4,
+Professors Cube, 5x5x5, 2x2x2, Dogic, Impossiball, Megaminx, Pyraminx,
+Pyramorphix, Skewb, Bicube, Brainball, Equator, Masterball, Missing link,
+Orb, Puck, Roundy, Siamese Cubes, Square One, Topspin, Rubiks Triamid,
+Tricky Disky, Turnstile, Orbix, Spinout, Tantrix">
+
+<script language="JavaScript1.1" type="text/javascript" src="Jaap%27s%20Puzzle%20Page_files/preview.js"></script>
+<script language="JavaScript1.1" type="text/javascript">
+<!--
+    // Javascript written by Jaap Scherphuis. (jaapsch a t yahoo d o t com)
+    insertpreviewstyle();
+
+    function insertemail(first,last)
+    {
+        var em = first+"@"+last;
+        document.write("<a href='mailto:"+em+"' onmouseover='return prev(-1)'>"+em+"<\/a>");
+    }
+//-->
+</script><style type="text/css">
+#preview{position:absolute; left:0; top:0; width:1; visibility:visible;}
+</style>
+
+</head>
+<body onload="initialise();">
+
+<div class="header"><h1>Jaap's Puzzle Page</h1><p class="jpp"></p></div>
+
+<div class="update">
+
+<br><span class="update1">UPDATED</span> <span style="font-weight: bold;">27/12/2010</span>. Added new pages for
+<a href="http://www.jaapsch.net/puzzles/36cube.htm" onmouseover="return prev(250)" onfocus="return prev(250)" onmouseout="slides()" onblur="slides()">36 Cube</a>,
+<a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(252)" onfocus="return prev(252)" onmouseout="slides()" onblur="slides()">Crazy 4×4×4 Cube I</a>,
+<a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(253)" onfocus="return prev(253)" onmouseout="slides()" onblur="slides()">II</a>,
+<a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(254)" onfocus="return prev(254)" onmouseout="slides()" onblur="slides()">III</a>,
+<a href="http://www.jaapsch.net/puzzles/floppy2.htm" onmouseover="return prev(255)" onfocus="return prev(255)" onmouseout="slides()" onblur="slides()">Super Floppy Cube</a>,
+<a href="http://www.jaapsch.net/puzzles/gearcube.htm" onmouseover="return prev(257)" onfocus="return prev(257)" onmouseout="slides()" onblur="slides()">Gear Cube</a>,
+<a href="http://www.jaapsch.net/puzzles/gearcube2.htm" onmouseover="return prev(258)" onfocus="return prev(258)" onmouseout="slides()" onblur="slides()">Gear Cube Extreme</a>,
+<a href="http://www.jaapsch.net/puzzles/octaface.htm" onmouseover="return prev(260)" onfocus="return prev(260)" onmouseout="slides()" onblur="slides()">Face-turning Octahedron</a>,
+<a href="http://www.jaapsch.net/puzzles/pyracrys.htm" onmouseover="return prev(261)" onfocus="return prev(261)" onmouseout="slides()" onblur="slides()">Pyraminx Crystal</a>,
+<a href="http://www.jaapsch.net/puzzles/rubslide.htm" onmouseover="return prev(262)" onfocus="return prev(262)" onmouseout="slides()" onblur="slides()">Rubik's Slide</a>,
+<a href="http://www.jaapsch.net/puzzles/spherexyz.htm" onmouseover="return prev(263)" onfocus="return prev(263)" onmouseout="slides()" onblur="slides()">SphereXyz</a>, and
+<a href="http://www.jaapsch.net/puzzles/starlet.htm" onmouseover="return prev(264)" onfocus="return prev(264)" onmouseout="slides()" onblur="slides()">Starlet / Swesdotschka</a>.
+I also added
+<a href="http://www.jaapsch.net/puzzles/megaminx.htm" onmouseover="return prev(251)" onfocus="return prev(251)" onmouseout="slides()" onblur="slides()">Ball-B</a> and the
+<a href="http://www.jaapsch.net/puzzles/megaminx.htm" onmouseover="return prev(259)" onfocus="return prev(259)" onmouseout="slides()" onblur="slides()">Holey Megaminx</a> to the Megaminx page,
+and a new simple solution for the <a href="http://www.jaapsch.net/puzzles/square1.htm" onmouseover="return prev(44)" onfocus="return prev(44)" onmouseout="slides()" onblur="slides()">Square-1</a>.
+
+Added javascript simulations of
+<a href="http://www.jaapsch.net/puzzles/rubslide.htm" onmouseover="return prev(262)" onfocus="return prev(262)" onmouseout="slides()" onblur="slides()">Rubik's Slide</a>, and
+<a href="http://www.jaapsch.net/puzzles/starlet.htm" onmouseover="return prev(264)" onfocus="return prev(264)" onmouseout="slides()" onblur="slides()">Starlet / Swesdotschka</a>.
+And finally I almost completely revamped the
+<a href="http://www.jaapsch.net/puzzles/ideas.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Ideas for further puzzles</a> page,
+and updated the <a href="http://www.jaapsch.net/puzzles/puzzlink.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Links</a> page.
+
+<br><br><span class="update2">UPDATED</span> <span style="font-weight: bold;">31/01/2010</span>. Added new pages for
+
+<a href="http://www.jaapsch.net/puzzles/cube223.htm" onmouseover="return prev(238)" onfocus="return prev(238)" onmouseout="slides()" onblur="slides()">Tower Cube 2×2×3</a>,
+<a href="http://www.jaapsch.net/puzzles/cube334.htm" onmouseover="return prev(239)" onfocus="return prev(239)" onmouseout="slides()" onblur="slides()">3×3×4</a>,
+<a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(240)" onfocus="return prev(240)" onmouseout="slides()" onblur="slides()">Cubedron</a> /
+<a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(241)" onfocus="return prev(241)" onmouseout="slides()" onblur="slides()">Cybedron</a>,
+<a href="http://www.jaapsch.net/puzzles/cube6.htm" onmouseover="return prev(242)" onfocus="return prev(242)" onmouseout="slides()" onblur="slides()">6×6×6 V-cube</a>,
+<a href="http://www.jaapsch.net/puzzles/cube7.htm" onmouseover="return prev(243)" onfocus="return prev(243)" onmouseout="slides()" onblur="slides()">7×7×7 V-cube</a>,
+<a href="http://www.jaapsch.net/puzzles/dualcircle.htm" onmouseover="return prev(244)" onfocus="return prev(244)" onmouseout="slides()" onblur="slides()">Dual Circle</a>,
+<a href="http://www.jaapsch.net/puzzles/robinson.htm" onmouseover="return prev(245)" onfocus="return prev(245)" onmouseout="slides()" onblur="slides()">Robinson Roulette</a>, and
+added
+<a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(246)" onfocus="return prev(246)" onmouseout="slides()" onblur="slides()">Gamze Lights Out</a> to the Lights Out page,
+<a href="http://www.jaapsch.net/puzzles/cohan.htm" onmouseover="return prev(247)" onfocus="return prev(247)" onmouseout="slides()" onblur="slides()">Arusloky</a> to the Cohan Circle page,
+<a href="http://www.jaapsch.net/puzzles/pyraminx.htm" onmouseover="return prev(248)" onfocus="return prev(248)" onmouseout="slides()" onblur="slides()">Jing Pyraminx</a> to the Pyraminx page,
+<a href="http://www.jaapsch.net/puzzles/impossi.htm" onmouseover="return prev(249)" onfocus="return prev(249)" onmouseout="slides()" onblur="slides()">Flowerminx</a> to the Impossiball page.
+
+Added javascript simulations of
+<a href="http://www.jaapsch.net/puzzles/dualcircle.htm" onmouseover="return prev(244)" onfocus="return prev(244)" onmouseout="slides()" onblur="slides()">Dual Circle</a>,
+<a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(240)" onfocus="return prev(240)" onmouseout="slides()" onblur="slides()">Cubedron</a> /
+<a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(241)" onfocus="return prev(241)" onmouseout="slides()" onblur="slides()">Cybedron</a>, and
+<a href="http://www.jaapsch.net/puzzles/robinson.htm" onmouseover="return prev(245)" onfocus="return prev(245)" onmouseout="slides()" onblur="slides()">Robinson Roulette</a>.
+
+There is a new
+<a href="http://www.jaapsch.net/puzzles/puzstats.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Puzzle Statistics</a>
+ page
+listing the number of positions for all the puzzles, and through 
+plugging the gaps on that page I added God's Algorithm calculation 
+results to the
+<a href="http://www.jaapsch.net/puzzles/domino.htm" onmouseover="return prev(37)" onfocus="return prev(37)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Domino</a>,
+<a href="http://www.jaapsch.net/puzzles/cohan.htm" onmouseover="return prev(164)" onfocus="return prev(164)" onmouseout="slides()" onblur="slides()">Cohan Circle</a>,
+<a href="http://www.jaapsch.net/puzzles/sliderule2.htm" onmouseover="return prev(220)" onfocus="return prev(220)" onmouseout="slides()" onblur="slides()">Heptalive</a>,
+<a href="http://www.jaapsch.net/puzzles/orbik.htm" onmouseover="return prev(185)" onfocus="return prev(185)" onmouseout="slides()" onblur="slides()">Orbik</a>, and
+<a href="http://www.jaapsch.net/puzzles/palettemix.htm" onmouseover="return prev(218)" onfocus="return prev(218)" onmouseout="slides()" onblur="slides()">Palette Mix 4</a> pages.
+And finally I greatly expanded the
+<a href="http://www.jaapsch.net/puzzles/subgroup.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cube Subgroups</a> page to include groups generated by middle layer moves and wide moves.
+
+
+<br><br><span class="update3">UPDATED</span> <span style="font-weight: bold;">20/09/2009</span>. At last another update. Added new pages for
+<a href="http://www.jaapsch.net/puzzles/crossover.htm" onmouseover="return prev(237)" onfocus="return prev(237)" onmouseout="slides()" onblur="slides()">Crossover</a>,
+<a href="http://www.jaapsch.net/puzzles/dodek.htm" onmouseover="return prev(223)" onfocus="return prev(223)" onmouseout="slides()" onblur="slides()">Dodek Duo</a>,
+<a href="http://www.jaapsch.net/puzzles/floppy.htm" onmouseover="return prev(224)" onfocus="return prev(224)" onmouseout="slides()" onblur="slides()">Floppy Cube</a>,
+<a href="http://www.jaapsch.net/puzzles/magnatease.htm" onmouseover="return prev(225)" onfocus="return prev(225)" onmouseout="slides()" onblur="slides()">Magnatease</a>,
+<a href="http://www.jaapsch.net/puzzles/marusenko.htm" onmouseover="return prev(226)" onfocus="return prev(226)" onmouseout="slides()" onblur="slides()">Marusenko Sphere</a>,
+<a href="http://www.jaapsch.net/puzzles/mindlock.htm" onmouseover="return prev(227)" onfocus="return prev(227)" onmouseout="slides()" onblur="slides()">Mindlock</a>,
+<a href="http://www.jaapsch.net/puzzles/moebius.htm" onmouseover="return prev(228)" onfocus="return prev(228)" onmouseout="slides()" onblur="slides()">Möbius Line Puzzle</a>,
+<a href="http://www.jaapsch.net/puzzles/newseven.htm" onmouseover="return prev(229)" onfocus="return prev(229)" onmouseout="slides()" onblur="slides()">New Seven Puzzle</a> /
+<a href="http://www.jaapsch.net/puzzles/newseven.htm" onmouseover="return prev(222)" onfocus="return prev(222)" onmouseout="slides()" onblur="slides()">Azig</a>,
+<a href="http://www.jaapsch.net/puzzles/tritrick.htm" onmouseover="return prev(230)" onfocus="return prev(230)" onmouseout="slides()" onblur="slides()">Tri-Trick</a>,
+<a href="http://www.jaapsch.net/puzzles/wanderrings.htm" onmouseover="return prev(231)" onfocus="return prev(231)" onmouseout="slides()" onblur="slides()">Olympic Wanderrings</a>, and
+<a href="http://www.jaapsch.net/puzzles/writersblock.htm" onmouseover="return prev(232)" onfocus="return prev(232)" onmouseout="slides()" onblur="slides()">Writer's Block</a>.
+Added javascript simulations of
+<a href="http://www.jaapsch.net/puzzles/mindlock.htm" onmouseover="return prev(227)" onfocus="return prev(227)" onmouseout="slides()" onblur="slides()">Mindlock</a>,
+<a href="http://www.jaapsch.net/puzzles/newseven.htm" onmouseover="return prev(229)" onfocus="return prev(229)" onmouseout="slides()" onblur="slides()">New Seven Puzzle</a>,
+<a href="http://www.jaapsch.net/puzzles/tritrick.htm" onmouseover="return prev(230)" onfocus="return prev(230)" onmouseout="slides()" onblur="slides()">Tri-Trick</a>, and
+<a href="http://www.jaapsch.net/puzzles/wanderrings.htm" onmouseover="return prev(231)" onfocus="return prev(231)" onmouseout="slides()" onblur="slides()">Olympic Wanderrings</a>.
+Finally, I also added a page about
+<a href="http://www.jaapsch.net/puzzles/hamilton.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Hamiltonian Paths and Cycles</a>.
+Apart from the new pages and a general facelift, there are a few minor updates. For example Parts 3b and 3c were added to the
+<a href="http://www.jaapsch.net/puzzles/lomath.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Mathematics of Lights&nbsp;Out</a>
+page, a film still was added to the
+<a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(101)" onfocus="return prev(101)" onmouseout="slides()" onblur="slides()">Lights&nbsp;Out</a> page,
+and the
+<a href="http://www.jaapsch.net/puzzles/tantrix.htm" onmouseover="return prev(53)" onfocus="return prev(53)" onmouseout="slides()" onblur="slides()">Tantrix</a>
+page has been expanded.
+
+</div>
+
+<div class="overview">
+If you have a puzzle but don't know its name, then you can look at the<br>
+<a href="http://www.jaapsch.net/puzzles/indxgraf.htm" onmouseover="return prev(-1);">Graphical Overview</a>
+<br>of all the puzzles featured on this site.
+</div>
+
+<div class="scriptavail">* = JavaScript simulation available</div>
+<div class="prevcontrol">
+<a href="javascript:togglepreview()" onmouseover="return prev(-1);">Click to switch preview on/off</a>
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top" width="33%">
+
+    <div class="blockhead">Rubik's Cube family:</div>
+    <div class="blockbody">
+        <h5>Tetrahedral: <small>(4 axes)</small></h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/pyraminx.htm" onmouseover="return prev(31)" onfocus="return prev(31)" onmouseout="slides()" onblur="slides()">Pyraminx</a>* /
+                <a href="http://www.jaapsch.net/puzzles/pyraminx.htm" onmouseover="return prev(56)" onfocus="return prev(56)" onmouseout="slides()" onblur="slides()">Tetraminx</a>/
+                <a href="http://www.jaapsch.net/puzzles/pyraminx.htm" onmouseover="return prev(13)" onfocus="return prev(13)" onmouseout="slides()" onblur="slides()"><span style="white-space: nowrap;">Meier-Halpern&nbsp;Pyramid</span></a> /
+                <a href="http://www.jaapsch.net/puzzles/pyraminx.htm" onmouseover="return prev(248)" onfocus="return prev(248)" onmouseout="slides()" onblur="slides()">Jing Pyraminx</a> <span class="new2">UPDATED</span>
+
+        </li></ul>
+        <h5>Cubical: <small>(6 axes)</small></h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/cube2.htm" onmouseover="return prev(59)" onfocus="return prev(59)" onmouseout="slides()" onblur="slides()">2×2×2 Rubik's&nbsp;Pocket&nbsp;Cube</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube3.htm" onmouseover="return prev(7)" onfocus="return prev(7)" onmouseout="slides()" onblur="slides()">3×3×3 Rubik's&nbsp;Cube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube4.htm" onmouseover="return prev(33)" onfocus="return prev(33)" onmouseout="slides()" onblur="slides()">4×4×4 Rubik's&nbsp;Revenge</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube5.htm" onmouseover="return prev(8)" onfocus="return prev(8)" onmouseout="slides()" onblur="slides()">5×5×5 Professor's&nbsp;Cube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube6.htm" onmouseover="return prev(242)" onfocus="return prev(242)" onmouseout="slides()" onblur="slides()">6×6×6 V-cube</a> <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube7.htm" onmouseover="return prev(243)" onfocus="return prev(243)" onmouseout="slides()" onblur="slides()">7×7×7 V-cube</a> <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(252)" onfocus="return prev(252)" onmouseout="slides()" onblur="slides()">Crazy 4×4×4 Cube I</a> /
+                <a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(253)" onfocus="return prev(253)" onmouseout="slides()" onblur="slides()">II</a> /
+                <a href="http://www.jaapsch.net/puzzles/crazy444.htm" onmouseover="return prev(254)" onfocus="return prev(254)" onmouseout="slides()" onblur="slides()">III</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/barrel.htm" onmouseover="return prev(25)" onfocus="return prev(25)" onmouseout="slides()" onblur="slides()">Barrel / Octagon</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/diamstyl.htm" onmouseover="return prev(104)" onfocus="return prev(104)" onmouseout="slides()" onblur="slides()">Diamond Style Puzzler</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/gearcube.htm" onmouseover="return prev(257)" onfocus="return prev(257)" onmouseout="slides()" onblur="slides()">Gear Cube</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/marusenko.htm" onmouseover="return prev(226)" onfocus="return prev(226)" onmouseout="slides()" onblur="slides()">Marusenko Sphere</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/octahed.htm" onmouseover="return prev(26)" onfocus="return prev(26)" onmouseout="slides()" onblur="slides()">Octahedron</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyramorf.htm" onmouseover="return prev(32)" onfocus="return prev(32)" onmouseout="slides()" onblur="slides()">Pyramorphix</a> /
+                <a href="http://www.jaapsch.net/puzzles/pyramorf.htm" onmouseover="return prev(109)" onfocus="return prev(109)" onmouseout="slides()" onblur="slides()">Stern</a>
+        </li></ul>
+        <h5>Octahedral: <small>(8 axes)</small></h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/beachbll.htm" onmouseover="return prev(2)" onfocus="return prev(2)" onmouseout="slides()" onblur="slides()">Beachball</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/diamond.htm" onmouseover="return prev(9)" onfocus="return prev(9)" onmouseout="slides()" onblur="slides()">Diamond</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dinocube.htm" onmouseover="return prev(76)" onfocus="return prev(76)" onmouseout="slides()" onblur="slides()">Dino&nbsp;Cube</a>* /
+                <a href="http://www.jaapsch.net/puzzles/dinocube.htm" onmouseover="return prev(77)" onfocus="return prev(77)" onmouseout="slides()" onblur="slides()">Rainbow&nbsp;Cube</a> /
+                <a href="http://www.jaapsch.net/puzzles/dinocube.htm" onmouseover="return prev(160)" onfocus="return prev(160)" onmouseout="slides()" onblur="slides()">Brain&nbsp;Twist</a> /
+                <a href="http://www.jaapsch.net/puzzles/dinocube.htm" onmouseover="return prev(161)" onfocus="return prev(161)" onmouseout="slides()" onblur="slides()">Jackpot / Platypus</a> /
+                <a href="http://www.jaapsch.net/puzzles/dinocube.htm" onmouseover="return prev(233)" onfocus="return prev(232)" onmouseout="slides()" onblur="slides()">Dino Star</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/octaface.htm" onmouseover="return prev(260)" onfocus="return prev(260)" onmouseout="slides()" onblur="slides()">Face-turning Octahedron</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/skewb.htm" onmouseover="return prev(42)" onfocus="return prev(42)" onmouseout="slides()" onblur="slides()">Skewb</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/ultimate.htm" onmouseover="return prev(51)" onfocus="return prev(51)" onmouseout="slides()" onblur="slides()">Ultimate Skewb</a>
+        </li></ul>
+        <h5>Dodecahedral: <small>(12 axes)</small></h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/alexandr.htm" onmouseover="return prev(0)" onfocus="return prev(0)" onmouseout="slides()" onblur="slides()">Alexander's&nbsp;Star</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dogic.htm" onmouseover="return prev(11)" onfocus="return prev(11)" onmouseout="slides()" onblur="slides()">Dogic</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/impossi.htm" onmouseover="return prev(14)" onfocus="return prev(14)" onmouseout="slides()" onblur="slides()">Impossiball</a> /
+                <a href="http://www.jaapsch.net/puzzles/impossi.htm" onmouseover="return prev(81)" onfocus="return prev(81)" onmouseout="slides()" onblur="slides()">Thomasball</a> /
+                <a href="http://www.jaapsch.net/puzzles/impossi.htm" onmouseover="return prev(249)" onfocus="return prev(249)" onmouseout="slides()" onblur="slides()">Flowerminx</a> <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/megaminx.htm" onmouseover="return prev(20)" onfocus="return prev(20)" onmouseout="slides()" onblur="slides()">Megaminx</a> /
+                <a href="http://www.jaapsch.net/puzzles/megaminx.htm" onmouseover="return prev(251)" onfocus="return prev(251)" onmouseout="slides()" onblur="slides()">Ball-B</a> /
+                <a href="http://www.jaapsch.net/puzzles/megaminx.htm" onmouseover="return prev(259)" onfocus="return prev(259)" onmouseout="slides()" onblur="slides()">Holey Megaminx</a> <span class="new1">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyracrys.htm" onmouseover="return prev(261)" onfocus="return prev(261)" onmouseout="slides()" onblur="slides()">Pyraminx Crystal</a> <span class="new1">NEW</span>
+        </li></ul>
+        <h5>Dihedral:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/cube223.htm" onmouseover="return prev(238)" onfocus="return prev(238)" onmouseout="slides()" onblur="slides()">2×2×3, Tower Cube</a> <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/floppy.htm" onmouseover="return prev(224)" onfocus="return prev(224)" onmouseout="slides()" onblur="slides()">3×3×1, Floppy Cube</a>  <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/floppy2.htm" onmouseover="return prev(255)" onfocus="return prev(255)" onmouseout="slides()" onblur="slides()">3×3×1, Super Floppy Cube</a> /
+                <a href="http://www.jaapsch.net/puzzles/floppy2.htm" onmouseover="return prev(256)" onfocus="return prev(256)" onmouseout="slides()" onblur="slides()">Imitation</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/domino.htm" onmouseover="return prev(37)" onfocus="return prev(37)" onmouseout="slides()" onblur="slides()">3×3×2, Rubik's&nbsp;Domino</a>* <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cube334.htm" onmouseover="return prev(239)" onfocus="return prev(239)" onmouseout="slides()" onblur="slides()">3×3×4</a> <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/brain.htm" onmouseover="return prev(5)" onfocus="return prev(5)" onmouseout="slides()" onblur="slides()">Brain&nbsp;ball</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/gearcube2.htm" onmouseover="return prev(258)" onfocus="return prev(258)" onmouseout="slides()" onblur="slides()">Gear Cube Extreme</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/gerdig.htm" onmouseover="return prev(86)" onfocus="return prev(86)" onmouseout="slides()" onblur="slides()">Gerdig&nbsp;Ufo</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/kepkorong.htm" onmouseover="return prev(174)" onfocus="return prev(174)" onmouseout="slides()" onblur="slides()">Kép&nbsp;Korong</a> /
+                <a href="http://www.jaapsch.net/puzzles/kepkorong.htm" onmouseover="return prev(65)" onfocus="return prev(65)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Cheese</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/master.htm" onmouseover="return prev(19)" onfocus="return prev(19)" onmouseout="slides()" onblur="slides()">Masterball</a>* /
+                <a href="http://www.jaapsch.net/puzzles/master.htm" onmouseover="return prev(92)" onfocus="return prev(92)" onmouseout="slides()" onblur="slides()">Logi-Vip</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/morph.htm" onmouseover="return prev(131)" onfocus="return prev(131)" onmouseout="slides()" onblur="slides()">Morph head</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/puck.htm" onmouseover="return prev(29)" onfocus="return prev(29)" onmouseout="slides()" onblur="slides()">(Hockey)&nbsp;Puck</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/roundy.htm" onmouseover="return prev(34)" onfocus="return prev(34)" onmouseout="slides()" onblur="slides()">Roundy&nbsp;3</a>* /
+                <a href="http://www.jaapsch.net/puzzles/roundy.htm" onmouseover="return prev(163)" onfocus="return prev(163)" onmouseout="slides()" onblur="slides()">Roundy&nbsp;4</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/saturn.htm" onmouseover="return prev(66)" onfocus="return prev(66)" onmouseout="slides()" onblur="slides()">Saturn</a>* <small>(by Mag-Nif)</small>
+            </li><li><a href="http://www.jaapsch.net/puzzles/alex.htm" onmouseover="return prev(87)" onfocus="return prev(87)" onmouseout="slides()" onblur="slides()">Smart&nbsp;Alex</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/tricky.htm" onmouseover="return prev(10)" onfocus="return prev(10)" onmouseout="slides()" onblur="slides()">Tricky&nbsp;Disky</a> /
+                <a href="http://www.jaapsch.net/puzzles/tricky.htm" onmouseover="return prev(70)" onfocus="return prev(70)" onmouseout="slides()" onblur="slides()">Triple&nbsp;Disky</a> /
+                <a href="http://www.jaapsch.net/puzzles/tricky.htm" onmouseover="return prev(96)" onfocus="return prev(96)" onmouseout="slides()" onblur="slides()"><span style="white-space: nowrap;">Ufo/Varia-Disk</span></a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubufo.htm" onmouseover="return prev(84)" onfocus="return prev(84)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Ufo</a>*
+        </li></ul>
+        <h5>Toroidal:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/combo.htm" onmouseover="return prev(136)" onfocus="return prev(136)" onmouseout="slides()" onblur="slides()">Combo Puzzle</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/octo.htm" onmouseover="return prev(193)" onfocus="return prev(193)" onmouseout="slides()" onblur="slides()">Octo Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/ufo.htm" onmouseover="return prev(67)" onfocus="return prev(67)" onmouseout="slides()" onblur="slides()">Ufo</a> <small>(by Netblock)</small> /
+                <a href="http://www.jaapsch.net/puzzles/ufo.htm" onmouseover="return prev(188)" onfocus="return prev(188)" onmouseout="slides()" onblur="slides()">King&nbsp;Ring</a>
+        </li></ul>
+    </div><br>
+
+    <div class="blockhead">Programs, etc.:</div>
+    <div class="blockbody">
+        <h5>JavaScripts and Java Applets:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/cubie.htm" onmouseover="return prev(-1)">Rubik's&nbsp;Cube Java&nbsp;Applet</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/sphere.htm" onmouseover="return prev(-1)">Sphere Symmetries Java&nbsp;Applet</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/polysolver.htm" onmouseover="return prev(-1)">Polyform puzzle Java&nbsp;Applet</a><br>&nbsp;
+            </li><li><a href="http://www.jaapsch.net/puzzles/indxjscr.htm" onmouseover="return prev(-1)">Javascript Simulations and Source&nbsp;Code</a>
+        </li></ul>
+        <h5>Other stuff:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/indxgraf.htm" onmouseover="return prev(-1)">Graphical&nbsp;Overview</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/puzzlink.htm" onmouseover="return prev(-1)">Links Page</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/guest.htm" onmouseover="return prev(-1)">Guest Book</a>
+        </li></ul>
+    </div>
+    <div class="scriptavail">* = JavaScript simulation available</div>
+</td><td valign="top" width="33%">
+    <div class="blockhead">Other moving piece puzzles:</div>
+    <div class="blockbody">
+        <h5>Bandaged:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/bandpyra.htm" onmouseover="return prev(1)" onfocus="return prev(1)" onmouseout="slides()" onblur="slides()">Bandaged&nbsp;Pyraminx</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/bandage.htm" onmouseover="return prev(3)" onfocus="return prev(3)" onmouseout="slides()" onblur="slides()">Bicube (Bandaged&nbsp;Cube)</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/battlegear.htm" onmouseover="return prev(200)" onfocus="return prev(200)" onmouseout="slides()" onblur="slides()">Battle&nbsp;Gear Mask</a> /
+                <a href="http://www.jaapsch.net/puzzles/battlegear.htm" onmouseover="return prev(201)" onfocus="return prev(201)" onmouseout="slides()" onblur="slides()">Spy</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/planets.htm" onmouseover="return prev(181)" onfocus="return prev(181)" onmouseout="slides()" onblur="slides()">Planets</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rotascope.htm" onmouseover="return prev(143)" onfocus="return prev(143)" onmouseout="slides()" onblur="slides()">Rotascope</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/sliderule.htm" onmouseover="return prev(208)" onfocus="return prev(208)" onmouseout="slides()" onblur="slides()">Slide&nbsp;Rule&nbsp;Duel</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/square1.htm" onmouseover="return prev(44)" onfocus="return prev(44)" onmouseout="slides()" onblur="slides()">Square&nbsp;1 / Cube 21</a> <span class="new1">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/trio.htm" onmouseover="return prev(221)" onfocus="return prev(221)" onmouseout="slides()" onblur="slides()">Trio</a>
+        </li></ul>
+        <h5>With gaps:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/chaos.htm" onmouseover="return prev(72)" onfocus="return prev(72)" onmouseout="slides()" onblur="slides()">Atomic&nbsp;Chaos / Kaos</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/ivory.htm" onmouseover="return prev(16)" onfocus="return prev(16)" onmouseout="slides()" onblur="slides()">Babylon&nbsp;Tower</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/backspin.htm" onmouseover="return prev(61)" onfocus="return prev(61)" onmouseout="slides()" onblur="slides()">BackSpin / Loophole</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/nineball.htm" onmouseover="return prev(23)" onfocus="return prev(23)" onmouseout="slides()" onblur="slides()">Billiards 9-ball puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/clark.htm" onmouseover="return prev(206)" onfocus="return prev(206)" onmouseout="slides()" onblur="slides()">Clark's&nbsp;Cube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/codebreak.htm" onmouseover="return prev(209)" onfocus="return prev(209)" onmouseout="slides()" onblur="slides()">Code&nbsp;Breaker</a> /
+                <a href="http://www.jaapsch.net/puzzles/codebreak.htm" onmouseover="return prev(236)" onfocus="return prev(236)" onmouseout="slides()" onblur="slides()">Twisting&nbsp;Rings&nbsp;Puzzle</a> <span class="new3">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/crosstsr.htm" onmouseover="return prev(156)" onfocus="return prev(156)" onmouseout="slides()" onblur="slides()">Crossteaser</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(240)" onfocus="return prev(240)" onmouseout="slides()" onblur="slides()">Cubedron</a> /
+                <a href="http://www.jaapsch.net/puzzles/cubedron.htm" onmouseover="return prev(241)" onfocus="return prev(241)" onmouseout="slides()" onblur="slides()">Cybedron</a>* <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/eightbll.htm" onmouseover="return prev(141)" onfocus="return prev(141)" onmouseout="slides()" onblur="slides()">Diamond 8-ball puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/fifteen.htm" onmouseover="return prev(58)" onfocus="return prev(58)" onmouseout="slides()" onblur="slides()">14-15&nbsp;Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/gears.htm" onmouseover="return prev(127)" onfocus="return prev(127)" onmouseout="slides()" onblur="slides()">Great&nbsp;Gears</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/massage.htm" onmouseover="return prev(18)" onfocus="return prev(18)" onmouseout="slides()" onblur="slides()">Massage&nbsp;Ball</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/mindlock.htm" onmouseover="return prev(227)" onfocus="return prev(227)" onmouseout="slides()" onblur="slides()">Mindlock</a>* <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/missing.htm" onmouseover="return prev(21)" onfocus="return prev(21)" onmouseout="slides()" onblur="slides()">Missing&nbsp;link</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/wanderrings.htm" onmouseover="return prev(231)" onfocus="return prev(231)" onmouseout="slides()" onblur="slides()">Olympic Wanderrings</a>* <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/panex.htm" onmouseover="return prev(194)" onfocus="return prev(194)" onmouseout="slides()" onblur="slides()">Panex</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/blackhole.htm" onmouseover="return prev(177)" onfocus="return prev(177)" onmouseout="slides()" onblur="slides()">Peter's&nbsp;Black&nbsp;Hole</a> /
+                <a href="http://www.jaapsch.net/puzzles/blackhole.htm" onmouseover="return prev(178)" onfocus="return prev(178)" onmouseout="slides()" onblur="slides()">Magic&nbsp;Jack</a> /
+                <a href="http://www.jaapsch.net/puzzles/blackhole.htm" onmouseover="return prev(179)" onfocus="return prev(179)" onmouseout="slides()" onblur="slides()">IQube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pionir.htm" onmouseover="return prev(202)" onfocus="return prev(202)" onmouseout="slides()" onblur="slides()">Pionir&nbsp;Cube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rackemup.htm" onmouseover="return prev(112)" onfocus="return prev(112)" onmouseout="slides()" onblur="slides()">Rack'em&nbsp;Up</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/eightcub.htm" onmouseover="return prev(105)" onfocus="return prev(105)" onmouseout="slides()" onblur="slides()">Rolling Cubes Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rowbyrow.htm" onmouseover="return prev(91)" onfocus="return prev(91)" onmouseout="slides()" onblur="slides()">Row&nbsp;by&nbsp;Row</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/saturnld.htm" onmouseover="return prev(90)" onfocus="return prev(90)" onmouseout="slides()" onblur="slides()">Saturn</a> <small>(by LD Games)</small>
+            </li><li><a href="http://www.jaapsch.net/puzzles/spongebob.htm" onmouseover="return prev(170)" onfocus="return prev(170)" onmouseout="slides()" onblur="slides()">SpongeBob Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/tower.htm" onmouseover="return prev(52)" onfocus="return prev(52)" onmouseout="slides()" onblur="slides()">Whip-it</a> /
+                <a href="http://www.jaapsch.net/puzzles/tower.htm" onmouseover="return prev(46)" onfocus="return prev(46)" onmouseout="slides()" onblur="slides()">6&nbsp;by&nbsp;6</a>* /
+                <a href="http://www.jaapsch.net/puzzles/tower.htm" onmouseover="return prev(111)" onfocus="return prev(111)" onmouseout="slides()" onblur="slides()">Varikon</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/varikon2.htm" onmouseover="return prev(203)" onfocus="return prev(203)" onmouseout="slides()" onblur="slides()">Varikon&nbsp;Box&nbsp;2×2×2</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/varikon3.htm" onmouseover="return prev(176)" onfocus="return prev(176)" onmouseout="slides()" onblur="slides()">Varikon&nbsp;Box&nbsp;3×3×3</a>* /
+                <a href="http://www.jaapsch.net/puzzles/varikon3.htm" onmouseover="return prev(204)" onfocus="return prev(204)" onmouseout="slides()" onblur="slides()">Inversion</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/wisdom.htm" onmouseover="return prev(85)" onfocus="return prev(85)" onmouseout="slides()" onblur="slides()">Wisdom&nbsp;Ball</a> /
+               <a href="http://www.jaapsch.net/puzzles/wisdom.htm" onmouseover="return prev(159)" onfocus="return prev(159)" onmouseout="slides()" onblur="slides()">Wisdom&nbsp;Ball&nbsp;II</a>
+        </li></ul>
+        <h5>Flat without gaps:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/butterfly.htm" onmouseover="return prev(142)" onfocus="return prev(142)" onmouseout="slides()" onblur="slides()">Butterfly</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/circle.htm" onmouseover="return prev(113)" onfocus="return prev(113)" onmouseout="slides()" onblur="slides()">Circle Puzzle</a>* /
+                <a href="http://www.jaapsch.net/puzzles/circle.htm" onmouseover="return prev(145)" onfocus="return prev(145)" onmouseout="slides()" onblur="slides()">Whirligig</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cohan.htm" onmouseover="return prev(164)" onfocus="return prev(164)" onmouseout="slides()" onblur="slides()">Cohan Circle</a>* /
+                <a href="http://www.jaapsch.net/puzzles/cohan.htm" onmouseover="return prev(247)" onfocus="return prev(247)" onmouseout="slides()" onblur="slides()">Arusloky</a>* <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/crossover.htm" onmouseover="return prev(237)" onfocus="return prev(237)" onmouseout="slides()" onblur="slides()">Crossover</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/farmgear.htm" onmouseover="return prev(196)" onfocus="return prev(196)" onmouseout="slides()" onblur="slides()">Farmland&nbsp;Gear Big&nbsp;Crop</a> /
+                <a href="http://www.jaapsch.net/puzzles/farmgear.htm" onmouseover="return prev(197)" onfocus="return prev(197)" onmouseout="slides()" onblur="slides()">Feed&nbsp;Lots</a> /
+                <a href="http://www.jaapsch.net/puzzles/farmgear.htm" onmouseover="return prev(198)" onfocus="return prev(198)" onmouseout="slides()" onblur="slides()">Hay&nbsp;Ride</a> /
+                <a href="http://www.jaapsch.net/puzzles/farmgear.htm" onmouseover="return prev(199)" onfocus="return prev(199)" onmouseout="slides()" onblur="slides()">Plow&nbsp;Deep</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubik15.htm" onmouseover="return prev(40)" onfocus="return prev(40)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Fifteen</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/flipside.htm" onmouseover="return prev(191)" onfocus="return prev(191)" onmouseout="slides()" onblur="slides()">Flip-Side</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/gripple.htm" onmouseover="return prev(89)" onfocus="return prev(89)" onmouseout="slides()" onblur="slides()">Gripple</a>
+                <a href="http://www.jaapsch.net/puzzles/gripple.htm" onmouseover="return prev(68)" onfocus="return prev(68)" onmouseout="slides()" onblur="slides()">(2)</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/madtriad.htm" onmouseover="return prev(97)" onfocus="return prev(97)" onmouseout="slides()" onblur="slides()">Mad&nbsp;Triad</a> /
+                <a href="http://www.jaapsch.net/puzzles/madtriad.htm" onmouseover="return prev(98)" onfocus="return prev(98)" onmouseout="slides()" onblur="slides()">Handy</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/newseven.htm" onmouseover="return prev(229)" onfocus="return prev(229)" onmouseout="slides()" onblur="slides()">New Seven Puzzle</a>* /
+                <a href="http://www.jaapsch.net/puzzles/newseven.htm" onmouseover="return prev(222)" onfocus="return prev(222)" onmouseout="slides()" onblur="slides()">Azig</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/palette7.htm" onmouseover="return prev(217)" onfocus="return prev(217)" onmouseout="slides()" onblur="slides()">Palette 7</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/palette.htm" onmouseover="return prev(210)" onfocus="return prev(210)" onmouseout="slides()" onblur="slides()">Palette&nbsp;21</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/palettemix.htm" onmouseover="return prev(218)" onfocus="return prev(218)" onmouseout="slides()" onblur="slides()">Palette Mix 4</a> <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/port.htm" onmouseover="return prev(30)" onfocus="return prev(30)" onmouseout="slides()" onblur="slides()">Port&nbsp;to&nbsp;Port</a>* /
+                <a href="http://www.jaapsch.net/puzzles/port.htm" onmouseover="return prev(48)" onfocus="return prev(48)" onmouseout="slides()" onblur="slides()">Triple&nbsp;Cross</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rashkey.htm" onmouseover="return prev(78)" onfocus="return prev(78)" onmouseout="slides()" onblur="slides()">Rashkey</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rotos.htm" onmouseover="return prev(116)" onfocus="return prev(116)" onmouseout="slides()" onblur="slides()">Rotos</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rings.htm" onmouseover="return prev(39)" onfocus="return prev(39)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Rings</a>* /
+                <a href="http://www.jaapsch.net/puzzles/rings.htm" onmouseover="return prev(73)" onfocus="return prev(73)" onmouseout="slides()" onblur="slides()">Hungarian&nbsp;Rings</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubslide.htm" onmouseover="return prev(262)" onfocus="return prev(262)" onmouseout="slides()" onblur="slides()">Rubik's Slide</a>* <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/sliderule2.htm" onmouseover="return prev(219)" onfocus="return prev(219)" onmouseout="slides()" onblur="slides()">Slide&nbsp;Rule&nbsp;Duel Pentaplenty</a> /<br>
+                <a href="http://www.jaapsch.net/puzzles/sliderule2.htm" onmouseover="return prev(220)" onfocus="return prev(220)" onmouseout="slides()" onblur="slides()">Slide&nbsp;Rule&nbsp;Duel Heptalive</a> <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/starlet.htm" onmouseover="return prev(264)" onfocus="return prev(264)" onmouseout="slides()" onblur="slides()">Starlet / Swesdotschka</a>* <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/swissmad.htm" onmouseover="return prev(171)" onfocus="return prev(171)" onmouseout="slides()" onblur="slides()">Swissmad</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/topspin.htm" onmouseover="return prev(45)" onfocus="return prev(45)" onmouseout="slides()" onblur="slides()">Topspin / No. Crunch</a>* /
+                <a href="http://www.jaapsch.net/puzzles/topspin.htm" onmouseover="return prev(95)" onfocus="return prev(95)" onmouseout="slides()" onblur="slides()">Educational&nbsp;Logic&nbsp;Game</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/trillion.htm" onmouseover="return prev(83)" onfocus="return prev(83)" onmouseout="slides()" onblur="slides()">Trillion</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/tritrick.htm" onmouseover="return prev(230)" onfocus="return prev(230)" onmouseout="slides()" onblur="slides()">Tri-Trick</a>* <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/it.htm" onmouseover="return prev(103)" onfocus="return prev(103)" onmouseout="slides()" onblur="slides()">Tsukuda's&nbsp;Square</a> /
+                <a href="http://www.jaapsch.net/puzzles/it.htm" onmouseover="return prev(15)" onfocus="return prev(15)" onmouseout="slides()" onblur="slides()">'It'&nbsp;Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/turnpush.htm" onmouseover="return prev(49)" onfocus="return prev(49)" onmouseout="slides()" onblur="slides()">Lotica / Turn'Push</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/turnstil.htm" onmouseover="return prev(50)" onfocus="return prev(50)" onmouseout="slides()" onblur="slides()">Turnstile</a>* /
+                <a href="http://www.jaapsch.net/puzzles/turnstil.htm" onmouseover="return prev(102)" onfocus="return prev(102)" onmouseout="slides()" onblur="slides()">Puzzler</a>* /
+                <a href="http://www.jaapsch.net/puzzles/turnstil.htm" onmouseover="return prev(135)" onfocus="return prev(135)" onmouseout="slides()" onblur="slides()">Trio</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/uriblock.htm" onmouseover="return prev(187)" onfocus="return prev(187)" onmouseout="slides()" onblur="slides()">Uriblock / Mix Box</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/kreuz.htm" onmouseover="return prev(126)" onfocus="return prev(126)" onmouseout="slides()" onblur="slides()">Zauberkreuz</a>*
+        </li></ul>
+        <h5>Other permutation puzzles:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/astrolab.htm" onmouseover="return prev(128)" onfocus="return prev(128)" onmouseout="slides()" onblur="slides()">Astrolabacus</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/iqball.htm" onmouseover="return prev(80)" onfocus="return prev(80)" onmouseout="slides()" onblur="slides()">Chromo&nbsp;Ball / Mystic IQ Ball</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cmetrick2.htm" onmouseover="return prev(168)" onfocus="return prev(168)" onmouseout="slides()" onblur="slides()">Cmetrick&nbsp;Too</a> /
+                <a href="http://www.jaapsch.net/puzzles/cmetrick2.htm" onmouseover="return prev(211)" onfocus="return prev(211)" onmouseout="slides()" onblur="slides()">Cmetrick&nbsp;Too&nbsp;Hard</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dualcircle.htm" onmouseover="return prev(244)" onfocus="return prev(244)" onmouseout="slides()" onblur="slides()">Dual Circle</a>* <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/equator.htm" onmouseover="return prev(62)" onfocus="return prev(12)" onmouseout="slides()" onblur="slides()">Equator</a> /
+                <a href="http://www.jaapsch.net/puzzles/equator.htm" onmouseover="return prev(12)" onfocus="return prev(12)" onmouseout="slides()" onblur="slides()">Hungarian&nbsp;Globe</a> /
+                <a href="http://www.jaapsch.net/puzzles/equator.htm" onmouseover="return prev(235)" onfocus="return prev(235)" onmouseout="slides()" onblur="slides()">Oxo</a> <span class="new3">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/massage2.htm" onmouseover="return prev(69)" onfocus="return prev(69)" onmouseout="slides()" onblur="slides()">Massage&nbsp;Ball&nbsp;2</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/mozaika.htm" onmouseover="return prev(22)" onfocus="return prev(22)" onmouseout="slides()" onblur="slides()">Mozaika</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/nintendo.htm" onmouseover="return prev(24)" onfocus="return prev(24)" onmouseout="slides()" onblur="slides()">Nintendo&nbsp;Billion&nbsp;Barrel</a>* /
+                <a href="http://www.jaapsch.net/puzzles/nintendo.htm" onmouseover="return prev(234)" onfocus="return prev(234)" onmouseout="slides()" onblur="slides()">Star&nbsp;Barrel</a> <span class="new3">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/orb.htm" onmouseover="return prev(27)" onfocus="return prev(27)" onmouseout="slides()" onblur="slides()">Orb (Orb-It)</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pakovalec.htm" onmouseover="return prev(158)" onfocus="return prev(158)" onmouseout="slides()" onblur="slides()">Pakoválec</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rainbowp.htm" onmouseover="return prev(182)" onfocus="return prev(182)" onmouseout="slides()" onblur="slides()">Rainbow&nbsp;Puzzle</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubshll.htm" onmouseover="return prev(74)" onfocus="return prev(74)" onmouseout="slides()" onblur="slides()">Rubik's Shells</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/siamese.htm" onmouseover="return prev(41)" onfocus="return prev(41)" onmouseout="slides()" onblur="slides()">Siamese&nbsp;Cubes</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/spherexyz.htm" onmouseover="return prev(263)" onfocus="return prev(263)" onmouseout="slides()" onblur="slides()">SphereXyz</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/triamid.htm" onmouseover="return prev(47)" onfocus="return prev(47)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Triamid</a>
+        </li></ul>
+    </div>
+</td><td valign="top" width="33%">
+    <div class="blockhead">Articles:</div>
+    <div class="blockbody">
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/about.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">About my collection</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cayley.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cayley graphs</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cmetrick2c.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cmetrick Too Contest Results</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/compcube.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Computer Puzzling</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/cubic.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cubic Circular</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/circleman.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Circle Puzzler's Manual</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/groups.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Group&nbsp;Theory for puzzles</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/hamilton.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Hamiltonian Paths and Cycles</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/ideas.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Ideas for further&nbsp;puzzles</a> <span class="new1">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/theory.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Useful Mathematics</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/lomath.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">The&nbsp;Mathematics of Lights&nbsp;Out</a> <span class="new3">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/patents.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Puzzle Patents</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/puzstats.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Puzzle Statistics</a> <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/graphpuzz.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Rotational puzzles on graphs</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/subgroup.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cube subgroups</a> <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/symmetr1.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Cube Symmetries and Pretty&nbsp;Patterns: part 1</a>
+                <a href="http://www.jaapsch.net/puzzles/symmetr2.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">2</a>,
+                <a href="http://www.jaapsch.net/puzzles/symmetr3.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">3</a>,
+                <font color="gray">4</font>
+            </li><li><a href="http://www.jaapsch.net/puzzles/thistle.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Thistlethwaite's 52-move algorithm</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pgl25.htm" onmouseover="return prev(-1)" onfocus="return prev(-1)" onmouseout="slides()" onblur="slides()">Two-generator corners group</a>
+        </li></ul>
+    </div>
+
+    <div class="blockhead">Other interesting puzzles:</div>
+    <div class="blockbody">
+        <h5>Pattern matching puzzles:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/bolygok.htm" onmouseover="return prev(64)" onfocus="return prev(64)" onmouseout="slides()" onblur="slides()">Bolygok</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/circus.htm" onmouseover="return prev(144)" onfocus="return prev(144)" onmouseout="slides()" onblur="slides()">Circus&nbsp;Puzzler</a>* /
+                <a href="http://www.jaapsch.net/puzzles/circus.htm" onmouseover="return prev(144)" onfocus="return prev(144)" onmouseout="slides()" onblur="slides()">Drive&nbsp;Ya&nbsp;Nuts</a> /
+                <a href="http://www.jaapsch.net/puzzles/circus.htm" onmouseover="return prev(162)" onfocus="return prev(162)" onmouseout="slides()" onblur="slides()">Spot&nbsp;Colour&nbsp;Puzzle</a> /
+                <a href="http://www.jaapsch.net/puzzles/circus.htm" onmouseover="return prev(154)" onfocus="return prev(154)" onmouseout="slides()" onblur="slides()">Thinkominos</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubdice.htm" onmouseover="return prev(36)" onfocus="return prev(36)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Dice</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dodeca.htm" onmouseover="return prev(169)" onfocus="return prev(169)" onmouseout="slides()" onblur="slides()">Dodeca&nbsp;Nona</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dodek.htm" onmouseover="return prev(223)" onfocus="return prev(223)" onmouseout="slides()" onblur="slides()">Dodek Duo</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/foolspool.htm" onmouseover="return prev(106)" onfocus="return prev(106)" onmouseout="slides()" onblur="slides()">Fool's Spool</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/fourcube.htm" onmouseover="return prev(180)" onfocus="return prev(180)" onmouseout="slides()" onblur="slides()">Four&nbsp;Cube&nbsp;Puzzle</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/frustr8tor.htm" onmouseover="return prev(215)" onfocus="return prev(215)" onmouseout="slides()" onblur="slides()">Frustr8tor</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/insanity.htm" onmouseover="return prev(63)" onfocus="return prev(63)" onmouseout="slides()" onblur="slides()">Instant&nbsp;Insanity</a>* /
+                <a href="http://www.jaapsch.net/puzzles/insanity.htm" onmouseover="return prev(117)" onfocus="return prev(117)" onmouseout="slides()" onblur="slides()">Buvos&nbsp;Golyok</a> /
+                <a href="http://www.jaapsch.net/puzzles/insanity.htm" onmouseover="return prev(134)" onfocus="return prev(134)" onmouseout="slides()" onblur="slides()">Drive&nbsp;Ya&nbsp;Crazy</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/izzi.htm" onmouseover="return prev(155)" onfocus="return prev(155)" onmouseout="slides()" onblur="slides()">Izzi</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/magnatease.htm" onmouseover="return prev(225)" onfocus="return prev(225)" onmouseout="slides()" onblur="slides()">Magnatease</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubmaze.htm" onmouseover="return prev(55)" onfocus="return prev(55)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Maze</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/octacube.htm" onmouseover="return prev(157)" onfocus="return prev(157)" onmouseout="slides()" onblur="slides()">Octacube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/level.htm" onmouseover="return prev(175)" onfocus="return prev(175)" onmouseout="slides()" onblur="slides()">On&nbsp;the&nbsp;Level</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/magellan.htm" onmouseover="return prev(216)" onfocus="return prev(216)" onmouseout="slides()" onblur="slides()">Magellán</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/moebius.htm" onmouseover="return prev(228)" onfocus="return prev(228)" onmouseout="slides()" onblur="slides()">Möbius Line Puzzle</a> <span class="new3">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyramid.htm" onmouseover="return prev(212)" onfocus="return prev(212)" onmouseout="slides()" onblur="slides()">The&nbsp;Great&nbsp;Pyramid</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyram.htm" onmouseover="return prev(189)" onfocus="return prev(189)" onmouseout="slides()" onblur="slides()">Pyram</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyrix.htm" onmouseover="return prev(132)" onfocus="return prev(132)" onmouseout="slides()" onblur="slides()">Pyrix</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/pyrus.htm" onmouseover="return prev(153)" onfocus="return prev(153)" onmouseout="slides()" onblur="slides()">Pyrus</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rubrab.htm" onmouseover="return prev(71)" onfocus="return prev(71)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Rabbits</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/rapids.htm" onmouseover="return prev(166)" onfocus="return prev(166)" onmouseout="slides()" onblur="slides()">Raging&nbsp;Rapids</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/royal.htm" onmouseover="return prev(100)" onfocus="return prev(100)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Royal&nbsp;Brainteaser</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/spectra.htm" onmouseover="return prev(140)" onfocus="return prev(140)" onmouseout="slides()" onblur="slides()">Spectra</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/tangle.htm" onmouseover="return prev(82)" onfocus="return prev(82)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Tangle</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/tantrix.htm" onmouseover="return prev(53)" onfocus="return prev(53)" onmouseout="slides()" onblur="slides()">Tantrix</a> <span class="new3">UPDATED</span> /
+                <a href="http://www.jaapsch.net/puzzles/tantrix.htm" onmouseover="return prev(110)" onfocus="return prev(110)" onmouseout="slides()" onblur="slides()">Tantrix Rock</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/36cube.htm" onmouseover="return prev(250)" onfocus="return prev(250)" onmouseout="slides()" onblur="slides()">36 Cube</a> <span class="new1">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(146)" onfocus="return prev(146)" onmouseout="slides()" onblur="slides()">Trixxy</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(147)" onfocus="return prev(147)" onmouseout="slides()" onblur="slides()">Transposer&nbsp;Tiffany</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(148)" onfocus="return prev(148)" onmouseout="slides()" onblur="slides()">Transposer&nbsp;6</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(165)" onfocus="return prev(165)" onmouseout="slides()" onblur="slides()">Transposer&nbsp;Bonbons</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(205)" onfocus="return prev(205)" onmouseout="slides()" onblur="slides()">Transposer&nbsp;Genesis</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(150)" onfocus="return prev(150)" onmouseout="slides()" onblur="slides()">Kaboozle</a> /
+                <a href="http://www.jaapsch.net/puzzles/trixxy.htm" onmouseover="return prev(149)" onfocus="return prev(149)" onmouseout="slides()" onblur="slides()">Stained</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/turn12.htm" onmouseover="return prev(93)" onfocus="return prev(93)" onmouseout="slides()" onblur="slides()">Turn 12</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/zigzaw.htm" onmouseover="return prev(79)" onfocus="return prev(79)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;ZigZaw</a>
+        </li></ul>
+        <h5>Others:</h5>
+        <ul>
+            <li><a href="http://www.jaapsch.net/puzzles/brainchek.htm" onmouseover="return prev(214)" onfocus="return prev(214)" onmouseout="slides()" onblur="slides()">Brain-chek</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/clock.htm" onmouseover="return prev(35)" onfocus="return prev(35)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Clock</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/cmetrick.htm" onmouseover="return prev(152)" onfocus="return prev(152)" onmouseout="slides()" onblur="slides()">Cmetrick</a>* /
+                <a href="http://www.jaapsch.net/puzzles/cmetrick.htm" onmouseover="return prev(195)" onfocus="return prev(195)" onmouseout="slides()" onblur="slides()">CMetrick&nbsp;Mini</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/columbus.htm" onmouseover="return prev(192)" onfocus="return prev(192)" onmouseout="slides()" onblur="slides()">Columbus&nbsp;Egg / The&nbsp;X&nbsp;Super&nbsp;Puzzle</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/dizzy.htm" onmouseover="return prev(139)" onfocus="return prev(139)" onmouseout="slides()" onblur="slides()">Dizzy&nbsp;Rainbow</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/enigma.htm" onmouseover="return prev(94)" onfocus="return prev(94)" onmouseout="slides()" onblur="slides()">Enigma</a> /
+                <a href="http://www.jaapsch.net/puzzles/enigma.htm" onmouseover="return prev(167)" onfocus="return prev(167)" onmouseout="slides()" onblur="slides()">Combinescion</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/hexadec.htm" onmouseover="return prev(184)" onfocus="return prev(184)" onmouseout="slides()" onblur="slides()">Hexadecimal Puzzle</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/impuzzle.htm" onmouseover="return prev(213)" onfocus="return prev(213)" onmouseout="slides()" onblur="slides()">Im-puzzle-ball</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/kibble.htm" onmouseover="return prev(190)" onfocus="return prev(190)" onmouseout="slides()" onblur="slides()">Kibble&nbsp;Cube</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/kinato.htm" onmouseover="return prev(151)" onfocus="return prev(151)" onmouseout="slides()" onblur="slides()">Kinato</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(101)" onfocus="return prev(101)" onmouseout="slides()" onblur="slides()">Lights&nbsp;Out</a>*  <span class="new3">UPDATED</span>/
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(137)" onfocus="return prev(137)" onmouseout="slides()" onblur="slides()">Mini&nbsp;Lights&nbsp;Out</a>* /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(17)" onfocus="return prev(17)" onmouseout="slides()" onblur="slides()">Lights&nbsp;Out&nbsp;2000</a>* /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(107)" onfocus="return prev(107)" onmouseout="slides()" onblur="slides()">Lights&nbsp;Out&nbsp;Cube</a>* /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(118)" onfocus="return prev(118)" onmouseout="slides()" onblur="slides()">Lights&nbsp;Out&nbsp;Deluxe</a>* /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(246)" onfocus="return prev(246)" onmouseout="slides()" onblur="slides()">Gamze Lights Out</a> <span class="new2">NEW</span> /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(186)" onfocus="return prev(186)" onmouseout="slides()" onblur="slides()">Vulcan&nbsp;XL-25</a> /
+                <a href="http://www.jaapsch.net/puzzles/lights.htm" onmouseover="return prev(108)" onfocus="return prev(108)" onmouseout="slides()" onblur="slides()">Merlin</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/luminat.htm" onmouseover="return prev(88)" onfocus="return prev(88)" onmouseout="slides()" onblur="slides()">Luminations</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/magic.htm" onmouseover="return prev(38)" onfocus="return prev(38)" onmouseout="slides()" onblur="slides()">Rubik's&nbsp;Magic</a> /
+                <a href="http://www.jaapsch.net/puzzles/magicmini.htm" onmouseover="return prev(207)" onfocus="return prev(207)" onmouseout="slides()" onblur="slides()">Mini&nbsp;Magic</a> /
+                <a href="http://www.jaapsch.net/puzzles/magiccrea.htm" onmouseover="return prev(57)" onfocus="return prev(57)" onmouseout="slides()" onblur="slides()">Create&nbsp;the&nbsp;Cube</a> /
+                <a href="http://www.jaapsch.net/puzzles/magicmast.htm" onmouseover="return prev(60)" onfocus="return prev(60)" onmouseout="slides()" onblur="slides()">Master&nbsp;Edition</a> /
+                <a href="http://www.jaapsch.net/puzzles/magicrings.htm" onmouseover="return prev(172)" onfocus="return prev(172)" onmouseout="slides()" onblur="slides()">Magic&nbsp;Rings</a> /
+                <a href="http://www.jaapsch.net/puzzles/magicsuper.htm" onmouseover="return prev(75)" onfocus="return prev(75)" onmouseout="slides()" onblur="slides()">Magic&nbsp;Balls</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/orbik.htm" onmouseover="return prev(185)" onfocus="return prev(185)" onmouseout="slides()" onblur="slides()">The Orbik</a>* <span class="new2">UPDATED</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/orbix.htm" onmouseover="return prev(28)" onfocus="return prev(28)" onmouseout="slides()" onblur="slides()">Orbix</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/padlock.htm" onmouseover="return prev(99)" onfocus="return prev(99)" onmouseout="slides()" onblur="slides()">Padlock / Lockout</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/robinson.htm" onmouseover="return prev(245)" onfocus="return prev(245)" onmouseout="slides()" onblur="slides()">Robinson Roulette</a>* <span class="new2">NEW</span>
+            </li><li><a href="http://www.jaapsch.net/puzzles/snakecube.htm" onmouseover="return prev(183)" onfocus="return prev(183)" onmouseout="slides()" onblur="slides()">Snake&nbsp;Cubes / Cubra</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/spinout.htm" onmouseover="return prev(43)" onfocus="return prev(43)" onmouseout="slides()" onblur="slides()">Spinout</a>* /
+                <a href="http://www.jaapsch.net/puzzles/spinout.htm" onmouseover="return prev(4)" onfocus="return prev(4)" onmouseout="slides()" onblur="slides()">The&nbsp;Brain</a> /
+                <a href="http://www.jaapsch.net/puzzles/spinout.htm" onmouseover="return prev(6)" onfocus="return prev(6)" onmouseout="slides()" onblur="slides()">Chinese&nbsp;Rings</a>
+            </li><li><a href="http://www.jaapsch.net/puzzles/thinkadot.htm" onmouseover="return prev(173)" onfocus="return prev(173)" onmouseout="slides()" onblur="slides()">Think-a-Dot</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/hanoi.htm" onmouseover="return prev(54)" onfocus="return prev(54)" onmouseout="slides()" onblur="slides()">Towers of Hanoi</a>*
+            </li><li><a href="http://www.jaapsch.net/puzzles/writersblock.htm" onmouseover="return prev(232)" onfocus="return prev(232)" onmouseout="slides()" onblur="slides()">Writer's Block</a> <span class="new3">NEW</span>
+        </li></ul>
+    </div>
+</td></tr></tbody></table>
+
+<div style="text-align: center; width:100%"><div class="nav"><ul>
+<li><a href="http://www.jaapsch.net/puzzles/">Home</a></li>
+<li><a href="http://www.jaapsch.net/puzzles/puzzlink.htm">Links</a></li>
+<li><a href="http://www.jaapsch.net/puzzles/guest.htm">Guestbook</a></li>
+</ul></div></div>
+
+<p class="clear">
+These pages and scripts are written by Jaap Scherphuis, © Copyright 1999-2011. It is a non-commercial site.
+<br>Some of these puzzles may be trademarked. This site is not derived 
+from, associated with, or endorsed by the holders of such trademarks.
+<br>Send any comments or suggestions to
+<script language="JavaScript" type="text/javascript"><!--
+insertemail("jaap"+"sch","yah"+"oo.com");
+//--></script><a href="mailto:jaapsch@yahoo.com" onmouseover="return prev(-1)">jaapsch@yahoo.com</a>
+<noscript>jaapsch a t yahoo d o t com.</noscript>
+
+<script language="JavaScript1.1" type="text/javascript">
+<!--
+    // Javascript written by Jaap Scherphuis. (jaapsch a t yahoo d o t com)
+    insertpreviewlayer();
+ //-->
+</script></p><div style="left: 936px; top: 0pt; visibility: visible;" id="preview"><img src="http://www.jaapsch.net/puzzles/javascript/images/preview/wanderrings.gif" name="previmg" onmouseover="jump();" width="64" border="4" height="64"></div>
+
+
+
+
+</body></html>

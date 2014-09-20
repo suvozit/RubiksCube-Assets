@@ -1,0 +1,78 @@
+<html><head>
+<title>Download</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" href="download_files/style.css" type="text/css">
+	<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+    </style>
+</head>
+	
+	<body>
+	<table width="800" border="0" cellpadding="20" cellspacing="30">
+	  <tbody><tr> 
+		<td valign="top" width="700" bgcolor="#E7E9FA" height="48"> <h1 align="center">Download</h1>
+		</td>
+	  </tr>
+	  
+  <tr> 
+    <td valign="top" bgcolor="#E7E9FA" height="133"> 
+      <div align="left"></div>
+      <div align="left"><font color="#FF0000">Cube Explorer 5.00</font> needs 
+        128 MB of RAM and runs on all Windows platforms from Windows 98 to Windows 7 (32 bit or 64 bit).<br>
+        </div>
+      <p align="center"><a href="http://kociemba.org/cube500.zip">Download Cube Explorer (932 kb)</a></p>
+    </td>
+	  </tr>
+	  <tr> 
+		
+    <td valign="top" width="700" bgcolor="#E7E9FA" height="280"><p>I also have a special version <font color="#FF0000">Cube Explorer 5.00s</font> available, which uses more than 2 GB of RAM for the huge optimal solver 
+  tables. It is about 15 times faster than the standard optimal solver and <strong>optimally</strong> solves a random cube in <strong>less than two 
+    minutes</strong> on average on a 3 GHz Pentium 4 machine.</p>
+<p>With a 32 bit operating system, only Windows XP Professional supports a 
+  virtual address space of more than 2 GB for an application. Even with 
+  these versions you have to use the /3GB switch in the Boot.ini file to 
+  support more than 2 GB of RAM for an application (see <a href="http://www.microsoft.com/whdc/system/platform/server/PAE/PAEmem.mspx">here</a> for details).<br>
+You may download this special 
+  version <a href="http://kociemba.org/cube500s.zip">here</a>.</p>
+<p>If you run Windows Vista 64 bit, this version will run without any 
+problems if you have about 4 GB of RAM installed. With an Intel Core i7 
+920 CPU I solved about 300 cubes optimally within one hour by doing the 
+computations in parallel to keep all 8 cores (4 physical and 4 virtual 
+cores) busy.</p>
+</td>
+	  </tr> 
+	  <tr> 
+		
+    <td valign="top" width="700" bgcolor="#E7E9FA" height="134"> <p>If you are 
+        interested in an <strong>Optimal Cube Solver in the Quarter Turn Metric</strong> 
+        which runs on the command line under <strong>LINUX</strong> and <strong>WINDOWS</strong>, 
+        you can download the documented <strong>C source code</strong> <a href="http://kociemba.org/optiqtmSrc.zip">here</a>. 
+        An already compiled version for Windows is available <a href="http://kociemba.org/optiqtmWinExe.zip">here</a>. 
+        The program also accepts the file format of Cube Explorer, so you can 
+        generate your cubes in Cube Explorer and feed them to this program.<br>
+        Bruce MacKenzie has ported this command line program to run on a<strong> 
+        MAC</strong> (nomen est omen). You can download the program <a href="http://kociemba.org/macsolver.zip">here</a>.</p>
+      </td>
+	  </tr>
+   <tr><td valign="top" width="700" bgcolor="#E7E9FA" height="60"> <p>A working version of the two-phase-algorithm is not too easy to program. For demonstration purposes I wrote a <span class="style1">Java package</span> which implements the two-phase-algorithm in its simplest form without any symmetry reductions.</p>
+     <p>The package org.kociemba.twophase, the sourcecode and the corresponding javadocs are included in the file <a href="http://kociemba.org/twophase.jar">twophase.jar</a> . The little Java program <a href="http://kociemba.org/GUI_example.jar">GUI_example.jar</a> (Version 2009.02.16), which is an executable jar file shows an example how to use the package. </p>
+     <p>The tables in this implementation take only about 5 MB and are 
+generated within seconds. Nevertheless the package routine solved about 
+26000 random cubes/hour if the maximum maneuver length was set to 21 
+moves and about 800 random cubes/hour if it was set to 20 moves maximum 
+length.</p>
+     <p>You may use this package for free but you must include an appropriate credit line.</p></td>
+	  </tr>	  
+<tr> 
+		
+    <td valign="top" width="700" bgcolor="#E7E9FA" height="60"> <p>Last but not least I implemented the Two-Phase-Algorithm into a <a href="http://kociemba.org/TwoPhase_Mathematica.zip">Mathematica-package</a>. The code runs very slow, but it is also very short. It might be interesting from a theoretical point of view.</p>
+    <p>The interactive editor function in the package needs at least Version 6.0 of Mathematica.</p></td>
+	  </tr>	  
+	  
+	  
+	</tbody></table>
+	
+	
+</body></html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>Beginner Solution to the Rubik's Cube</title>
+<meta name="rubik's cube solution" content="Jasmine Lee's Beginner Solution to the Rubik's Cube">
+	<link href="http://peter.stillhq.com/jasmine/blog/cube-favicon.ico" rel="shortcut icon">
+	<style type="text/css">
+<!--
+p {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 8pt; line-height: 1.6; margin: 10px 0px 10px 0px;}
+h1 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 24pt;}
+h2 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 18pt;}
+h3 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 14pt;}
+h4 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 13pt;}
+h5 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 11pt; font-weight: bold;}
+h6 {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 10pt; font-weight: bold;}
+ul {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 8pt; line-height: 1.6; margin: 10px 0px 0px 20px; list-style: square;}
+ol {  font-family: Verdana, Arial, Helvetica, sans-serif; colour: "#000000"; font-size: 8pt; line-height: 1.6; margin: 10px 0px 0px 20px;}
+.smalltxtbold {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: "bold"; font-size: 8pt;}
+.smalltxt {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;}
+-->
+</style>
+</head>
+<body topmargin="70" leftmargin="70" rightmargin="70" bottommargin="70" vlink="#993333" alink="#FFFF00" background="rubikscubesolution_files/paper.gif" link="#3300FF">
+
+<table width="100%" bgcolor="#FFFFFF" border="1" bordercolor="#000000" cellpadding="20" cellspacing="1">
+<tbody><tr>
+<td valign="top">
+<table width="100%"><tbody><tr>
+<td>
+<img src="rubikscubesolution_files/cube-scrambled.gif" alt="Scrambled Rubik's Cube" width="86" align="absmiddle" border="0" height="95"></td>
+<td><center><h3>Beginner Solution to the Rubik's Cube</h3></center>
+<center><p><a href="http://www.geocities.com/jasmine_ellen/">Home</a> | 
+<!--<a href="http://speedcuber.blogspot.com/">Blog</a> | -->
+<a href="http://peter.stillhq.com/jasmine/rubiks-25th-anniversary.html">Rubik's 
+25th Anniversary</a> | <a href="http://www.geocities.com/jasmine_ellen/RubiksWorldChampionships2003.html">RWC2003</a> | <a href="http://www.geocities.com/jasmine_ellen/Cube/rubikslinks.html">Rubiks links</a></p><p>Translations: <a href="http://www.megadix.it/rubik">
+Italian</a> | <a href="http://peter.stillhq.com/jasmine/cubesolution-deutsch.html">German</a> | <a href="http://fcalzado.net/blog/?q=node/92">Spanish</a></p><p><a href="#introduction">introduction</a> | <a href="#structure">structure of the cube</a> | <a href="#terminology">cube notation</a><br><a href="#solution">solution</a> | <a href="#first-layer">first layer</a> | <a href="#cross">cross</a> | <a href="#FL-corners">FL corners</a> | <a href="#mid-layer">middle layer</a> | <a href="#last-layer">last layer</a><br><a href="#last-layer-edge-orientation"> LL edge orientation</a> | <a href="#last-layer-corner-permutation"> LL corner permutation</a> | <a href="#last-layer-corner-orientation"> LL corner orientation</a> | <a href="#last-layer-edge-permutation"> LL edge permutation</a> | <a href="#next-steps"> next steps</a></p></center></td>
+<td>
+<img src="rubikscubesolution_files/cube-solved.gif" alt="Solved Rubik's Cube" width="86" align="absmiddle" border="0" height="95"></td>
+</tr>
+<tr><td colspan="3" align="center">
+	<p><br>
+	<img src="rubikscubesolution_files/pdficon.gif" alt="PDF icon" align="absmiddle"> <b> <a href="http://peter.stillhq.com/jasmine/JasmineLeeBeginnerRubikSolution.pdf" alt="Click here to download a PDF version of Jasmine's Beginner Solution to the Rubik's Cube">PDF version of beginner cube solution</a></b> 
+(requires <a href="http://www.adobe.com/products/acrobat/readermain.html">Adobe Acrobat</a>)</p></td></tr>
+</tbody></table>
+<a name="introduction"></a><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Introduction</h6>
+<p>There are many different methods for solving the Rubik's cube. They 
+can be divided into two broad categories: layer methods and corners 
+first methods (and there are sub-categories within these broad 
+categories). The method I use for speedsolving 
+is a layer based method. More specifically, the method I currently use 
+is: 
+cross, F2L, 3-look LL (I know some of the OLLs, so sometimes I can do a 
+2-look 
+LL). If you are a newbie cuber then this description may not mean much 
+to you, so I should add that it's the 'Advanced Solution' I described in
+ the <a href="#next-steps"><b>Next Steps</b></a> section at the end of this page.
+</p><p>Many years ago when I wrote this webpage there were many great 
+websites that explained advanced and expert methods for solving the cube
+ (check out my <a href="http://peter.stillhq.com/jasmine/Cube/rubikslinks.html"><b>Rubiks links</b></a>
+ page), 
+however, there were very few that explained beginner methods. This is 
+the reason 
+I wrote this page. It's not meant to be a totally comprehensive 
+explanation, it's really just some notes I threw together for some 
+friends I was teaching. I thought it might be useful for others, so I've
+ turned it into a webpage. 
+</p><p>This beginner method requires memorising only a few algorithms, 
+and when done efficiently can achieve solves of 60 seconds or faster. I 
+know people who can solve in 
+20-30s with a method like this. I 
+haven't been able to solve so fast with a beginner method, so don't be 
+too distressed if you can't either. On the other hand, if you can do 30s
+ solves with this method, then you are too good for this method and you 
+should be learning an Advanced 
+or Expert method!
+</p><p>Aside from minimal memorisation, another benefit of this method is that it is 
+very scalable. More algorithms may be added later to develop it into an advanced 
+method, or if you're really keen, an expert method. This means you don't need to 
+scrap it and start again to move to an expert method. Everything you learn here 
+will be useful for more advanced methods.
+
+<a name="structure"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Structure of the cube</h6>
+<p>We all know that 3x3x3=27, however, rather than thinking about the 
+cube as 27 little "cubies", think about it as 6 fixed centres (that can 
+rotate on their own axis) with 8 corners and 12 edges which rotate 
+around it. As the centres are fixed, the centre colour defines the 
+colour for the face. It's important to remember this otherwise you'll 
+end up trying to do illogical (mechanically impossible!) things like 
+wondering why you can't work out how to put a corner piece in an edge 
+position, or assuming that you're looking at the blue face merely 
+because 8 of the 9 cubies on it are blue (if the centre is white then 
+it's the white face).
+
+<a name="terminology"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Terminology</h6>
+<p>When describing the solution for the 2nd and 3rd layers, standard 
+cube notation will be used. Here's what you need to know to read it:
+</p><p>
+<table width="90%" align="center"><tbody><tr>
+<td><p><b>F</b> = front face</p></td>
+<td><p><b>B</b> = back face</p></td>
+<td><p><b>R</b> = right face</p></td>
+<td><p><b>L</b> = left face</p></td>
+<td><p><b>U</b> = up face</p></td>
+<td><p><b>D</b> = down face</p></td>
+</tr></tbody></table>
+
+</p><p>In addition to a letter, each move may be accompanied by an apostrophe or the number two:</p><ul>
+	<li>A letter by itself means turn that face 90 degrees clockwise (eg. <b>F</b>).</li>
+	<li>A letter followed by an apostrophe means turn that face 90 degrees anti-clockwise (eg.
+	<b>F'</b>).</li>
+	<li>A letter followed by the number 2 means turn that face 180 degrees (direction is irrelevant), (eg.
+	<b>F2</b>).
+
+</li>
+	</ul>
+
+<p>So <b>R U' L2</b> is shorthand for <i>"turn the right face 90 degrees clockwise, then turn the up face 90 degrees anti-clockwise, then turn the left face 180 degrees"</i>.
+ When thinking whether to turn clockwise/anti-clockwise, imagine that 
+you are looking directly at the particular face you are turning.
+
+</p><p>For each algorithm, the notation is written with the assumption 
+that the core of the cube remains fixed throughout the whole algorithm, 
+and the faces just turn around it. This means that you also need to know
+ how to position the cube to start the algorithm.
+
+</p><p>For pictures and further detail about cube notation, have a look at <b>
+<a href="http://www.nascarjon.us/notation.html">Jon Morris' cube notation page</a></b>.
+
+<br>
+<br>
+<!-- START OF SOLUTION -->
+<br>
+<a name="solution"></a></p><center><h3>The Solution</h3></center>
+
+<!-- FIRST LAYER -->
+
+<a name="first-layer"></a><h4><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> The First Layer</h4>
+
+<p>The first layer is solved in two stages:</p><ol>
+	<li>Form the cross</li>
+	<li>Insert the 4 first layer corners (each corner is inserted individually)
+	</li>
+	</ol>
+<p>I believe that the first layer should be done intuitively. You need 
+to understand it and solve it without learning algorithms. Until you can
+ do this, I wouldn't bother attempting the rest of the cube! So, spend 
+some time playing with the cube and familiarising yourself with how to 
+move the pieces around the cube.
+</p><p>Now, here are some tips to get you started.
+
+<!-- CROSS -->
+
+<a name="cross"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> The Cross</h6>
+
+<p>I prefer to start with the white cross because I find white easier to
+ quickly identify on a completely scrambled cube, however, you can use 
+any colour.
+
+</p><p>There are 4 edge pieces with white (ie. the 4 arms of the cross) 
+which have specific positions. You can't put any white edge piece in an 
+arm of the cross because the other colour on the edge cubie must match 
+up with it's centre on the middle layer.
+
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="50%"><center>
+<img src="rubikscubesolution_files/cross-correct.gif" alt="cross: correct" width="89" border="0" height="98">
+<p>Here is a pic of what a correctly formed cross looks like (grey denotes cubies that are irrelevant to the cross). Note that the <b>white</b>/<font color="#FF0000"><b>red</b></font> edge cubie matches up with the <b>white</b> centre and the <font color="#FF0000"><b>red</b></font> centre. Ditto re the <b>white</b>/<font color="#0000FF"><b>blue</b></font> cubie.</p></center></td>
+<td valign="top" width="50%"><center>
+<img src="rubikscubesolution_files/cross-incorrect.gif" alt="cross: incorrect" width="89" border="0" height="98"><p>Here's a pic on an incorrectly formed cross. Looking at the <b>white</b> face we do indeed see a <b>white</b> cross, however the <b>white</b>/<font color="#FF0000"><b>red</b></font> edge cubie does not match up with the <font color="#FF0000"><b>red</b></font> centre. Ditto re the <b>white</b>/<font color="#0000FF"><b>blue</b></font> cubie. This is bad!</p></center></td>
+</tr>
+</tbody></table>
+
+</p><p>For a detailed explanation of the cross, check out Dan Harris' <a href="http://www.cubestation.co.uk/cs2/index.php?page=3x3x3/cfop/cross/cross" target="_blank"><b>Solving the Cross</b></a> page.
+
+<!-- FIRST LAYER CORNERS -->
+
+<a name="FL-corners"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> The First Layer Corners</h6>
+<p>Once you have completed the cross, completing the first layer 
+requires inserting each of the 4 corners in separately. The first thing 
+to do is examine your cube and locate all of the top layer edge pieces -
+ they will be sitting in either the 
+first layer or the last layer. Inserting the first layer corners should 
+be done intuitively, not by learning algorithms. To get you started, 
+here's a step-by-step example of one way to insert a 
+first layer corner.
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/FLC1.jpg" alt="first layer corner: step 1" width="89" border="0" height="98"><p><b>Step 1</b>
+</p><p>The <font color="#0000FF"><b>blue</b></font>/<font color="#FF0000"><b>red</b></font>/<b>white</b> corner is sitting in the bottom layer (the <font color="#0000FF"><b>blue</b></font> part is facing the bottom so we can't see it in this picture). Turn the <font color="#0000FF"><b>blue</b></font> face 90 degrees anti-clockwise.
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/FLC2.jpg" alt="first layer corner: step 2" width="89" border="0" height="98"><p><b>Step 2</b>
+</p><p>Now your cube should look like this. Move the D face 90 degrees anti-clockwise to line up the <font color="#0000FF"><b>blue</b></font>/<b>white</b> edge with the <font color="#0000FF"><b>blue</b></font>/<b>white</b>/<font color="#FF0000"><b>red</b></font> corner.
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/FLC3.jpg" alt="first layer corner: step 3" width="89" border="0" height="98"><p><b>Step 3</b>
+</p><p>Now that the <font color="#0000FF"><b>blue</b></font>/<b>white</b> edge and the <font color="#0000FF"><b>blue</b></font>/<b>white</b>/<font color="#FF0000"><b>red</b></font> corner have been lined up, re-form the <b>white</b> cross by turning the <font color="#0000FF"><b>blue</b></font> face 90 degrees clockwise.
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/FLC4.jpg" alt="first layer corner: step 4" width="89" border="0" height="98"><p><b>Step 4</b>
+</p><p>Now the <font color="#0000FF"><b>blue</b></font>/<b>white</b>/<font color="#FF0000"><b>red</b></font> corner is in its correct place.
+</p></center></td>
+</tr>
+</tbody></table>
+</p><p>
+</p><p><i>Here are some tips for inserting the top layer corners:</i>
+</p><ul>
+<li><p>Start with a first layer corner that is sitting in the last layer.</p></li>
+<li><p>If there are multiple first layer corners in the last layer 
+(there usually will be), start with one that does not have the white 
+part of the corner on the face 
+opposite the white face. Or, if you were using a different colour for 
+the cross ('colour X'), start with a corner that does not have the 
+'colour X' part of the corner on the face 
+opposite the 'colour X' face.</p></li>
+<li><p>When working with a first layer corner piece that is in the first
+ layer (but in the wrong 
+first layer corner position), you will need to get it out of the first 
+layer into the 
+last layer, then insert it into the correct first layer corner position.
+ The same principle applies if a 
+first layer corner piece is in the correct first layer corner position 
+but needs to be flipped around. You need to get it out of the 
+first layer (ie. into the last layer), and then re-insert it into the 
+first layer the correct way around.</p></li>
+</ul>
+<p>
+</p><center><table width="80%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89">
+<p></p><center><img src="rubikscubesolution_files/FirstLayer.jpg" alt="completed first layer" width="89" border="0" height="98"></center></td>
+<td valign="middle">
+<p>This is what the first layer should look like when finished.
+</p></td></tr></tbody></table></center>
+
+<!-- MIDDLE LAYER -->
+
+<a name="mid-layer"></a><h4><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> The Middle Layer</h4>
+
+<p>The middle layer consists of one stage:
+</p><ol>
+	<li>Insert the 4 middle layer edges (each edge is inserted individually).</li>
+	</ol>
+<p>You only need to learn one algorithm (plus the mirror algorithm) for 
+the second layer. There are many more algs, but let's just learn the 
+essential one first.
+</p><p>First, locate a middle layer edge that is currently sitting in the last layer. I'm going to use the <font color="#0000FF"><b>blue</b></font>/<font color="#FF0000"><b>red</b></font> edge for this example.
+
+</p><center><table width="80%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89">
+<p></p><center><img src="rubikscubesolution_files/SecondLayerEdge.jpg" width="89" border="0" height="98"></center></td>
+<td valign="middle">
+<p> This blue edge cubie in the last layer is the <font color="#0000FF"><b>blue</b></font>/<font color="#FF0000"><b>red</b></font> edge cubie.
+</p></td></tr></tbody></table></center>
+
+<p>In this picture, <b>U=white, L=<font color="#FF0000">red</font> and F=<font color="#0000FF">blue</font></b>.
+ We can't see the other three faces, but obviously the R face is the one
+ opposite the L face, the D face is opposite the U face and the B face 
+is opposite the F face.
+
+</p><p>Now, position the <font color="#0000FF"><b>blue</b></font>/<font color="#FF0000"><b>red</b></font> edge piece so that the colour on the side of the cube (<font color="#0000FF"><b>blue</b></font> in this case) lines up with it's centre. Now perform the following algorithm: <b>D L D' L' D' F' D F</b>
+
+</p><p>If the <font color="#0000FF"><b>blue</b></font>/<font color="#FF0000"><b>red</b></font> edge piece was flipped the other way so that the <font color="#0000FF"><b>blue</b></font> was on the bottom rather than the <font color="#FF0000"><b>red</b></font>, you would position the cubie under the <font color="#FF0000"><b>red</b></font> centre and perform the following alg: <b>D' F' D F D L D' L'</b>.
+ This is the mirror of the previous algorithm. The axis of symmetry lies
+ diagonally across the white face, and along the line which divides the <font color="#0000FF"><b>blue</b></font> face and the <font color="#FF0000"><b>red</b></font> face.</p>
+<br>
+<table width="100%" border="0">
+<tbody><tr>
+<td width="70%">
+<p><b><i>What if the edge piece is not in the last layer?</i></b></p>
+<p>The instructions above assume that the middle layer edge piece you are inserting is sitting somewhere in the last layer.</p>
+
+<p>If some middle edges are in the last layer and some are in the middle
+ layer in the wrong spot, always start working with the edge pieces that
+ are in the last layer. After you've done this, sometimes (but not too 
+often) you'll be left with a middle layer edge piece that's in the 
+middle layer but in the wrong spot. In this situation, you can use the 
+same middle layer algorithms from above (<b>D L D' L' D' F' D F</b> or <b>D' F' D F D L D' L'</b>)
+ to insert another edge piece into the middle layer edge position, 
+thereby knocking the middle layer edge piece out of its spot and into 
+the last layer. Once you've done this, the middle layer edge piece is in
+ the last layer and you can deal with it in the usual way.</p>
+<p>There is a short-cut to this problem, but as this is a beginner solution with 
+minimal memorisation, I haven't included it here. If you really want to learn 
+it, take a look at 
+<a href="http://www.cosine-systems.com/cubestation/cs2/index.php?page=3x3x3/cfop/f2l/frdd#f2l1">Case Dd2</a> on Dan Harris' site.</p></td>
+<td width="5%"> </td>
+<td width="30%">
+<p align="center"><img src="rubikscubesolution_files/MiddleLayerEdge2.jpg" alt="Middle layer edge in the wrong way"></p>
+<p align="center"><i>The <font color="#FF0000"><b>red</b></font>/<font color="#0000FF"><b>blue</b></font>
+ middle layer edge piece is in the middle layer but not oriented 
+correctly. It needs to be moved to the last layer, then put back into 
+the middle layer in the right way.</i></p>
+</td></tr></tbody></table>
+
+<!-- LAST LAYER -->
+
+<a name="last-layer"></a><h4><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> The Last Layer</h4>
+
+<p>The last layer ("LL") is done in 4 steps:
+</p><ol>
+	<li>Orient the edges (2 algs) - i.e. form a cross on the D face.</li>
+	<li>Permute the corners (1 alg) - i.e. get the corners in the correct 
+position in 3D space (don't worry if they still need to be rotated).</li>
+	<li>Orient the corners (1 alg + mirror alg) - i.e. flip the corners.</li>
+	<li>Permute the edges (1 alg) - i.e. swap the edges around. The cube should now be solved! :)
+	</li>
+	</ol>
+
+<p>All last layer algorithms are performed with the cross (i.e. the first layer - 
+white side in this example) on the bottom.
+
+<!-- LAST LAYER: EDGE ORIENTATION -->
+
+<a name="last-layer-edge-orientation"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Orienting the LL Edges</h6>
+
+<p>Once you have completed the first two layers ("F2L"), hold the cube 
+so that the white side is on the bottom. The white side will be on the 
+bottom for the remainder of the solution. This means that the white side
+ is the D side for all last layer algorithms.</p>
+
+<p>On my cube, white is opposite yellow, therefore yellow is the U face 
+for all last layer algorithms on my cube. Note that your cube may have a
+ different colour opposite white (e.g. blue). Now have a look at your 
+last layer, and in particular, look at the last layer face - there are 4
+ possible patterns of LL edges that you may see.</p>
+
+<p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/OLLE1.jpg" width="89" border="0" height="98"><p><b>State 1</b>
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/OLLE2.jpg" width="89" border="0" height="98"><p><b>State 2</b>
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/OLLE3.jpg" width="89" border="0" height="98"><p><b>State 3</b>
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/OLLE4.jpg" width="89" border="0" height="98"><p><b>State 4</b>
+</p></center></td>
+</tr>
+</tbody></table>
+
+</p><p>Unlike with the initial cross (where all the edges must match up 
+with the white centre and with the centres on the middle layer), here 
+all you need to worry about is getting all the last layer edges matching
+ up with the last layer centre. It doesn't matter if the other colour on
+ the LL edge piece does not match up with the colour on the middle layer
+ centre. Also, ignore the LL corners too. It doesn't matter what they 
+are doing at the moment. Now, let's consider each of these LL edge 
+states separately.
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLE1.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b>State 1</b></p><p>All the edges are already oriented correctly. Move on to permuting the corners.
+</p></td>
+</tr>
+</tbody></table>
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLE2.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b>State 2</b></p><p>We are going to re-orient our faces for this 
+algorithm. The face you are looking directly at in this picture is now 
+the U face (it was the D face for when you were doing the second layer 
+edges). Perform the following algorithm: <b>F U R U' R' F'</b>
+</p></td>
+</tr>
+</tbody></table>
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLE3.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b>State 3</b></p><p>As with State 2, the face you are looking directly at in this picture is now the U face. Perform the following algorithm: <b>F R U R' U' F'</b>
+</p></td>
+</tr>
+</tbody></table>
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLE4.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b>State 4</b></p><p>State 4 is really a combination of States 2 and 
+3, so all you need to do is perform the algorithm for either State 2 or 
+State 3. Once you've done this, you'll see that your LL edges now look 
+like State 2 or State 3, so just perform the appropriate algorithm and 
+you will have a cross on the LL.
+</p></td>
+</tr>
+</tbody></table>
+
+<!-- LAST LAYER: CORNER PERMUTATION -->
+
+<a name="last-layer-corner-permutation"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Permuting the LL Corners</h6>
+
+<p>The two possible states are:</p><ul>
+	<li>two adjacent LL corners need to be swapped; or</li>
+	<li>two diagonal LL corners need to be swapped.</li>
+	</ul>
+	<p>These are the only two possible states. If you cannot identify one of these two states with your LL corners then one 
+	or more of the following must be true:</p><ul>
+	<li>You have not finished the F2L.</li>
+	<li>Someone has ripped out a corner of your cube and put it in the wrong way.</li>
+	<li>Someone has ripped off some of your stickers and put them back in the 
+	wrong place.</li>
+	<li>You are not looking hard enough. ;) </li>
+	</ul>
+
+<p><b><i>Swapping adjacent corners</i></b>
+
+</p><p>Hold the cube with the white side on the bottom, and the two 
+corners to be swapped are in the front right top and the back right top 
+positions. Perform the following algorithm: <b>L U' R' U L' U' R U2</b>. 
+To see an animated version of this algorithm, see the first algorithm on
+<a href="http://lar5.com/cube/fas5.html">Lars Petrus' 
+
+<!-- <p>In a previous version of this page, I had the adjacent corner swap written with the cross on top. This wasn't very good and confused people because all the other LL algs on this page are written for cross on bottom. When I realised this I was just going to delete it, but in case anyone really wants to do the LL adjacent corner swap with cross on top (which I advise against) and was using this page as a reference I decided to leave it in. I may revise this later and remove it altogether. However, for now, here it is: Hold the cube with the white cross on the top, and the two corners to be swapped are in the front right bottom and the back right bottom positions. Perform the following algorithm: <b>L D' R' D L' D' R D2</b> -->
+
+Step 5 page</a>. On Lars' site, the algorithm is being executed from a slightly 
+different angle (the two corners being swapped are front-top-right and 
+front-top-left), but it is the same exact algorithm.</p><p></p><p>
+<b><i>Swapping diagonal corners</i></b>
+
+</p><p>Swapping diagonal corners can be done by executing the adjacent 
+corner swap algorithm twice. Perform it once to swap any two LL corners.
+ Re-examine you cube and you'll see that now there are just two LL 
+corners that need to be swapped. Position it correctly for the final LL 
+adjacent corner swap and perform the LL adjacent corner swap algorithm.
+
+<!-- LAST LAYER: CORNER ORIENTATION -->
+
+<a name="last-layer-corner-orientation"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Orienting the LL Corners</h6>
+
+<p>There are 8 possible orientation states for the LL corners. One is 
+where all 4 corners are correctly oriented. The other 7 look like this.
+
+</p><p>
+<table width="100%" cellspacing="2"><tbody><tr>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC1.jpg" width="89" border="0" height="98"><p><b>State 1</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC2.jpg" width="89" border="0" height="98"><p><b>State 2</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC3.jpg" width="89" border="0" height="98"><p><b>State 3</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC4.jpg" width="89" border="0" height="98"><p><b>State 4</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC5.jpg" width="89" border="0" height="98"><p><b>State 5</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC6.jpg" width="89" border="0" height="98"><p><b>State 6</b>
+</p></center></td>
+<td valign="top" width="14%"><center><img src="rubikscubesolution_files/OLLC7.jpg" width="89" border="0" height="98"><p><b>State 7</b>
+</p></center></td>
+</tr>
+</tbody></table>
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLC1.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b><i>State 1. Twisting three corners anti-clockwise</i></b></p><p><b>R' U' R U' R' U2 R U2</b></p></td>
+</tr>
+</tbody></table>
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="89"><img src="rubikscubesolution_files/OLLC2.jpg" width="89" border="0" height="98"></td>
+<td valign="top">
+<p><b><i>State 2. Twisting three corners clockwise</i></b></p><p><b>R U R' U R U2 R' U2</b>
+<br>
+To see an animated version of this algorithm, look at
+<a href="http://lar5.com/cube/fas6.html">Lars Petrus' Sune algorithm</a>.</p></td>
+</tr>
+</tbody></table>
+
+</p><p><b><i>States 3-7</i></b></p><p>
+Once you know the algorithms for States 1 and 2, you can solve any LL 
+orientation State. The remaining States can be oriented using a maximum 
+of 2 algorithms. You will need to do one of the following (i) the State 1
+ algorithm twice, (ii) the State 2 algorithm twice, (iii) the State 1 
+algorithm, then the State 2 algorithm, or (iv) the State 2 algorithm, 
+then the State 1 algorithm.
+
+</p><p>In a previous edition of this solution, I had said that I'm not 
+going to tell you 
+exactly how to combine the State 1 and State 2 algorithms to solve 
+States 3-7. 
+My reason for this was because it is important that you try to 
+understand how the State 1 and the State 2 algorithms work, 
+and that once you do understand them you will be able to work out how to
+ use them to solve all the States. 
+I still believe this, however, I received emails from a few people who 
+were having trouble with States 3-7, so I decided to write some extra 
+tips. I still suggest that you try to work out States 3-7 by yourself, 
+but if you are really stuck, have a look here:
+
+
+<a href="http://peter.stillhq.com/jasmine/rubikscubesolution-orient-LL-corners.html">Orienting the Last Layer Corners: further tips</a>.
+
+<!-- LAST LAYER: EDGE PERMUTATION -->
+
+<a name="last-layer-edge-permutation"></a></p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Permuting the LL Edges</h6>
+
+<p>There are 5 possible permutation states for the LL edges. One is 
+where all 4 edges are correctly permuted. The other 4 look like this.
+
+</p><p>
+<table width="100%" cellspacing="10"><tbody><tr>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/PLLE1.jpg" width="73" border="0" height="73"><p><b>State 1</b>
+</p><p><b>R2 U F B' R2 F' B U R2</b>
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/PLLE2.jpg" width="73" border="0" height="73"><p><b>
+State 2</b></p><p><b><b>R2 U' F B' R2 F' B U' R2</b>
+<br></b>This is almost identical to the algorithm for State 1. Only difference is the 2nd move and the 2nd last move.</p><p>
+For an animated version of this algorithm, see the
+<a href="http://lar5.com/cube/fas7.html">Lars Petrus' Allen algorithm</a>. The 
+algorithm is being executed from a slightly different angle, but it is the same 
+exact algorithm.</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/PLLE3.jpg" width="73" border="0" height="73"><p><b>State 3</b></p><p>Apply the algorithm for either State 1 or State 2. Re-examine your cube and it will now look like State 1 or State 2.
+</p></center></td>
+<td valign="top" width="25%"><center><img src="rubikscubesolution_files/PLLE4.jpg" width="73" border="0" height="73"><p><b>State 4</b>
+</p><p>Apply the algorithm for either State 1 or State 2. Re-examine your cube and it will now look like State 1 or State 2.
+</p></center></td>
+</tr>
+</tbody></table>
+
+</p><p><b>And that's all you really need to know to solve the Rubik's Cube!</b>
+ With practice, you should be able to achieve times of 60 seconds (or 
+faster) using this method. Once your comfortable with this method and 
+want to learn more, take a look at the following section.</p>
+
+<br>
+<center><img src="rubikscubesolution_files/cubebar.gif" alt="cube-coloured stripe"><img src="rubikscubesolution_files/cubebar.gif" alt="cube-coloured stripe"><img src="rubikscubesolution_files/cubebar.gif" alt="cube-coloured stripe"></center>
+<br>
+<br>
+
+<!-- NEXT STEPS -->
+
+<a name="next-steps"></a><h4><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Next Steps</h4>
+
+<p>If this beginner method is too easy and boring for you then consider the following.
+
+</p><p><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> <b><i>Intermediate method</i></b>
+</p><ul>
+<li><p>Solve each first layer corner + corresponding middle layer edge 
+in one step. This means that after the cross you only have 4 steps (4 
+corner/edge pairs) to complete the F2L. With this beginner method there 
+are 8 steps: solve each of the 4 first layer corners, then solve each of
+ the 4 middle layer edges. I'd suggest just playing around with your 
+cube and figuring out the F2L corner/edge pairs yourself. For some hints
+ about solving the F2L intuitively, have a look at <a href="http://dougreed.no-ip.org/%7Edoug/f2l/f2l.htm" target="_blank"><b>Doug Reed's intuitive F2L guide</b></a>. If you're still stuck and just want the algorithms, check out <a href="http://www.cubestation.co.uk/cs2/index.php?page=3x3x3/cfop/f2l/f2l" target="_blank"><b>Dan Harris' F2L page</b></a><a> and </a><a href="http://www.ws.binghamton.edu/fridrich/Mike/middle.html" target="_blank"><b>Jessica Fridrich's F2L page</b>.</a><br>
+&nbsp;</p></li>
+<li><p>Learn the 4 specific algorithms (or rather, 3 algorithms plus one
+ mirror algorithm) for each of the 4 different permutation states of the
+ LL edges. 
+My beginner solution already shows you 2 of the 4 last layer edge 
+permutation 
+algorithms, the other two last layer edge permutation algorithms are 
+<a href="http://www.cosine-systems.com/cubestation/cs2/index.php?page=3x3x3/cfop/pll/pllcaseedges#pll5">Case #5</a> and 
+<a href="http://www.cosine-systems.com/cubestation/cs2/index.php?page=3x3x3/cfop/pll/pllcaseedges#pll17">Case #17</a> on
+<b>
+<a href="http://www.cosine-systems.com/cubestation/cs2/3x3x3/cfop/pll/pllprintablepage.php">Dan Harris' PLL page</a></b>.</p></li>
+</ul>
+
+<!--<p>For more details about the intermediate method, check out <a href="http://benjerry.middlebury.edu/~knights/Cube/Intermediate.html" target="_blank"><b>Dan Knights' intermediate solution</b></a>. -->
+
+<p><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> <b><i>Advanced method</i></b>
+</p><ul>
+<li><p>Learn everything from the Intermediate method.</p></li>
+<li><p>Learn the 3-look LL. This requires learning the 7 specific 
+algorithms for the 7 different orientation states of the LL corners, and
+ learning the 21 PLL algorithms (permuting the last layer algorithms) so
+ you can permute the LL edges and LL corners at the same time. A full 
+3-look LL uses 30 algorithms.
+</p></li></ul>
+
+<p>For more details about the advanced method, check out t <b>
+<a href="http://www.geocities.com/rubiks_galaxia/3look.html">Rubiks Galaxia 
+3-look LL</a></b>, <b> 
+<a href="http://www.cubestation.co.uk/" target="_blank">Dan Harris' site</a></b> 
+and <b> 
+<a href="http://www.cubezone.be/pll.html">Lars Vandenbergh's PLL page</a></b>.
+<!--<p>For more details about the advanced method, check out <a href="http://benjerry.middlebury.edu/~knights/Cube/Advanced.html" target="_blank"><b>Dan Knights' advanced solution</b></a> and <a href="http://www.ws.binghamton.edu/fridrich/Mike/permute.html" target="_blank"><b>Jessica Fridrich's LL permutations</b></a>.-->
+
+</p><p><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> <b><i>Expert method</i></b>
+</p><ul>
+<li><p>Do the F2L in 5 steps (first dot point from the Intermediate method).</p></li>
+<li><p>Learn a full 2-look LL. This requires memorising 21 PLL 
+algorithms, plus 57 OLL algorithms (orienting the last layer 
+algorithms).</p></li>
+</ul>
+
+<p>For more details about the expert method, check out <b> 
+<a href="http://www.cubestation.co.uk/" target="_blank">Dan Harris' site</a>, 
+<a href="http://www.solvethecube.co.uk/">Joël van Noort's site</a></b> and <b> 
+<a href="http://www.cubezone.be/">Lars Vandenbergh's site</a></b>.
+
+</p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Other stuff</h6>
+
+<p>The method I've documented here is what I believe to be a good 
+beginner method. The problem with some beginner methods is that they are
+ not scalable - to improve your cubing you have to un-learn much of what
+ you know and re-learn it in a different way. This method focuses on 
+memorising very few algorithms, but is structured in a way that allows 
+for development into an intermediate or advanced method. Other thing I 
+should say is that I didn't actually devise any of the last layer 
+algorithms in this method. I merely chose a selection of existing 
+algorithms (sourced from a variety of places including <a href="http://www.ws.binghamton.edu/fridrich/cube.html" target="_blank"><b>Jessica's site</b></a> and <a href="http://benjerry.middlebury.edu/%7Eknights/CubeInfo.html" target="_blank"><b>Dan K's site</b></a>) and organised them into a simple solution method.
+
+</p><h6><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> Celebrate your cubing success!</h6>
+
+<p>When you are confident that you can solve the cube by yourself, time 
+yourself so you can keep track of your progress. Also, consider 
+submitting your time to the <a href="http://www.speedcubing.com/" target="_blank"><b>unofficial world records</b></a>.</p><p>
+</p><center><p><img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"> <b>You are cuber number...<br>
+</b>&nbsp;<!-- Start Bravenet.com Service Code --><script language="JavaScript" type="text/javascript" src="rubikscubesolution_files/code.htm"></script><script language="javascript" src="rubikscubesolution_files/show.htm"></script><table align="center" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td align="center"><img src="rubikscubesolution_files/counter.png" alt="Bravenet Counter Stats" title="Bravenet Counter Stats" border="0"><br><a target="_new" href="http://www.bravenet.com/"><img src="rubikscubesolution_files/1_preview.gif" alt="Powered by Bravenet" border="0"></a><br><a target="_new" href="http://counter2.bravenet.com/index.php?id=392006&amp;type=overview&amp;usernum=104951552"><img src="rubikscubesolution_files/1_stat.gif" target="_blank" alt="View Statistics" border="0"></a></td></tr></tbody></table><!-- End Bravenet.com Service Code --><b>
+<br>... to visit this page</b> <img src="rubikscubesolution_files/LittleCube.jpg" alt="Rubik's Cube" width="20" align="absmiddle" border="0" height="22"></p></center>
+<p>
+</p><hr>
+<font class="smalltxt"><a href="http://peter.stillhq.com/jasmine/index.html">Home</a> | <a href="http://www.geocities.com/jasmine_ellen/RubiksWorldChampionships2003.html">RWC2003</a> | <a href="http://www.geocities.com/jasmine_ellen/Cube/rubikslinks.html">Rubiks Links</a> | 
+<a href="http://peter.stillhq.com/jasmine/rubiks-25th-anniversary.html">Rubik's 
+25th Anniversary</a> | 
+<!-- <a href="http://speedcuber.blogspot.com/">Blog</a>--><br><b>Page last modified</b> 
+Thursday 
+17 July 2008 by <a href="mailto:jasmine_ellen@NOSPAMyahoo.com%28remove-these-words-in-brackets-and-the-wordsNOSPAM-to-send-email%29">Jasmine Lee</a></font><!-- Begin Webstats4U code -->
+<!-- Title: Beginner Solution to the Rubik's Cube -->
+<!-- URL: http://peter.stillhq.com/jasmine/rubikscubesolution.html -->
+<script language="JavaScript" type="text/javascript" src="rubikscubesolution_files/m.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+  webstats4u("ADojbwklWXmM/fD52LJMbY7M/E5A", 0);
+// -->
+</script><a target="_blank" href="http://webstats.motigo.com/stats?ADojbwklWXmM/fD52LJMbY7M/E5A"><img src="rubikscubesolution_files/n.gif" alt="Webstats4U - Free web site statistics" width="18" border="0" height="18"></a><script language="JavaScript" type="text/javascript" src="rubikscubesolution_files/md.js"></script><script type="text/javascript" language="javascript" src="rubikscubesolution_files/eas_002.js"></script><script src="rubikscubesolution_files/EAS_tag.js"></script><script language="JavaScript" src="rubikscubesolution_files/eas.js" type="text/javascript"></script><input value="0.42680222098068066" style="width: 0px; top: 0px; position: absolute; visibility: hidden;" id="oV6" onchange="fV8(fV1,5,true)"><div style="display:inline" id="oV10"></div>
+<noscript>
+<a target="_blank" 
+href="http://www.webstats4u.com/stats?ADojbwklWXmM/fD52LJMbY7M/E5A"><img src="http://m1.webstats4u.com/n?id=ADojbwklWXmM/fD52LJMbY7M/E5A"
+border="0" width="18" height="18" alt="Webstats4U - Free web site statistics Personal homepage website counter"></a><br>
+<a target="_blank" href="http://www.webstats4u.com/">Free counter</a>
+</noscript>
+<!-- End Webstats4U code --></td>
+</tr>
+</tbody></table>
+
+</body></html>

@@ -1,0 +1,2231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><script src="Simple_Tab_Control.aspx_files/i.ashx"></script>
+	<title>Simple Tab Control for Visual C++: Part 2 - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="Simple_Tab_Control.aspx_files/CodeProject.css">
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="An easy way to develop interfaces with the tab control.; Author: venura c.p.w. goonatillake; Section: Tabs &amp; Property Pages; Chapter: Desktop Development">
+<meta name="Keywords" content="VC7, VC7.1, VC8.0, Win2K, Win2003, Vista, VS.NET2003, VS2005, Dev,Tabs &amp; Property Pages,Desktop Development,Free source code, tutorials">
+<meta name="Author" content="venura c.p.w. goonatillake">
+<meta name="Rating" content="General">
+<meta name="Robots" content="index, follow">
+<meta name="Revisit-After" content="1 days">
+<meta name="google-site-verification" content="RP2bNCUeOmNkkJesEnU8X3UyTbqIcCKP0CmdwU8in5k">
+<meta name="msapplication-navbutton-color" content="#FF9900">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All topics" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC / C++" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=4">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - .NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=5">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - VB.NET" href="http://www.codeproject.com/webservices/articlerss.aspx?cat=6">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+
+	<!-- base href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx" -->
+	<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script type="text/javascript" language="Javascript">//<![CDATA[
+if(top!=self)top.location.href=location.href; if(typeof(DemoUrl)!="undefined")document.write(unescape('%3Cme')+'ta http'+'-equiv="re' +'fresh" con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+function SelfCheck(){ return window.confirm("You are about to reply to your own message. Is this really what you want?");}
+function MarkAns(MemberID,MsgID,gp,bp,mt,QID){
+ document.write(unescape("%3Ca href=\"#xx" + MsgID.toString() + "xx\"  onclick=\"RateMsg("+MemberID.toString()+","+MsgID.toString()+",6,"+QID.toString()+");\"%3E"));
+ document.write(unescape("%3Cimg height=\"20\" width=\"20\" src=\"/script/Forums/Images/good.png\" alt=\"good\" border=\"0\" align=\"absmiddle\" /%3E "+gp+" "+mt+"%3C/a%3E "));
+ document.write(" &nbsp;"); document.write(unescape("%3Ca href=\"#xx" + MsgID.toString() + "xx\"  onclick=\"RateMsg("+MemberID.toString()+","+MsgID.toString()+",7,"+QID.toString()+");\"%3E"));
+ document.write(unescape("%3Cimg height=\"20\" width=\"20\" src=\"/script/Forums/Images/bad.png\" alt=\"bad\" border=\"0\" align=\"absmiddle\" /%3E "+bp+" "+mt+"%3C/a%3E"));
+}
+
+function MsgVFrm(MemberID,MsgID,GB,gp,bp,mt){
+ if(!GB)document.write("Rate this message: ");
+ document.write(unescape("%3Ca href=\"#xx" + MsgID.toString() + "xx\" onclick=\"RateMsg(" + MemberID.toString() + ", " + MsgID.toString() + ","));document.write((GB?"5":"1")+unescape(",0);\"%3E"));
+ if(GB) document.write(unescape("%3Cimg height=\"20\" width=\"20\" src=\"/script/Forums/Images/good.png\" alt=\"good\" border=\"0\" align=\"absmiddle\" /%3E "+gp+" "+mt+"%3C/a%3E "));
+ else document.write(unescape("%3Cimg height=\"14px\" width=\"14px\" src=\"/script/Forums/Images/thumbs_down.gif\" alt=\"vote 1\" border=\"0\" align=\"middle\" /%3E%3C/a%3E "));
+ if(GB)document.write(" &nbsp;"); else for(var i=1; i<=5;i++)
+  document.write(unescape("%3Ca class=\"toolbar\" href=\"#xx" + MsgID.toString() + "xx\" title=\"vote this message a " + i.toString() + "\" onclick=\"RateMsg(" + MemberID.toString() + ", " + MsgID.toString() + ", " + i.toString() + ",0)\"%3E%3Cb%3E" + i.toString() + "%3C/b%3E%3C/a%3E "));
+ document.write(unescape("%3Ca href=\"#xx" + MsgID.toString() + "xx\" onclick=\"RateMsg(" + MemberID.toString() + ", " + MsgID.toString() + ","));document.write((GB?"1":"5")+unescape(",0);\"%3E"));
+ if(GB)document.write(unescape("%3Cimg height=\"20\" width=\"20\" src=\"/script/Forums/Images/bad.png\" alt=\"bad\" border=\"0\" align=\"absmiddle\" /%3E "+bp+" "+mt+"%3C/a%3E"));
+ else document.write(unescape("%3Cimg height=\"14px\" width=\"14px\" src=\"/script/Forums/Images/thumbs_up.gif\" border=\"0\" alt=\"vote 5\" align=\"middle\" /%3E%3C/a%3E "));
+}
+
+function ReportMsg(userid, msgid, score) {
+ if (confirm("Are you sure you want this message removed?"))
+  return RateMsg(userid, msgid, score, 0);
+ else return false;
+}
+function RateMsg(memberid, msgid, score, questionId) {
+ var req = new XMLHttpRequest();
+ req.onreadystatechange = function() {
+  if (req.readyState == 4){
+   if (req.status == 200){
+    var respText = req.responseText;
+    var re = new RegExp(unescape("\%3Cdiv\%3E(.*)\%3C/div\%3E"), "g");
+    var match = re.exec(respText);
+    voteStatus.innerHTML = unescape("%3Cb%3E") + (match&&match.length>1&&match[1])?match[1]:"An error occured" + unescape("%3C/b%3E");
+   } else
+    voteStatus.innerHTML = unescape("%3Cb style='color:red'%3EFailed!") + req.statusText + unescape("%3C/b%3E");
+  }
+ }
+ var voteStatus = document.getElementById("MVF" + msgid);
+ if (!voteStatus) return;
+ voteStatus.innerHTML = unescape("%3Cb style='color:green'%3EVoting...%3C/b%3E");
+ var strAction = "/script/Forums/Vote.aspx?js=1&fmid="+memberid.toString()+"&select="+msgid.toString()+"&score="+score.toString()+"&qid="+questionId.toString();
+ req.open("GET", strAction, true);
+ req.send(null);
+  return false;
+}
+var Selected = "-1";
+function Pin(elm){
+ CloseMsg(Selected);
+ Selected=''
+ var wrk=elm.parentNode; if(wrk)wrk=wrk.children[0];
+ var fc=elm?elm.firstChild:null;
+ if (wrk&&!wrk.pinned) {
+  OpenMsg(wrk.name, true);wrk.pinned=true;fc.src='/script/forums/images/pinned.gif';fc.title='Pinned. Click to unpin'
+ } else {
+  wrk.pinned=false;CloseMsg(wrk.name); fc.src='/script/forums/images/pin.gif';fc.title='Click to pin message'
+ }
+ return false;
+}
+function CloseMsg(msgId) {
+ if(!msgId||msgId==''||msgId<0)return;
+ var lnk=document.getElementsByName(msgId);
+ if(lnk&&lnk.length>0&&lnk[0].pinned)return;
+ var hed=document.getElementById('F' + msgId.toString() + '_h0');
+ if(hed) hed.className = hed.className.replace("Sel", "UnSel");
+ var bdy=document.getElementById('F' + msgId.toString() + '_h1');
+ if(bdy) bdy.style.display = 'none';
+}
+function OpenMsg(msgId, keep) {
+ if(!msgId||msgId==''||msgId<0)return;
+ var bdy=document.getElementById('F' + msgId.toString() + '_h1');
+ if(bdy){
+  var lnk=document.getElementsByName(msgId);
+  if(lnk&&lnk.length>0&&lnk[0].pinned)keep=true;
+  if(keep&&bdy.style.display!='none')return;
+  if(bdy.style.display=='none') bdy.style.display='';
+  else bdy.style.display = 'none';
+ }
+ var hed=document.getElementById('F' + msgId.toString() + '_h0');
+ if (hed) hed.className = hed.className.replace('UnSel', 'Sel');
+ if(bdy&&hed&&bdy.style.display!='none'){
+  var webkitWeird=document.documentElement.scrollTop < document.body.scrollTop;
+  if (!webkitWeird)document.body.scrollTop = getRealPos(hed, 'Top') - document.body.clientHeight/10;
+  EnsureMessageVisible(msgId, true);
+ }
+}
+function EnsureMessageVisible(msgID, bShowTop) {
+	var webkitWeird = document.documentElement.scrollTop < document.body.scrollTop;
+	var msgHeader = document.getElementById('F' + msgID + '_h0');
+	var msgBody = document.getElementById('F' + msgID + '_h1');
+	if (!msgBody || !msgHeader) return;
+	var scrollContainer = document.documentElement;
+	var top = getRealPos(msgHeader, 'Top');
+	var bottom = getRealPos(msgBody, 'Top') + msgBody.offsetHeight;
+	var scrollTop = webkitWeird? scrollTop = document.body.scrollTop:document.documentElement.scrollTop;
+	if (scrollTop > top && !bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
+	if (scrollTop + scrollContainer.clientHeight < bottom) scrollTop = bottom - scrollContainer.clientHeight;
+	if (scrollTop > top && bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
+	if (webkitWeird) document.body.scrollTop = scrollTop; else scrollContainer.scrollTop = scrollTop;
+}
+function getRealPos(i,which) {
+	iPos = 0;
+	while (i!=null)  {
+		iPos += i['offset' + which];
+		i = i.offsetParent;
+	}
+	return iPos;
+}
+
+function SwitchMessage(e, msgId)
+{
+
+  if (msgId) msgId=msgId.toString();
+
+  else {
+
+    if(!e)e=window.event;
+
+    var target=e.target?e.target:e.srcElement;
+
+    while(target&&target.id!='DynMessLink')target=target.parentNode;
+    if(!target||target.id!='DynMessLink')return;
+    if(target.pinned){/*Selected='';*/return false;}
+    msgId=target.name;
+  }
+  CloseMsg(Selected)
+  if(Selected==msgId) Selected='';
+  else { OpenMsg(msgId, false); Selected=msgId;}
+  if (e){if(e.preventDefault)e.preventDefault;else e.returnValue=false;}
+  return false;
+}
+
+
+//]]>
+</script>
+
+<script src="Simple_Tab_Control.aspx_files/ga.js" async="" type="text/javascript"></script></head>	
+
+<body class="">
+
+
+<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="Simple_Tab_Control.aspx_files/t.gif"></a>
+
+
+<div class="page-background">
+	<div id="A" class="container-content">
+
+		
+		
+
+		
+
+		
+		
+
+<div class="container nav-memberbar clearfix">
+<div class="member-stats float-left">7,860,950 members and growing! (29,845 online)</div>
+<div class="float-left"></div>
+<div class="float-right">
+
+
+<span class="tooltip member-message">
+	<img src="Simple_Tab_Control.aspx_files/envelope11.gif" style="vertical-align: bottom; padding-bottom: 3px;" width="11px" height="11px">
+	<div class="tooltip-flyout small-text">
+		
+		<div id="ctl00_MemberMenu_Messages_Confirm"><a id="ctl00_MemberMenu_Messages_EmailConfirm" href="http://www.codeproject.com/script/Membership/ConfirmEmail.aspx?tg=475832504733173">Your email address needs to be confirmed.</a></div>
+		
+	</div>
+</span><span id="ctl00_MemberMenu_CurRat" class="tooltip">
+		<a id="ctl00_MemberMenu_MyProfile" href="http://www.codeproject.com/Members/My_Zit">My_Zit</a><img src="Simple_Tab_Control.aspx_files/arrow-down-16.png" style="width: 16px; height: 16px; vertical-align: bottom;">
+		<div class="tooltip-flyout" style="width:110px !important">
+			<div><a id="ctl00_MemberMenu_MySettingsNonSSL" href="http://www.codeproject.com/script/Membership/Modify.aspx">My Settings</a></div>
+			<div></div>
+			<div><a id="ctl00_MemberMenu_MyContacts" href="http://www.codeproject.com/script/Membership/ListContacts.aspx">My Contact info</a></div>
+			<div><a id="ctl00_MemberMenu_MyBookmarks" href="http://www.codeproject.com/script/Bookmarks/List.aspx?obtid=2">My Bookmarks</a></div>
+			
+			<div><a id="ctl00_MemberMenu_MyCodeProject" href="http://www.codeproject.com/script/Membership/MyCodeProject.aspx">My Watched Items</a></div>
+			<div><a id="ctl00_MemberMenu_MyArticles" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=5692976">My Articles</a></div>
+			<div><a id="ctl00_MemberMenu_MyMessages" href="http://www.codeproject.com/script/Forums/Messages.aspx?fmid=5692976">My Messages</a></div>
+			<div><a id="ctl00_MemberMenu_MyQuestions" href="http://www.codeproject.com/script/Answers/MemberPosts.aspx?tab=questions&amp;mid=5692976&amp;showall=True">My Questions</a></div>
+			<div><a id="ctl00_MemberMenu_MyAnswers" href="http://www.codeproject.com/script/Answers/MemberPosts.aspx?tab=answers&amp;mid=5692976&amp;showall=True">My Answers</a></div>
+			
+		</div>
+	</span><span id="ctl00_MemberMenu_TotalPoints" title="Total reputation points 305" class="member-rep-box bronze" style="margin-left:0"><a href="http://www.codeproject.com/script/Reputation/List.aspx?mid=5692976">305</a></span>
+	&nbsp;
+	<a id="ctl00_MemberMenu_Signout" href="http://www.codeproject.com/script/Membership/LogOff.aspx?rp=%2fKB%2ftabs%2fSimple_Tab_Control.aspx">Sign out</a>
+
+
+</div>
+
+</div>
+		
+
+		
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="header"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" title="The Code Project" src="Simple_Tab_Control.aspx_files/logo225x90.gif" alt="Home" style="border-width: 0px;"></a></td>
+			<td class="header" align="right">
+				<div class="lqm_ad" width="728px" height="90px" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="8" lqm_tags="VC7,VC7.1,VC8.0,Win2K,Win2003,Vista,VS.NET2003,VS2005,Dev"><a href="http://a.lakequincy.com/c.ashx?channel=1&amp;format=8&amp;pageid=C24EBDD6-7683-BDDD-28B8-C187AD3E1B43&amp;publisher=495&amp;tags=VC7%2cVC7.1%2cVC8.0%2cWin2K%2cWin2003%2cVista%2cVS.NET2003%2cVS2005%2cDev&amp;target=_blank&amp;ypos=62&amp;zone=77&amp;renderhtml=true&amp;callback=jsonp1307642569501&amp;url=http%253A%252F%252Fwww.codeproject.com%252FKB%252Ftabs%252FSimple_Tab_Control.aspx&amp;country=XX&amp;userguid=00000000-0000-0000-0000-000000000000&amp;placement=9484&amp;creative=9525" target="_blank"><img src="Simple_Tab_Control.aspx_files/634364843942386309.gif" alt="Click Here" width="728" border="0" height="90"></a></div>
+			</td>
+		</tr></tbody></table>
+
+		<table class="contrast1-background extended" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap">
+			
+
+<div class="navbar clearfix">
+<ul id="nav">
+
+<li><a id="ctl00_TopNavBar_Home" class="down" href="http://www.codeproject.com/">Home</a>
+
+
+</li><li><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">Articles</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_ArtTopicList" class="fly last" onmouseover="ShowMap(this, 'siteMap');" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections</a><ul id="ctl00_TopNavBar_MapFlyout"><li>
+				<div id="siteMap" class="tooltip-flyout">
+					<img src="Simple_Tab_Control.aspx_files/animated.gif" style="margin: 150px; width: 100px; height: 100px;">
+				</div>
+			</li></ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6,8">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=4">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li id="ctl00_TopNavBar_VideosLink">
+			<a id="ctl00_TopNavBar_ArtVideoArticles" class="fly" href="http://www.codeproject.com/script/Articles/VideoArticleList.aspx">Video Articles</a>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly" href="http://www.codeproject.com/script/Articles/Submit.aspx">Post an Article</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostTipTrick" class="fly" href="http://www.codeproject.com/Tips/post.aspx">Post Tip &amp; Trick</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly break" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">Post your Blog</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly last" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+	</ul>
+
+</li>
+
+
+
+<li><a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">Questions &amp; Answers</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight" href="#_comments">Ask a Question about this article</a></li>
+
+		<li class="heading">Quick Answers</li>
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=81" style="padding-left: 30px;">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=85" style="padding-left: 30px;">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=842" style="padding-left: 30px;">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=78" style="padding-left: 30px;">C++ questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=69" style="padding-left: 30px;">C#3.0 questions</a></li>
+			
+		<li class="heading">Programming Discussions</li>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/1580227/CSS.aspx">CSS</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1213656/PHP.aspx">PHP</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+
+		<li class="heading">Other Languages<span class="fly-menu">&gt;</span>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul></li>
+	
+	</ul>
+
+</li>
+
+
+<li><a id="ctl00_TopNavBar_Zones" href="http://www.codeproject.com/Zones/index.aspx">Learning Zones</a>
+
+	<ul>
+		<!--<li class="heading">Zones</li>-->
+		<li><a href="http://www.codeproject.com/Zones/Commerce/" class="fly">The Commerce Zone</a></li><li><a href="http://www.codeproject.com/Zones/Mobile/" class="fly">The Mobile Zone</a></li><li><a href="http://www.codeproject.com/Zones/Cloud/" class="fly">The Cloud Zone</a></li><li><a href="http://www.codeproject.com/Zones/Hardware/" class="fly">The Hardware Zone</a></li><li><a href="http://www.codeproject.com/Zones/Parallelism/" class="fly">The Parallelism Zone</a></li><li><a href="http://www.codeproject.com/Zones/WPF-Silverlight/" class="fly">The WPF / Silverlight Zone</a></li><li><a href="http://www.codeproject.com/Zones/Flex-Flash/" class="fly">The Flex / Flash Zone</a></li><li><a href="http://www.codeproject.com/Zones/SqlServer/" class="fly">The SQL Zone</a></li><li><a href="http://www.codeproject.com/Zones/WhitePapers/" class="fly break">WhitePapers / Webcasts</a></li>
+		<li><a id="ctl00_TopNavBar_Solutions" class="fly last" href="http://www.codeproject.com/kb/Solution-Center/">Solutions Center</a></li>
+	</ul>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">Features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">CodeProject MVPs</a></li>
+		<li><a id="ctl00_TopNavBar_Companies" class="fly break" href="http://www.codeproject.com/script/Membership/Profiles.aspx?mgtid=1&amp;mgm=True">Company Listings</a></li>
+		<li><a id="ctl00_TopNavBar_Catalog" class="fly" href="http://www.codeproject.com/script/Catalog/List.aspx">Component &amp; Service Catalog</a></li>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">Daily Insider</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_PressRelease" class="fly" href="http://www.codeproject.com/script/PressReleases/Preview.aspx">Press Releases</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li><a id="ctl00_TopNavBar_AddIn" class="fly last" href="http://www.codeproject.com/Services/Addins/">CodeProject VS Addin </a></li>
+	</ul>
+
+</li>
+
+
+<li><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">Help!</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'The Code Project'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Post a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Directory</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://www.codeproject.com/info/MediaKit.aspx">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly last" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+	</ul>
+
+</li>
+
+
+<li style="margin-left:10px">
+<a id="ctl00_TopNavBar_Lounge" class="simple" href="http://www.codeproject.com/Lounge.aspx">The Lounge</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_CleverLnk" class="fly" href="http://www.codeproject.com/feature/CleverCode.aspx">Clever Code</a></li>
+		<li><a id="ctl00_TopNavBar_ShameLnk" class="fly" href="http://www.codeproject.com/feature/HallOfSHame.aspx">Hall of Shame</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox-2-0.aspx">The Soapbox</a></li>
+		
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+
+<script type="text/javascript">
+
+function ShowMap(prnt, elmId) {
+	var map = $('#' + elmId);
+	
+	if (!prnt.populated && !prnt.populating) {
+		prnt.populating = true;
+		map.css( { 'height': '400px', 'width': '400px' });
+		map.load("/script/content/ajax/SiteMap.aspx", function() { prnt.populated = true; });
+		prnt.populated = true;
+		prnt.populating = false;
+	}
+
+	if (prnt.populated) {
+		var width = Math.min((($(window).width()-map.offset().left) * 0.9), 1000);
+		var height = Math.min((($(window).height()-map.offset().top) * 0.9), 700);
+		map.css('width', width + 'px');
+		map.css('height', height + 'px');
+		map.css('overflow', 'auto');
+		map.css('margin', '0');
+	}
+}
+
+</script>
+		</td><td align="right">
+			
+
+<div class="search-bar">
+
+<form method="get" action="/search.aspx" name="Search" class="tight">
+
+
+<input class="search  subdue" id="sb_tb" value="Search" name="q">
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" checked="checked" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+<input id="sb_ctlk" name="sbo" value="ctlk" type="radio"><label for="sb_ctlk">Product Catalog</label><br>
+
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+		</td></tr></tbody></table>
+		
+
+		
+		<div class="container-article hreview-aggregate">
+		
+			
+			<div class="container-header">
+				<div id="ctl00_Header" class="header">
+
+					<a name="Main"></a>
+
+					
+					<a name="_articleTop" id="_articleTop"></a>
+					
+
+<div class="clearfix hover-container">
+
+	<div class="container">
+		
+		<div class="breadcrumb float-left"><a href="http://www.codeproject.com/script/Content/SiteMap.aspx"><span class="sitemap-anchor" onmouseover="ShowMap(this,'map');"><img src="Simple_Tab_Control.aspx_files/sitemap16.png" alt="Site map" style="vertical-align: middle;" width="16px" border="0" height="16px"><div id="map" class="tooltip-flyout"><img src="Simple_Tab_Control.aspx_files/animated.gif" style="margin: 150px; width: 100px; height: 100px; border: 0pt none;"></div></span></a> » <a href="http://www.codeproject.com/Chapters/1/Desktop-Development.aspx">Desktop Development</a> » <a href="http://www.codeproject.com/KB/tabs/">Tabs &amp; Property Pages</a> » <a href="http://www.codeproject.com/KB/tabs/#Tabs+and+Property+Pages">Tabs and Property Pages</a></div>
+	</div>
+
+	
+	<div id="ctl00_TitleArea_InfoArea" class="float-right">
+		
+
+<div class="infobox">
+	<table class="tight small-text" cellpadding="0" cellspacing="1">
+	<tbody><tr><td>Licence&nbsp;</td><td><a href="http://www.codeproject.com/info/cpol10.aspx" title="The Code Project Open License (CPOL)">CPOL</a></td></tr>
+	
+	<tr><td>First Posted&nbsp;</td><td nowrap="nowrap"><b>22 Nov 2006</b></td></tr>
+	<tr><td>Views&nbsp;</td><td><b>41,492</b></td></tr>
+	
+	<tr><td>Downloads&nbsp;</td><td><b>145</b></td></tr>
+		
+	
+	<tr><td>Bookmarked&nbsp;</td><td><b>25 times</b></td></tr>
+	
+
+	
+	
+	</tbody></table>
+</div>	
+	</div>
+
+	
+	<div class="item">
+	<h1 id="ctl00_TitleArea_ArticleTitle" class="fn">Simple Tab Control for Visual C++: Part 2</h1>
+	</div>
+
+	
+	<div class="author">
+		By <b><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></b> | 
+		5 Jun 2007 
+		
+
+		
+		
+	</div>
+	
+	<div class="tags">
+	<span id="ctl00_TitleArea_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TitleArea_TagsList_VisibleTags"><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=5">VC7</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=7">VC7.1</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=9">VC8.0</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=23">Win2K</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=26">Win2003</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=27">Vista</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=38">VS.NET2003</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=39">VS2005</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=118">Dev</a></span></span> 
+
+	
+	
+</span>
+
+	</div>
+
+	
+	<div class="abstract summary"><span id="ctl00_TitleArea_ArticleDescr">An easy way to develop interfaces with the tab control.</span></div>
+</div>
+
+
+
+					
+
+				</div>
+
+				<div id="ctl00_HeadSide" class="header-sidebar">
+					<div class="align-left" style="height:24px">
+						
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+					
+
+<div class="bold pad-top">See Also</div>
+<ul class="outdent small-text" style="margin-left:5px">
+	<li><a id="ctl00_SeeAlso_LikeThis" href="http://www.codeproject.com/search.aspx?q=Simple+Tab+Control+for+Visual+C%2b%2b+Part+2">More like this</a></li>
+	<li><a id="ctl00_SeeAlso_ByAuthor" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=1192302">More by this author</a></li>
+</ul>
+
+				</div>
+
+			</div>
+			
+
+			
+			<div id="ctl00_Nav" class="container-nav">
+				<div id="ctl00_TabContainer" class="tabs-container clearfix">
+
+					
+					<div class="float-right action-links"> 
+						<a id="ctl00_ActionLinks_PrintLnk" class="tooltip" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?display=Print">
+	<img src="Simple_Tab_Control.aspx_files/print.gif" style="vertical-align: middle; border: 0pt none;" width="24px" height="24px">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Print Article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+
+<span id="SBI"><img src="Simple_Tab_Control.aspx_files/share_drop24.png" id="ctl00_ActionLinks_AddTo_Img" alt="add" style="vertical-align: middle;" width="37" height="24">
+</span>
+<div style="left: 612px; top: 166.633px;" id="ATD" class="list-socialbookmark"><div><a class="AddTo" title="Add this page to Twitter" onclick="return socialLinks.addto(0);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Twitter.gif" width="16px" align="absmiddle" border="0" height="16px"> Twitter</a> </div><div><a class="AddTo" title="Add this page to Digg" onclick="return socialLinks.addto(1);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Digg.png" width="16px" align="absmiddle" border="0" height="16px"> Digg</a> </div><div><a class="AddTo" title="Add this page to Facebook" onclick="return socialLinks.addto(2);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Facebook.png" width="16px" align="absmiddle" border="0" height="16px"> Facebook</a> </div><div><a class="AddTo" title="Add this page to Del.icio.us" onclick="return socialLinks.addto(3);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Delicious.png" width="16px" align="absmiddle" border="0" height="16px"> Del.icio.us</a> </div><div><a class="AddTo" title="Add this page to Reddit" onclick="return socialLinks.addto(4);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Reddit.png" width="16px" align="absmiddle" border="0" height="16px"> Reddit</a> </div><div><a class="AddTo" title="Add this page to Stumbleupon" onclick="return socialLinks.addto(5);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_stumbleupon.png" width="16px" align="absmiddle" border="0" height="16px"> Stumbleupon</a> </div><div><a class="AddTo" title="Add this page to Newsvine" onclick="return socialLinks.addto(6);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Newsvine.png" width="16px" align="absmiddle" border="0" height="16px"> Newsvine</a> </div><div><a class="AddTo" title="Add this page to Technorati" onclick="return socialLinks.addto(7);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Technorati.png" width="16px" align="absmiddle" border="0" height="16px"> Technorati</a> </div><div><a class="AddTo" title="Add this page to Mr. Wong" onclick="return socialLinks.addto(8);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_MrWong.png" width="16px" align="absmiddle" border="0" height="16px"> Mr. Wong</a> </div><div><a class="AddTo" title="Add this page to Yahoo!" onclick="return socialLinks.addto(9);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Yahoo.png" width="16px" align="absmiddle" border="0" height="16px"> Yahoo!</a> </div><div><a class="AddTo" title="Add this page to Google" onclick="return socialLinks.addto(10);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Google.png" width="16px" align="absmiddle" border="0" height="16px"> Google</a> </div><div><a class="AddTo" title="Add this page to Windows Live" onclick="return socialLinks.addto(11);" href="#"><img src="Simple_Tab_Control.aspx_files/AddTo_Live.png" width="16px" align="absmiddle" border="0" height="16px"> Windows Live</a> </div><div><a class="AddTo" title="Send as Email" onclick="return socialLinks.addto(12);" href="#"><img src="Simple_Tab_Control.aspx_files/envelope.gif" width="16px" align="absmiddle" border="0" height="16px"> Send as Email</a> </div></div> 
+ 
+
+<span class="tooltip">
+	<a id="ctl00_ActionLinks_ArticleBmk_ImgBt" title="Bookmark" alternatetext="Bookmark" name="bm_16485_2" onclick="return bookmarkMe(16485,2,'/script/Bookmarks/Ajax/Add.aspx?obid=16485&amp;obtid=2&amp;action=AddBookmark&amp;bio=true',true);" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=16485&amp;obtid=2&amp;action=AddBookmark&amp;bio=true" style="display: inline-block; height: 24px; width: 24px; vertical-align: middle; border: 0pt none;"><img title="Bookmark" src="Simple_Tab_Control.aspx_files/bookmark.png" alt="" style="border-width: 0px;"></a>
+
+
+<span id="ctl00_ActionLinks_ArticleBmk_StatusMsg" class="tiny-text" style="display:none" name="bm_16485_2"></span>
+ 
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Add to your CodeProject bookmarks</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</span>
+
+<a href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx#_comments" id="discussAnch" class="tooltip anchorLink">
+	
+	<img src="Simple_Tab_Control.aspx_files/discuss.gif" alt="Discuss" style="vertical-align: middle; border: 0pt none;" width="24px" height="24px">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Discuss this article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+<span id="ctl00_ActionLinks_cmtcnt" class="subdue small-text align-middle" style="margin-left:-4px">32</span>
+
+
+
+
+					</div>
+
+					<div class="float-left">
+						
+						
+
+<div class="tabs float-left"><table cellpadding="0" cellspacing="0"><tbody><tr>
+	<td class="tab-selected">Article</td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=16485">Browse Code</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=16485">Stats</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=16485">Revisions (3)</a></td>
+</tr></tbody></table></div>	
+
+
+						
+						<div class="float-left" style="margin-left:15px">
+							<div id="ctl00_CurRat" class="tooltip" name="CurRat_16485">
+								
+<table class="small-text" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<div class="nowrap rating-stars" style="height:24px;width:120px;position:relative;">
+	<div class="clipped align-left float-left" style="height:24px;width:61px;">
+		<img src="Simple_Tab_Control.aspx_files/stars-fill.png" style="border-width: 0px;">
+	</div><div class="clipped" style="height:24px;width:59px;position:relative;">
+		<img src="Simple_Tab_Control.aspx_files/stars-empty.png" style="border-width: 0px; position: absolute; top: 0pt; right: 0pt;">
+	</div>
+</div>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;<span id="ctl00_ArticleRating_VotesR">&nbsp;<span class="rating">2.55</span> (<span class="count">17 votes</span>)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+								<div id="ctl00_RB" class="speech-bubble-container-up">
+									<div class="speech-bubble-up" style="width:150px !important">
+										            
+<div>
+<table class="feature" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0"><tbody><tr><td class="chart-column"><img src="Simple_Tab_Control.aspx_files/pollcol.gif" alt="5 votes, 29.4%" title="5 votes, 29.4%" width="16px" border="0px" height="35px"><br><span title="5 votes">1</span></td>
+<td class="chart-column"><img src="Simple_Tab_Control.aspx_files/pollcol.gif" alt="2 votes, 11.8%" title="2 votes, 11.8%" width="16px" border="0px" height="14px"><br><span title="2 votes">2</span></td>
+<td class="chart-column"><img src="Simple_Tab_Control.aspx_files/pollcol.gif" alt="1 vote, 5.9%" title="1 vote, 5.9%" width="16px" border="0px" height="7px"><br><span title="1 vote">3</span></td>
+<td class="chart-column"><img src="Simple_Tab_Control.aspx_files/pollcol.gif" alt="2 votes, 11.8%" title="2 votes, 11.8%" width="16px" border="0px" height="14px"><br><span title="2 votes">4</span></td>
+<td class="chart-column"><img src="Simple_Tab_Control.aspx_files/pollcol.gif" alt="7 votes, 41.2%" title="7 votes, 41.2%" width="16px" border="0px" height="50px"><br><span title="7 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">2.55/5 - 17 votes</div>
+</div>
+
+
+
+
+									</div>
+									<div class="speech-bubble-pointer-up">
+										<div class="speech-bubble-pointer-up-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="ctl00_HeadSideFoot" class="tabs-sidebar">
+					<div>Sponsored Links</div>
+				</div>
+			</div>
+			
+
+			
+			<div class="container-text">
+
+				<div id="AT" class="text">
+					
+					
+					
+					
+
+					   
+
+						
+							
+			
+					<div id="ctl00_confirmError" class="Callout small-text" style="padding:10px;margin:20px;"><img style="float: left; margin-right: 10px;" src="Simple_Tab_Control.aspx_files/warning_32.png" width="32px" height="32px"><b>Is your email address OK?</b>
+					You are signed up for our newsletters but your email address is either unconfirmed, or has not 
+					been reconfirmed in a long time. Please click 
+					<a id="ctl00_RequestConfirmLink2" href="http://www.codeproject.com/script/Membership/SendConfirmRequest.aspx?rp=%2fKB%2ftabs%2fSimple_Tab_Control.aspx">here</a> to have a 
+					confirmation email sent so we can confirm your email address and start sending you newsletters 
+					again. Alternatively, you can 
+					<a id="ctl00_SubscribeLink2" href="http://www.codeproject.com/script/Membership/Subscribe.aspx?rp=%2fKB%2ftabs%2fSimple_Tab_Control.aspx">update your subscriptions</a>.</div><form name="aspnetForm" method="post" action="/KB/tabs/Simple_Tab_Control.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExOTQzNjk4Mw9kFgJmD2QWAgIFD2QWCAIRD2QWAgIBD2QWBmYPDxYCHgtOYXZpZ2F0ZVVybAUyL3NjcmlwdC9BcnRpY2xlcy9BZG1pbi9FZGl0b3JDaG9pY2UuYXNweD9haWQ9MTY0ODVkZAICDw8WAh8ABTgvc2NyaXB0L0F3YXJkcy9BZG1pbi9Bd2FyZE9iamVjdC5hc3B4P29iaWQ9MTY0ODUmb2J0aWQ9MmRkAgoPDxYCHwAFLy9zY3JpcHQvQXJ0aWNsZXMvQWRtaW4vUXVldWVFZGl0LmFzcHg/YWlkPTE2NDg1ZGQCEw9kFgICAQ9kFgICAQ9kFghmDw8WAh8ABS4vS0IvdGFicy9TaW1wbGVfVGFiX0NvbnRyb2wuYXNweD9kaXNwbGF5PVByaW50ZGQCCA8WAh4EaHJlZgUqL0tCL3RhYnMvU2ltcGxlX1RhYl9Db250cm9sLmFzcHgjX2NvbW1lbnRzZAIKDxYCHglpbm5lcmh0bWwFAjMyZAIMDw8WAh8ABSYvc2NyaXB0L0FydGljbGVzL1JlcG9ydC5hc3B4P2FpZD0xNjQ4NWRkAhUPZBYCAg0PZBYKAgEPFgIeB1Zpc2libGVnFgQCAQ8PFgIfAAVUL3NjcmlwdC9NZW1iZXJzaGlwL1NlbmRDb25maXJtUmVxdWVzdC5hc3B4P3JwPSUyZktCJTJmdGFicyUyZlNpbXBsZV9UYWJfQ29udHJvbC5hc3B4ZGQCAw8PFgIfAAVLL3NjcmlwdC9NZW1iZXJzaGlwL1N1YnNjcmliZS5hc3B4P3JwPSUyZktCJTJmdGFicyUyZlNpbXBsZV9UYWJfQ29udHJvbC5hc3B4ZGQCAg8WAh4GYWN0aW9uBSAvS0IvdGFicy9TaW1wbGVfVGFiX0NvbnRyb2wuYXNweBYIAgEPZBYCAgEPFgIfA2hkAgMPZBYCAgIPZBYCAgEPEGRkFgBkAgkPFgIeC18hSXRlbUNvdW50AgFkAgsPZBYCAgEPFgIeBFRleHQFRzxhICBocmVmPSIvS0IvdGFicy9TaW1wbGVfVGFiX0NvbnRyb2wuYXNweCNfYXJ0aWNsZVRvcCI+QXJ0aWNsZSBUb3A8L2E+ZAIKDw8WBB8GBQlQZXJtYWxpbmsfAAUgL0tCL3RhYnMvU2ltcGxlX1RhYl9Db250cm9sLmFzcHhkZAISDxYCHwYFCjUgSnVuIDIwMDdkAhYPFgIfBgUsQ29weXJpZ2h0IDIwMDYgYnkgdmVudXJhIGMucC53LiBnb29uYXRpbGxha2VkAhcPZBYCAgUPDxYCHwNoZGRkmgr41N4lB1/I4+HElUrpayrU8dY=" type="hidden">
+</div>
+
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAK2lpr4AQLAlMXDBwLBlMXDBwLClMXDBwLDlMXDBwLElMXDBwLP+++tCwK5upDkC1RHVCjRRW84L4XdKgl+0maGoffb" type="hidden">
+</div>
+
+						<!-- Article Text Start -->
+						<div id="contentdiv">
+						
+
+
+
+<!-- Article Starts -->
+
+
+<ul class="download">
+<li><a href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control/Simple_Tab_Control_src.zip">Download source files - 28.6 KB</a></li>
+
+<li><a href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control/Simple_Tab_Control_demo.zip">Download demo project - 566 KB</a></li>
+</ul>
+
+<p><img alt="Sample Image - Simple_Tab_Control.jpg" src="Simple_Tab_Control.aspx_files/Simple_Tab_Control.jpg" complete="true" width="416" height="293"></p>
+
+<h2>Introduction</h2>
+
+<p>I take this opportunity to thank all my friends who commented and 
+gave ideas about my previous tab control. It made me build this useful 
+and easy tab control for all of you.</p>
+
+<h4>About this new tab control</h4>
+
+<p>If you are using this particular tab control, you have to do the following steps:</p>
+
+<ol>
+<li>Drag and drop the VC++ tab control on to your dialog.</li>
+
+<li>Add <em>CIbTabCtrl.c</em> and <em>CIbTabCtrl.h</em> to your solution.</li>
+
+<li>Derive the tab control variable from <code>CIbTabCtrl</code>.</li>
+</ol>
+
+<p>You are free to design your tab pages using property pages. Add 
+property pages to your application using the Add Resource option. Then 
+create a property page associated class using <code>CPropertyPage</code>.
+ You can add any number of property pages to your application. To make 
+it visually suitable for a tab control, you can set the following 
+property values:</p>
+
+<ul>
+<li>Set Border property to None</li>
+
+<li>Set Control property to True (this is very important; if it is false, the tab key function will not have any effect).</li>
+
+<li>Set the Disable property to False</li>
+</ul>
+
+<p>Once you create your property pages, you have to link those pages with your tab control.</p>
+
+<h4>How to link pages with the tab control</h4>
+
+<ol>
+<li>Create property page objects as members of the dialog where your control is (if property page classes are <code>CPPone</code> and <code>CPPTwo</code>):</li>
+
+<div style="display:block" width="100%" id="premain0" class="small-text align-right"><img preid="0" style="cursor: pointer;" src="Simple_Tab_Control.aspx_files/minus.gif" id="preimg0" width="9" height="9"><span preid="0" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse0"> Collapse</span></div><pre style="margin-top: 0pt;" id="pre0" lang="C++">CPPOne m_oPPOne;
+CPPTwo m_oPPTwo;</pre>
+
+<li>On the OnInitDialog member function:</li>
+
+<div style="display:block" width="100%" id="premain1" class="small-text align-right"><img preid="1" style="cursor: pointer;" src="Simple_Tab_Control.aspx_files/minus.gif" id="preimg1" width="9" height="9"><span preid="1" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse1"> Collapse</span></div><pre style="margin-top: 0pt;" id="pre1" lang="C++">m_oPPOne.Create(IDD_PP_ONE);
+m_oPPTwo.Create(IDD_PP_TWO);
+
+<span class="code-comment">//</span><span class="code-comment"> Using the addNewPage() function, user can set tab caption and the
+</span><span class="code-comment">//</span><span class="code-comment"> property page user wants to attach with it.
+</span>
+<span class="code-comment">//</span><span class="code-comment"> setDefaultPage() will determine which page should have the very first focus.
+</span>
+m_ctrlTabV.addNewPage(<span class="code-string">"</span><span class="code-string">My Page 1"</span>,&amp;m_oPPOne);
+m_ctrlTabV.addNewPage(<span class="code-string">"</span><span class="code-string">My Page 2"</span>,&amp;m_oPPTwo);
+m_ctrlTabV.setDefaultPage(<span class="code-digit">0</span>); </pre>
+</ol>
+
+<p>That's it! This is all you have to do to use this control in your solution.</p>
+
+<p><strong>For those interested in the CIbTabCtrl class</strong></p>
+
+<p>This class is derived from the MFC <code>CTabCtrl</code> class. I have added three functions:</p>
+
+<ol>
+<li><code>AddNewPage(CString strPage, CWnd * pPage)</code> (public)</li>
+
+<p>This will keep track of all the pages added. Here I am using the <code>CArray</code> member variable to keep those pages.</p>
+
+<div style="display:block" width="100%" id="premain2" class="small-text align-right"><img preid="2" style="cursor: pointer;" src="Simple_Tab_Control.aspx_files/minus.gif" id="preimg2" width="9" height="9"><span preid="2" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse2"> Collapse</span></div><pre style="margin-top: 0pt;" id="pre2" lang="C++">InsertItem(<span class="code-keyword">this</span>-<span class="code-keyword">&gt;</span>GetItemCount(),strPage);
+pPage-<span class="code-keyword">&gt;</span>ShowWindow(SW_HIDE);
+m_oPages.Add(pPage); <span class="code-comment">//</span><span class="code-comment"> store page;</span></pre>
+
+<li><code>setPage(CWnd* pWnd)</code> (private member function)</li>
+
+<p>This will display and draw a page according to the size of the tab control.</p>
+
+<div style="display:block" width="100%" id="premain3" class="small-text align-right"><img preid="3" style="cursor: pointer;" src="Simple_Tab_Control.aspx_files/minus.gif" id="preimg3" width="9" height="9"><span preid="3" style="cursor: pointer; margin-bottom: 0pt;" id="precollapse3"> Collapse</span></div><pre style="margin-top: 0pt;" id="pre3" lang="C++">CIbTabCtrl::setPage(CWnd* pWnd)
+{
+    CWnd * pPage;
+    pPage = m_oPages.GetAt(m_iPrevPage);
+    pPage-<span class="code-keyword">&gt;</span>ShowWindow(SW_HIDE);
+    CRect oRect,oWRect,oPWRect,oIRect;
+    GetItemRect(<span class="code-digit">0</span>,oIRect);
+    GetClientRect(oRect);
+    GetWindowRect(oWRect);
+    GetParent()-<span class="code-keyword">&gt;</span>GetWindowRect(oPWRect);
+    pWnd-<span class="code-keyword">&gt;</span>SetWindowPos(<span class="code-keyword">this</span>,oWRect.left-oPWRect.left,oWRect.top-oPWRect.top,
+          oRect.Width()- <span class="code-digit">5</span>,oRect.Height()-oIRect.Height() - <span class="code-keyword">void</span> <span class="code-digit">6</span>, SWP_SHOWWINDOW);
+}</pre>
+
+<li><code>setDefaultPage(<span class="code-keyword">int</span> iIndex)</code> (public)</li>
+
+<p>Sets the default page.</p>
+
+<li>removePage(int iIndex) (public)</li>
+
+<p>This will remove the tab page from the tab control.</p>
+</ol>
+
+<p>Hope this description is enough for you to use this control. You are 
+free to ask any question on this article. I am sure you will enjoy this 
+control very much.</p>
+
+
+
+
+
+
+						</div>
+						<!-- Article Text End -->
+
+						
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+
+						<div class="float-right">
+						<div class="lqm_ad" width="300px" height="250px" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="6" lqm_tags="VC7,VC7.1,VC8.0,Win2K,Win2003,Vista,VS.NET2003,VS2005,Dev"><iframe src="Simple_Tab_Control.aspx_files/f.htm" marginwidth="0" marginheight="0" scrolling="no" width="300" frameborder="0" height="250"></iframe></div>
+						</div>
+
+						
+						
+   
+<table border="0" cellpadding="0" cellspacing="5">
+<tbody><tr valign="top">
+<td id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable" style="width: 155px;" valign="top">
+	<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" href="http://www.codeproject.com/Members/venura-c-p-w-goonatillake">venura c.p.w. goonatillake</a></b><br><br>
+	<center><img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" src="Simple_Tab_Control.aspx_files/d060b87f-3f2c-415c-8cb3-0bbebbae8ae7.jpg" style="border-width: 0px;"></center>
+
+	<div class="small-text">
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer (Senior)</span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="Simple_Tab_Control.aspx_files/LK.gif" alt="Sri Lanka" width="16px" height="11px"> Sri Lanka</span><br>
+		<br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span><br>
+		
+
+		
+	</div>
+</td>
+
+<td>
+	I am working as a Tech Lead. I love VC++.<br>
+I am trying to get into new technologies coming with VC++ and also in other areas too.<br>
+&nbsp;<br>
+Currently I am working in C# .Net as well... <br>
+&nbsp;<br>
+Now I have sound knowledge in C# as well as in VC++.<br>	
+</td>
+</tr>
+</tbody></table><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						
+						<div id="ctl00_RateArticleRow" class="clearfix voting-bar">
+						<div class="float-left" style="padding-top:8px"><a href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx#_articleTop">Article Top</a></div>
+						<div class="float-right align-right"><div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_16485">
+
+	<table class="small-text" width="100%" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" align="right" nowrap="nowrap">
+			<span class="voteRes"></span>
+			<img class="loaderImg" alt="loading..." src="Simple_Tab_Control.aspx_files/ajax-loader.gif" style="display: none;" width="16px" height="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr class="">
+				
+				<td id="ctl00_RateArticle_RateText" style="padding-right: 5px; white-space: nowrap;">
+					<i><b>Rate this article for us!</b></i>
+				</td>
+
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">
+					<i>&nbsp;&nbsp;Poor</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" style="white-space: nowrap;" align="left">
+					<table id="ctl00_RateArticle_VoteRBL" class="radio" style="border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td><input id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" value="1" onclick="ChkRtctl00_RateArticle(1, 16485);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></td><td><input id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" value="2" onclick="ChkRtctl00_RateArticle(2, 16485);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></td><td><input id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" value="3" onclick="ChkRtctl00_RateArticle(3, 16485);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></td><td><input id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" value="4" onclick="ChkRtctl00_RateArticle(4, 16485);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></td><td><input id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" value="5" onclick="ChkRtctl00_RateArticle(5, 16485);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></td>
+	</tr>
+</tbody></table> 
+				</td>
+
+				<td id="ctl00_RateArticle_EndForm" align="left">
+					<i>Excellent</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteBtn">	
+					<input name="ctl00$RateArticle$SubmitRateBtn" value="Vote" onclick="return rateItem(16485,2,1,true,true,3);" id="ctl00_RateArticle_SubmitRateBtn" class="button" type="submit">
+				</td>
+
+			</tr>
+			</tbody></table>
+			<span id="ctl00_RateArticle_ErrorMessage" class="error"></span>
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote: <a href="#" id="clear-rate_ctl00_RateArticle_RCD" title="close">x</a><br>
+			<textarea class="RateComment" rows="5" cols="60" style="width: 98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Votes of 3 or less require a comment</span>
+		</div>
+	</div>
+</div>
+</div>
+						</div>
+						
+
+					</form>
+
+					
+					<div style="margin:auto;padding:0px 10px;white-space:nowrap;overflow:hidden;width:460px;height:60px">		  
+						<div class="lqm_ad" width="468px" height="60px" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="1" lqm_tags="VC7,VC7.1,VC8.0,Win2K,Win2003,Vista,VS.NET2003,VS2005,Dev"><a href="http://a.lakequincy.com/c.ashx?channel=1&amp;format=1&amp;pageid=C24EBDD6-7683-BDDD-28B8-C187AD3E1B43&amp;publisher=495&amp;tags=VC7%2cVC7.1%2cVC8.0%2cWin2K%2cWin2003%2cVista%2cVS.NET2003%2cVS2005%2cDev&amp;target=_blank&amp;ypos=2677.833251953125&amp;zone=77&amp;renderhtml=true&amp;callback=jsonp1307642569503&amp;url=http%253A%252F%252Fwww.codeproject.com%252FKB%252Ftabs%252FSimple_Tab_Control.aspx&amp;country=XX&amp;userguid=00000000-0000-0000-0000-000000000000&amp;placement=8797&amp;creative=9297" target="_blank"><img src="Simple_Tab_Control.aspx_files/634345882972723775.jpg" alt="Click Here" width="468" border="0" height="60"></a></div>
+					</div>
+					
+
+					
+					
+					<h2>Comments and Discussions</h2>
+					<a name="_comments" id="_comments"></a><!-- Forum Start -->
+<div id="_MessageBoard" onclick="return SwitchMessage(event, null)">
+<table id="ForumTable" class="box forum" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="3px" cellspacing="0">
+<tbody><tr class="forum-header1">
+<td style="white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/info-16.gif" alt="FAQ" style="border-width: 0pt; width: 16px; height: 16px; vertical-align: middle;">&nbsp;<a href="http://www.codeproject.com/KB/FAQs/MessageBoardsFAQ.aspx"><b>FAQ</b></a>&nbsp;</td><td colspan="2" style="white-space: nowrap; text-align: right;"><form action="/Search.aspx?fid=0" method="get" style="margin:0;padding:0;">
+<input name="fid" value="361017" type="hidden"><input class="Frm_Input" name="qf" type="text">&nbsp;<input value="Search" class="button" type="submit">
+</form></td>
+</tr><tr class="forum-header2">
+<td colspan="3" style="width: 100%;"><div style="text-align:right;">
+<form action="/script/Forums/SetOptions.aspx?floc=%2fKB%2ftabs%2fSimple_Tab_Control.aspx&amp;fid=361017" method="get" style="margin:0;padding:0;">
+<input name="fid" value="361017" type="hidden"><input name="currentQS" value="?floc=%2fKB%2ftabs%2fSimple_Tab_Control.aspx&amp;fid=361017" type="hidden"><input name="floc" value="/KB/tabs/Simple_Tab_Control.aspx" type="hidden"><input name="prof" id="prof" style="vertical-align: middle;" type="checkbox"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Noise level<select size="1" class="Frm_DropDown" name="noise">
+<option value="1">Very High</option><option value="2">High</option><option selected="selected" value="3">Medium</option><option value="4">Low</option><option value="5">Very Low</option>
+</select>&nbsp;&nbsp;Layout<select size="1" class="Frm_DropDown" name="view">
+<option selected="selected" value="Quick">Normal</option><option value="Topic">Expand Posts only</option><option value="Expanded">Expand Posts &amp; Replies</option><option value="Thread">Thread View</option><option value="Normal">No Javascript</option><option value="Preview">No JS + Preview</option>
+</select>&nbsp;&nbsp;Per page<select size="1" class="Frm_DropDown" name="mpp">
+<option value="10">10</option><option selected="selected" value="25">25</option><option value="50">50</option>
+</select>&nbsp;&nbsp;&nbsp;<input value="Update" name="SetOpt" class="button" type="submit">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table width="100%" border="0" cellpadding="2px" cellspacing="0">
+<tbody><tr class="forum-navbar">
+<td><img src="Simple_Tab_Control.aspx_files/forum_newmsg.gif" alt="new" width="16px" align="top" border="0" height="16px"><a href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;floc=/KB/tabs/Simple_Tab_Control.aspx" class="toolbar" name="Frm_HoverNL" title="Create a new message thread" target="_top"><b>New Message</b></a></td><td>Msgs 1 to 25 of 32 (Total in Forum: 32) (<a href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017">Refresh</a>)</td><td style="text-align: right; white-space: nowrap;"><span class="subdue">First</span> <span class="subdue">Prev</span><a class="toolbar" name="Frm_HoverNL" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;fr=26#xx0xx">Next</a></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table class="fixed-layout blank-background" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="5px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F3576636_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3576636xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3576636" href="http://www.codeproject.com/Messages/3576636/Some-keyboard-navigation-keys-are-not-working-as-e.aspx">Some keyboard (navigation) keys are not working as expected</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=27127">C++ Hacker</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">8:18 25 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3576636_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hello,<br>&nbsp;<br>I found a problem with the keyboard navigation:<br>&nbsp;<br>If
+ I press the enter key while the focus is on the "message" button (has 
+the focus frame) nothing happens, if I press the button with the mouse a
+ message box is opened.<br>&nbsp;<br>Also I can't switch the tabs by pressing STRG-TAB STRG-SHIFT-TAB that normally works in windows dialogs with tab controls.<br>&nbsp;<br>Best Regards,<br>&nbsp;<br>Andreas.<br><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3576636&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3576636&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3576636" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3576636/Some-keyboard-navigation-keys-are-not-working-as-e.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3576636&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3576636" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(27127,3576636,false,"","","");
+</script>Rate this message: <a href="#xx3576636xx" onclick="RateMsg(27127, 3576636,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3576636xx" title="vote this message a 1" onclick="RateMsg(27127, 3576636, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3576636xx" title="vote this message a 2" onclick="RateMsg(27127, 3576636, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3576636xx" title="vote this message a 3" onclick="RateMsg(27127, 3576636, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3576636xx" title="vote this message a 4" onclick="RateMsg(27127, 3576636, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3576636xx" title="vote this message a 5" onclick="RateMsg(27127, 3576636, 5,0)"><b>5</b></a> <a href="#xx3576636xx" onclick="RateMsg(27127, 3576636,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F3570166_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3570166xx"></a><img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3570166" href="http://www.codeproject.com/Messages/3570166/What-is-the-meaning-of-the-constants-5-and-6-passe.aspx">What is the meaning of the constants (5 and 6) passed to SetWindowPos in fucntion setPage [modified]</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=27127">C++ Hacker</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">5:22 19 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3570166_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hello,<br>very good job. But can you explain me the 
+meaning of the constants 5 and 6 passed to SetWindowPos that are 
+subtracted from width and height in function setPage. It seems to be the
+ size of a frame. Isn't is possible to get this value programmatically? <br>&nbsp;<br>I
+ ask this because I want to use this class also in a themed application 
+and I think that the trick with 5 and 6 doesn't work there anymore, or 
+am I wrong?<br>&nbsp;<br>And 6 must be 7, or in the bottom frame is a line missing (on Windows Vista Prof. 32 bit).<br>&nbsp;<br>Thanks,<br>&nbsp;<br>Andreas.<br>&nbsp;<br><br>&nbsp;<br>-- Modified Thursday, August 19, 2010 5:32 AM<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3570166&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3570166&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3570166" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3570166/What-is-the-meaning-of-the-constants-5-and-6-passe.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3570166&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3570166" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(27127,3570166,false,"","","");
+</script>Rate this message: <a href="#xx3570166xx" onclick="RateMsg(27127, 3570166,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3570166xx" title="vote this message a 1" onclick="RateMsg(27127, 3570166, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3570166xx" title="vote this message a 2" onclick="RateMsg(27127, 3570166, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3570166xx" title="vote this message a 3" onclick="RateMsg(27127, 3570166, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3570166xx" title="vote this message a 4" onclick="RateMsg(27127, 3570166, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3570166xx" title="vote this message a 5" onclick="RateMsg(27127, 3570166, 5,0)"><b>5</b></a> <a href="#xx3570166xx" onclick="RateMsg(27127, 3570166,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F3573142_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3573142xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3573142" href="http://www.codeproject.com/Messages/3573142/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx">Re: What is the meaning of the constants (5 and 6) passed to SetWindowPos in fucntion setPage</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">5:36 22 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3573142_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi <br>
+&nbsp;<br>
+I did not checked this in windows vista. 7 may be correct. These constant values used align the <br>
+pages. If given values did not bring expected results you can use as you wish. <br>
+Hope its served to your purpose.<br>
+&nbsp;<br>
+Sincerely<br>
+Venura<br>
+<div class="signature">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3573142&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3573142&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3570166" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3573142/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3573142&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3573142" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,3573142,false,"","","");
+</script>Rate this message: <a href="#xx3573142xx" onclick="RateMsg(1192302, 3573142,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3573142xx" title="vote this message a 1" onclick="RateMsg(1192302, 3573142, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3573142xx" title="vote this message a 2" onclick="RateMsg(1192302, 3573142, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3573142xx" title="vote this message a 3" onclick="RateMsg(1192302, 3573142, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3573142xx" title="vote this message a 4" onclick="RateMsg(1192302, 3573142, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3573142xx" title="vote this message a 5" onclick="RateMsg(1192302, 3573142, 5,0)"><b>5</b></a> <a href="#xx3573142xx" onclick="RateMsg(1192302, 3573142,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F3576619_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="52px"><a name="xx3576619xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3576619" href="http://www.codeproject.com/Messages/3576619/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx">Re: What is the meaning of the constants (5 and 6) passed to SetWindowPos in fucntion setPage</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=27127">C++ Hacker</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">8:08 25 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3576619_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 52px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="52px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hello,<br>Do you know a way to get these constants programmatically?<br>&nbsp;<br>Andreas.<br><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3576619&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3576619&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3570166" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3576619/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3576619&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3576619" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(27127,3576619,false,"","","");
+</script>Rate this message: <a href="#xx3576619xx" onclick="RateMsg(27127, 3576619,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3576619xx" title="vote this message a 1" onclick="RateMsg(27127, 3576619, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3576619xx" title="vote this message a 2" onclick="RateMsg(27127, 3576619, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3576619xx" title="vote this message a 3" onclick="RateMsg(27127, 3576619, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3576619xx" title="vote this message a 4" onclick="RateMsg(27127, 3576619, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3576619xx" title="vote this message a 5" onclick="RateMsg(27127, 3576619, 5,0)"><b>5</b></a> <a href="#xx3576619xx" onclick="RateMsg(27127, 3576619,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F3581485_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="70px"><a name="xx3581485xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3581485" href="http://www.codeproject.com/Messages/3581485/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx">Re: What is the meaning of the constants (5 and 6) passed to SetWindowPos in fucntion setPage</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">23:34 29 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3581485_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 70px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="70px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi <br>
+&nbsp;<br>
+In C# those things a possible. But I failed on VC++. Sorry for I could not able <br>
+to help you on this.<br>
+&nbsp;<br>
+<br>
+Sincerely,<br>
+Venura<br>
+<div class="signature">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3581485&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3581485&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3570166" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3581485/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3581485&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3581485" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,3581485,false,"","","");
+</script>Rate this message: <a href="#xx3581485xx" onclick="RateMsg(1192302, 3581485,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3581485xx" title="vote this message a 1" onclick="RateMsg(1192302, 3581485, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3581485xx" title="vote this message a 2" onclick="RateMsg(1192302, 3581485, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3581485xx" title="vote this message a 3" onclick="RateMsg(1192302, 3581485, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3581485xx" title="vote this message a 4" onclick="RateMsg(1192302, 3581485, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3581485xx" title="vote this message a 5" onclick="RateMsg(1192302, 3581485, 5,0)"><b>5</b></a> <a href="#xx3581485xx" onclick="RateMsg(1192302, 3581485,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F3581584_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="88px"><a name="xx3581584xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3581584" href="http://www.codeproject.com/Messages/3581584/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx">Re: What is the meaning of the constants (5 and 6) passed to SetWindowPos in fucntion setPage</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=27127">C++ Hacker</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">3:37 30 Aug '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3581584_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 88px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="88px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hello,<br>Can you tell me how this works in C# (which 
+functions names I have to use), may be I can call some API functions in 
+VC++ or google about it.<br>&nbsp;<br>Thanks,<br>&nbsp;<br>Andreas.<br><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3581584&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3581584&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3570166" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3581584/Re-What-is-the-meaning-of-the-constants-5-and-6-pa.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3581584&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3581584" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(27127,3581584,false,"","","");
+</script>Rate this message: <a href="#xx3581584xx" onclick="RateMsg(27127, 3581584,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3581584xx" title="vote this message a 1" onclick="RateMsg(27127, 3581584, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3581584xx" title="vote this message a 2" onclick="RateMsg(27127, 3581584, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3581584xx" title="vote this message a 3" onclick="RateMsg(27127, 3581584, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3581584xx" title="vote this message a 4" onclick="RateMsg(27127, 3581584, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3581584xx" title="vote this message a 5" onclick="RateMsg(27127, 3581584, 5,0)"><b>5</b></a> <a href="#xx3581584xx" onclick="RateMsg(27127, 3581584,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F3539518_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx3539518xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3539518" href="http://www.codeproject.com/Messages/3539518/HIde-show-tab-pages.aspx">HIde/show tab pages</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=465778">mcory2002</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">4:56 20 Jul '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3539518_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi,<br>
+Is there any possibility to hide/show tab pages instead of insert/remove them ?<br>
+&nbsp;<br>
+Thanks,<br>
+Cornel.<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3539518&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3539518&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3539518" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3539518/HIde-show-tab-pages.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3539518&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3539518" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(465778,3539518,false,"","","");
+</script>Rate this message: <a href="#xx3539518xx" onclick="RateMsg(465778, 3539518,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3539518xx" title="vote this message a 1" onclick="RateMsg(465778, 3539518, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3539518xx" title="vote this message a 2" onclick="RateMsg(465778, 3539518, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3539518xx" title="vote this message a 3" onclick="RateMsg(465778, 3539518, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3539518xx" title="vote this message a 4" onclick="RateMsg(465778, 3539518, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3539518xx" title="vote this message a 5" onclick="RateMsg(465778, 3539518, 5,0)"><b>5</b></a> <a href="#xx3539518xx" onclick="RateMsg(465778, 3539518,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F3539637_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx3539637xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="3539637" href="http://www.codeproject.com/Messages/3539637/Re-HIde-show-tab-pages.aspx">Re: HIde/show tab pages</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">7:11 20 Jul '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F3539637_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi Cornel,<br>
+&nbsp;<br>
+I also tried to find an answer to your question when I am doing this. But I failed.<br>
+Because of that I used this insert and remove functionality. But if you find an answer<br>
+please remember to share it with me.<br>
+&nbsp;<br>
+Sincerely,<br>
+Venura<br>
+<div class="signature">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3539637&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=3539637&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=3539518" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3539637/Re-HIde-show-tab-pages.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=3539637&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3539637" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,3539637,false,"","","");
+</script>Rate this message: <a href="#xx3539637xx" onclick="RateMsg(1192302, 3539637,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx3539637xx" title="vote this message a 1" onclick="RateMsg(1192302, 3539637, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx3539637xx" title="vote this message a 2" onclick="RateMsg(1192302, 3539637, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx3539637xx" title="vote this message a 3" onclick="RateMsg(1192302, 3539637, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx3539637xx" title="vote this message a 4" onclick="RateMsg(1192302, 3539637, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx3539637xx" title="vote this message a 5" onclick="RateMsg(1192302, 3539637, 5,0)"><b>5</b></a> <a href="#xx3539637xx" onclick="RateMsg(1192302, 3539637,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd LoVote Rt HdUnSel " id="F2936221_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2936221xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2936221" href="http://www.codeproject.com/Messages/2936221/OnTcnSelchange.aspx">OnTcnSelchange</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5094833">Rangarajan Varadan</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">11:07 23 Feb '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2936221_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi Venura,<br>
+When a user choses a tab, this function runs <br>
+void CIbTabCtrl::OnTcnSelchange(NMHDR *pNMHDR, LRESULT *pResult)<br>
+&nbsp;<br>
+When we arrive in to this function is there a easy way to figure out which PP the user clicked on?<br>
+&nbsp;<br>
+Like PPTWO, so that I can call a static member function from that CPPTwo class?<br>
+&nbsp;<br>
+Cheers<br>
+Ranga<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2936221&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2936221&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2936221" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2936221/OnTcnSelchange.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2936221&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2936221" style="white-space:nowrap;">1.00/5 (1 vote) <script type="text/javascript">
+MsgVFrm(5094833,2936221,false,"","","");
+</script>Rate this message: <a href="#xx2936221xx" onclick="RateMsg(5094833, 2936221,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2936221xx" title="vote this message a 1" onclick="RateMsg(5094833, 2936221, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2936221xx" title="vote this message a 2" onclick="RateMsg(5094833, 2936221, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2936221xx" title="vote this message a 3" onclick="RateMsg(5094833, 2936221, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2936221xx" title="vote this message a 4" onclick="RateMsg(5094833, 2936221, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2936221xx" title="vote this message a 5" onclick="RateMsg(5094833, 2936221, 5,0)"><b>5</b></a> <a href="#xx2936221xx" onclick="RateMsg(5094833, 2936221,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F2819859_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2819859xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2819859" href="http://www.codeproject.com/Messages/2819859/Tabs-are-not-visible.aspx">Tabs are not visible.</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2058697">Member 2058697</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">9:15 25 Nov '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2819859_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi,<br>
+I am using vc++ 8.0. The associated dialogs in CTabCtrl are not visible.<br>
+They are visible only if i click on the particular tab or move the dialog.<br>
+&nbsp;<br>
+Why is  it so? Any Help.<br>
+&nbsp;<br>
+Thanks in Advance,<br>
+Senthil<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2819859&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2819859&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2819859" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2819859/Tabs-are-not-visible.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2819859&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2819859" style="white-space:nowrap;">3.40/5 (4 votes) <script type="text/javascript">
+MsgVFrm(2058697,2819859,false,"","","");
+</script>Rate this message: <a href="#xx2819859xx" onclick="RateMsg(2058697, 2819859,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2819859xx" title="vote this message a 1" onclick="RateMsg(2058697, 2819859, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2819859xx" title="vote this message a 2" onclick="RateMsg(2058697, 2819859, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2819859xx" title="vote this message a 3" onclick="RateMsg(2058697, 2819859, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2819859xx" title="vote this message a 4" onclick="RateMsg(2058697, 2819859, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2819859xx" title="vote this message a 5" onclick="RateMsg(2058697, 2819859, 5,0)"><b>5</b></a> <a href="#xx2819859xx" onclick="RateMsg(2058697, 2819859,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F2792808_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2792808xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2792808" href="http://www.codeproject.com/Messages/2792808/Tabs-within-the-main-Tab-arent-visible.aspx">Tabs within the main Tab aren't visible</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2056003">Member 2056003</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">9:27 4 Nov '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2792808_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">I have written a Dialogue VC++ 7.1. <br>
+I have created Tab in main window and it works fautlessly. I have 
+created another Tab in one of the window within the main Tab and 
+unfortunately created sub- pages are not visible at all. Could you 
+possibly explain me what causes the problem? Thank you in advance.<br>
+&nbsp;<br>
+Regards<br>
+Adamacka<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2792808&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2792808&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2792808" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2792808/Tabs-within-the-main-Tab-arent-visible.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2792808&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2792808" style="white-space:nowrap;">4.33/5 (2 votes) <script type="text/javascript">
+MsgVFrm(2056003,2792808,false,"","","");
+</script>Rate this message: <a href="#xx2792808xx" onclick="RateMsg(2056003, 2792808,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2792808xx" title="vote this message a 1" onclick="RateMsg(2056003, 2792808, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2792808xx" title="vote this message a 2" onclick="RateMsg(2056003, 2792808, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2792808xx" title="vote this message a 3" onclick="RateMsg(2056003, 2792808, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2792808xx" title="vote this message a 4" onclick="RateMsg(2056003, 2792808, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2792808xx" title="vote this message a 5" onclick="RateMsg(2056003, 2792808, 5,0)"><b>5</b></a> <a href="#xx2792808xx" onclick="RateMsg(2056003, 2792808,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F2742388_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2742388xx"></a><img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2742388" href="http://www.codeproject.com/Messages/2742388/How-to-avoid-UpdateData-or-overcome-this-problem.aspx">How to avoid UpdateData or overcome this problem</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5094833">Rangarajan Varadan</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">20:35 27 Sep '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2742388_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi Venura,<br>
+The situation I ran into because I had to create a menu in the main dialog.<br>
+I have a Edit control and CComboBox in my Property page PPOne.<br>
+&nbsp;<br>
+In my file menu, I do File Open, through which I can open a file and 
+read its contents, am able to populate memory,then I perform the step 
+m_oPPOne.Create(IDD_PP_ONE) I see the tab appear, now<br>
+how can I make the the data for the controls on this PP appear in their field.<br>
+&nbsp;<br>
+Example: Normally if I click a button when I am on the PP, this below function works fine.<br>
+&nbsp;<br>
+<pre>Void CPPOne::OnBtnRefreshClicked
+{
+   <span class="code-comment">//</span><span class="code-comment">populate Edit controls
+</span>   CString str;
+   str.Format(<span class="code-string">"</span><span class="code-string">%d"</span>,some_int1);
+   cs_my_edit_control = str;
+   UpdateData(TRUE);
+   ccb_my_combo_box.SelectString(<span class="code-digit">0</span>,*(&amp;amp;my_predef_Str[0+some_int2]));
+}
+</pre>
+&nbsp;<br>
+But if I call this above function from my main dialog, it fails with a 
+assertion failure in line 4184 on wincore.cpp saying doing UpdateData 
+before DoModal.<br>
+&nbsp;<br>
+How can I overcome this? any suggestion would help.<br>
+&nbsp;<br>
+Best Regards<br>
+RV<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2742388&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2742388&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2742388" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2742388/How-to-avoid-UpdateData-or-overcome-this-problem.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2742388&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2742388" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(5094833,2742388,false,"","","");
+</script>Rate this message: <a href="#xx2742388xx" onclick="RateMsg(5094833, 2742388,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2742388xx" title="vote this message a 1" onclick="RateMsg(5094833, 2742388, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2742388xx" title="vote this message a 2" onclick="RateMsg(5094833, 2742388, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2742388xx" title="vote this message a 3" onclick="RateMsg(5094833, 2742388, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2742388xx" title="vote this message a 4" onclick="RateMsg(5094833, 2742388, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2742388xx" title="vote this message a 5" onclick="RateMsg(5094833, 2742388, 5,0)"><b>5</b></a> <a href="#xx2742388xx" onclick="RateMsg(5094833, 2742388,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F2742698_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx2742698xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2742698" href="http://www.codeproject.com/Messages/2742698/Re-How-to-avoid-UpdateData-or-overcome-this-proble.aspx">Re: How to avoid UpdateData or overcome this problem</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">12:05 28 Sep '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2742698_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Please send me your code, I can look at it. Coz it is difficult<br>
+to think what the problem is. <br>
+&nbsp;<br>
+Thank You<br>
+Venura <br>
+&nbsp;<br>
+<div class="ForumSig">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2742698&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2742698&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2742388" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2742698/Re-How-to-avoid-UpdateData-or-overcome-this-proble.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2742698&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2742698" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,2742698,false,"","","");
+</script>Rate this message: <a href="#xx2742698xx" onclick="RateMsg(1192302, 2742698,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2742698xx" title="vote this message a 1" onclick="RateMsg(1192302, 2742698, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2742698xx" title="vote this message a 2" onclick="RateMsg(1192302, 2742698, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2742698xx" title="vote this message a 3" onclick="RateMsg(1192302, 2742698, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2742698xx" title="vote this message a 4" onclick="RateMsg(1192302, 2742698, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2742698xx" title="vote this message a 5" onclick="RateMsg(1192302, 2742698, 5,0)"><b>5</b></a> <a href="#xx2742698xx" onclick="RateMsg(1192302, 2742698,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F2696723_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2696723xx"></a><img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2696723" href="http://www.codeproject.com/Messages/2696723/How-to-convert-my-Dialogue-into-a-Tab.aspx">How to convert my Dialogue into a Tab</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5094833">Rangarajan Varadan</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">12:38 27 Aug '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2696723_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hello Venura:<br>
+You Tab Ctrl app is brilliant, hats off for it.<br>
+I have written a Dialogue(VC++ 7.0) which opens a comm port and does data exchange.<br>
+&nbsp;<br>
+In my main dialogue I have written a lot of code, I am trying to convert
+ it into a Prpoerty page without having to recode all of the items on 
+the Dialogue....This property page, I want to use as my first Tab or 
+opening tab.....<br>
+&nbsp;<br>
+Can you suggest a quick and easy way to do this....<br>
+&nbsp;<br>
+Appreciate your suggestion.<br>
+&nbsp;<br>
+Best Regards<br>
+Ranga<br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2696723&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2696723&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2696723" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2696723/How-to-convert-my-Dialogue-into-a-Tab.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2696723&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2696723" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(5094833,2696723,false,"","","");
+</script>Rate this message: <a href="#xx2696723xx" onclick="RateMsg(5094833, 2696723,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2696723xx" title="vote this message a 1" onclick="RateMsg(5094833, 2696723, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2696723xx" title="vote this message a 2" onclick="RateMsg(5094833, 2696723, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2696723xx" title="vote this message a 3" onclick="RateMsg(5094833, 2696723, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2696723xx" title="vote this message a 4" onclick="RateMsg(5094833, 2696723, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2696723xx" title="vote this message a 5" onclick="RateMsg(5094833, 2696723, 5,0)"><b>5</b></a> <a href="#xx2696723xx" onclick="RateMsg(5094833, 2696723,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HiVote HdUnSel " id="F2697339_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx2697339xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2697339" href="http://www.codeproject.com/Messages/2697339/Re-How-to-convert-my-Dialogue-into-a-Tab.aspx">Re: How to convert my Dialogue into a Tab</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">0:58 28 Aug '08 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2697339_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi,<br>
+&nbsp;<br>
+I think you can do it like this, property pages are derived from CDialog if I correct. You <br>
+can simpley derived your Dialog class to a property page class... or you can type cast... This can be done first as a trial.<br>
+If its work you can do it for your actual...<br>
+&nbsp;<br>
+Hope you can do some thing like this, you do not need to write every thing from scratch<br>
+in a property page.<br>
+&nbsp;<br>
+Sincerely<br>
+Venura <br>
+&nbsp;<br>
+<div class="ForumSig">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2697339&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2697339&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2696723" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2697339/Re-How-to-convert-my-Dialogue-into-a-Tab.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2697339&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2697339" style="white-space:nowrap;">5.00/5 (1 vote) <script type="text/javascript">
+MsgVFrm(1192302,2697339,false,"","","");
+</script>Rate this message: <a href="#xx2697339xx" onclick="RateMsg(1192302, 2697339,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2697339xx" title="vote this message a 1" onclick="RateMsg(1192302, 2697339, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2697339xx" title="vote this message a 2" onclick="RateMsg(1192302, 2697339, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2697339xx" title="vote this message a 3" onclick="RateMsg(1192302, 2697339, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2697339xx" title="vote this message a 4" onclick="RateMsg(1192302, 2697339, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2697339xx" title="vote this message a 5" onclick="RateMsg(1192302, 2697339, 5,0)"><b>5</b></a> <a href="#xx2697339xx" onclick="RateMsg(1192302, 2697339,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd Rt HdUnSel " id="F2064069_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx2064069xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2064069" href="http://www.codeproject.com/Messages/2064069/You-got-my-5.aspx">You got my 5!</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2853223">flippydeflippydebop</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">2:09 2 Jun '07 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2064069_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">This is exactly what im looking for. - You saved me some time.  Thanks. <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2064069&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2064069&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2064069" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2064069/You-got-my-5.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2064069&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2064069" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(2853223,2064069,false,"","","");
+</script>Rate this message: <a href="#xx2064069xx" onclick="RateMsg(2853223, 2064069,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2064069xx" title="vote this message a 1" onclick="RateMsg(2853223, 2064069, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2064069xx" title="vote this message a 2" onclick="RateMsg(2853223, 2064069, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2064069xx" title="vote this message a 3" onclick="RateMsg(2853223, 2064069, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2064069xx" title="vote this message a 4" onclick="RateMsg(2853223, 2064069, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2064069xx" title="vote this message a 5" onclick="RateMsg(2853223, 2064069, 5,0)"><b>5</b></a> <a href="#xx2064069xx" onclick="RateMsg(2853223, 2064069,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F2065156_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx2065156xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2065156" href="http://www.codeproject.com/Messages/2065156/Re-You-got-my-5.aspx">Re: You got my 5!</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">23:32 3 Jun '07 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2065156_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi <br>
+&nbsp;<br>
+Yes It is possible to remove pages after add. But it is not a<br>
+recomended method to do so. If you realy want to do so, what I can<br>
+propose is hide the relevant tab in tab control. No need to hide the page<br>
+if it is not currently selected. otherwise you have to hide that too.<br>
+Anyway I will impliment that too.. and update code project most probably today.<br>
+&nbsp;<br>
+Thank You<br>
+Venura<br>
+ <br>
+&nbsp;<br>
+<div class="ForumSig">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2065156&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2065156&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2064069" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2065156/Re-You-got-my-5.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2065156&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2065156" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,2065156,false,"","","");
+</script>Rate this message: <a href="#xx2065156xx" onclick="RateMsg(1192302, 2065156,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2065156xx" title="vote this message a 1" onclick="RateMsg(1192302, 2065156, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2065156xx" title="vote this message a 2" onclick="RateMsg(1192302, 2065156, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2065156xx" title="vote this message a 3" onclick="RateMsg(1192302, 2065156, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2065156xx" title="vote this message a 4" onclick="RateMsg(1192302, 2065156, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2065156xx" title="vote this message a 5" onclick="RateMsg(1192302, 2065156, 5,0)"><b>5</b></a> <a href="#xx2065156xx" onclick="RateMsg(1192302, 2065156,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F2151976_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx2151976xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="2151976" href="http://www.codeproject.com/Messages/2151976/Re-You-got-my-5.aspx">Re: You got my 5!</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3154573">sonsam</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">10:08 26 Jul '07 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F2151976_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Yeah this has been of great help in a small side project. <br>
+&nbsp;<br>
+thanks a lot <img src="Simple_Tab_Control.aspx_files/smiley_smile.gif" alt="Smile | :)" align="top"> <br>
+&nbsp;<br>
+5 from me <br>
+&nbsp;<br>
+<div class="ForumSig"><a href="http://www.codeproject.com/lounge.asp?msg=2136192#xx2136192xx" rel="nofollow">Code Project Lounge 101 by John Cardinal</a><br>
+</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2151976&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=2151976&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=2064069" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/2151976/Re-You-got-my-5.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=2151976&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF2151976" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(3154573,2151976,false,"","","");
+</script>Rate this message: <a href="#xx2151976xx" onclick="RateMsg(3154573, 2151976,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx2151976xx" title="vote this message a 1" onclick="RateMsg(3154573, 2151976, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx2151976xx" title="vote this message a 2" onclick="RateMsg(3154573, 2151976, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx2151976xx" title="vote this message a 3" onclick="RateMsg(3154573, 2151976, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx2151976xx" title="vote this message a 4" onclick="RateMsg(3154573, 2151976, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx2151976xx" title="vote this message a 5" onclick="RateMsg(3154573, 2151976, 5,0)"><b>5</b></a> <a href="#xx2151976xx" onclick="RateMsg(3154573, 2151976,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd LoVote Rt HdUnSel " id="F1774356_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="16px"><a name="xx1774356xx"></a><img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1774356" href="http://www.codeproject.com/Messages/1774356/No-content-in-tab-panes.aspx">No content in tab panes</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3534995">jalstadt</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">9:48 24 Nov '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1774356_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 16px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="16px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi I am having trouble in getting the tabs to display 
+the associated dialogs on the page. Instead, it shows a gray box. What 
+might be causing this? I ensured that the Dialog IDs were the same as 
+the associated classes and I also made sure that the properties of the 
+dialog were the same as the demo project. I have tabs, but no content. 
+I'm kind of stump as how to corect this.<br>
+Any help would be most appriciated.<br>
+Take care,<br>
+Jeff <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1774356&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1774356&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1774356/No-content-in-tab-panes.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1774356&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1774356" style="white-space:nowrap;">2.00/5 (1 vote) <script type="text/javascript">
+MsgVFrm(3534995,1774356,false,"","","");
+</script>Rate this message: <a href="#xx1774356xx" onclick="RateMsg(3534995, 1774356,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1774356xx" title="vote this message a 1" onclick="RateMsg(3534995, 1774356, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1774356xx" title="vote this message a 2" onclick="RateMsg(3534995, 1774356, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1774356xx" title="vote this message a 3" onclick="RateMsg(3534995, 1774356, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1774356xx" title="vote this message a 4" onclick="RateMsg(3534995, 1774356, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1774356xx" title="vote this message a 5" onclick="RateMsg(3534995, 1774356, 5,0)"><b>5</b></a> <a href="#xx1774356xx" onclick="RateMsg(3534995, 1774356,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F1776315_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx1776315xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1776315" href="http://www.codeproject.com/Messages/1776315/Re-No-content-in-tab-panes.aspx">Re: No content in tab panes</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1192302">venura c.p.w. goonatillake</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">21:45 26 Nov '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1776315_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi<br>
+&nbsp;<br>
+If I could see your code I can help you in a straighter way. Have you added the tab control?<br>
+And you should use property pages instead of dialogs<br>
+Try with the given sample code. If the problem is still existing  let me know?<br>
+&nbsp;<br>
+Thank you<br>
+Venura<br>
+ <br>
+&nbsp;<br>
+<div class="ForumSig">VENURA GOONATILLAKE, SRI LANKA</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1776315&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1776315&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1776315/Re-No-content-in-tab-panes.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1776315&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1776315" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(1192302,1776315,false,"","","");
+</script>Rate this message: <a href="#xx1776315xx" onclick="RateMsg(1192302, 1776315,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1776315xx" title="vote this message a 1" onclick="RateMsg(1192302, 1776315, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1776315xx" title="vote this message a 2" onclick="RateMsg(1192302, 1776315, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1776315xx" title="vote this message a 3" onclick="RateMsg(1192302, 1776315, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1776315xx" title="vote this message a 4" onclick="RateMsg(1192302, 1776315, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1776315xx" title="vote this message a 5" onclick="RateMsg(1192302, 1776315, 5,0)"><b>5</b></a> <a href="#xx1776315xx" onclick="RateMsg(1192302, 1776315,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F1776661_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="52px"><a name="xx1776661xx"></a><img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1776661" href="http://www.codeproject.com/Messages/1776661/Re-No-content-in-tab-panes.aspx">Re: No content in tab panes</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3534995">jalstadt</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">3:03 27 Nov '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1776661_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 52px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="52px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Well, I am not sure what exactly the problem is. I 
+renamed all of my sample code so that it allined directly with the 
+sample project code. I think I might try creating new dialogs and see if
+ that works. I noticed in VS 2003 it the resource generator has major 
+problems when one changes the underlying code that it created. (Thanks 
+MS). <br>
+&nbsp;<br>
+Thanks for your help thus far. <br>
+~Jeff <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1776661&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1776661&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1776661/Re-No-content-in-tab-panes.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1776661&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1776661" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(3534995,1776661,false,"","","");
+</script>Rate this message: <a href="#xx1776661xx" onclick="RateMsg(3534995, 1776661,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1776661xx" title="vote this message a 1" onclick="RateMsg(3534995, 1776661, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1776661xx" title="vote this message a 2" onclick="RateMsg(3534995, 1776661, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1776661xx" title="vote this message a 3" onclick="RateMsg(3534995, 1776661, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1776661xx" title="vote this message a 4" onclick="RateMsg(3534995, 1776661, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1776661xx" title="vote this message a 5" onclick="RateMsg(3534995, 1776661, 5,0)"><b>5</b></a> <a href="#xx1776661xx" onclick="RateMsg(3534995, 1776661,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F1777230_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="70px"><a name="xx1777230xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1777230" href="http://www.codeproject.com/Messages/1777230/Re-No-content-in-tab-panes.aspx">Re: No content in tab panes</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3534995">jalstadt</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">10:06 27 Nov '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1777230_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 70px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="70px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Still no luck. I have no clue what the reason is and I 
+am presently having a problem with VS 2003 creating a class for a 
+property sheet dialog when you right click and call the class wizard to 
+create a class file for the dialog. I have no idea how to fix this. <br>
+&nbsp;<br>
+Regards,<br>
+Jeff <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1777230&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1777230&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1777230/Re-No-content-in-tab-panes.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1777230&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1777230" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(3534995,1777230,false,"","","");
+</script>Rate this message: <a href="#xx1777230xx" onclick="RateMsg(3534995, 1777230,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1777230xx" title="vote this message a 1" onclick="RateMsg(3534995, 1777230, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1777230xx" title="vote this message a 2" onclick="RateMsg(3534995, 1777230, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1777230xx" title="vote this message a 3" onclick="RateMsg(3534995, 1777230, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1777230xx" title="vote this message a 4" onclick="RateMsg(3534995, 1777230, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1777230xx" title="vote this message a 5" onclick="RateMsg(3534995, 1777230, 5,0)"><b>5</b></a> <a href="#xx1777230xx" onclick="RateMsg(3534995, 1777230,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HiVote HdUnSel " id="F1788844_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="34px"><a name="xx1788844xx"></a><img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1788844" href="http://www.codeproject.com/Messages/1788844/Here-is-a-fix-that-works-for-me-modified.aspx">Here is a fix that works for me ! [modified]</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=199524">PatrickL</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">10:05 4 Dec '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1788844_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 34px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="34px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Hi  <br>
+I got the same problem as Jeff ...<br>
+Is it because I use Visual Studio 2005, or Windows XP Pro SP2 ?<br>
+&nbsp;<br>
+Anyway, I found a way to make it work; <br>
+hopefully it may help Jeff and others !<br>
+&nbsp;<br>
+In addNewPage(), I added 	pPage-&gt;SetParent(this-&gt;GetParent());  <br>
+and<br>
+In  setPage(),  I added        	pWnd-&gt;ShowWindow(SW_SHOW); // at the end<br>
+&nbsp;<br>
+Cheers <br>
+&nbsp;<br>
+<br>
+ -- modified at 10:03 Tuesday 5th December, 2006 <br>
+&nbsp;<br>
+<div class="ForumSig">Patrick</div><br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1788844&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1788844&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1788844/Here-is-a-fix-that-works-for-me-modified.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1788844&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1788844" style="white-space:nowrap;">5.00/5 (1 vote) <script type="text/javascript">
+MsgVFrm(199524,1788844,false,"","","");
+</script>Rate this message: <a href="#xx1788844xx" onclick="RateMsg(199524, 1788844,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1788844xx" title="vote this message a 1" onclick="RateMsg(199524, 1788844, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1788844xx" title="vote this message a 2" onclick="RateMsg(199524, 1788844, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1788844xx" title="vote this message a 3" onclick="RateMsg(199524, 1788844, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1788844xx" title="vote this message a 4" onclick="RateMsg(199524, 1788844, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1788844xx" title="vote this message a 5" onclick="RateMsg(199524, 1788844, 5,0)"><b>5</b></a> <a href="#xx1788844xx" onclick="RateMsg(199524, 1788844,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F1790311_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="52px"><a name="xx1790311xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1790311" href="http://www.codeproject.com/Messages/1790311/Re-Here-is-a-fix-that-works-for-me.aspx">Re: Here is a fix that works for me !</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3534995">jalstadt</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">5:29 5 Dec '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1790311_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 52px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="52px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Thanks Patrick.  I'm using VS 2003 on XP Svc. Pack 1 and
+ the tabs finally display properly. I still have problems with 
+positioning for which I need figure out. I had the same problem using 
+this as well on Windows 2000. I think it might be a bug in Venura's 
+code. Pehaps he should make this addition so that others will not have 
+this same problem.<br>
+Thanks for again for your help.<br>
+~Jeff <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1790311&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1790311&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1790311/Re-Here-is-a-fix-that-works-for-me.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1790311&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1790311" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(3534995,1790311,false,"","","");
+</script>Rate this message: <a href="#xx1790311xx" onclick="RateMsg(3534995, 1790311,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1790311xx" title="vote this message a 1" onclick="RateMsg(3534995, 1790311, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1790311xx" title="vote this message a 2" onclick="RateMsg(3534995, 1790311, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1790311xx" title="vote this message a 3" onclick="RateMsg(3534995, 1790311, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1790311xx" title="vote this message a 4" onclick="RateMsg(3534995, 1790311, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1790311xx" title="vote this message a 5" onclick="RateMsg(3534995, 1790311, 5,0)"><b>5</b></a> <a href="#xx1790311xx" onclick="RateMsg(3534995, 1790311,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="1px"></td>
+</tr>
+<!-- Start Message head -->
+
+<tr class="MsgHd HdUnSel " id="F1790461_h0">
+<td width="100%"><table class="quickHd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="hover-row">
+<td class="Frm_MsgIndent" width="70px"><a name="xx1790461xx"></a><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"></td><td class="Frm_MsgSubject hover-container"><a id="DynMessLink" rel="nofollow" name="1790461" href="http://www.codeproject.com/Messages/1790461/Re-Here-is-a-fix-that-works-for-me.aspx">Re: Here is a fix that works for me !</a> <a onclick="return Pin(this);" href="#" title="Click to pin message"><img src="Simple_Tab_Control.aspx_files/pin.gif" alt="Pin" width="13px" align="top" border="0" height="12px"></a></td><td style="width: 20px; white-space: nowrap;"><img src="Simple_Tab_Control.aspx_files/member_sm.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3534995">jalstadt</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">6:55 5 Dec '06 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><!-- End Message head -->
+
+<tr id="F1790461_h1" style="display: none;">
+<td width="100%"><table class="quickBd" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width: 70px;"><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="70px" height="1px"></td><td class="MsgBd BdSel "><table width="100%" border="0" cellpadding="0" cellspacing="5px">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2">Patrick,<br>
+&nbsp;<br>
+I still have one problem. My event handlers are not responding now with 
+the property pages as they were responding before. Basically, for 
+example, the checkbox is unable to be clicked. Any idea how to fix this?<br>
+~Jeff <br></td>
+</tr><tr style="vertical-align: middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1790461&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=r" title="Reply">Reply</a>·<a class="toolbar" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=361017&amp;select=1790461&amp;floc=/KB/tabs/Simple_Tab_Control.aspx&amp;action=e" title="Email">Email</a>·<a class="toolbar" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;tid=1774356" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/1790461/Re-Here-is-a-fix-that-works-for-me.aspx" title="Get permanent link">Link</a>·<a class="toolbar" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=1790461&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post">Bookmark</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF1790461" style="white-space:nowrap;"><script type="text/javascript">
+MsgVFrm(3534995,1790461,false,"","","");
+</script>Rate this message: <a href="#xx1790461xx" onclick="RateMsg(3534995, 1790461,1,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_down.gif" alt="vote 1" width="14px" align="middle" border="0" height="14px"></a> <a class="toolbar" href="#xx1790461xx" title="vote this message a 1" onclick="RateMsg(3534995, 1790461, 1,0)"><b>1</b></a> <a class="toolbar" href="#xx1790461xx" title="vote this message a 2" onclick="RateMsg(3534995, 1790461, 2,0)"><b>2</b></a> <a class="toolbar" href="#xx1790461xx" title="vote this message a 3" onclick="RateMsg(3534995, 1790461, 3,0)"><b>3</b></a> <a class="toolbar" href="#xx1790461xx" title="vote this message a 4" onclick="RateMsg(3534995, 1790461, 4,0)"><b>4</b></a> <a class="toolbar" href="#xx1790461xx" title="vote this message a 5" onclick="RateMsg(3534995, 1790461, 5,0)"><b>5</b></a> <a href="#xx1790461xx" onclick="RateMsg(3534995, 1790461,5,0);"><img src="Simple_Tab_Control.aspx_files/thumbs_up.gif" alt="vote 5" width="14px" align="middle" border="0" height="14px"></a> </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="Simple_Tab_Control.aspx_files/t_002.gif" alt="" width="1px" border="0" height="5px"></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table width="100%" cellpadding="2px" cellspacing="0">
+<tbody><tr class="forum-footer">
+<td>Last Visit: 13:53 9 Jun '11  &nbsp; &nbsp; Last Update: 14:02 9 Jun '11 </td><td style="text-align: right; white-space: nowrap;"><input id="_mbnUrl" value="/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;fr=26" type="hidden"><b>1</b><a class="toolbar" name="Frm_HoverNL" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;fr=26#xx0xx">2</a> <a class="toolbar" name="Frm_HoverNL" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?fid=361017&amp;fr=26#xx0xx">Next »</a></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div><p class="small-text"><img src="Simple_Tab_Control.aspx_files/msg_general.gif" alt="General" width="16px" align="top" height="16px"> General &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_news.gif" alt="News" width="16px" align="top" height="16px"> News &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_question.gif" alt="Question" width="16px" align="top" height="16px"> Question &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_answer.gif" alt="Answer" width="16px" align="top" height="16px"> Answer &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_joke.gif" alt="Joke" width="16px" align="top" height="16px"> Joke &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_rant.gif" alt="Rant" width="16px" align="top" height="16px"> Rant &nbsp;&nbsp; <img src="Simple_Tab_Control.aspx_files/msg_admin.gif" alt="Admin" width="16px" align="top" height="16px"> Admin &nbsp;&nbsp; </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+PgUp/PgDown to switch pages.</p>
+<!-- Forum End -->
+
+
+
+
+					
+					<div class="theme1-background" style="height:2px"></div>
+
+					<div class="extended tiny-text">
+						<div class="row">
+							<div class="float-left">
+								<a id="ctl00_PermaLink" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx">Permalink</a> | 
+								<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+								<a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a> |
+								<a id="ctl00_Mobile" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?display=Mobile">Mobile</a>
+								<br>Last Updated: 5 Jun 2007<br>
+								<br>
+							</div>
+							<div class="float-right align-right">
+								Copyright 2006 by venura c.p.w. goonatillake<br>Everything else
+								Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2011<br>
+								Web21 |
+								<a id="ctl00_AdvertiseLink" href="http://www.codeproject.com/info/MediaKit.aspx">Advertise on the Code Project </a>
+							</div>
+
+							
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" href="http://www.codeproject.com/KB/tabs/Simple_Tab_Control.aspx?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+						</div>
+					</div>
+					
+
+				<br clear="all">
+		
+				
+				</div>
+
+				<div id="ctl00_ContentSide" class="text-sidebar">
+					 
+					<div class="lqm_ad container-adwords" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="30"></div>
+
+					<script type="text/javascript">document.write(unescape('%0d%0a%3cdiv class%3d%22announce%22%3e%0d%0a%0d%0a%3cdiv class%3d%22announce-content%22%3e%09%0d%0a%0d%0a%0d%0a%3cdiv class%3d%22container-adwords%22%3e%0d%0a%09%3ca id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl00_Link%22 href%3d%22%2fscript%2fCatalog%2fRedir.aspx%3fctid%3d2682%26amp%3bcttype%3d2%22 target%3d%22_blank%22%3e%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl00_Title%22 class%3d%22title%22%3eActiveAnalysis for Silverlight%2c WinForms%2c ASP.NET%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl00_Teaser%22 title%3d%22ActiveAnalysis is a complete OLAP%2c data visualization and business intelligence component for Silverlight%2c Windows Forms and ASP.NET. With the ability to connect to virtually any data source and support for three development platforms%2c rolling out your own BI applications is easier than ever!%22 class%3d%22desc%22%3eActiveAnalysis is a complete OLAP%2c data...%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl00_Url%22 class%3d%22link%22%3ewww.gcpowertools.com%3c%2fspan%3e%3c%2fa%3e%0d%0a%3c%2fdiv%3e%0d%0a%0d%0a%3cdiv class%3d%22container-adwords%22%3e%0d%0a%09%3ca id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl01_Link%22 href%3d%22%2fscript%2fCatalog%2fRedir.aspx%3fctid%3d2393%26amp%3bcttype%3d2%22 target%3d%22_blank%22%3e%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl01_Title%22 class%3d%22title%22%3eResco MobileForms Toolkit%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl01_Teaser%22 title%3d%22Ultimate set of mobile .NET controls%22 class%3d%22desc%22%3eUltimate set of mobile .NET controls%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl01_Url%22 class%3d%22link%22%3ewww.resco.net%3c%2fspan%3e%3c%2fa%3e%0d%0a%3c%2fdiv%3e%0d%0a%0d%0a%3cdiv class%3d%22container-adwords%22%3e%0d%0a%09%3ca id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl02_Link%22 href%3d%22%2fscript%2fCatalog%2fRedir.aspx%3fctid%3d2967%26amp%3bcttype%3d2%22 target%3d%22_blank%22%3e%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl02_Title%22 class%3d%22title%22%3eSpread for COM%2fActiveX%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl02_Teaser%22 title%3d%22FarPoint Spread for COM%2fActiveX by GrapeCity is an Award-winning%2c World%26%2339%3bs Best Selling Microsoft Excel Compatible SpreadSheet Component for COM%2fActiveX with powerful features and near unlimited customization with support for native Excel export%2fimport%2c event based coding and built-in calculation e%22 class%3d%22desc%22%3eFarPoint Spread for COM%2fActiveX by GrapeCity...%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%3cspan id%3d%22ctl00_CatalogItems_FeatureItemRptr_ctl02_Url%22 class%3d%22link%22%3ewww.gcpowertools.com%3c%2fspan%3e%3c%2fa%3e%0d%0a%3c%2fdiv%3e%0d%0a%0d%0a%0d%0a%3c%2fdiv%3e%0d%0a%3c%2fdiv%3e%0d%0a%0d%0a%0d%0a'));</script>
+<div class="announce">
+
+<div class="announce-content">	
+
+
+<div class="container-adwords">
+	<a id="ctl00_CatalogItems_FeatureItemRptr_ctl00_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=2682&amp;cttype=2" target="_blank"><span id="ctl00_CatalogItems_FeatureItemRptr_ctl00_Title" class="title">ActiveAnalysis for Silverlight, WinForms, ASP.NET</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl00_Teaser" title="ActiveAnalysis is a complete OLAP, data visualization and business intelligence component for Silverlight, Windows Forms and ASP.NET. With the ability to connect to virtually any data source and support for three development platforms, rolling out your own BI applications is easier than ever!" class="desc">ActiveAnalysis is a complete OLAP, data...</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl00_Url" class="link">www.gcpowertools.com</span></a>
+</div>
+
+<div class="container-adwords">
+	<a id="ctl00_CatalogItems_FeatureItemRptr_ctl01_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=2393&amp;cttype=2" target="_blank"><span id="ctl00_CatalogItems_FeatureItemRptr_ctl01_Title" class="title">Resco MobileForms Toolkit</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl01_Teaser" title="Ultimate set of mobile .NET controls" class="desc">Ultimate set of mobile .NET controls</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl01_Url" class="link">www.resco.net</span></a>
+</div>
+
+<div class="container-adwords">
+	<a id="ctl00_CatalogItems_FeatureItemRptr_ctl02_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=2967&amp;cttype=2" target="_blank"><span id="ctl00_CatalogItems_FeatureItemRptr_ctl02_Title" class="title">Spread for COM/ActiveX</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl02_Teaser" title="FarPoint Spread for COM/ActiveX by GrapeCity is an Award-winning, World's Best Selling Microsoft Excel Compatible SpreadSheet Component for COM/ActiveX with powerful features and near unlimited customization with support for native Excel export/import, event based coding and built-in calculation e" class="desc">FarPoint Spread for COM/ActiveX by GrapeCity...</span><br>
+		<span id="ctl00_CatalogItems_FeatureItemRptr_ctl02_Url" class="link">www.gcpowertools.com</span></a>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+					
+
+					
+
+					
+<div class="announce">
+<div class="announce-header">See Also...</div>
+<div class="announce-content">	
+
+
+<div class="container-related-item">
+	<a id="ctl00_RelatedArticles_RelatedItemRptr_ctl00_TitleLink" class="title" href="http://www.codeproject.com/KB/tabs/lbtab.aspx">Fully owner drawn tab control</a><br>
+	<span id="ctl00_RelatedArticles_RelatedItemRptr_ctl00_Teaser" class="desc">A better looking tab control</span><br>
+</div>
+
+<div class="container-related-item">
+	<a id="ctl00_RelatedArticles_RelatedItemRptr_ctl01_TitleLink" class="title" href="http://www.codeproject.com/KB/tabs/tabbingframework.aspx">Custom Tab Controls, Tabbed Frame and Tabbed MDI</a><br>
+	<span id="ctl00_RelatedArticles_RelatedItemRptr_ctl01_Teaser" class="desc">An extensible framework for creating...</span><br>
+</div>
+
+<div class="container-related-item">
+	<a id="ctl00_RelatedArticles_RelatedItemRptr_ctl02_TitleLink" class="title" href="http://www.codeproject.com/KB/tabs/AMCustomTabCtrlDemo.aspx">CCustomTabCtrl - MFC Tab Control</a><br>
+	<span id="ctl00_RelatedArticles_RelatedItemRptr_ctl02_Teaser" class="desc">An MFC tab control - a clone of the Excel tab...</span><br>
+</div>
+
+<div class="container-related-item">
+	<a id="ctl00_RelatedArticles_RelatedItemRptr_ctl03_TitleLink" class="title" href="http://www.codeproject.com/KB/tabs/SimpleTab.aspx">Simple Tab Control For Visual C++</a><br>
+	<span id="ctl00_RelatedArticles_RelatedItemRptr_ctl03_Teaser" class="desc">Using this Tab control the user can manage...</span><br>
+</div>
+
+<div class="container-related-item">
+	<a id="ctl00_RelatedArticles_RelatedItemRptr_ctl04_TitleLink" class="title" href="http://www.codeproject.com/KB/tabs/CMyTabCtrl.aspx">CMyTabCtrl - Very Simple Dynamic Tab Control for MFC</a><br>
+	<span id="ctl00_RelatedArticles_RelatedItemRptr_ctl04_Teaser" class="desc">A Very Simple to use and expandable CTabCtrl Class</span><br>
+</div>
+
+</div>
+</div>
+
+
+
+
+					
+
+					
+<div class="announce">
+<div class="announce-header">The Daily Insider</div>
+<div class="announce-content">
+
+<div><a id="ctl00_News_News_ctl01_Link" href="http://citizen428.net/archives/434">30 free programming books</a></div>
+
+Daily News: <a id="ctl00_News_News_ctl02_Subscribe" href="http://www.codeproject.com/Feature/Insider/">Signup now</a>.
+</div>
+</div>
+		
+
+					<div style="margin:auto;width:150px"><div class="lqm_ad" width="150px" height="80px" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="21" lqm_tags="VC7,VC7.1,VC8.0,Win2K,Win2003,Vista,VS.NET2003,VS2005,Dev"><a href="http://a.lakequincy.com/c.ashx?channel=1&amp;format=21&amp;pageid=C24EBDD6-7683-BDDD-28B8-C187AD3E1B43&amp;publisher=495&amp;tags=VC7%2cVC7.1%2cVC8.0%2cWin2K%2cWin2003%2cVista%2cVS.NET2003%2cVS2005%2cDev&amp;target=_blank&amp;ypos=972.5333251953125&amp;zone=77&amp;renderhtml=true&amp;callback=jsonp1307642569505&amp;url=http%253A%252F%252Fwww.codeproject.com%252FKB%252Ftabs%252FSimple_Tab_Control.aspx&amp;country=XX&amp;userguid=00000000-0000-0000-0000-000000000000&amp;placement=7931&amp;creative=7413" target="_blank"><img src="Simple_Tab_Control.aspx_files/634230138107349008.gif" alt="Click here" width="150" border="0" height="80"></a></div>
+					</div>
+	
+					<div style="margin:auto;width:160px;margin-top:10px"><div class="lqm_ad" width="160px" height="600px" lqm_channel="1" lqm_publisher="495" lqm_zone="77" lqm_format="18" lqm_tags="VC7,VC7.1,VC8.0,Win2K,Win2003,Vista,VS.NET2003,VS2005,Dev"><iframe src="Simple_Tab_Control.aspx_files/f_002.htm" marginwidth="0" marginheight="0" scrolling="no" width="160" frameborder="0" height="600"></iframe></div>
+					</div>
+				</div>
+
+			</div>
+			
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+<script type="text/javascript" language="Javascript" src="Simple_Tab_Control.aspx_files/jquery-1.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.4.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="Simple_Tab_Control.aspx_files/article.js"></script>
+<script type="text/javascript" language="Javascript" src="Simple_Tab_Control.aspx_files/m.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+var socialLinks = new social();
+socialLinks.PlaceholderId="ATD";socialLinks.ObjectId=16485;
+socialLinks.ObjectTypeId=2;
+socialLinks.addtoMethod=1;
+socialLinks.Horizontal=false;
+socialLinks.Showname=true;
+socialLinks.setupLinks("socialLinks", escape(document.location.href),escape(document.title), 100, 0, "small-text Bold", "AddTo");
+socialLinks.setupMenu();
+if($.LqmAds)$.LqmAds();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ InitWatermark('sb_tb', 'Search');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide();
+  sbar.blur(function() { if (!oSrchFlt)sfilter.hide();srchBoxFoc=false; });
+  sbar.focus(function() { oSrchFlt=false;srchBoxFoc=true;sfilter.show(); });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox)sfilter.hide();});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$(document).ready(function() { anchorAnimate(); });
+$("#ctl00_RateArticle_RateItemWrapper").removeClass("container-rating");$('#clear-rate_ctl00_RateArticle_RCD').click(function () { $('#ctl00_RateArticle_RCD').hide(); return false;});
+function ChkRtctl00_RateArticle(val, objId) {if (val<=3||true) {
+$('div[name=RateItem_' + objId + '] .rating-comment').css("display","");}
+else $('div[name=RateItem_' + objId + '] .rating-comment').css("display","none");}
+
+
+//]]>
+</script>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,20 @@
+konaSafe(function(){
+teUrl='http://te.kontera.com/ContentLink/ContentLink?publisherId=2409&layout=adlinks&sId=2030,2193,183&cb=1307567225&creative=L&cn=in';
+directAdsPrefetch=true;
+setMaxLinksOnPage(6);
+reJsonResponse({"AutoReport":{"rep":"re422.colo8.sjc.kontera.com","stopic":6},"jsABParameters":{"js_audience_targeting":true,"js_comscore_enabled":1,"js_feed_click_delay":true,"js_legolas_enabled":1,"js_one_layer":1,"js_related_enabled":1,"js_related_unit_settings":"disabled"},"konaLat":"20","konaLon":"77","konaPostalCode":"","konaUserGuid":"E4C86326-374B-11E0-BD6B-00163E201183","pageHash":"jp_wroecwtsrsybiipkMtuktcesBsaergoieanepceuernswnrisnnudirtddiFpetrewuncmdgripietldoosnrlmeiCsszdvltf","scripts":[{"scriptURL":"http://rt.legolas-media.com/lgrt?ci=2&ti=253&kch=[SUPER_TOPIC]&kst=[SITE_DOMAIN]&ksp=[SEARCH_PHRASE]"},{"postCode":"COMSCORE.beacon({c1:8,c2:\"6036297\",c3:\"12345678\"});","scriptURL":"http://b.scorecardresearch.com/beacon.js"}],"topics":[[2030,348,6],[2193,29,4],[183,29,4],[123,348,6],[94,17,4],[2090,348,6],[187,29,4],[225,35,6],[2192,348,6]]});
+pageTopicVector="";
+addContentLink(215,24426296,'button%20changes',215,1,"","22727;50081");
+addContentLink(336,22746703,'Help%20button',336,1,"","22727;50081");
+addContentLink(360,15149631,'the%20buttons',360,1,"","22727;50081");
+addContentLink(384,461663,'application',384,1,"","22727;50081");
+addContentLink(862,16374086,'Cancel%20button',862,1,"","22727;50081");
+addContentLink(965,685916,'Resource',965,1,"","22727;50081");
+}, "reaction response");
+konaSafe(function(){
+konaTweakMode=84485122;
+konaRequestId="137020073181172592";
+konaPageLoadSendReport=0;
+setKonaResults(1,1,"L|0|0|0|white|none&pRfr=http://www.functionx.com/visualc/dialogboxes/wizards.htm&dc_aff_id=");
+onKonaReturn(1);
+}, "reaction response");

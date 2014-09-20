@@ -1,0 +1,882 @@
+<html><head>
+<script src="bitwise_operators_files/ga.js" async="" type="text/javascript"></script><script language="Javascript">
+<!--
+var axel = Math.random() + "";
+var ord = axel * 1000000000000000000;
+ //-->
+</script>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds2.feedburner.com/Cprogrammingcom/">
+<link rel="stylesheet" href="bitwise_operators_files/style.css" type="text/css">
+
+<meta http-equiv="name" content="C
+and C++ game programming">
+<meta name="Keywords" content="programming, c, c++, bitwise, bitwise
+operators, C++ bitwise operators, C bitwise operators, bits, bit
+manipulations, bitwise manipulations, bitwise and, bitwise or, xor, bitwise
+not, and bitwise, or bitwise">
+<meta name="Description" content="A comprehensive tutorial on bit
+manipulations and bitwise operators in C and C++ with exercises.">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cprogramming.com - Tutorials - Bitwise Operators and Bit Manipulations in C and C++</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7820175-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript" src="bitwise_operators_files/google_service.js">
+</script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-2560316224908115");
+GS_googleEnableAllServices();
+</script><script src="bitwise_operators_files/google_ads.js"></script>
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_LargeRectangle_ATF_336x280");
+GA_googleAddSlot("ca-pub-2560316224908115", "RunOfSite_ATF_leaderboard_728x90");
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script>
+<script type="text/javascript" src="bitwise_operators_files/styled_popovers_and_lightboxes.js"></script><script src="bitwise_operators_files/doclix_lib.js" charset="utf-8" async="async" type="text/javascript"></script><script charset="utf-8" async="true" src="bitwise_operators_files/anchor_settings.jsp" type="text/javascript"></script></head>
+
+
+
+<body style="overflow: auto;"><a href="http://www.cprogramming.com/"> 
+<img class="logo" src="bitwise_operators_files/title.png" alt="logo" width="324" border="0" height="83"> 
+</a>
+
+ 
+ 
+ 
+ 
+
+ 
+<table class="line">
+	<tbody><tr>
+		<td> </td>
+	</tr>
+</tbody></table>
+<div style="padding-top:25px;padding-right:25px;" align="right">
+<!-- SiteSearch Google -->
+
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input name="cx" value="partner-pub-2560316224908115:wqvdce-aw4a" type="hidden">
+    <input name="ie" value="ISO-8859-1" type="hidden">
+    <input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="31" type="text">
+    <input name="sa" value="Search" type="submit">
+  </div>
+<input value="www.cprogramming.com/tutorial/bitwise_operators.html" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="bitwise_operators_files/brand"></script>
+
+<!-- SiteSearch Google -->
+</div>
+
+
+
+
+<div>
+
+  <table class="main">
+
+    <tbody><tr>
+
+  	<td colspan="5" bgcolor="#EBEBEB">
+
+  		<img src="bitwise_operators_files/spacer-vert.png" alt="" width="0" height="6">
+
+
+
+  	   <center>
+
+    	<div class="leaderboard">
+<!-- RunOfSite_ATF_leaderboard_728x90 -->
+<script type="text/javascript">
+GA_googleFillSlot("RunOfSite_ATF_leaderboard_728x90");
+</script><script src="bitwise_operators_files/ads"></script><div id="google_ads_div_RunOfSite_ATF_leaderboard_728x90_ad_container"><!-- JavaScript Only -->
+<script type="text/javascript" src="bitwise_operators_files/12124-129374-36735-0.js">
+</script><script type="text/javascript" src="bitwise_operators_files/documentwrite.js"></script><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" id="18" name="movie18" width="728" height="90"><param name="FlashVars" value="clickTAG=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767&amp;clickTag=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767&amp;clickTag1=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767"><param name="movie" value="http://img-cdn.mediaplex.com/0/12124/129374/728x90_2_May.swf"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><embed wmode="opaque" allowscriptaccess="always" name="12124/129374/728x90_2_May." src="bitwise_operators_files/728x90_2_May.swf" flashvars="clickTAG=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767&amp;clickTag=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767&amp;clickTag1=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBixgi5Mf4TaTMKMeLcKP50e0G2bqdhwIAAAAQASCGyvQBOABYifvpuxhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQk3Mjh4OTBfYXPIAQnaATtodHRwOi8vd3d3LmNwcm9ncmFtbWluZy5jb20vdHV0b3JpYWwvYml0d2lzZV9vcGVyYXRvcnMuaHRtbJgCrBvAAgLgAgDqAiBSdW5PZlNpdGVfQVRGX2xlYWRlcmJvYXJkXzcyOHg5MPgC8NEekAOaCJgD4AOoAwHgBAE%2526num%253D0%2526sig%253DAGiWqtz-jEE_IOHWYrXgnRh6IafOBfXuyw%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-0%3Fmpt%3D408449767" swliveconnect="false" type="application/x-shockwave-flash" pluginspage="" width="728" height="90"></object>
+
+</div>
+
+
+
+
+
+</div>
+
+		</center>
+
+		<img src="bitwise_operators_files/spacer-vert.png" width="1" height="4">
+
+
+  	</td>
+
+  </tr>
+
+  <tr>
+
+  	<td class="divider-horiz" colspan="5">
+
+  	</td>
+
+  </tr>
+
+  <tr>
+
+      <td valign="top" width="130" bgcolor="#EBEBEB"> 
+
+        <center>
+
+    <div class="menu" valign="top">
+
+     <p class="navcategory" align="left">
+
+          <img class="bullet" src="bitwise_operators_files/bullet.gif" width="11" height="13">    Starting out
+
+
+     </p>
+
+     <p class="navlist" align="left">
+
+     		<a href="http://www.cprogramming.com/begin.html">Getting Started</a><br>
+
+     		<a href="http://www.cprogramming.com/tutorial.html">Tutorials</a><br>
+
+     		<a href="http://www.cprogramming.com/quiz/">Quizzes</a>
+
+     </p>
+
+     <p class="navcategory" align="left">
+
+          <br>
+
+          <img class="bullet" src="bitwise_operators_files/bullet.gif" width="11" height="13"> Moving on
+
+
+     </p>
+
+     <p class="navlist" align="left">
+
+	 		<a href="http://www.cprogramming.com/advtutorial.html">Advanced Tutorials</a><br>		
+
+            <a href="http://www.cprogramming.com/articles.html">Articles</a><br>
+
+     		<a href="http://www.cprogramming.com/challenge.html">Challenges</a><br>
+
+     		
+
+                <a href="http://www.cprogramming.com/tips">Tips and
+                Tricks</a><br><a href="http://www.cprogramming.com/jobs/">Jobs</a>
+
+
+     </p>
+
+     <p class="navcategory" align="left">
+
+          <br>
+
+          <img class="bullet" src="bitwise_operators_files/bullet.gif" width="11" height="13"> Tools
+
+
+     </p>
+
+     <p class="navlist" align="left">
+
+     		<a href="http://www.cprogramming.com/tools.html">What do I need?</a><br>
+
+     		<a href="http://www.cprogramming.com/compilers.html">Compilers</a><br>
+
+     		<a href="http://www.cprogramming.com/texteditors.html">Editors</a><br>
+
+     		<a href="http://www.cprogramming.com/debuggers.html">Debuggers</a>
+
+     </p>
+
+     <p class="navcategory" align="left">
+
+          <br>
+
+          <img class="bullet" src="bitwise_operators_files/bullet.gif" width="11" height="13"> Resources
+
+
+     </p>
+
+     <p class="navlist" align="left">
+
+			<a href="http://www.cprogramming.com/cgi-bin/source/source.cgi">Source Code</a><br><a href="http://www.cprogramming.com/reference/">Syntax Reference</a><br><a href="http://www.cprogramming.com/snippets/">Snippets</a><br>
+
+     		<a href="http://www.cprogramming.com/cgi-bin/cdir/Cdirectory.cgi">Links Directory</a><br>
+
+     		<a href="http://www.cprogramming.com/cgi-bin/glossary/glossary.pl">Glossary</a><br>
+
+     		<a href="http://www.cprogramming.com/books.html">Book Reviews</a><br>
+
+     		<a href="http://www.cprogramming.com/function.html">Function Lookup</a>
+
+     </p>
+
+     <p class="navcategory" align="left">
+
+          <br>
+
+          <img class="bullet" src="bitwise_operators_files/bullet.gif" width="11" height="13"> Questions
+
+
+     </p>
+
+     <p class="navlist" align="left">
+
+     		<a href="http://faq.cprogramming.com/">Programming FAQ</a><br>
+
+     		<a href="http://www.cprogramming.com/board.html">Message Board</a><br>
+
+     		<a href="http://www.cprogramming.com/expert.html">Ask an Expert</a><br>
+
+     		<a href="http://www.cprogramming.com/email.html">Email</a><br>
+<a href="http://www.cprogramming.com/about.html">About Us</a>
+
+
+     </p>
+
+    </div>
+
+
+
+      <!-- AI Horizon Link Image START --><br><br><script type="text/javascript"><!-- 
+ google_ad_client = "pub-2560316224908115"; google_ad_width = 120; google_ad_height = 90; google_ad_format = "120x90_0ads_al"; google_ad_channel ="9079022593"; google_color_border = "EBEBEB"; google_color_bg = "EBEBEB"; google_color_link = "C30000"; google_color_url = "C30000"; google_color_text = "000000"; //--></script> <script type="text/javascript" src="bitwise_operators_files/show_ads.js"> </script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="120" frameborder="0" height="90"></iframe></ins></ins>
+
+      <a href="http://www.aihorizon.com/" onmouseout="window.status=''; return true" onmouseover="window.status='An Affiliate of AIHorizon'; return true">
+
+      <br>
+
+      <br>
+
+      <img src="bitwise_operators_files/aihorizon.png" alt="An Affiliate of AIHorizon" width="90" border="1" height="34"></a>
+
+
+
+      <!-- AI Horizon Link Image END -->
+
+
+
+    </center>
+
+    </td>
+
+   
+
+    <td class="divider"></td>
+
+
+
+	<td class="content" valign="top">
+
+    			<div class="content2">
+
+
+<h1>Bitwise Operators in C and C++: A Tutorial</h1>
+
+Generally, as a programmer you don't need to concern yourself about operations
+at the bit level.  You're free to think in bytes, or ints and doubles, or even
+higher level data types composed of a combination of these.  But there are
+times when you'd like to be able to go to the level of an individual bit.
+<a href="http://www.cprogramming.com/tutorial/xor.html">Exclusive-or encryption</a> is one example when you need bitwise operations.  
+<br><br>
+<center>
+<!-- RunOfSite_LargeRectangle_ATF_336x280 -->
+<script type="text/javascript">
+GA_googleFillSlot("RunOfSite_LargeRectangle_ATF_336x280");
+</script><script src="bitwise_operators_files/ads_002"></script><div id="google_ads_div_RunOfSite_LargeRectangle_ATF_336x280_ad_container"><!-- JavaScript Only -->
+<script type="text/javascript" src="bitwise_operators_files/12124-129374-36735-1.js">
+</script><script type="text/javascript" src="bitwise_operators_files/documentwrite.js"></script><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" id="8" name="movie8" width="300" height="250"><param name="FlashVars" value="clickTAG=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231&amp;clickTag=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231&amp;clickTag1=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231"><param name="movie" value="http://img-cdn.mediaplex.com/0/12124/129374/300x250_2_May.swf"><param name="wmode" value="opaque"><param name="allowscriptaccess" value="always"><embed wmode="opaque" allowscriptaccess="always" name="12124/129374/300x250_2_May." src="bitwise_operators_files/300x250_2_May.swf" flashvars="clickTAG=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231&amp;clickTag=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231&amp;clickTag1=http://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBpSrB8cf4Tfj6CoK9cMHUpKgN8cWfhwIAAAAQASCGyvQBOABY-ezEvhhg5crlg7QOsgEUd3d3LmNwcm9ncmFtbWluZy5jb226AQozMDB4MjUwX2FzyAEJ2gE7aHR0cDovL3d3dy5jcHJvZ3JhbW1pbmcuY29tL3R1dG9yaWFsL2JpdHdpc2Vfb3BlcmF0b3JzLmh0bWzgAQKYApQjwAIC4AIA6gIkUnVuT2ZTaXRlX0xhcmdlUmVjdGFuZ2xlX0FURl8zMzZ4Mjgw-ALw0R6QA5oImAPgA6gDAeAEAQ%2526num%253D0%2526sig%253DAGiWqtydg2VfHLKm-rZ57oMif5hz4hi8DA%2526client%253Dca-pub-2560316224908115%2526adurl%253Dhttp://altfarm.mediaplex.com%2Fad%2Fck%2F12124-129374-36735-1%3Fmpt%3D1612524231" swliveconnect="false" type="application/x-shockwave-flash" pluginspage="" width="300" height="250"></object>
+
+ 
+</div>
+
+
+
+  </center>
+  <br><br>
+Another example comes up when dealing with data compression: what if you
+wanted to compress a file?  In principle, this means taking one representation
+and turning it into a representation that takes less space.  One way of doing
+this is to use an encoding that takes less than 8 bits to store a byte.  (For
+instance, if you knew that you would only be using the 26 letters of the Roman
+alphabet and didn't care about capitalization, you'd only need 5 bits to do
+it.)  In order to encode and decode files compressed in this manner, you need
+to actually extract data at the bit level.
+
+<br><br>
+Finally, you can use bit operations to speed up your program or perform neat
+tricks.  (This isn't always the best thing to do.)
+
+<h2>Thinking about Bits</h2>
+
+The byte is the lowest level at which we can access data; there's no "bit" type, and we
+can't ask for an individual bit.  In fact, we can't even perform operations on
+a single bit -- every bitwise operator will be applied to, at a minimum,
+an entire byte at a time.  This means we'll be considering the whole
+representation of a number whenever we talk about applying a bitwise operator.
+(Note that this doesn't mean we can't ever change only one bit at a time; it
+just means we have to be smart about how we do it.) Understanding what it
+means to apply a bitwise operator to an entire string of bits is probably
+easiest to see with the shifting operators.  By convention, in C and C++ you
+can think about binary numbers as starting with the most significant bit to
+the left (i.e., 10000000 is 128, and 00000001 is 1).  Regardless of underlying
+representation, you may treat this as true.  As a consequence, the results of
+the left and right shift operators are not implementation dependent for
+unsigned numbers (for signed numbers, the right shift operator is
+implementation defined). 
+
+<br><br>
+The leftshift operator is the equivalent of moving all the bits of a number a
+specified number of places to the left:
+
+<pre class="example">[variable]&lt;&lt;[number of places]
+</pre>
+For instance, consider the number 8 written in binary 00001000.  If we wanted
+to shift it to the left 2 places, we'd end up with 00100000; everything is
+moved to the left two places, and zeros are added as padding.  This is the
+number 32 -- in fact, left shifting is the equivalent of multiplying by a
+power of two.
+<pre class="example">int mult_by_pow_2(int number, int power)
+{
+    return number&lt;&lt;power;
+}
+</pre>
+Note that in this example, we're using integers, which are either 2 or 4
+bytes, and that the operation gets applied to the entire sequence of 16 or 32
+bits.
+
+<br><br>
+But what happens if we shift a number like 128 and we're only storing it in a
+single byte: 10000000?  Well, 128 * 2 = 256, and we can't even store a number
+that big in a byte, so it shouldn't be surprising that the result is 00000000.
+
+<br><br>
+It shouldn't surprise you that there's a corresponding right-shift operator:
+&gt;&gt; (especially considering that I mentioned it earlier).  Note that a
+bitwise right-shift will be the equivalent of integer division by 2.
+
+<br><br>
+Why is it integer division?  Consider the number 5, in binary, 00000101.  5/2
+is 2.5, but if you are performing integer division, 5/2 is 2.  When you
+perform a right shift by one: (unsigned int)5&gt;&gt;1, you end up with 00000010, as the
+rightmost 1 gets shifted off the end; this is the representation of the number
+2.  Note that this only holds true for unsigned integers; otherwise, we are
+not guaranteed that the padding bits will be all 0s. 
+
+<br><br>
+Generally, using the left and right shift operators will result in
+significantly faster code than calculating and then multiplying by a power of
+two.  The shift operators will also be useful later when we look at how to
+manipulating individual bits.
+
+<br><br>
+For now, let's look at some of the other binary operators to see what they can
+do for us.
+
+<h2>Bitwise AND</h2>
+
+The bitwise AND operator is a single ampersand: &amp;.  A handy mnemonic is
+that the small version of the boolean AND, &amp;&amp;, works on smaller pieces
+(bits instead of bytes, chars, integers, etc).  In essence, a binary AND
+simply takes the logical AND of the bits in each position of a number in
+binary form.
+
+<br><br>
+For instance, working with a byte (the char type):
+<pre class="example">01001000 &amp; 
+10111000 = 
+--------
+00001000
+</pre>
+
+The most significant bit of the first number is 0, so we know the most
+significant bit of the result must be 0; in the second most significant bit,
+the bit of second number is zero, so we have the same result.  The only time
+where both bits are 1, which is the only time the result will be 1, is the
+fifth bit from the left.  Consequently, 
+<pre class="example">72 &amp; 184 = 8
+</pre>
+
+<h2>Bitwise OR</h2>
+
+Bitwise OR works almost exactly the same way as bitwise AND.  The only
+difference is that only one  of the two bits needs to be a 1 for that
+position's bit in the result to be 1.  (If both bits are a 1, the result will
+also have a 1 in that position.)  The symbol is a pipe: |.  Again, this is
+similar to boolean logical operator, which is ||.
+<pre class="example">01001000 | 
+10111000 = 
+--------
+11111000
+</pre>
+and consequently
+<pre class="example">72 | 184 = 248
+</pre>
+
+Let's take a look at an example of when you could use just these four
+operators to do something potentially useful.  Let's say that you wanted to
+keep track of certain boolean attributes about something -- for instance, you
+might have eight cars (!) and want to keep track of which are in use.  Let's
+assign each of the cars a number from 0 to 7.
+
+<br><br>
+Since we have eight items, all we really need is a single byte, and we'll use
+each of its eight bits to indicate whether or not a car is in use.  To do
+this, we'll declare a char called in_use, and set it to zero.  (We'll assume
+that none of the cars are initially "in use".)
+
+<pre class="example">char in_use = 0;
+</pre>
+
+Now, how can we check to make sure that a particular car is free before we try
+to use it?  Well, we need to isolate the one bit that corresponds to that car.
+The strategy is simple: use bitwise operators to ensure every bit of the
+result is zero except, possibly, for the bit we want to extract.
+
+<br><br>
+Consider trying to extract the fifth bit from the right of a number: XX?XXXXX
+We want to know what the question mark is, and we aren't concerned about the
+Xs.  We'd like to be sure that the X bits don't interfere with our result, so
+we probably need to use a bitwise AND of some kind to make sure they are all
+zeros.  What about the question mark?  If it's a 1, and we take the bitwise
+AND of XX?XXXXX and 00100000, then the result will be 00100000:
+
+<pre class="example">XX1XXXXX &amp; 
+00100000 = 
+--------
+00100000
+</pre>
+
+Whereas, if it's a zero, then the result will be 00000000:
+<pre class="example">XX0XXXXX &amp; 
+00100000 = 
+--------
+00000000
+</pre>
+
+So we get a non-zero number if, and only if, the bit we're interested in is a
+1.
+
+<br><br>
+This procedure works for finding the bit in the nth position.  The only thing
+left to do is to create a number with only the one bit in the correct position
+turned on.  These are just powers of two, so one approach might be to do
+something like:
+
+<pre class="example">int is_in_use(int car_num)
+{
+    // pow returns an int, but in_use will also be promoted to an int
+    // so it doesn't have any effect; we can think of this as an operation
+    // between chars
+    return in_use &amp; pow(2, car_num);
+}
+</pre>
+While this function works, it can be confusing.  It obscures the fact that
+what we want to do is shift a bit over a certain number of places, so that we
+have a number like 00100000 -- a couple of zeros, a one, and some more zeros.
+(The one could also be first or last -- 10000000 or 00000001.)
+
+<br><br>
+We can use a bitwise leftshift to accomplish this, and it'll be much faster to
+boot.  If we start with the number 1, we are guaranteed to have only a single
+bit, and we know it's to the far-right.  We'll keep in mind that car 0 will
+have its data stored in the rightmost bit, and car 7 will be the leftmost.
+<pre class="example">int is_in_use(int car_num)
+{
+    return in_use &amp; 1&lt;&lt;car_num;
+}
+</pre>
+
+Note that shifting by zero places is a legal operation -- we'll just get back
+the same number we started with.
+
+<br><br>
+All we can do right now is check whether a car is in use; we can't
+actually set the in-use bit for it.  There are two cases to consider:
+indicating a car is in use, and removing a car from use.  In one case, we need
+to turn a bit on, and in the other, turn a bit off.  
+
+<br><br>
+Let's tackle the problem of turning the bit on.  What does this suggest we
+should do?  If we have a bit set to zero, the only way we know right now to
+set it to 1 is to do a bitwise OR.  Conveniently, if we perform a bitwise OR
+with only a single bit set to 1 (the rest are 0), then we won't affect the
+rest of the number because anything ORed with zero remains the same (1 OR 0 is
+1, and 0 OR 0 is 0).
+
+<br><br>
+Again we need to move a single bit into the correct position:
+void set_in_use(int car_num)
+{
+    in_use = in_use | 1&lt;&lt;car_num;
+}
+
+
+What does this do?  Take the case of setting the rightmost bit to 1: we have
+some number 0XXXXXXX | 10000000; the result, 1XXXXXXX.  The shift is the same
+as before; the only difference is the operator and that we store the result.
+
+<br><br>
+Setting a car to be no longer in use is a bit more complicated.  For that,
+we'll need another operator.
+
+<h2>The Bitwise Complement</h2>
+
+
+The bitwise complement operator, the tilde, ~, flips every bit.  A useful way
+to remember this is that the tilde is sometimes called a twiddle, and the
+bitwise complement twiddles every bit: if you have a 1, it's a 0, and if you
+have a 0, it's a 1.
+
+<br><br>
+This turns out to be a great way of finding the largest possible value for an
+unsigned number:
+
+<pre class="example">unsigned int max = ~0;
+</pre>
+
+0, of course, is all 0s: 00000000 00000000.  Once we twiddle 0, we get all 1s:
+11111111 11111111.  Since max is an unsigned int, we don't have to worry about
+sign bits or twos complement.  We know that all 1s is the largest possible
+number.
+
+<br><br>
+Note that ~ and ! cannot be used interchangeably.  When you take the logical
+NOT of a non-zero number, you get 0 (FALSE).  However, when you twiddle a
+non-zero number, the only time you'll get 0 is when every bit is turned on.
+(This non-equivalence principle holds true for bitwise AND too, unless you
+know that you are using strictly the numbers 1 and 0.  For bitwise OR, to be
+certain that it would be equivalent, you'd need to make sure that the
+underlying representation of 0 is all zeros to use it interchangeably.  But
+don't do that!  It'll make your code harder to understand.)
+
+<br><br>
+Now that we have a way of flipping bits, we can start thinking about how
+ to
+turn off a single bit.  We know that we want to leave other bits 
+unaffected,
+but that if we have a 1 in the given position, we want it to be a 0.  
+Take some time to think about how to do this before reading further.
+
+<br><br>
+We need to come up with a sequence of operations that leaves 1s and 0s 
+in the
+non-target position unaffected; before, we used a bitwise OR, but we can
+ also
+use a bitwise AND.  1 AND 1 is 1, and 0 AND 1 is 0.  Now, to turn off a 
+bit,
+we just need to AND it with 0: 1 AND 0 is 0.  So if we want to indicate 
+that car 2 is no longer in use, we want to take the bitwise AND of 
+XXXXX1XX with 11111011.
+
+<br><br>
+How can we get that number?  This is where the ability to take the complement
+of a number comes in handy: we already know how to turn a single bit on.  If
+we turn one bit on and take the complement of the number, we get every bit on
+except that bit:
+
+<pre class="example">~(1&lt;&lt;position)
+</pre>
+
+Now that we have this, we can just take the bitwise AND of this with the
+current field of cars, and the only bit we'll change is the one of the car_num
+we're interested in.
+
+<pre class="example">int set_unused(int car_num)
+{
+    in_use = in_use &amp; ~(1&lt;&lt;position);
+}
+</pre>
+
+You might be thinking to yourself, but this is kind of clunky.  We actually
+need to know whether a car is in use or not (if the bit is on or off) before we can
+know which function to call.  While this isn't necessarily a bad thing, it
+means that we do need to know a little bit about what's going on.  There is an
+easier way, but first we need the last bitwise operator: exclusive-or.
+
+<h2>Bitwise Exclusive-Or (XOR)</h2>
+
+There is no boolean operator counterpart to bitwise exclusive-or, but there is
+a simple explanation.  The exclusive-or operation takes two inputs and
+returns a 1 if either one or the other of the inputs is a 1, but not if both
+are.  That is, if both inputs are 1 or both inputs are 0, it returns 0.
+Bitwise exclusive-or, with the operator of a carrot, ^, performs the
+exclusive-or operation on each pair of bits.  Exclusive-or is commonly
+abbreviated XOR.
+
+<br><br>
+For instance, if you have two numbers represented in binary as 10101010 and
+01110010 then taking the bitwise XOR results in 11011000.  It's easier to see
+this if the bits are lined up correctly:
+<pre class="example">01110010 ^
+10101010 
+--------
+11011000
+</pre>
+
+You can think of XOR in the following way: you have some bit, either 1 or 0,
+that we'll call A.  When you take A XOR 0, then you always get A back: if A is
+1, you get 1, and if A is 0, you get 0.  On the other hand, when you take A
+XOR 1, you flip A.  If A is 0, you get 1; if A is 1, you get 0.  
+
+<br><br>
+So you can think of the XOR operation as a sort of selective twiddle: if you
+apply XOR to two numbers, one of which is all 1s, you get the equivalent of a
+twiddle.  
+
+<br><br>
+Additionally, if you apply the XOR operation twice -- say you have a bit, A,
+and another bit B, and you set C equal to A XOR B, and then take C XOR B: you
+get A XOR B XOR B, which essentially either flips every bit of A twice, or
+never flips the bit, so you just get back A.  (You can also think of B XOR B
+as cancelling out.)  As an exercise, can you think of a way to use this to
+exchange two integer variables without a temporary variable?  (Once you've
+figured it out, check the <a href="http://www.cprogramming.com/tutorial/xorsol.html">solution</a>.)
+
+<br><br>
+How does that help us?  Well, remember the first principle: XORing a bit with
+0 results in the same bit.  So what we'd really like to be able to do is just
+call one function that flips the bit of the car we're interested in -- it
+doesn't matter if it's being turned on or turned off -- and leaves the rest of
+the bits unchanged.
+
+<br><br>
+This sounds an awful lot like the what we've done in the past; in fact, we
+only need to make one change to our function to turn a bit on.  Instead of
+using a bitwise OR, we use a bitwise XOR.  This leaves everything unchanged,
+but flips the bit instead of always turning it on:
+
+<pre class="example">void flip_use_state(int car_num)
+{
+    in_use = in_use ^ 1&lt;&lt;car_num;
+}
+</pre>
+
+<h2>When should you use bitwise operators?</h2>
+
+Bitwise operators are good for saving space -- but many times, space is hardly
+an issue.  And one problem with working at the level of the individual bits is
+that if you decide you need more space or want to save some time -- for
+instance, if we needed to store information about 9 cars instead of 8 -- then
+you might have to redesign large portions of your program.  On the other hand,
+sometimes you can use bitwise operators to cleverly remove dependencies, such
+as by using ~0 to find the largest possible integer.  And bit shifting to
+multiply by two is a fairly common operation, so it doesn't affect readability
+in the way that advanced use of bit manipulation can in some cases (for
+instance, using XOR to switch the values stored in two variables).
+
+<br><br>
+There are also times when you need to use bitwise operators: if you're working
+with compression or some forms of encryption, or if you're working on a system
+that expects bit fields to be used to store boolean attributes.
+
+<h2>Summary</h2>
+
+You should now be familiar with six bitwise operators:
+<br><br>
+<b>Works on bits for left argument, takes an integer as a second argument</b>
+
+<pre class="example">bit_arg&lt;&lt;shift_arg
+</pre>
+Shifts bits to of bit_arg shift_arg places to the left -- equivalent to
+multiplication by 2^shift_arg
+
+<pre class="example">bit_arg&gt;&gt;shift_arg
+</pre>
+Shifts bits to of bit_arg shift_arg places to the right -- equivalent to
+integer division by 2^shift_arg
+<br><br>
+<b>Works on the bits of both arguments</b>
+<pre class="example">left_arg &amp; right_arg
+</pre>
+Takes the bitwise AND of left_arg and right_arg
+<pre class="example">left_arg ^ right_arg
+</pre>
+Takes the bitwise XOR of left_arg and right_arg
+
+<pre class="example">left_arg | right_arg
+</pre>
+
+<b>Works on the bits of only argument</b>
+<pre class="example">~arg
+</pre>
+Reverses the bits of arg
+
+<br><br>
+<b>Skills and knowledge</b>
+You also know a couple of neat tricks that you can use when performance is
+critical, or space is slow, or you just need to isolate and manipulate
+individual bits of a number.<br><br>
+And you now should have a better sense of what goes on at the lowest levels
+of your computer.
+
+<h2>A Parting Puzzle</h2>
+
+One final neat trick of bitwise operators is that you can use them, in
+conjunction with a bit of math, to find out whether an integer is a power of two.
+Take some time to think about it, then check out the <a href="http://www.cprogramming.com/tutorial/powtwosol.html">solution</a>.  
+
+<!-- removed chitika -->
+ 
+<hr>
+Related articles<br>
+<a href="http://faq.cprogramming.com/cgi-bin/smartfaq.cgi?answer=1074727388&amp;id=1073086407">A bit of background in bits and a few other tricks</a>
+<br><br>
+               
+
+     
+<center>
+<br><br>
+          
+ 
+               <script type="text/javascript">
+<!--
+google_ad_client = "pub-2560316224908115";
+/* link_ads_bottom */
+google_ad_slot = "2258412831";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script> <script type="text/javascript" src="bitwise_operators_files/show_ads.js"> </script><ins style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" scrolling="no" width="728" frameborder="0" height="15"></iframe></ins></ins> 
+ 
+
+
+
+<script type="text/javascript" src="bitwise_operators_files/618210012.js"></script><style type="text/css">#af-form-618210012 .af-body .af-textWrap{width:70%;display:block;float:right;}#af-form-618210012 .af-body a{color:#000000;text-decoration:underline;font-style:normal;font-weight:normal;}#af-form-618210012 .af-body input.text, #af-form-618210012 .af-body textarea{background-color:#FFFFFF;border-color:#CCCCCC;border-width:2px;border-style:inset;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}#af-form-618210012 .af-body input.text:focus, #af-form-618210012 .af-body textarea:focus{background-color:inherit;border-color:#CCCCCC;border-width:2px;border-style:inset;}#af-form-618210012 .af-body label.previewLabel{display:block;float:left;width:25%;text-align:left;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}#af-form-618210012 .af-body{padding-bottom:15px;background-repeat:no-repeat;background-position:inherit;background-image:none;color:inherit;font-size:12px;font-family:, serif;}#af-form-618210012 .af-footer{background-color:transparent;background-repeat:no-repeat;background-position:top left;background-image:none;border-bottom-style:none;border-left-style:none;border-right-style:none;border-top-style:none;color:inherit;font-family:, serif;}#af-form-618210012 .af-header{padding-bottom:15px;padding-top:15px;padding-right:15px;padding-left:15px;background-color:transparent;background-repeat:no-repeat;background-position:inherit;background-image:none;border-bottom-style:none;border-left-style:none;border-right-style:none;border-top-style:none;color:inherit;font-family:, serif;}#af-form-618210012 .af-quirksMode .bodyText{padding-top:2px;padding-bottom:2px;}#af-form-618210012 .af-quirksMode{padding-right:15px;padding-left:15px;}#af-form-618210012 .af-standards .af-element{padding-right:15px;padding-left:15px;}#af-form-618210012 .bodyText p{margin:1em 0;}#af-form-618210012 .buttonContainer input.submit{color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}#af-form-618210012 .buttonContainer input.submit{width:auto;}#af-form-618210012 .buttonContainer{text-align:center;}#af-form-618210012 body,#af-form-618210012 dl,#af-form-618210012 dt,#af-form-618210012 dd,#af-form-618210012 h1,#af-form-618210012 h2,#af-form-618210012 h3,#af-form-618210012 h4,#af-form-618210012 h5,#af-form-618210012 h6,#af-form-618210012 pre,#af-form-618210012 code,#af-form-618210012 fieldset,#af-form-618210012 legend,#af-form-618210012 blockquote,#af-form-618210012 th,#af-form-618210012 td{float:none;color:inherit;position:static;margin:0;padding:0;}#af-form-618210012 button,#af-form-618210012 input,#af-form-618210012 submit,#af-form-618210012 textarea,#af-form-618210012 select,#af-form-618210012 label,#af-form-618210012 optgroup,#af-form-618210012 option{float:none;position:static;margin:0;}#af-form-618210012 div{margin:0;}#af-form-618210012 fieldset{border:0;}#af-form-618210012 form,#af-form-618210012 textarea,.af-form-wrapper,.af-form-close-button,#af-form-618210012 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}#af-form-618210012 input,#af-form-618210012 button,#af-form-618210012 textarea,#af-form-618210012 select{font-size:100%;}#af-form-618210012 p{color:inherit;}#af-form-618210012 select,#af-form-618210012 label,#af-form-618210012 optgroup,#af-form-618210012 option{padding:0;}#af-form-618210012 table{border-collapse:collapse;border-spacing:0;}#af-form-618210012 ul,#af-form-618210012 ol{list-style-image:none;list-style-position:outside;list-style-type:disc;padding-left:40px;}#af-form-618210012,#af-form-618210012 .quirksMode{width:400px;}#af-form-618210012.af-quirksMode{overflow-x:hidden;}#af-form-618210012{background-color:transparent;border-color:inherit;border-width:none;border-style:none;}#af-form-618210012{overflow:hidden;}.af-body .af-textWrap{text-align:left;}.af-body input.image{border:none!important;}.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}.af-body input.text{width:100%;float:none;padding:2px!important;}.af-body.af-standards input.submit{padding:4px 12px;}.af-clear{clear:both;}.af-element label{text-align:left;display:block;float:left;}.af-element{padding:5px 0;}.af-form-wrapper{text-indent:0;}.af-form{text-align:left;margin:auto;}.af-header,.af-footer{margin-bottom:0;margin-top:0;padding:10px;}.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}.lbl-right .af-element label{text-align:right;}body {}</style><form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"><div style="display: none;"><input name="meta_web_form_id" value="618210012" type="hidden"><input name="meta_split_id" value="" type="hidden"><input name="listname" value="cprogramming" type="hidden"><input name="redirect" value="http://www.cprogramming.com/ml_thankyou.html" id="redirect_ea565cecd625fa897970a6c67df0398d" type="hidden"><input name="meta_adtracking" value="inline" type="hidden"><input name="meta_message" value="1" type="hidden"><input name="meta_required" value="email" type="hidden"><input name="meta_tooltip" value="" type="hidden"></div><div id="af-form-618210012" class="af-form"><div id="af-header-618210012" class="af-header"><div class="bodyText"><center><div><div>Join our mailing list to keep up with the latest news and updates about Cprogramming.com!</div>&nbsp;</div></center></div></div><div id="af-body-618210012" class="af-body af-standards"><div class="af-element"><label class="previewLabel" for="awf_field-15384792">Name</label><div class="af-textWrap"><input id="awf_field-15384792" name="name" class="text" tabindex="500" type="text"></div><div class="af-clear"></div></div><div class="af-element"><label class="previewLabel" for="awf_field-15384793">Email</label><div class="af-textWrap"><input class="text" id="awf_field-15384793" name="email" tabindex="501" type="text"></div><div class="af-clear"></div></div><div class="af-element"><div class="bodyText"><center></center></div><div class="af-clear"></div></div><div class="af-element buttonContainer"><input name="submit" class="submit" value="Join Mailing List" tabindex="502" type="submit"><div class="af-clear"></div></div><div class="af-element" style="text-align: center"><img src="bitwise_operators_files/a.png" alt="Subscriber Counter"></div></div><div id="af-footer-618210012" class="af-footer"><div class="bodyText"><p>&nbsp;</p></div></div></div></form><script type="text/javascript">    <!--    (function() {        var IE = /*@cc_on!@*/false;        if (!IE) { return; }        if (document.compatMode && document.compatMode == 'BackCompat') {            if (document.getElementById("af-form-618210012")) {                document.getElementById("af-form-618210012").className = 'af-form af-quirksMode';            }            if (document.getElementById("af-body-618210012")) {                document.getElementById("af-body-618210012").className = "af-body inline af-quirksMode";            }            if (document.getElementById("af-header-618210012")) {                document.getElementById("af-header-618210012").className = "af-header af-quirksMode";            }            if (document.getElementById("af-footer-618210012")) {                document.getElementById("af-footer-618210012").className = "af-footer af-quirksMode";            }        }    })();    --></script>
+<p align="center"> ----- <br>
+<script type="text/javascript" src="bitwise_operators_files/713888.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Interested in <a href="http://www.cprogramming.com/advertising.html">advertising
+                with us</a>?<br>
+                Please read our <a href="http://www.cprogramming.com/privacy.html">privacy
+                policy</a>.
+    			</p></center></div>
+    	</td>
+    	
+    	
+	<td class="divider" rowspan="1" valign="top">
+    	</td>
+    	
+    	
+	<td class="content" rowspan="1" valign="top" bgcolor="#EBEBEB">
+	<div class="content2"><br><div class="verticalad">
+<script type="text/javascript"><!--
+        e9 = new Object();
+    e9.size = "160x600,120x600";
+//--></script>
+<script type="text/javascript" src="bitwise_operators_files/tags.js"></script><script type="text/javascript" src="bitwise_operators_files/displayAd.js"></script><center><script type="text/javascript" src="bitwise_operators_files/j.js"></script><iframe src="bitwise_operators_files/lq_sky.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" width="120" frameborder="0" height="600"></iframe></center>
+
+
+
+
+	</div><br>
+    </div>
+    	</td>  	
+  </tr>
+  <tr>
+  	<td class="divider-horiz" colspan="5" valign="top">
+    </td>
+  </tr>
+  
+  <tr>
+  <td colspan="5" valign="top" bgcolor="#EBEBEB">
+      	<center>
+    		<br><div class="bannerad"> 
+
+        </div><br>
+
+    	</center>	
+   </td>  
+  </tr>
+</tbody></table>
+  </div>
+
+<script type="text/javascript">
+        doclix_pid = 16436;
+        doclix_cid = 962;
+</script>
+<script type="text/javascript" src="bitwise_operators_files/doclix_synd_overlay.js" async="" defer="defer" charset="utf-8"></script>
+
+
+
+
+
+
+
+
+<div><style type="text/css">#af-form-713888 .af-body .af-textWrap{width:70%;display:block;float:right;}
+#af-form-713888 .af-body a{color:#000000;text-decoration:underline;font-style:normal;font-weight:normal;}
+#af-form-713888 .af-body input.text, #af-form-713888 .af-body textarea{background-color:#FFFFFF;border-color:#CCCCCC;border-width:2px;border-style:inset;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}
+#af-form-713888 .af-body input.text:focus, #af-form-713888 .af-body textarea:focus{background-color:inherit;border-color:#CCCCCC;border-width:2px;border-style:inset;}
+#af-form-713888 .af-body label.previewLabel{display:block;float:left;width:25%;text-align:left;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}
+#af-form-713888 .af-body{padding-bottom:15px;background-repeat:no-repeat;background-position:inherit;background-image:none;color:inherit;font-size:12px;font-family:, serif;}
+#af-form-713888 .af-footer{background-color:#FFFFFF;background-repeat:no-repeat;background-position:top left;background-image:none;border-bottom-style:none;border-left-style:none;border-right-style:none;border-top-style:none;color:inherit;font-family:, serif;}
+#af-form-713888 .af-header{padding-bottom:15px;padding-top:15px;padding-right:15px;padding-left:15px;background-color:#FFFFFF;background-repeat:no-repeat;background-position:inherit;background-image:none;border-bottom-style:none;border-left-style:none;border-right-style:none;border-top-style:none;color:inherit;font-family:, serif;}
+#af-form-713888 .af-quirksMode .bodyText{padding-top:2px;padding-bottom:2px;}
+#af-form-713888 .af-quirksMode{padding-right:15px;padding-left:15px;}
+#af-form-713888 .af-standards .af-element{padding-right:15px;padding-left:15px;}
+#af-form-713888 .bodyText p{margin:1em 0;}
+#af-form-713888 .buttonContainer input.submit{color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:inherit;font-family:inherit;}
+#af-form-713888 .buttonContainer input.submit{width:auto;}
+#af-form-713888 .buttonContainer{text-align:center;}
+#af-form-713888 body,#af-form-713888 dl,#af-form-713888 dt,#af-form-713888 dd,#af-form-713888 h1,#af-form-713888 h2,#af-form-713888 h3,#af-form-713888 h4,#af-form-713888 h5,#af-form-713888 h6,#af-form-713888 pre,#af-form-713888 code,#af-form-713888 fieldset,#af-form-713888 legend,#af-form-713888 blockquote,#af-form-713888 th,#af-form-713888 td{float:none;color:inherit;position:static;margin:0;padding:0;}
+#af-form-713888 button,#af-form-713888 input,#af-form-713888 submit,#af-form-713888 textarea,#af-form-713888 select,#af-form-713888 label,#af-form-713888 optgroup,#af-form-713888 option{float:none;position:static;margin:0;}
+#af-form-713888 div{margin:0;}
+#af-form-713888 fieldset{border:0;}
+#af-form-713888 form,#af-form-713888 textarea,.af-form-wrapper,.af-form-close-button,#af-form-713888 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}
+#af-form-713888 input,#af-form-713888 button,#af-form-713888 textarea,#af-form-713888 select{font-size:100%;}
+#af-form-713888 p{color:inherit;}
+#af-form-713888 select,#af-form-713888 label,#af-form-713888 optgroup,#af-form-713888 option{padding:0;}
+#af-form-713888 table{border-collapse:collapse;border-spacing:0;}
+#af-form-713888 ul,#af-form-713888 ol{list-style-image:none;list-style-position:outside;list-style-type:disc;padding-left:40px;}
+#af-form-713888,#af-form-713888 .quirksMode{width:400px;}
+#af-form-713888.af-quirksMode{overflow-x:hidden;}
+#af-form-713888{background-color:#FFFFFF;border-color:inherit;border-width:none;border-style:none;}
+.af-body .af-textWrap{text-align:left;}
+.af-body input.image{border:none!important;}
+.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}
+.af-body input.text{width:100%;float:none;padding:2px!important;}
+.af-body.af-standards input.submit{padding:4px 12px;}
+.af-clear{clear:both;}
+.af-element label{text-align:left;display:block;float:left;}
+.af-element{padding:5px 0;}
+.af-form-wrapper{text-indent:0;}
+.af-form{text-align:left;margin:auto;}
+.af-header,.af-footer{margin-bottom:0;margin-top:0;padding:10px;}
+.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}
+.dropShadowBottom713888{background:url(http://forms.aweber.com/images/wfg/drop-bottom.png) repeat-x;width:398px;height:10px;float:left;margin-bottom:0;line-height:0;font-size:0;padding:0;}
+.dropShadowL713888{background:url(http://forms.aweber.com/images/wfg/drop-left.png) repeat-y;line-height:0;font-size:0;width:10px;height:100%;float:left;margin-bottom:0;}
+.dropShadowLL713888{background:url(http://forms.aweber.com/images/wfg/drop-bottomLeft.png) no-repeat;width:10px;height:10px;float:left;margin-bottom:0;line-height:0;font-size:0;padding:0;}
+.dropShadowLR713888{background:url(http://forms.aweber.com/images/wfg/drop-bottomRight.png) no-repeat;width:10px;height:10px;float:left;margin-bottom:0;line-height:0;font-size:0;padding:0;}
+.dropShadowR713888{background:url(http://forms.aweber.com/images/wfg/drop-right.png) repeat-y;width:10px;height:100%;float:right;margin-bottom:0;}
+.dropShadowTop713888{background:url(http://forms.aweber.com/images/wfg/drop-top.png) repeat-x;width:398px;height:10px!important;line-height:0;font-size:0;float:left;margin-bottom:0;padding:0;}
+.dropShadowUL713888{background:url(http://forms.aweber.com/images/wfg/drop-topLeft.png) no-repeat;width:10px;height:10px!important;float:left;margin-bottom:0;line-height:0;font-size:0;padding:0;}
+.dropShadowUR713888{background:url(http://forms.aweber.com/images/wfg/drop-topRight.png) no-repeat;width:10px;line-height:0;font-size:0;height:10px!important;float:left;margin-bottom:0;padding:0;}
+.lbl-right .af-element label{text-align:right;}
+body {
+}</style></div></body></html>

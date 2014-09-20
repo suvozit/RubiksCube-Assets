@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="client-firefox client-firefox-4 client-gecko client-win" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>God's algorithm - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.17wmf1">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="God%27s_algorithm_files/load_002.css" type="text/css" media="all">
+<style type="text/css" media="all">.suggestions{overflow:hidden;position:absolute;top:0px;left:0px;width:0px;border:none;z-index:99;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;color:WindowText;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;background-color:Highlight;color:white;color:HighlightText}.suggestions-special .special-label{font-size:0.8em;color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white;color:HighlightText}.autoellipsis-matched,.highlight{font-weight:bold}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:8d395f27880b6ffcab73b1c74b0217ea */</style><style type="text/css" media="all">#mw-panel.collapsible-nav div.portal{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEtQTFRF29vb2tra4ODg6urq5OTk4uLi6+vr7e3t7Ozs8PDw5+fn4+Pj4eHh3d3d39/f6Ojo5eXl6enp8fHx8/Pz8vLy7+/v3Nzc2dnZ2NjYnErj7QAAAD1JREFUeNq0wQUBACAMALDj7hf6JyUFGxzEnYhC9GaNPG1xVffGDErk/iCigLl1XV2xM49lfAxEaSM+AQYA9HMKuv4liFQAAAAASUVORK5CYII=);background-image:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/portal-break.png?2011-02-12T21:25:00Z)!ie;background-position:left top;background-repeat:no-repeat;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav div.portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRFeXl53d3dmpqasbGx////GU0iEgAAAAV0Uk5T/////wD7tg5TAAAAK0lEQVQI12NwgQIG0hhCDAwMTCJAhqMCA4MiWEoIJABiOCooQhULi5BqMgB2bh4svs8t+QAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/open.png?2011-02-12T21:25:00Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0px}#mw-panel.collapsible-nav div.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF3d3deXl5////nZ2dQA6SoAAAAAN0Uk5T//8A18oNQQAAADNJREFUeNpiYEIDDMQKMKALMDOgCTDCRWACcBG4AEwEIcDITEAFuhnotmC4g4EEzwEEGAADqgHmQSPJKgAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/closed-ltr.png?2011-02-12T21:25:00Z) left center no-repeat!ie;margin-bottom:0px}#mw-panel.collapsible-nav div h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav div.collapsed h5:hover{text-decoration:underline}#mw-panel.collapsible-nav div.portal div.body{background:none !important;padding-top:0px;display:none}#mw-panel.collapsible-nav div.persistent div.body{display:block}#mw-panel.collapsible-nav div.first h5{display:none}#mw-panel.collapsible-nav div.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav div.portal div.body ul li{padding:0.25em 0}#mw-panel.collapsible-nav div.first{background-image:none;margin-top:0px}#mw-panel.collapsible-nav div.persistent div.body{margin-left:0.5em}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:c5cca4c308b0b64d12b1147b6871e86e */</style><meta name="ResourceLoaderDynamicStyles" content=""><link rel="stylesheet" href="God%27s_algorithm_files/load.css" type="text/css" media="all">
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
+<script type="text/javascript">wgNamespaceNumber=0;wgAction="view";wgPageName="God's_algorithm";wgMainPageTitle="Main Page";wgWikimediaMobileUrl="http:\/\/en.m.wikipedia.org\/wiki";</script><script src="God%27s_algorithm_files/MobileRedirect.js" type="text/javascript"></script><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--><link href="God%27s_algorithm_files/index_002.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="God%27s_algorithm_files/index_003.php"></script><link href="God%27s_algorithm_files/index.css" rel="stylesheet" type="text/css"></head>
+<body class="mediawiki ltr ns-0 ns-subject page-God_s_algorithm skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script><div id="localNotice"><p></p>
+</div>
+</div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">God's algorithm</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p><b>God's algorithm</b> is a notion originating in discussions of ways to solve the <a href="http://en.wikipedia.org/wiki/Rubik%27s_Cube" title="Rubik's Cube">Rubik's Cube</a> puzzle, but which can also be applied to other <a href="http://en.wikipedia.org/wiki/Combinatorial" title="Combinatorial" class="mw-redirect">combinatorial</a> <a href="http://en.wikipedia.org/wiki/Puzzle" title="Puzzle">puzzles</a> and <a href="http://en.wikipedia.org/wiki/Mathematical_game" title="Mathematical game">mathematical games</a>. It refers to any algorithm which produces a solution having the fewest possible number of moves, the idea being that an <a href="http://en.wikipedia.org/wiki/Omniscient" title="Omniscient" class="mw-redirect">omniscient</a> being would know an optimal step from any given configuration.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="#" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Scope_and_definition"><span class="tocnumber">1</span> <span class="toctext">Scope and definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit&amp;section=1" title="Edit section: Scope and definition">edit</a>]</span> <span class="mw-headline" id="Scope_and_definition">Scope and definition</span></h2>
+<p>The notion applies to <a href="http://en.wikipedia.org/wiki/Puzzle" title="Puzzle">puzzles</a> that can assume a <a href="http://en.wiktionary.org/wiki/Finite" class="extiw" title="wiktionary:Finite">finite</a>
+ number of "configurations", with a relatively small, well-defined 
+arsenal of "moves" that may be applicable to configurations and then 
+lead to a new configuration. Solving the puzzle means to reach a 
+specific designated "final configuration" (or one of a collection of 
+final configurations) by applying a sequence of moves, starting from 
+some arbitrary initial configuration.</p>
+<p>Some well-known puzzles fitting this description are <a href="http://en.wikipedia.org/wiki/Mechanical_puzzle" title="Mechanical puzzle">mechanical puzzles</a> like <a href="http://en.wikipedia.org/wiki/Rubik%27s_Cube" title="Rubik's Cube">Rubik's Cube</a>, <a href="http://en.wikipedia.org/wiki/Towers_of_Hanoi" title="Towers of Hanoi" class="mw-redirect">Towers of Hanoi</a>, and the <a href="http://en.wikipedia.org/wiki/15_puzzle" title="15 puzzle" class="mw-redirect">15 puzzle</a>. The one-person game of <a href="http://en.wikipedia.org/wiki/Peg_solitaire" title="Peg solitaire">peg solitaire</a> is also covered, as well as many <a href="http://en.wikipedia.org/wiki/Logic_puzzle" title="Logic puzzle">logic puzzles</a>, such as the <a href="http://en.wikipedia.org/wiki/Missionaries_and_cannibals_problem" title="Missionaries and cannibals problem">missionaries and cannibals problem</a>. These have in common that they can be <a href="http://en.wikipedia.org/wiki/Mathematical_model" title="Mathematical model">modeled mathematically</a> as a <a href="http://en.wikipedia.org/wiki/Graph_%28mathematics%29#Directed_graph" title="Graph (mathematics)">directed graph</a>, in which the configurations are the vertices, and the moves the arcs.</p>
+<p>An algorithm can be considered to solve such a puzzle if it takes as 
+input an arbitrary initial configuration and produces as output a 
+sequence of moves leading to a final configuration (<i>if</i> the puzzle
+ is solvable from that initial configuration, otherwise it signals the 
+impossibility of a solution). A solution is optimal if the sequence of 
+moves is as short as possible. God's algorithm, then, for a given 
+puzzle, is an algorithm that solves the puzzle and produces only optimal
+ solutions.</p>
+<p>For an algorithm to be properly referred to as "God's algorithm", it should also be <i>practical</i>, meaning that the algorithm does not require extraordinary amounts of memory or time. For example, using a giant <a href="http://en.wikipedia.org/wiki/Lookup_table" title="Lookup table">lookup table</a>
+ indexed by initial configurations would allow solutions to be found 
+very quickly, but would require an extraordinary amount of memory.</p>
+<p>Instead of asking for a full solution, one can equivalently ask for a
+ single move from an initial but not final configuration, where the move
+ is the first of some optimal solution. An algorithm for the single-move
+ version of the problem can be turned into an algorithm for the original
+ problem by invoking it repeatedly while applying each move reported to 
+the present configuration, until a final one is reached. Conversely, any
+ algorithm for the original problem can be turned into an algorithm for 
+the single-move version by truncating its output to its first move.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit&amp;section=2" title="Edit section: Examples">edit</a>]</span> <span class="mw-headline" id="Examples">Examples</span></h2>
+<p>For the <a href="http://en.wikipedia.org/wiki/N-puzzle" title="N-puzzle" class="mw-redirect"><i>n</i>-puzzle</a>, a generalized 15-puzzle, the problem of finding an optimal solution is known to be <a href="http://en.wikipedia.org/wiki/NP-hard" title="NP-hard">NP-hard</a>.<sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup> Therefore, whether a practical God's algorithm for this problem exists remains unknown but appears unlikely.</p>
+<p>For the <a href="http://en.wikipedia.org/wiki/Towers_of_Hanoi" title="Towers of Hanoi" class="mw-redirect">Towers of Hanoi</a> puzzle, a God's algorithm exists for any given number of disks.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup></p>
+<p>An algorithm for finding optimal solutions for Rubik's Cube was published in 1997 by Richard Korf.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup>
+ While it had been known since 1995 that 20 was a lower bound on the 
+number of moves for the solution in the worst case, it was proved in 
+2010 through extensive computer calculations that no configuration 
+requires more than 20 moves.<sup id="cite_ref-GN20_3-0" class="reference"><a href="#cite_note-GN20-3"><span>[</span>4<span>]</span></a></sup> Thus 20 is a <a href="http://en.wikipedia.org/wiki/Mathematical_jargon#sharp" title="Mathematical jargon" class="mw-redirect">sharp</a> <a href="http://en.wikipedia.org/wiki/Upper_bound" title="Upper bound" class="mw-redirect">upper bound</a> on the length of optimal solutions. This number is known as <b>God's number</b>.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>5<span>]</span></a></sup></p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Oracle_machine" title="Oracle machine">Oracle machine</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Divine_move" title="Divine move">Divine move</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Optimal_solutions_for_Rubik%27s_Cube" title="Optimal solutions for Rubik's Cube">Optimal solutions for Rubik's Cube</a></li>
+</ul>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h2>
+<ol class="references">
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> Daniel Ratner, Manfred K. Warmuth (1986). <a href="http://www.aaai.org/Papers/AAAI/1986/AAAI86-027.pdf" class="external text" rel="nofollow">"Finding a shortest solution for the N × N extension of the 15-puzzle is intractable"</a>. in <i>Proceedings AAAI-86</i>. National Conference on Artificial Intelligence, 1986. pp.&nbsp;168–172.</li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> Carlos Rueda, <a href="http://web.archive.org/web/20040605074124/http://yupana.autonoma.edu.co/publicaciones/yupana/003/hanoi/hanoi_eng.html" class="external text" rel="nofollow">"An optimal solution to the Towers of Hanoi Puzzle"</a>.</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> Richard E. Korf, "Finding optimal solutions to Rubik's Cube using pattern databases", <i>Proc. Nat. Conf. on Artificial Intelligence</i> (AAAI-97), Providence, Rhode Island, Jul 1997, pp. 700–705.</li>
+<li id="cite_note-GN20-3"><b><a href="#cite_ref-GN20_3-0">^</a></b> <a href="http://www.cube20.org/" class="external text" rel="nofollow">"God's Number is 20"</a>. Cube20.org</li>
+<li id="cite_note-4"><b><a href="#cite_ref-4">^</a></b> <span class="citation news">Jonathan Fildes (August 11, 2010). <a href="http://www.bbc.co.uk/news/technology-10929159" class="external text" rel="nofollow">"Rubik's Cube quest for speedy solution comes to an end"</a>. <a href="http://en.wikipedia.org/wiki/BBC_News" title="BBC News">BBC News</a><span class="printonly">. <a href="http://www.bbc.co.uk/news/technology-10929159" class="external free" rel="nofollow">http://www.bbc.co.uk/news/technology-10929159</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Rubik%27s+Cube+quest+for+speedy+solution+comes+to+an+end&amp;rft.atitle=&amp;rft.aulast=Jonathan+Fildes&amp;rft.au=Jonathan+Fildes&amp;rft.date=August+11%2C+2010&amp;rft.pub=%5B%5BBBC+News%5D%5D&amp;rft_id=http%3A%2F%2Fwww.bbc.co.uk%2Fnews%2Ftechnology-10929159&amp;rfr_id=info:sid/en.wikipedia.org:God%27s_algorithm"><span style="display: none;">&nbsp;</span></span></li>
+</ol>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit&amp;section=5" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<ul>
+<li><span class="citation book">David Joyner (2002). <i>Adventures in Group Theory</i>. Johns Hopkins University Press. <a href="http://en.wikipedia.org/wiki/Special:BookSources/0801869471" class="internal mw-magiclink-isbn">ISBN 0-8018-6947-1</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Adventures+in+Group+Theory&amp;rft.aulast=David+Joyner&amp;rft.au=David+Joyner&amp;rft.date=2002&amp;rft.pub=Johns+Hopkins+University+Press&amp;rfr_id=info:sid/en.wikipedia.org:God%27s_algorithm"><span style="display: none;">&nbsp;</span></span></li>
+</ul>
+<table class="navbox" style="" cellspacing="0">
+<tbody><tr>
+<td style="padding: 2px;">
+<table id="collapsibleTable0" class="nowraplinks collapsible collapsed" style="width: 100%; background: none repeat scroll 0% 0% transparent; color: inherit;" cellspacing="0">
+<tbody><tr>
+<th style="" colspan="2" class="navbox-title"><span class="collapseButton">[<a href="#" id="collapseButton0">show</a>]</span><span style="float:left;width:6em;text-align:left;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="http://en.wikipedia.org/wiki/Template:Rubik%27s_Cube" title="Template:Rubik's Cube"><span style=";;background:none transparent;border:none;font-size:100%;" title="View this template">v</span></a> <span style=";;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="http://en.wikipedia.org/wiki/Template_talk:Rubik%27s_Cube" title="Template talk:Rubik's Cube"><span style=";;background:none transparent;border:none;font-size:100%;" title="Discuss this template">d</span></a> <span style=";;background:none transparent;border:none;font-size:100%;"><b>·</b></span> <a href="http://en.wikipedia.org/w/index.php?title=Template:Rubik%27s_Cube&amp;action=edit" class="external text" rel="nofollow"><span style=";;background:none transparent;border:none;font-size:100%;" title="Edit this template">e</span></a></span></span></span><span class="" style="font-size:110%;"><a href="http://en.wikipedia.org/wiki/Rubik%27s_Cube" title="Rubik's Cube">Rubik's Cube</a></span></th>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Inventor</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Ern%C5%91_Rubik" title="Ernő Rubik">Ernő Rubik</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Rubik's Cubes</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Combination_puzzle" title="Combination puzzle">Overview</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Pocket_Cube" title="Pocket Cube">2×2×2 (Pocket Cube)</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Cube" title="Rubik's Cube">3×3×3 (Rubik's Cube)</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Revenge" title="Rubik's Revenge">4×4×4 (Rubik's Revenge)</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Professor%27s_Cube" title="Professor's Cube">5×5×5 (Professor's Cube)</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/V-Cube_6" title="V-Cube 6">6×6×6 (V-Cube 6)</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/V-Cube_7" title="V-Cube 7">7×7×7 (V-Cube 7)</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Cubic variations</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Helicopter_Cube" title="Helicopter Cube">Helicopter Cube</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Skewb" title="Skewb">Skewb</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Square_One_%28puzzle%29" title="Square One (puzzle)">Square 1</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Sudoku_Cube" title="Sudoku Cube">Sudoku Cube</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Void_Cube" title="Void Cube">Void Cube</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Non-cubic variations</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table class="nowraplinks navbox-subgroup" style="width: 100%;" cellspacing="0">
+<tbody><tr>
+<td class="navbox-group" style="padding-left: 0em; padding-right: 0em; font-weight: normal;">
+<div style="padding:0em 0.75em;">Tetrahedral</div>
+</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="http://en.wikipedia.org/wiki/BrainTwist" title="BrainTwist">BrainTwist</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Pyraminx" title="Pyraminx">Pyraminx</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Pyramorphix" title="Pyramorphix">Pyramorphix</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="padding-left: 0em; padding-right: 0em; font-weight: normal;">
+<div style="padding:0em 0.75em;">Octahedral</div>
+</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="http://en.wikipedia.org/wiki/Skewb_Diamond" title="Skewb Diamond">Skewb Diamond</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="padding-left: 0em; padding-right: 0em; font-weight: normal;">
+<div style="padding:0em 0.75em;">Dodecahedral</div>
+</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="http://en.wikipedia.org/wiki/Alexander%27s_Star" title="Alexander's Star">Alexander's Star</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Megaminx" title="Megaminx">Megaminx</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Pyraminx_Crystal" title="Pyraminx Crystal">Pyraminx Crystal</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Skewb_Ultimate" title="Skewb Ultimate">Skewb Ultimate</a></div>
+</td>
+</tr>
+<tr style="height: 2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style="padding-left: 0em; padding-right: 0em; font-weight: normal;">
+<div style="padding:0em 0.75em;">Icosahedral</div>
+</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="http://en.wikipedia.org/wiki/Dogic" title="Dogic">Dogic</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Impossiball" title="Impossiball">Impossiball</a></div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="line-height: 1.2em; padding: 0.25em 1em;">Higher-dimensional<br>
+virtual variations</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/N-dimensional_sequential_move_puzzle#Magic_4D_Cube" title="N-dimensional sequential move puzzle">MagicCube4D</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/N-dimensional_sequential_move_puzzle#Magic_5D_Cube" title="N-dimensional sequential move puzzle">MagicCube5D</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/N-dimensional_sequential_move_puzzle#Magic_120-cell" title="N-dimensional sequential move puzzle">Magic 120-cell</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Derivatives</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Missing_Link_%28puzzle%29" title="Missing Link (puzzle)">Missing Link</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_360" title="Rubik's 360">Rubik's 360</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Clock" title="Rubik's Clock">Rubik's Clock</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Magic" title="Rubik's Magic">Rubik's Magic</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Magic:_Master_Edition" title="Rubik's Magic: Master Edition">Rubik's Magic: Master Edition</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Revolution" title="Rubik's Revolution">Rubik's Revolution</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Snake" title="Rubik's Snake">Rubik's Snake</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rubik%27s_Triamid" title="Rubik's Triamid">Rubik's Triamid</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">World record holders</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Erik_Akkersdijk" title="Erik Akkersdijk">Erik Akkersdijk</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Muhammad_Iril_Khairul_Anam" title="Muhammad Iril Khairul Anam">Muhammad Iril Khairul Anam</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/w/index.php?title=Dan_Cohen_%28Rubik%27s_Cube_solver%29&amp;action=edit&amp;redlink=1" class="new" title="Dan Cohen (Rubik's Cube solver) (page does not exist)">Dan Cohen</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Rowe_Hessler" title="Rowe Hessler">Rowe Hessler</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Yu_Nakajima" title="Yu Nakajima">Yu Nakajima</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Feliks_Zemdegs" title="Feliks Zemdegs">Feliks Zemdegs</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Renowned solvers</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Jessica_Fridrich" title="Jessica Fridrich">Jessica Fridrich</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Chris_Hardwick_%28speed_cuber%29" title="Chris Hardwick (speed cuber)">Chris Hardwick</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Leyan_Lo" title="Leyan Lo">Leyan Lo</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Shotaro_%22Macky%22_Makisumi" title="Shotaro &quot;Macky&quot; Makisumi">Shotaro "Macky" Makisumi</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Toby_Mao" title="Toby Mao">Toby Mao</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Tyson_Mao" title="Tyson Mao">Tyson Mao</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Frank_Morris_%28cube_solver%29" title="Frank Morris (cube solver)">Frank Morris</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Lars_Petrus" title="Lars Petrus">Lars Petrus</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/David_Singmaster" title="David Singmaster">David Singmaster</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Ron_van_Bruchem" title="Ron van Bruchem">Ron van Bruchem</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Solutions</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><strong class="selflink">God's algorithm</strong>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Optimal_solutions_for_Rubik%27s_Cube" title="Optimal solutions for Rubik's Cube">Optimal</a>&nbsp;<span style="font-weight:bold;">·</span>  <a href="http://en.wikipedia.org/wiki/Speedcubing" title="Speedcubing">Speedcubing</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Mathematics</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/Rubik%27s_cube_group" title="Rubik's cube group">Rubik's Cube group</a></p>
+</div>
+</div>
+</td>
+</tr>
+<tr style="height: 2px; display: none;">
+<td></td>
+</tr>
+<tr style="display: none;">
+<td class="navbox-group" style="">Official organization</td>
+<td style="text-align: left; border-left-width: 2px; border-left-style: solid; width: 100%; padding: 0px;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em">
+<div>
+<p><a href="http://en.wikipedia.org/wiki/World_Cube_Association" title="World Cube Association">World Cube Association</a></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 2411/1000000
+Post-expand include size: 49035/2048000 bytes
+Template argument size: 16957/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:5068075-0!*!0!!en!* and timestamp 20110606140826 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/God%27s_algorithm">http://en.wikipedia.org/wiki/God%27s_algorithm</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Search_algorithms" title="Category:Search algorithms">Search algorithms</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Logic_puzzles" title="Category:Logic puzzles">Logic puzzles</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Mathematical_games" title="Category:Mathematical games">Mathematical games</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Rubik%27s_Cube" title="Category:Rubik's Cube">Rubik's Cube</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=God%27s_algorithm&amp;campaign=ACP2" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/God%27s_algorithm" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+					<li id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:God%27s_algorithm" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/God%27s_algorithm">Read</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input name="title" value="Special:Search" type="hidden">
+				<div id="simpleSearch">
+						<input autocomplete="off" placeholder="Search" tabindex="1" id="searchInput" name="search" title="Search Wikipedia [alt-shift-f]" accesskey="f" type="text">
+						<button id="searchButton" type="submit" name="button" title="Search Wikipedia for this text"><img src="God%27s_algorithm_files/search-ltr.png" alt="Search"></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png&quot;);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal first persistent" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+					<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+					<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+					<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal expanded" id="p-interaction">
+	<h5 tabindex="2">Interaction</h5>
+	<div style="display: block;" class="body">
+				<ul>
+					<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+					<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="3">Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/God%27s_algorithm" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/God%27s_algorithm" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;oldid=431995351" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=God%27s_algorithm&amp;id=431995351" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="4">Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=God%27s+algorithm" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=God%27s+algorithm&amp;oldid=431995351&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=God%27s_algorithm&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- LANGUAGES -->
+<div class="portal expanded" id="p-lang">
+	<h5 tabindex="5">Languages</h5>
+	<div style="display: block;" class="body">
+		<ul>
+					<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Gottes_Algorithmus" title="Gottes Algorithmus">Deutsch</a></li>
+					<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Algorithme_de_Dieu" title="Algorithme de Dieu">Français</a></li>
+					<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Tanr%C4%B1n%C4%B1n_algoritmas%C4%B1" title="Tanrının algoritması">Türkçe</a></li>
+				</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 1 June 2011 at 13:12.<br></li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br></li><li class="noprint"><a class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="God%27s_algorithm_files/wikimedia-button.png" alt="Wikimedia Foundation" width="88" height="31"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="God%27s_algorithm_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="God%27s_algorithm_files/load_002.php" type="text/javascript"></script><script src="God%27s_algorithm_files/load_005.php" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "God\'s_algorithm", "wgTitle": "God\'s algorithm", "wgAction": "view", "wgArticleId": 5068075, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 431995351, "wgCategories": ["Search algorithms", "Logic puzzles", "Mathematical games", "Rubik\'s Cube"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "058c9ea851e512fbd1925b04c858c6de", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+}
+</script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.wikibits", "mediawiki.util", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch", "ext.UserBuckets", "ext.articleFeedback.startup"]);
+	mediaWiki.loader.go();
+}
+</script><script type="text/javascript" src="God%27s_algorithm_files/load.php"></script><script type="text/javascript" src="God%27s_algorithm_files/load_004.php"></script>
+
+<script src="God%27s_algorithm_files/index.php" type="text/javascript"></script>
+<script src="God%27s_algorithm_files/load_003.php" type="text/javascript"></script><script type="text/javascript" src="God%27s_algorithm_files/index_002.php"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":false,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false});;mediaWiki.loader.state({"user.options":"ready"});
+	
+	/* cache key: enwiki:resourceloader:filter:minify-js:5:27c920e3d777c540f5f38bf4516bf8fd */
+}
+</script><script type="text/javascript" src="God%27s_algorithm_files/a"></script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served by srv245 in 0.053 secs. -->			
+
+<div class="suggestions" style="top: 72px; width: 204px; display: none; left: auto; right: 29px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
