@@ -4,7 +4,7 @@ blog: https://bitsits.games/2011/06/rubiks-cube-solver.html
 ---
 ![](rubiks%20cube%20solver%20-%20small.PNG)
 
-# RubiksCube-Assets
+# Rubik's Cube Solver
 
 Okay, its done. This Rubik's Cube solver uses [Korf's Algorithm][korf] also called [IDA*][ida]. 
 The solver have two views 3D and flat. 
